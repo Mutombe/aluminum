@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  --color-arch-black: #0A0A0A;
+  --color-arch-charcoal: #1A1A1A;
+  --color-arch-graphite: #2D2D2D;
+  
+  --color-arch-silver: #C0C0C0;
+  --color-arch-silver-light: #E8E8E8;
+  --color-arch-silver-dark: #8A8A8A;
+  --color-arch-platinum: #E5E4E2;
+  
+  --color-arch-gold: #D4AF37;
+  --color-arch-yellow: #FFD700;
+  --color-arch-amber: #F5B800;
+  
+  --color-arch-white: #FFFFFF;
+}
+
+/* Only essential custom styles that Tailwind can't do */
+.gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5B800 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-arch-black);
+  color: var(--color-arch-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
