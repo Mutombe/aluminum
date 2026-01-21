@@ -78,7 +78,7 @@ const Navbar = () => {
                 {/* Stylized AA Logo */}
                 <img src="/logo1.png" alt="AA Logo" className="w-15 h-15" />
               </div>
-              <div className="hidden sm:block">
+              <div className="">
                 <span className="font-display font-bold text-lg text-arch-white tracking-tight">
                   ARCHITECTURAL
                 </span>
