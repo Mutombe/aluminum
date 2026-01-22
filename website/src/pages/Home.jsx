@@ -118,6 +118,7 @@ const Home = () => {
         <img
           src={image.src}
           alt={image.alt}
+          loading='eager'
           className="w-full h-full object-cover"
         />
       </motion.div>
