@@ -34,7 +34,7 @@ const heroImages = [
     alt: "Modern aluminium curtain wall facade"
   },
   {
-    src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200",
+    src: "18.jpg",
     alt: "Sleek aluminium window frames"
   },
   {
