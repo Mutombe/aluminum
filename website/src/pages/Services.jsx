@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   DoorOpen, 
@@ -19,6 +18,23 @@ import {
   Award
 } from 'lucide-react';
 import { AnimatedSection, StaggerContainer, StaggerItem, ParallaxWrapper } from '../components/AnimatedComponents';
+import {
+  CornerBrackets,
+  BlueprintLines,
+  WindowFramePattern,
+  BeamConnectionPattern,
+  AluminiumProfilePattern,
+  CurtainWallPattern,
+  GeometricRing,
+  CircuitPattern,
+  ConstellationPattern,
+  FloatingParticles,
+  AngularLayers,
+  BlueprintGrid,
+  HexagonalGrid,
+  CrossSectionPattern,
+  MeasurementLines
+} from '../components/ArchitecturalPatterns';
 import SEO from '../components/SEO';
 import { services } from '../data/content';
 
@@ -231,10 +247,10 @@ function ServiceCard({ service, index }) {
           
           {/* CTA */}
           <Link 
-            to={`/contact?service=${service.id}`}
+            to={`/services/${service.id}`}
             className="inline-flex items-center gap-2 text-arch-gold font-medium group/link mt-4"
           >
-            <span>Get a Quote</span>
+            <span>Learn More</span>
             <motion.span
               animate={{ x: isHovered ? 5 : 0 }}
               transition={{ duration: 0.2 }}
@@ -311,6 +327,44 @@ export default function Services() {
           <div className="absolute inset-0 bg-gradient-to-b from-arch-black/80 via-arch-black/70 to-arch-black" />
         </motion.div>
         
+        {/* Floating Particles */}
+        <FloatingParticles className="opacity-30" count={35} />
+        
+        {/* Large Geometric Ring - Background */}
+        <div className="absolute -right-32 top-1/4 opacity-10">
+          <GeometricRing size={600} />
+        </div>
+        
+        {/* Blueprint Lines */}
+        <BlueprintLines className="text-arch-gold opacity-25" />
+        
+        {/* Cross Section Pattern - Left */}
+        <motion.div
+          className="absolute left-5 md:left-10 top-1/3 w-24 h-16 md:w-40 md:h-28 opacity-15"
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <CrossSectionPattern className="w-full h-full" />
+        </motion.div>
+        
+        {/* Aluminium Profile Pattern - Right */}
+        <motion.div
+          className="absolute right-5 md:right-20 bottom-1/4 w-20 h-20 md:w-32 md:h-32 opacity-10"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        >
+          <AluminiumProfilePattern className="w-full h-full text-arch-gold" opacity={1} />
+        </motion.div>
+        
+        {/* Constellation Pattern - Top Left */}
+        <motion.div
+          className="absolute left-1/4 top-32 w-32 h-32 opacity-15 hidden md:block"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ConstellationPattern className="w-full h-full" />
+        </motion.div>
+        
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -329,6 +383,11 @@ export default function Services() {
             transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
             className="absolute bottom-1/4 left-1/4 w-64 h-64 border border-arch-silver/10 rounded-full"
           />
+        </div>
+        
+        {/* Measurement Lines Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 opacity-30 hidden md:block">
+          <MeasurementLines className="w-full h-full" />
         </div>
         
         {/* Content */}
@@ -391,9 +450,44 @@ export default function Services() {
       </section>
       
       {/* Services Grid */}
-      <section className="py-24 md:py-32 bg-arch-black relative">
+      <section className="py-24 md:py-32 bg-arch-black relative overflow-hidden">
+        {/* Blueprint Grid Background */}
+        <BlueprintGrid className="opacity-20" />
+        
+        {/* Hexagonal Grid Overlay */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <HexagonalGrid className="w-full h-full text-arch-gold" opacity={1} />
+        </div>
+        
+        {/* Angular Layers - Left */}
+        <motion.div
+          className="absolute left-0 top-1/4 w-32 h-32 md:w-48 md:h-48 opacity-10"
+          animate={{ rotate: [0, 5, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <AngularLayers className="w-full h-full" />
+        </motion.div>
+        
+        {/* Circuit Pattern - Right */}
+        <motion.div
+          className="absolute right-0 bottom-1/3 w-40 h-40 md:w-64 md:h-64 opacity-[0.08]"
+          animate={{ y: [-15, 15, -15] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <CircuitPattern className="w-full h-full" color="#D4AF37" />
+        </motion.div>
+        
+        {/* Window Frame - Bottom Left */}
+        <motion.div
+          className="absolute left-10 bottom-20 w-24 h-32 md:w-32 md:h-44 opacity-[0.06] hidden lg:block"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <WindowFramePattern className="w-full h-full text-arch-gold" />
+        </motion.div>
+        
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
             backgroundSize: '40px 40px'
@@ -426,6 +520,29 @@ export default function Services() {
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <div className="absolute inset-0 bg-gradient-to-l from-arch-gold/5 to-transparent" />
         </div>
+        
+        {/* Curtain Wall Pattern - Right */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/4 opacity-[0.03] hidden lg:block">
+          <CurtainWallPattern className="w-full h-full text-arch-gold" rows={12} cols={6} />
+        </div>
+        
+        {/* Beam Connection Pattern - Bottom Left */}
+        <motion.div
+          className="absolute left-5 bottom-20 w-24 h-24 md:w-40 md:h-40 opacity-[0.08]"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+        >
+          <BeamConnectionPattern className="w-full h-full text-arch-gold" opacity={1} />
+        </motion.div>
+        
+        {/* Constellation - Top Left */}
+        <motion.div
+          className="absolute left-10 top-20 w-32 h-32 opacity-15 hidden md:block"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ConstellationPattern className="w-full h-full" />
+        </motion.div>
         
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -499,8 +616,25 @@ export default function Services() {
       </section>
       
       {/* Why Choose Us */}
-      <section className="py-24 md:py-32 bg-arch-black relative">
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+      <section className="py-24 md:py-32 bg-arch-black relative overflow-hidden">
+        {/* Floating Particles */}
+        <FloatingParticles className="opacity-20" count={25} />
+        
+        {/* Geometric Ring - Left */}
+        <div className="absolute -left-24 top-1/2 -translate-y-1/2 opacity-[0.04]">
+          <GeometricRing size={400} />
+        </div>
+        
+        {/* Angular Layers - Right */}
+        <motion.div
+          className="absolute right-0 top-1/4 w-40 h-40 opacity-10"
+          animate={{ rotate: [0, -10, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <AngularLayers className="w-full h-full" />
+        </motion.div>
+        
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">Our Advantages</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
@@ -545,12 +679,39 @@ export default function Services() {
           <div className="absolute inset-0 bg-arch-black/80 backdrop-blur-sm" />
         </div>
         
+        {/* Floating Particles */}
+        <FloatingParticles className="opacity-25" count={30} />
+        
+        {/* Corner Patterns */}
+        <motion.div
+          className="absolute left-5 top-10 w-20 h-20 md:w-32 md:h-32 opacity-15"
+          animate={{ rotate: [0, 360] }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        >
+          <BeamConnectionPattern className="w-full h-full text-arch-gold" opacity={1} />
+        </motion.div>
+        
+        <motion.div
+          className="absolute right-5 bottom-10 w-24 h-24 md:w-40 md:h-40 opacity-10"
+          animate={{ rotate: [-360, 0] }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+        >
+          <AluminiumProfilePattern className="w-full h-full text-arch-silver" opacity={1} />
+        </motion.div>
+        
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-center">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-display">
-              Ready to Start Your{' '}
-              <span className="gradient-text">Project?</span>
-            </h2>
+            {/* Corner Brackets */}
+            <div className="relative inline-block">
+              <div className="absolute -inset-6 md:-inset-10 hidden sm:block">
+                <CornerBrackets size={40} color="#D4AF37" />
+              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-display">
+                Ready to Start Your{' '}
+                <span className="gradient-text">Project?</span>
+              </h2>
+            </div>
             <p className="text-xl text-arch-silver/80 max-w-2xl mx-auto mb-10">
               Contact us today for a free consultation and quote. Our team is ready to bring your vision to life.
             </p>

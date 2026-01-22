@@ -74,7 +74,7 @@ const Gallery = () => {
       location: 'Harare',
       year: '2021',
       // Vision: Dramatic shot of reflective curtain walling on a modern skyscraper
-      image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80',
+      image: '1.avif',
       size: 'large'
     },
     {
@@ -94,7 +94,7 @@ const Gallery = () => {
       location: 'Avondale',
       year: '2022',
       // Vision: Modern supermarket interior with custom shelving and branded aluminium fixtures
-      image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&q=80',
+      image: '17.webp',
       size: 'small'
     },
     {
@@ -174,7 +174,7 @@ const Gallery = () => {
       location: 'Union Avenue',
       year: '2022',
       // Vision: Commercial building with distinctive diamond-pattern curtain walling
-      image: 'https://images.unsplash.com/photo-1464938050520-ef2571e0d6c7?w=800&q=80',
+      image: '1.jpg',
       size: 'large'
     },
     {

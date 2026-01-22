@@ -19,8 +19,10 @@ import {
   Building2,
   GraduationCap
 } from 'lucide-react';
+import { SiFsecure } from "react-icons/si";
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
+import { LiaAwardSolid } from "react-icons/lia";
 
 const Careers = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
@@ -52,7 +54,7 @@ const Careers = () => {
       description: 'Flexible working arrangements and generous leave policies'
     },
     {
-      icon: Award,
+      icon: LiaAwardSolid,
       title: 'Recognition Programme',
       description: 'Monthly awards and bonuses for exceptional performance'
     },

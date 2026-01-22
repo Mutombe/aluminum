@@ -125,7 +125,7 @@ export const projects = [
     description: "Premium shopfront installations for multiple retail units in Zimbabwe's premier shopping destination.",
     services: ["Shopfronts", "Curtain Walling", "Entrance Canopies"],
     // Vision: Upscale shopping mall with glass storefronts
-    image: "https://images.unsplash.com/photo-1567449303078-57ad995bd17f?w=800"
+    image: "10.webp"
   },
   {
     id: 3,

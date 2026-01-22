@@ -12,11 +12,11 @@ const navLinks = [
     name: 'Services', 
     path: '/services',
     dropdown: [
-      { name: 'Fenestration', path: '/services#fenestration' },
-      { name: 'Shopfitting', path: '/services#shopfitting' },
-      { name: 'Building Interiors', path: '/services#building-interiors' },
-      { name: 'Residential', path: '/services#residential' },
-      { name: 'Commercial Exteriors', path: '/services#commercial-exteriors' }
+      { name: 'Fenestration', path: '/services/fenestration' },
+      { name: 'Shopfitting', path: '/services/shopfitting' },
+      { name: 'Building Interiors', path: '/services/interiors' },
+      { name: 'Residential', path: '/services/residential' },
+      { name: 'Commercial Exteriors', path: '/services/exteriors' }
     ]
   },
   { name: 'Projects', path: '/projects' },
@@ -76,7 +76,7 @@ const Navbar = () => {
             <Link to="/" className="relative z-10 flex items-center gap-3 group">
               <div className="relative w-12 h-12 flex items-center justify-center">
                 {/* Stylized AA Logo */}
-                <img src="/logo1.png" alt="AA Logo" className="w-15 h-15" />
+                <img src="/logo1.png" alt="AA Logo" loading="eager" className="w-15 h-15" />
               </div>
               <div className="">
                 <span className="font-display font-bold text-lg text-arch-white tracking-tight">

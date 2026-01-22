@@ -18,6 +18,7 @@ import {
   Linkedin,
   Instagram
 } from 'lucide-react';
+import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { toast } from 'sonner';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
@@ -265,7 +266,7 @@ const Contact = () => {
                     className="text-center py-12"
                   >
                     <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 className="w-10 h-10 text-green-500" />
+                      <IoCheckmarkDoneCircleOutline className="w-10 h-10 text-green-500" />
                     </div>
                     <h3 className="text-2xl font-display font-bold text-white mb-2">
                       Message Sent!

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie, X, Shield, ChevronRight } from 'lucide-react';
+import { SiFsecure } from "react-icons/si";
 
 // Cookie Consent Component
 export const CookieConsent = () => {
