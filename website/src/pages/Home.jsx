@@ -406,7 +406,7 @@ const Home = () => {
                 {services.slice(0, 4).map((service, index) => (
                   <StaggerItem key={service.id}>
                     <Link
-                      to={`/services#${service.id}`}
+                      to={`/services/${service.id}`}
                       className="group relative block p-6 md:p-8 rounded-2xl glass hover:glass-light transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                     >
                       {/* Corner brackets decoration */}
