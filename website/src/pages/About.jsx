@@ -57,12 +57,12 @@ const About = () => {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600"
             alt="Manufacturing excellence"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-arch-black via-arch-black/70 to-arch-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/50" />
         </div>
         
         {/* Floating Particles */}
@@ -105,12 +105,12 @@ const About = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               About Us
             </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-arch-white mt-4 mb-6 leading-[1.1]">
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-arch-charcoal mt-4 mb-6 leading-[1.1]">
               Building Zimbabwe's
               <span className="block gradient-text">Future in Aluminium</span>
             </h1>
-            <p className="text-xl text-arch-silver-dark max-w-2xl">
-              From a backyard workshop in 1994 to Zimbabwe's premier aluminium fabricator, 
+            <p className="text-xl text-arch-slate max-w-2xl">
+              From a backyard workshop in 1994 to Zimbabwe's premier aluminium fabricator,
               our journey is one of vision, dedication, and relentless pursuit of excellence.
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ const About = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="absolute bottom-16 right-6 md:right-12 hidden sm:block"
         >
-          <div className="relative glass p-6 rounded-2xl">
+          <div className="relative bg-white/90 backdrop-blur-sm border border-arch-silver-light p-6 rounded-2xl shadow-soft">
             <div className="absolute inset-2">
               <CornerBrackets size={16} color="#D4AF37" />
             </div>
@@ -132,14 +132,14 @@ const About = () => {
                 <p className="text-arch-gold font-display text-4xl font-bold">
                   <AnimatedCounter value={companyInfo.stats.years} suffix="+" />
                 </p>
-                <p className="text-arch-silver-dark text-sm">Years</p>
+                <p className="text-arch-slate text-sm">Years</p>
               </div>
-              <div className="w-px h-12 bg-arch-graphite" />
+              <div className="w-px h-12 bg-arch-silver-light" />
               <div className="text-center">
                 <p className="text-arch-gold font-display text-4xl font-bold">
                   <AnimatedCounter value={companyInfo.stats.projects} suffix="+" />
                 </p>
-                <p className="text-arch-silver-dark text-sm">Projects</p>
+                <p className="text-arch-slate text-sm">Projects</p>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ const About = () => {
       </section>
 
       {/* Timeline/Story Section */}
-      <section ref={containerRef} className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
+      <section ref={containerRef} className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
         {/* Blueprint Grid Background */}
         <BlueprintGrid className="opacity-30" />
         
@@ -163,8 +163,8 @@ const About = () => {
         
         {/* Animated vertical line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px hidden lg:block">
-          <div className="sticky top-0 h-screen w-full bg-arch-graphite">
-            <motion.div 
+          <div className="sticky top-0 h-screen w-full bg-arch-silver">
+            <motion.div
               className="absolute top-0 left-0 w-full bg-arch-gold"
               style={{ height: lineProgress }}
             />
@@ -205,10 +205,10 @@ const About = () => {
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Our Story
               </span>
-              <h2 className="font-display text-4xl font-bold text-arch-white mt-4 mb-6">
+              <h2 className="font-display text-4xl font-bold text-arch-charcoal mt-4 mb-6">
                 From Humble Beginnings to Industry Leadership
               </h2>
-              <div className="space-y-4 text-arch-silver-dark">
+              <div className="space-y-4 text-arch-slate">
                 <p>
                   Architectural Aluminium was born in 1994 as a suburban backyard business on Williams Way 
                   in Msasa, Harare. The founder and CEO, David Stally, had a singular vision: to create 
@@ -250,12 +250,12 @@ const About = () => {
                   <CornerBrackets size={30} color="#D4AF37" />
                 </div>
               </div>
-              <motion.div 
-                className="absolute -bottom-6 -left-6 glass p-4 rounded-xl"
+              <motion.div
+                className="absolute -bottom-6 -left-6 bg-white border border-arch-silver-light p-4 rounded-xl shadow-soft"
                 whileHover={{ scale: 1.05 }}
               >
                 <p className="text-arch-gold font-display text-2xl font-bold">1994</p>
-                <p className="text-arch-silver-dark text-sm">Established</p>
+                <p className="text-arch-slate text-sm">Established</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -266,7 +266,7 @@ const About = () => {
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-8 my-24">
             <AnimatedSection delay={0.1}>
-              <div className="relative p-8 rounded-2xl bg-arch-black border border-arch-graphite h-full overflow-hidden group hover:border-arch-gold/30 transition-colors duration-500">
+              <div className="relative p-8 rounded-2xl bg-white border border-arch-silver-light h-full overflow-hidden group hover:border-arch-gold/50 transition-colors duration-500 shadow-soft">
                 {/* Animated Joint in corner */}
                 <div className="absolute -top-4 -right-4 w-20 h-20 opacity-10 group-hover:opacity-20 transition-opacity">
                   <AnimatedJoint />
@@ -276,12 +276,12 @@ const About = () => {
                   <div className="w-14 h-14 rounded-xl bg-arch-gold/10 flex items-center justify-center mb-6">
                     <Target className="text-arch-gold" size={28} />
                   </div>
-                  <h3 className="font-display text-2xl font-semibold text-arch-white mb-4">
+                  <h3 className="font-display text-2xl font-semibold text-arch-charcoal mb-4">
                     Our Mission
                   </h3>
-                  <p className="text-arch-silver-dark">
-                    To create aluminium residential and commercial solutions for our customers in Zimbabwe 
-                    and internationally, irrespective of their need. We strive to be the partner of choice 
+                  <p className="text-arch-slate">
+                    To create aluminium residential and commercial solutions for our customers in Zimbabwe
+                    and internationally, irrespective of their need. We strive to be the partner of choice
                     for all aluminium fabrication requirements, delivering quality, innovation, and value.
                   </p>
                 </div>
@@ -294,7 +294,7 @@ const About = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <div className="relative p-8 rounded-2xl bg-arch-black border border-arch-graphite h-full overflow-hidden group hover:border-arch-gold/30 transition-colors duration-500">
+              <div className="relative p-8 rounded-2xl bg-white border border-arch-silver-light h-full overflow-hidden group hover:border-arch-gold/50 transition-colors duration-500 shadow-soft">
                 {/* Circuit Pattern in corner */}
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 opacity-10 group-hover:opacity-20 transition-opacity">
                   <CircuitPattern color="#C0C0C0" />
@@ -304,12 +304,12 @@ const About = () => {
                   <div className="w-14 h-14 rounded-xl bg-arch-gold/10 flex items-center justify-center mb-6">
                     <Eye className="text-arch-gold" size={28} />
                   </div>
-                  <h3 className="font-display text-2xl font-semibold text-arch-white mb-4">
+                  <h3 className="font-display text-2xl font-semibold text-arch-charcoal mb-4">
                     Our Vision
                   </h3>
-                  <p className="text-arch-silver-dark">
-                    To be the most reputable aluminium and shop fitting company in the region, 
-                    recognised for our excellence in craftsmanship, innovation in design, and 
+                  <p className="text-arch-slate">
+                    To be the most reputable aluminium and shop fitting company in the region,
+                    recognised for our excellence in craftsmanship, innovation in design, and
                     commitment to customer satisfaction.
                   </p>
                 </div>
@@ -328,7 +328,7 @@ const About = () => {
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Our Values
               </span>
-              <h2 className="font-display text-4xl font-bold text-arch-white mt-4">
+              <h2 className="font-display text-4xl font-bold text-arch-charcoal mt-4">
                 The Principles That Guide Us
               </h2>
             </div>
@@ -341,7 +341,7 @@ const About = () => {
                 { icon: RiTeamLine, title: 'Teamwork', desc: 'Collaborative excellence across all departments', pattern: 'constellation' }
               ].map((value, index) => (
                 <AnimatedSection key={value.title} delay={index * 0.1}>
-                  <div className="relative text-center p-6 rounded-xl glass-light hover:glass transition-all duration-300 group overflow-hidden">
+                  <div className="relative text-center p-6 rounded-xl bg-white border border-arch-silver-light hover:border-arch-gold/50 transition-all duration-300 group overflow-hidden shadow-soft">
                     {/* Dynamic pattern based on value */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                       {value.pattern === 'beam' && <BeamConnectionPattern className="w-full h-full text-arch-gold" opacity={1} />}
@@ -349,15 +349,15 @@ const About = () => {
                       {value.pattern === 'angular' && <AngularLayers className="w-full h-full" />}
                       {value.pattern === 'constellation' && <ConstellationPattern className="w-full h-full" />}
                     </div>
-                    
+
                     <div className="relative">
                       <div className="w-12 h-12 rounded-full bg-arch-gold/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-arch-gold/20 transition-colors">
                         <value.icon className="text-arch-gold" size={24} />
                       </div>
-                      <h4 className="font-display font-semibold text-arch-white mb-2">
+                      <h4 className="font-display font-semibold text-arch-charcoal mb-2">
                         {value.title}
                       </h4>
-                      <p className="text-sm text-arch-silver-dark">
+                      <p className="text-sm text-arch-slate">
                         {value.desc}
                       </p>
                     </div>
@@ -417,7 +417,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="relative py-24 md:py-32 bg-arch-black overflow-hidden">
+      <section id="team" className="relative py-24 md:py-32 bg-white overflow-hidden">
         {/* Large Geometric Ring Background */}
         <div className="absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.03]">
           <GeometricRing size={600} />
@@ -448,11 +448,11 @@ const About = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Our Team
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
               Leadership That Inspires
             </h2>
-            <p className="text-arch-silver-dark text-lg">
-              Our skilled management operates in an informal corporate structure that promotes 
+            <p className="text-arch-slate text-lg">
+              Our skilled management operates in an informal corporate structure that promotes
               excellence. Every team member is experienced and committed to delivering the best.
             </p>
           </AnimatedSection>
@@ -474,11 +474,11 @@ const About = () => {
                       <CornerBrackets size={20} color="#D4AF37" />
                     </div>
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-arch-white mb-1">
+                  <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-1">
                     {member.name}
                   </h3>
                   <p className="text-arch-gold text-sm mb-3">{member.role}</p>
-                  <p className="text-arch-silver-dark text-sm">{member.bio}</p>
+                  <p className="text-arch-slate text-sm">{member.bio}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -487,10 +487,10 @@ const About = () => {
       </section>
 
       {/* Architectural Divider */}
-      <ArchitecturalDivider className="bg-arch-black" />
+      <ArchitecturalDivider className="bg-white" />
 
       {/* Certifications & Memberships */}
-      <section className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
         {/* Isometric Grid Background */}
         <div className="absolute inset-0 opacity-[0.02]">
           <IsometricCubeGrid className="w-full h-full text-arch-gold" opacity={1} />
@@ -519,7 +519,7 @@ const About = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Credentials
             </span>
-            <h2 className="font-display text-4xl font-bold text-arch-white mt-4 mb-6">
+            <h2 className="font-display text-4xl font-bold text-arch-charcoal mt-4 mb-6">
               Recognised Excellence
             </h2>
           </AnimatedSection>
@@ -531,22 +531,22 @@ const About = () => {
               { icon: IoCheckmarkDoneCircleOutline, title: 'Quality Assured', desc: 'Rigorous quality control processes ensure every product meets our exacting standards.', pattern: 'beam' }
             ].map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="relative p-8 rounded-2xl glass text-center h-full group overflow-hidden hover:border-arch-gold/20 border border-transparent transition-all duration-500">
+                <div className="relative p-8 rounded-2xl bg-white text-center h-full group overflow-hidden hover:border-arch-gold/50 border border-arch-silver-light transition-all duration-500 shadow-soft">
                   {/* Pattern backgrounds */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.05] transition-opacity duration-500">
                     {item.pattern === 'hex' && <HexagonalGrid className="w-full h-full text-arch-gold" opacity={1} />}
                     {item.pattern === 'circuit' && <CircuitPattern className="w-full h-full" />}
                     {item.pattern === 'beam' && <BeamConnectionPattern className="w-full h-full text-arch-gold" opacity={1} />}
                   </div>
-                  
+
                   <div className="relative">
                     <div className="w-20 h-20 rounded-full bg-arch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-arch-gold/20 transition-colors">
                       <item.icon className="text-arch-gold" size={40} />
                     </div>
-                    <h3 className="font-display text-xl font-semibold text-arch-white mb-3">
+                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-arch-silver-dark">
+                    <p className="text-arch-slate">
                       {item.desc}
                     </p>
                   </div>
@@ -558,7 +558,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 md:py-32 bg-arch-black overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-arch-platinum to-arch-snow overflow-hidden">
         {/* Floating Particles */}
         <FloatingParticles className="opacity-20" count={25} />
         
@@ -577,12 +577,12 @@ const About = () => {
             <div className="absolute -inset-4 md:-inset-8 hidden sm:block">
               <CornerBrackets size={40} color="#D4AF37" />
             </div>
-            
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mb-6">
+
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mb-6">
               Join Our Journey
             </h2>
-            <p className="text-xl text-arch-silver-dark mb-10">
-              Whether you're a potential client, partner, or team member, 
+            <p className="text-xl text-arch-slate mb-10">
+              Whether you're a potential client, partner, or team member,
               we'd love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -595,7 +595,7 @@ const About = () => {
               </Link>
               <Link
                 to="/careers"
-                className="flex items-center gap-3 border border-arch-graphite text-arch-white px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
+                className="flex items-center gap-3 border border-arch-silver text-arch-charcoal px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
               >
                 View Careers
               </Link>

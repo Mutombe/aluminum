@@ -172,7 +172,7 @@ const processSteps = [
 function ServiceCard({ service, index }) {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = service.icon;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -183,7 +183,7 @@ function ServiceCard({ service, index }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative h-full bg-arch-charcoal/50 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-arch-gold/50 hover:shadow-2xl hover:shadow-arch-gold/10">
+      <div className="relative h-full bg-white border border-arch-silver-light rounded-2xl overflow-hidden transition-all duration-500 hover:border-arch-gold/50 hover:shadow-xl shadow-soft">
         {/* Image Section */}
         <div className="relative h-64 overflow-hidden">
           <motion.img
@@ -193,7 +193,7 @@ function ServiceCard({ service, index }) {
             animate={{ scale: isHovered ? 1.1 : 1 }}
             transition={{ duration: 0.6 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-arch-charcoal via-arch-charcoal/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
           
           {/* Floating Icon */}
           <motion.div 
@@ -213,31 +213,31 @@ function ServiceCard({ service, index }) {
         {/* Content Section */}
         <div className="p-6">
           <span className="text-arch-gold text-sm font-medium tracking-wider uppercase">{service.subtitle}</span>
-          <h3 className="text-2xl font-bold text-white mt-2 mb-3 font-display">{service.title}</h3>
-          <p className="text-arch-silver/80 text-sm leading-relaxed mb-4">{service.description}</p>
-          
+          <h3 className="text-2xl font-bold text-arch-charcoal mt-2 mb-3 font-display">{service.title}</h3>
+          <p className="text-arch-slate text-sm leading-relaxed mb-4">{service.description}</p>
+
           {/* Applications Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {service.applications.map((app, i) => (
-              <span 
+              <span
                 key={i}
-                className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-arch-silver"
+                className="px-3 py-1 bg-arch-platinum border border-arch-silver-light rounded-full text-xs text-arch-slate"
               >
                 {app}
               </span>
             ))}
           </div>
-          
+
           {/* Features Preview */}
-          <motion.div 
+          <motion.div
             className="space-y-2 overflow-hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: isHovered ? 'auto' : 0, opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="grid grid-cols-2 gap-2 py-4 border-t border-white/10">
+            <div className="grid grid-cols-2 gap-2 py-4 border-t border-arch-silver-light">
               {service.features.slice(0, 4).map((feature, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-arch-silver/80">
+                <div key={i} className="flex items-center gap-2 text-sm text-arch-slate">
                   <Check className="w-4 h-4 text-arch-gold" />
                   <span>{feature}</span>
                 </div>
@@ -284,11 +284,11 @@ function ProcessStep({ step, index, total }) {
             <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-24 bg-gradient-to-b from-arch-gold/50 to-transparent" />
           )}
         </div>
-        
+
         {/* Content */}
         <div className="pt-2">
-          <h3 className="text-xl font-bold text-white mb-2 font-display">{step.title}</h3>
-          <p className="text-arch-silver/80 leading-relaxed">{step.description}</p>
+          <h3 className="text-xl font-bold text-arch-charcoal mb-2 font-display">{step.title}</h3>
+          <p className="text-arch-slate leading-relaxed">{step.description}</p>
         </div>
       </div>
     </motion.div>
@@ -324,7 +324,7 @@ export default function Services() {
             alt="Aluminium fabrication"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-arch-black/80 via-arch-black/70 to-arch-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white" />
         </motion.div>
         
         {/* Floating Particles */}
@@ -405,26 +405,26 @@ export default function Services() {
               Comprehensive Solutions
             </span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-arch-charcoal mb-6 font-display">
               Our{' '}
               <span className="gradient-text">Services</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-arch-silver/80 max-w-3xl mx-auto mb-8">
+
+            <p className="text-xl md:text-2xl text-arch-slate max-w-3xl mx-auto mb-8">
               From fenestration to shopfitting, we deliver excellence across every aspect of aluminium fabrication and installation.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Link 
+              <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all"
               >
                 <Phone className="w-5 h-5" />
                 Get a Quote
               </Link>
-              <Link 
+              <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 hover:border-white/30 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-arch-charcoal/10 border border-arch-charcoal/20 text-arch-charcoal font-medium rounded-full hover:bg-arch-charcoal/20 hover:border-arch-charcoal/30 transition-all"
               >
                 View Projects
                 <ArrowRight className="w-5 h-5" />
@@ -434,13 +434,13 @@ export default function Services() {
         </motion.div>
         
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <motion.div 
+          <div className="w-6 h-10 border-2 border-arch-charcoal/30 rounded-full flex items-start justify-center p-2">
+            <motion.div
               className="w-1.5 h-1.5 bg-arch-gold rounded-full"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -450,7 +450,7 @@ export default function Services() {
       </section>
       
       {/* Services Grid */}
-      <section className="py-24 md:py-32 bg-arch-black relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-arch-platinum relative overflow-hidden">
         {/* Blueprint Grid Background */}
         <BlueprintGrid className="opacity-20" />
         
@@ -497,10 +497,10 @@ export default function Services() {
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">What We Offer</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+            <h2 className="text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
               Comprehensive Aluminium Solutions
             </h2>
-            <p className="text-arch-silver/80 max-w-2xl mx-auto text-lg">
+            <p className="text-arch-slate max-w-2xl mx-auto text-lg">
               We provide end-to-end aluminium fabrication and installation services for residential, commercial, and industrial projects.
             </p>
           </AnimatedSection>
@@ -515,7 +515,7 @@ export default function Services() {
       </section>
       
       {/* Our Process */}
-      <section className="py-24 md:py-32 bg-arch-charcoal relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <div className="absolute inset-0 bg-gradient-to-l from-arch-gold/5 to-transparent" />
@@ -550,10 +550,10 @@ export default function Services() {
             <div>
               <AnimatedSection>
                 <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">How We Work</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+                <h2 className="text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
                   Our Process
                 </h2>
-                <p className="text-arch-silver/80 text-lg mb-12">
+                <p className="text-arch-slate text-lg mb-12">
                   From initial consultation to final installation, we follow a systematic approach to ensure exceptional results on every project.
                 </p>
               </AnimatedSection>
@@ -581,8 +581,8 @@ export default function Services() {
                 />
                 
                 {/* Floating Stats Card */}
-                <motion.div 
-                  className="absolute -bottom-8 -left-8 bg-arch-black/90 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-2xl"
+                <motion.div
+                  className="absolute -bottom-8 -left-8 bg-white border border-arch-silver-light rounded-2xl p-6 shadow-medium"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -593,8 +593,8 @@ export default function Services() {
                       <Award className="w-7 h-7 text-arch-black" />
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white font-display">1402+</div>
-                      <div className="text-arch-silver text-sm">Projects Completed</div>
+                      <div className="text-3xl font-bold text-arch-charcoal font-display">1402+</div>
+                      <div className="text-arch-slate text-sm">Projects Completed</div>
                     </div>
                   </div>
                 </motion.div>
@@ -616,7 +616,7 @@ export default function Services() {
       </section>
       
       {/* Why Choose Us */}
-      <section className="py-24 md:py-32 bg-arch-black relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-arch-platinum relative overflow-hidden">
         {/* Floating Particles */}
         <FloatingParticles className="opacity-20" count={25} />
         
@@ -637,11 +637,11 @@ export default function Services() {
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">Our Advantages</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+            <h2 className="text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
               Why Choose Us
             </h2>
           </AnimatedSection>
-          
+
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Award, title: '30+ Years', desc: 'Of Excellence', color: 'from-arch-gold to-amber-600' },
@@ -650,15 +650,15 @@ export default function Services() {
               { icon: Clock, title: 'Fast', desc: 'Turnaround', color: 'from-green-500 to-emerald-500' }
             ].map((item, index) => (
               <StaggerItem key={index}>
-                <motion.div 
-                  className="text-center p-8 bg-arch-charcoal/50 border border-white/10 rounded-2xl hover:border-arch-gold/30 transition-all group"
+                <motion.div
+                  className="text-center p-8 bg-white border border-arch-silver-light rounded-2xl hover:border-arch-gold/50 transition-all group shadow-soft"
                   whileHover={{ y: -5 }}
                 >
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center transform group-hover:scale-110 transition-transform`}>
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white font-display">{item.title}</h3>
-                  <p className="text-arch-silver">{item.desc}</p>
+                  <h3 className="text-2xl font-bold text-arch-charcoal font-display">{item.title}</h3>
+                  <p className="text-arch-slate">{item.desc}</p>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -676,7 +676,7 @@ export default function Services() {
             alt="Modern building"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-arch-black/80 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm" />
         </div>
         
         {/* Floating Particles */}
@@ -706,26 +706,26 @@ export default function Services() {
               <div className="absolute -inset-6 md:-inset-10 hidden sm:block">
                 <CornerBrackets size={40} color="#D4AF37" />
               </div>
-              
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-display">
+
+              <h2 className="text-4xl md:text-6xl font-bold text-arch-charcoal mb-6 font-display">
                 Ready to Start Your{' '}
                 <span className="gradient-text">Project?</span>
               </h2>
             </div>
-            <p className="text-xl text-arch-silver/80 max-w-2xl mx-auto mb-10">
+            <p className="text-xl text-arch-slate max-w-2xl mx-auto mb-10">
               Contact us today for a free consultation and quote. Our team is ready to bring your vision to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link 
+              <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all"
               >
                 <Phone className="w-5 h-5" />
                 Get a Free Quote
               </Link>
-              <a 
+              <a
                 href="tel:+263778498911"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-medium rounded-full hover:bg-white/20 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-arch-charcoal/10 border border-arch-charcoal/20 text-arch-charcoal font-medium rounded-full hover:bg-arch-charcoal/20 transition-all"
               >
                 Call: +263 778 498 911
               </a>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Palette, Sparkles, Image, Droplets } from 'lucide-react';
+import { Check, Palette, Sparkles, Image, Droplets, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from './AnimatedComponents';
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { IoCheckmarkDone } from "react-icons/io5";
@@ -14,26 +15,14 @@ import a4 from '/a4.png';
 import a5 from '/a5.png';
 import a6 from '/a6.png';
 
-// Powder Coat Colors - Matt Finishes
+// Powder Coat Colors - New Colour Range
 const powderCoatColors = [
-  { name: 'Matt Titania', hex: '#E8E4DA', category: 'light' },
-  { name: 'Matt Desert Sand', hex: '#C4A77D', category: 'earth' },
-  { name: 'Matt Lichen', hex: '#7A7A5E', category: 'green' },
-  { name: 'Matt Lignite', hex: '#3D2B1F', category: 'brown' },
-  { name: 'Matt Sandstone Grey', hex: '#8B8469', category: 'earth' },
-  { name: 'Matt New Denim Blue', hex: '#4A5568', category: 'blue' },
-  { name: 'Matt FlaxPod', hex: '#6B6455', category: 'earth' },
-  { name: 'Matt Grey Friars', hex: '#4A4F4A', category: 'grey' },
-  { name: 'Matt Charcoal', hex: '#3D3635', category: 'grey' },
-  { name: 'Matt Iron Sand', hex: '#5C5346', category: 'earth' },
-  { name: 'Matt Mist Green', hex: '#6B7355', category: 'green' },
-  { name: 'Matt Bond Rivergum', hex: '#5A6355', category: 'green' },
-  { name: 'Matt Permanent Green', hex: '#1E4D2B', category: 'green' },
-  { name: 'Matt Karaka', hex: '#2C3325', category: 'green' },
-  { name: 'Matt Pioneer Red', hex: '#722F37', category: 'red' },
-  { name: 'Matt Scoria', hex: '#8B3A3A', category: 'red' },
-  { name: 'Matt Mid Bronze', hex: '#4A4035', category: 'bronze' },
-  { name: 'Matt Black', hex: '#1A1A1A', category: 'black' },
+  { name: 'Grey Gloss', hex: '#5A6872', category: 'grey' },
+  { name: 'Dove Grey Satin', hex: '#8A9990', category: 'grey' },
+  { name: 'Grey Matt', hex: '#A89888', category: 'earth' },
+  { name: 'Oak Gloss', hex: '#B09860', category: 'earth' },
+  { name: 'Sand Gloss', hex: '#A8A088', category: 'earth' },
+  { name: 'Grey Satin', hex: '#888888', category: 'grey' },
 ];
 
 // Anodised Finishes - FrostUltra Range
@@ -167,24 +156,24 @@ const AnodisedCard = ({ finish, isSelected, onSelect }) => {
 const AluminiumFinishes = () => {
   const [activeTab, setActiveTab] = useState('powdercoat');
   const [selectedColor, setSelectedColor] = useState(null);
-  const [filter, setFilter] = useState('all');
+  const navigate = useNavigate();
 
-  const categories = [
-    { id: 'all', label: 'All Colors' },
-    { id: 'light', label: 'Light' },
-    { id: 'earth', label: 'Earth Tones' },
-    { id: 'green', label: 'Greens' },
-    { id: 'grey', label: 'Greys' },
-    { id: 'bronze', label: 'Bronze' },
-    { id: 'black', label: 'Black' },
-  ];
+  const handleRequestQuote = () => {
+    if (selectedColor) {
+      const finishType = activeTab === 'powdercoat' ? 'Powder Coat' : 'Anodised';
+      const params = new URLSearchParams({
+        finish: selectedColor.name,
+        finishType: finishType,
+        hex: selectedColor.hex
+      });
+      navigate(`/contact?${params.toString()}#quote-form`);
+    }
+  };
 
-  const filteredColors = filter === 'all' 
-    ? powderCoatColors 
-    : powderCoatColors.filter(c => c.category === filter);
+
 
   return (
-    <section className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
@@ -211,25 +200,25 @@ const AluminiumFinishes = () => {
           <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
             Finishes & Colors
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
             Premium Aluminium
             <span className="block gradient-text">Finishes</span>
           </h2>
-          <p className="text-arch-silver-dark text-lg">
-            Choose from our extensive range of powder coat colors and anodised finishes 
+          <p className="text-arch-steel text-lg">
+            Choose from our extensive range of powder coat colors and anodised finishes
             to perfectly complement your architectural vision.
           </p>
         </AnimatedSection>
 
         {/* Tab Switcher */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-full glass">
+          <div className="inline-flex p-1.5 rounded-full bg-white border border-arch-silver/30 shadow-soft">
             <button
               onClick={() => setActiveTab('powdercoat')}
               className={`flex items-center gap-2 px-4 md:px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
                 activeTab === 'powdercoat'
-                  ? 'bg-arch-gold text-arch-black'
-                  : 'text-arch-silver-light hover:text-arch-white'
+                  ? 'bg-arch-black text-white'
+                  : 'text-arch-graphite hover:text-arch-charcoal'
               }`}
             >
               <Palette size={18} />
@@ -240,8 +229,8 @@ const AluminiumFinishes = () => {
               onClick={() => setActiveTab('anodised')}
               className={`flex items-center gap-2 px-4 md:px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
                 activeTab === 'anodised'
-                  ? 'bg-arch-gold text-arch-black'
-                  : 'text-arch-silver-light hover:text-arch-white'
+                  ? 'bg-arch-black text-white'
+                  : 'text-arch-graphite hover:text-arch-charcoal'
               }`}
             >
               <Sparkles size={18} />
@@ -259,34 +248,18 @@ const AluminiumFinishes = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Category Filters */}
-              <div className="flex flex-wrap justify-center gap-2 mb-10">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setFilter(cat.id)}
-                    className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
-                      filter === cat.id
-                        ? 'bg-arch-gold/20 text-arch-gold border border-arch-gold'
-                        : 'bg-arch-graphite/50 text-arch-silver-dark hover:text-arch-white border border-transparent'
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Powder Coat Color Grid */}
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-3 md:gap-4">
-                {filteredColors.map((color, index) => (
+            {/* Powder Coat Color Grid - Centered */}
+              <div className="flex justify-center">
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 md:gap-6 max-w-3xl">
+                {powderCoatColors.map((color, index) => (
                   <motion.button
                     key={color.name}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.03 }}
                     onClick={() => setSelectedColor(selectedColor?.name === color.name ? null : color)}
-                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/30 ${
-                      selectedColor?.name === color.name ? 'ring-2 ring-arch-gold ring-offset-2 ring-offset-arch-charcoal scale-105' : ''
+                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 w-24 h-24 md:w-28 md:h-28 ${
+                      selectedColor?.name === color.name ? 'ring-2 ring-arch-gold ring-offset-2 ring-offset-arch-platinum scale-105' : ''
                     }`}
                     style={{ backgroundColor: color.hex }}
                   >
@@ -315,6 +288,7 @@ const AluminiumFinishes = () => {
                   </motion.button>
                 ))}
               </div>
+              </div>
 
               {/* Selected Color Info */}
               <AnimatePresence>
@@ -323,24 +297,35 @@ const AluminiumFinishes = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="mt-10 p-4 md:p-6 rounded-2xl glass text-center max-w-md mx-auto"
+                    className="mt-10 p-4 md:p-6 rounded-2xl bg-white border border-arch-silver/30 shadow-soft max-w-lg mx-auto"
                   >
-                    <div className="flex items-center justify-center gap-4">
-                      <div 
-                        className="w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg"
-                        style={{ backgroundColor: selectedColor.hex }}
-                      />
-                      <div className="text-left">
-                        <h4 className="font-display text-base md:text-lg font-semibold text-arch-white">
-                          {selectedColor.name}
-                        </h4>
-                        <p className="text-arch-silver-dark text-sm">
-                          Powder Coat Finish
-                        </p>
-                        <p className="text-arch-gold font-mono text-xs mt-1">
-                          {selectedColor.hex.toUpperCase()}
-                        </p>
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className="w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg flex-shrink-0"
+                          style={{ backgroundColor: selectedColor.hex }}
+                        />
+                        <div className="text-left">
+                          <h4 className="font-display text-base md:text-lg font-semibold text-arch-charcoal">
+                            {selectedColor.name}
+                          </h4>
+                          <p className="text-arch-steel text-sm">
+                            Powder Coat Finish
+                          </p>
+                          <p className="text-arch-gold font-mono text-xs mt-1">
+                            {selectedColor.hex.toUpperCase()}
+                          </p>
+                        </div>
                       </div>
+                      <motion.button
+                        onClick={handleRequestQuote}
+                        className="flex items-center gap-2 px-4 py-2.5 bg-arch-black text-white font-semibold rounded-full text-sm hover:bg-arch-charcoal transition-colors whitespace-nowrap"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Get Quote
+                        <ArrowRight size={16} />
+                      </motion.button>
                     </div>
                   </motion.div>
                 )}
@@ -356,11 +341,11 @@ const AluminiumFinishes = () => {
             >
               {/* View Mode Toggle Hint */}
               <div className="flex justify-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light text-arch-silver-dark text-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-arch-silver-light text-arch-slate text-sm">
                   <span className="hidden sm:inline">Click</span>
-                  <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-arch-graphite/50 border border-arch-graphite">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-arch-platinum border border-arch-silver-light">
                     <Droplets size={14} className="text-arch-gold" />
-                    <span className="text-arch-silver-light">/</span>
+                    <span className="text-arch-slate">/</span>
                     <Image size={14} className="text-arch-gold" />
                   </span>
                   <span>to switch view</span>
@@ -376,7 +361,7 @@ const AluminiumFinishes = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <AnodisedCard 
+                    <AnodisedCard
                       finish={finish}
                       isSelected={selectedColor?.name === finish.name}
                       onSelect={() => setSelectedColor(selectedColor?.name === finish.name ? null : finish)}
@@ -385,21 +370,62 @@ const AluminiumFinishes = () => {
                 ))}
               </div>
 
+              {/* Selected Anodised Finish Info */}
+              <AnimatePresence>
+                {selectedColor && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="mt-10 p-4 md:p-6 rounded-2xl bg-white border border-arch-silver/30 shadow-soft max-w-lg mx-auto"
+                  >
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className="w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg flex-shrink-0 overflow-hidden"
+                          style={{ background: selectedColor.gradient }}
+                        />
+                        <div className="text-left">
+                          <h4 className="font-display text-base md:text-lg font-semibold text-arch-charcoal">
+                            {selectedColor.name.replace(' FrostUltra', '')}
+                          </h4>
+                          <p className="text-arch-steel text-sm">
+                            FrostUltra Anodised Finish
+                          </p>
+                          <p className="text-arch-gold font-mono text-xs mt-1">
+                            {selectedColor.hex.toUpperCase()}
+                          </p>
+                        </div>
+                      </div>
+                      <motion.button
+                        onClick={handleRequestQuote}
+                        className="flex items-center gap-2 px-4 py-2.5 bg-arch-black text-white font-semibold rounded-full text-sm hover:bg-arch-charcoal transition-colors whitespace-nowrap"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Get Quote
+                        <ArrowRight size={16} />
+                      </motion.button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {/* Anodised Info Box */}
-              <div className="mt-12 p-6 md:p-8 rounded-2xl glass">
+              <div className="mt-12 p-6 md:p-8 rounded-2xl bg-white border border-arch-silver-light shadow-soft">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-white mb-4">
+                    <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-charcoal mb-4">
                       FrostUltra Anodised Finish
                     </h3>
-                    <p className="text-arch-silver-dark mb-4 text-sm md:text-base">
-                      Our premium anodised finishes provide exceptional durability and a sophisticated 
-                      metallic appearance. The electrochemical process creates a protective oxide layer 
+                    <p className="text-arch-slate mb-4 text-sm md:text-base">
+                      Our premium anodised finishes provide exceptional durability and a sophisticated
+                      metallic appearance. The electrochemical process creates a protective oxide layer
                       that is integral to the aluminium itself.
                     </p>
                     <ul className="space-y-2">
                       {['Superior corrosion resistance', 'Scratch and wear resistant', 'UV stable - won\'t fade', 'Environmentally friendly'].map((benefit) => (
-                        <li key={benefit} className="flex items-center gap-2 text-arch-silver-light text-sm md:text-base">
+                        <li key={benefit} className="flex items-center gap-2 text-arch-slate text-sm md:text-base">
                           <IoCheckmarkDone className="text-arch-gold flex-shrink-0" size={16} />
                           {benefit}
                         </li>
@@ -408,8 +434,8 @@ const AluminiumFinishes = () => {
                   </div>
                   <div className="relative h-48 md:h-64 rounded-xl overflow-hidden">
                     {/* Use one of the anodised images */}
-                    <img 
-                      src={a1} 
+                    <img
+                      src={a1}
                       alt="Anodised aluminium profiles"
                       loading="eager"
                       className="w-full h-full object-cover"
@@ -427,7 +453,7 @@ const AluminiumFinishes = () => {
 
         {/* CTA */}
         <AnimatedSection delay={0.3} className="text-center mt-16">
-          <p className="text-arch-silver-dark mb-6">
+          <p className="text-arch-slate mb-6">
             Can't find the color you're looking for? We offer custom color matching.
           </p>
           <a

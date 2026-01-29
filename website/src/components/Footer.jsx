@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  MapPin, Phone, Mail, Clock, 
+import {
+  MapPin, Phone, Mail, Clock,
   Facebook, Linkedin, Instagram,
   ArrowUpRight, ChevronRight
 } from 'lucide-react';
@@ -34,16 +34,22 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-arch-darker overflow-hidden">
-      {/* Decorative top border */}
-      <div className="divider-gradient" />
-      
+    <footer className="relative bg-arch-charcoal overflow-hidden">
+      {/* Decorative top border - gold accent */}
+      <div className="h-1 bg-gradient-to-r from-arch-gold via-arch-amber to-arch-yellow" />
+
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-grid opacity-30" />
-      
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
+
       {/* Floating decorative elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-arch-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-48 h-48 bg-arch-silver/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-48 h-48 bg-white/5 rounded-full blur-3xl" />
 
       {/* Main Footer Content */}
       <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 py-16 md:py-24">
@@ -55,9 +61,9 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 md:mb-24"
         >
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 md:p-12 rounded-2xl glass-light">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 md:p-12 rounded-2xl bg-arch-graphite border border-white/10">
             <div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-arch-white mb-2">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
                 Ready to Start Your Project?
               </h3>
               <p className="text-arch-silver-dark max-w-md">
@@ -69,9 +75,9 @@ const Footer = () => {
               className="group flex items-center gap-3 bg-arch-gold text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-arch-amber transition-colors duration-300"
             >
               Get a Quote
-              <ArrowUpRight 
-                size={20} 
-                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" 
+              <ArrowUpRight
+                size={20}
+                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
               />
             </Link>
           </div>
@@ -94,19 +100,19 @@ const Footer = () => {
                 <rect x="14" y="28" width="14" height="3" fill="url(#footerLogoGradient)" />
               </svg>
               <div>
-                <span className="font-display font-bold text-arch-white">ARCHITECTURAL</span>
+                <span className="font-display font-bold text-white">ARCHITECTURAL</span>
                 <span className="block font-display text-xs text-arch-gold tracking-[0.2em]">ALUMINIUM</span>
               </div>
             </Link>
-            
+
             <p className="text-arch-silver-dark mb-8 max-w-sm">
-              Zimbabwe's leading fabricator of aluminium, shop fitting and joinery products since 1994. 
+              Zimbabwe's leading fabricator of aluminium, shop fitting and joinery products since 1994.
               Setting the standard for excellence in the industry.
             </p>
 
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <a 
+              <a
                 href={companyInfo.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -115,7 +121,7 @@ const Footer = () => {
               >
                 <Facebook size={18} />
               </a>
-              <a 
+              <a
                 href={companyInfo.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -124,7 +130,7 @@ const Footer = () => {
               >
                 <Linkedin size={18} />
               </a>
-              <a 
+              <a
                 href={companyInfo.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -138,11 +144,11 @@ const Footer = () => {
 
           {/* Links Columns */}
           <div className="lg:col-span-2">
-            <h4 className="font-display font-semibold text-arch-white mb-6">Company</h4>
+            <h4 className="font-display font-semibold text-white mb-6">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="group flex items-center gap-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                   >
@@ -155,11 +161,11 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="font-display font-semibold text-arch-white mb-6">Services</h4>
+            <h4 className="font-display font-semibold text-white mb-6">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="group flex items-center gap-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                   >
@@ -172,11 +178,11 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="font-display font-semibold text-arch-white mb-6">Resources</h4>
+            <h4 className="font-display font-semibold text-white mb-6">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="group flex items-center gap-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                   >
@@ -190,10 +196,10 @@ const Footer = () => {
 
           {/* Contact Column */}
           <div className="lg:col-span-2">
-            <h4 className="font-display font-semibold text-arch-white mb-6">Contact</h4>
+            <h4 className="font-display font-semibold text-white mb-6">Contact</h4>
             <ul className="space-y-4">
               <li>
-                <a 
+                <a
                   href={`https://maps.google.com/?q=${encodeURIComponent(companyInfo.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -204,7 +210,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href={`tel:${companyInfo.phone[0].replace(/\s/g, '')}`}
                   className="flex items-center gap-3 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                 >
@@ -213,7 +219,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href={`mailto:${companyInfo.email}`}
                   className="flex items-center gap-3 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                 >
@@ -230,12 +236,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-arch-graphite/50">
+        <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-6 text-sm text-arch-silver-dark">
               <span>© {currentYear} Architectural Aluminium. All rights reserved.</span>
             </div>
-            
+
             <div className="flex items-center gap-6 text-sm text-arch-silver-dark">
               <span className="flex items-center gap-2">
                 Member of <span className="text-arch-gold font-semibold">CIFOZ</span>

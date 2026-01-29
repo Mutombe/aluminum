@@ -142,7 +142,7 @@ export const PageLoader = () => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-[200] bg-arch-black flex items-center justify-center"
+      className="fixed inset-0 z-[200] bg-white flex items-center justify-center"
     >
       <div className="text-center">
         <motion.div
@@ -153,17 +153,17 @@ export const PageLoader = () => {
           <svg viewBox="0 0 48 48" className="w-16 h-16 mx-auto mb-4">
             <defs>
               <linearGradient id="loaderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#D4AF37" />
-                <stop offset="100%" stopColor="#F5B800" />
+                <stop offset="0%" stopColor="#0A0A0A" />
+                <stop offset="100%" stopColor="#2D2D2D" />
               </linearGradient>
             </defs>
             <path d="M12 40 L24 8 L28 8 L16 40 Z" fill="url(#loaderGradient)" />
             <path d="M20 40 L32 8 L36 8 L24 40 Z" fill="url(#loaderGradient)" />
-            <rect x="14" y="28" width="14" height="3" fill="url(#loaderGradient)" />
+            <rect x="14" y="28" width="14" height="3" fill="#D4AF37" />
           </svg>
         </motion.div>
         <LoadingSpinner size={32} />
-        <p className="mt-4 text-arch-silver-dark text-sm font-mono">Loading excellence...</p>
+        <p className="mt-4 text-arch-slate text-sm font-mono">Loading excellence...</p>
       </div>
     </motion.div>
   );

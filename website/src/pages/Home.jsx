@@ -114,7 +114,7 @@ const Home = () => {
   This creates the effect where the dark background "dissipates" into the images
 */}
 
-      <section className="relative min-h-screen overflow-hidden bg-arch-black">
+      <section className="relative min-h-screen overflow-hidden bg-arch-snow">
         {/* ============================================
       LAYER 1: FULL-WIDTH IMAGE CAROUSEL (BACKGROUND)
       Images span the entire section, sitting at the bottom layer
@@ -162,13 +162,13 @@ const Home = () => {
           style={{
             background: `linear-gradient(
         to right,
-        rgb(10, 10, 10) 0%,
-        rgb(10, 10, 10) 35%,
-        rgba(10, 10, 10, 0.95) 45%,
-        rgba(10, 10, 10, 0.8) 50%,
-        rgba(10, 10, 10, 0.5) 55%,
-        rgba(10, 10, 10, 0.2) 60%,
-        rgba(10, 10, 10, 0.05) 65%,
+        rgb(250, 250, 250) 0%,
+        rgb(250, 250, 250) 35%,
+        rgba(250, 250, 250, 0.95) 45%,
+        rgba(250, 250, 250, 0.8) 50%,
+        rgba(250, 250, 250, 0.5) 55%,
+        rgba(250, 250, 250, 0.2) 60%,
+        rgba(250, 250, 250, 0.05) 65%,
         transparent 70%
       )`,
           }}
@@ -194,7 +194,7 @@ const Home = () => {
           style={{
             background: `radial-gradient(
         ellipse 50% 100% at 55% 50%,
-        rgba(10, 10, 10, 0.3) 0%,
+        rgba(250, 250, 250, 0.3) 0%,
         transparent 70%
       )`,
           }}
@@ -210,15 +210,15 @@ const Home = () => {
           transition={{ delay: 1, duration: 0.8 }}
           className="absolute bottom-48 right-12 z-30 hidden lg:block"
         >
-          <div className="glass p-6 rounded-2xl max-w-xs backdrop-blur-md bg-arch-black/40 border border-white/10">
+          <div className="p-6 rounded-2xl max-w-xs backdrop-blur-md bg-white/80 border border-arch-silver/30 shadow-medium">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-arch-silver-light">Est. 1994</span>
+              <span className="text-sm text-arch-graphite">Est. 1994</span>
             </div>
             <p className="text-arch-gold font-display font-bold text-4xl mb-1">
               30+
             </p>
-            <p className="text-arch-silver-dark text-sm">Years of Excellence</p>
+            <p className="text-arch-steel text-sm">Years of Excellence</p>
           </div>
         </motion.div>
 
@@ -233,10 +233,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-arch-black/10 border border-arch-black/20 mb-8"
             >
               <Star className="text-arch-gold" size={16} />
-              <span className="text-sm text-arch-silver-light">
+              <span className="text-sm text-arch-charcoal">
                 #1 Aluminium Supplier in Zimbabwe
               </span>
             </motion.div>
@@ -246,7 +246,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-arch-white leading-[1.1] mb-6"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-arch-black leading-[1.1] mb-6"
             >
               Crafting
               <span className="block gradient-text">Excellence</span>
@@ -258,7 +258,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-arch-silver-dark max-w-xl mb-10"
+              className="text-xl text-arch-steel max-w-xl mb-10"
             >
               Zimbabwe's leading fabricator of aluminium, shop fitting and
               joinery products. Setting the standard for architectural
@@ -274,7 +274,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="group flex items-center gap-3 bg-arch-gold text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-arch-amber transition-all duration-300"
+                className="group flex items-center gap-3 bg-arch-black text-white px-8 py-4 rounded-full font-semibold hover:bg-arch-charcoal transition-all duration-300"
               >
                 Get a Quote
                 <ArrowRight
@@ -285,7 +285,7 @@ const Home = () => {
 
               <Link
                 to="/projects"
-                className="group flex items-center gap-3 border border-arch-graphite text-arch-white px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
+                className="group flex items-center gap-3 border border-arch-silver text-arch-charcoal px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
               >
                 View Projects
                 <ArrowUpRight
@@ -320,7 +320,7 @@ const Home = () => {
                   <p className="font-display text-3xl md:text-4xl font-bold text-arch-gold">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="text-arch-silver-dark text-sm mt-1">
+                  <p className="text-arch-steel text-sm mt-1">
                     {stat.label}
                   </p>
                 </div>
@@ -339,7 +339,7 @@ const Home = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-arch-silver-dark"
+            className="flex flex-col items-center gap-2 text-arch-steel"
           >
             <span className="text-xs uppercase tracking-wider">Scroll</span>
             <ChevronDown size={20} />
@@ -349,7 +349,7 @@ const Home = () => {
 
       {/* Services Section - Unique asymmetric layout */}
       <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-arch-charcoal" />
+        <div className="absolute inset-0 bg-arch-platinum" />
         <div className="absolute inset-0 diagonal-stripes" />
 
         {/* Blueprint lines decoration - MORE VISIBLE */}
@@ -376,11 +376,11 @@ const Home = () => {
                 <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                   What We Do
                 </span>
-                <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+                <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
                   Comprehensive
-                  <span className="block text-arch-silver">Solutions</span>
+                  <span className="block text-arch-steel">Solutions</span>
                 </h2>
-                <p className="text-arch-silver-dark mb-8 max-w-md">
+                <p className="text-arch-steel mb-8 max-w-md">
                   From residential windows to large-scale commercial facades, we
                   deliver precision-engineered aluminium solutions for every
                   need.
@@ -407,7 +407,7 @@ const Home = () => {
                   <StaggerItem key={service.id}>
                     <Link
                       to={`/services/${service.id}`}
-                      className="group relative block p-6 md:p-8 rounded-2xl glass hover:glass-light transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                      className="group relative block p-6 md:p-8 rounded-2xl bg-white border border-arch-silver/30 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                     >
                       {/* Corner brackets decoration */}
                       <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -419,15 +419,15 @@ const Home = () => {
                           <span className="text-arch-gold font-mono text-sm">
                             0{index + 1}
                           </span>
-                          <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-white mt-2 mb-3 group-hover:text-arch-gold transition-colors duration-300">
+                          <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-charcoal mt-2 mb-3 group-hover:text-arch-gold transition-colors duration-300">
                             {service.title}
                           </h3>
-                          <p className="text-arch-silver-dark">
+                          <p className="text-arch-steel">
                             {service.shortDesc}
                           </p>
                         </div>
                         <ArrowUpRight
-                          className="text-arch-graphite group-hover:text-arch-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+                          className="text-arch-silver group-hover:text-arch-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
                           size={24}
                         />
                       </div>
@@ -441,20 +441,20 @@ const Home = () => {
       </section>
 
       {/* Featured Projects - Horizontal scroll on mobile, grid on desktop */}
-      <section className="relative py-24 md:py-32 bg-arch-black">
+      <section className="relative py-24 md:py-32 bg-white">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Portfolio
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4">
                 Featured Projects
               </h2>
             </div>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-arch-silver-light hover:text-arch-gold transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
             >
               View All Projects
               <ArrowRight size={18} />
@@ -519,7 +519,7 @@ const Home = () => {
 
       {/* Why Choose Us - Unique card layout */}
       <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-arch-charcoal to-arch-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-arch-platinum to-arch-snow" />
 
         {/* Curtain wall pattern background - VISIBLE ON MOBILE */}
         <div className="absolute right-0 top-0 bottom-0 w-1/3 md:w-1/2 opacity-[0.04] md:opacity-[0.05]">
@@ -540,10 +540,10 @@ const Home = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Why Choose Us
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
               The Architectural Aluminium Difference
             </h2>
-            <p className="text-arch-silver-dark text-lg">
+            <p className="text-arch-steel text-lg">
               We combine decades of expertise with modern technology to deliver
               exceptional quality that stands the test of time.
             </p>
@@ -577,14 +577,14 @@ const Home = () => {
               },
             ].map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="group p-8 rounded-2xl border border-arch-graphite hover:border-arch-gold/50 bg-arch-charcoal/50 hover:bg-arch-gold/5 transition-all duration-500 h-full">
+                <div className="group p-8 rounded-2xl border border-arch-silver/30 hover:border-arch-gold/50 bg-white hover:bg-arch-gold/5 shadow-soft transition-all duration-500 h-full">
                   <div className="w-14 h-14 rounded-xl bg-arch-gold/10 flex items-center justify-center mb-6 group-hover:bg-arch-gold/20 transition-colors duration-300">
                     <item.icon className="text-arch-gold" size={28} />
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-arch-white mb-3">
+                  <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-arch-silver-dark">{item.description}</p>
+                  <p className="text-arch-steel">{item.description}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -593,15 +593,15 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative py-24 md:py-32 bg-arch-black">
-        <div className="absolute inset-0 bg-grid opacity-20" />
+      <section className="relative py-24 md:py-32 bg-white">
+        <div className="absolute inset-0 bg-grid opacity-50" />
 
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Testimonials
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4">
               What Our Clients Say
             </h2>
           </AnimatedSection>
@@ -609,12 +609,12 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <AnimatedSection key={index} delay={index * 0.15}>
-                <div className="relative p-8 rounded-2xl glass h-full">
+                <div className="relative p-8 rounded-2xl bg-arch-platinum border border-arch-silver/30 h-full">
                   <Quote
                     className="text-arch-gold/20 absolute top-6 right-6"
                     size={48}
                   />
-                  <p className="text-arch-silver-light mb-8 relative z-10">
+                  <p className="text-arch-graphite mb-8 relative z-10">
                     "{testimonial.quote}"
                   </p>
                   <div className="flex items-center gap-4">
@@ -624,10 +624,10 @@ const Home = () => {
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold text-arch-white">
+                      <p className="font-semibold text-arch-charcoal">
                         {testimonial.author}
                       </p>
-                      <p className="text-sm text-arch-silver-dark">
+                      <p className="text-sm text-arch-steel">
                         {testimonial.role}, {testimonial.company}
                       </p>
                     </div>
@@ -646,9 +646,9 @@ const Home = () => {
           <img
             src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600"
             alt="Aluminium profiles"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-arch-black via-arch-black/95 to-arch-black" />
+          <div className="absolute inset-0 bg-gradient-to-r from-arch-platinum via-arch-snow/95 to-arch-platinum" />
         </div>
 
         {/* Floating patterns - VISIBLE ON MOBILE */}
@@ -676,11 +676,11 @@ const Home = () => {
             </div>
 
             <AnimatedSection>
-              <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-white mb-6">
+              <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-black mb-6">
                 Ready to Transform Your
                 <span className="block gradient-text">Space?</span>
               </h2>
-              <p className="text-xl text-arch-silver-dark mb-10 max-w-2xl mx-auto">
+              <p className="text-xl text-arch-steel mb-10 max-w-2xl mx-auto">
                 Whether you're planning a residential project or a large-scale
                 commercial development, our team is ready to bring your vision
                 to life.
@@ -688,7 +688,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="group flex items-center gap-3 bg-arch-gold text-arch-black px-10 py-5 rounded-full font-semibold text-lg hover:bg-arch-amber transition-colors duration-300"
+                  className="group flex items-center gap-3 bg-arch-black text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-arch-charcoal transition-colors duration-300"
                 >
                   Start Your Project
                   <ArrowRight
@@ -698,7 +698,7 @@ const Home = () => {
                 </Link>
                 <a
                   href={`tel:${companyInfo.phone[0].replace(/\s/g, "")}`}
-                  className="flex items-center gap-3 text-arch-silver-light hover:text-arch-gold transition-colors duration-300"
+                  className="flex items-center gap-3 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
                 >
                   <span className="text-lg">
                     Or call {companyInfo.phone[0]}

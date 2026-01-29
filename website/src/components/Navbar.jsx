@@ -8,8 +8,8 @@ import { useSearch } from '../context/SearchContext';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { 
-    name: 'Services', 
+  {
+    name: 'Services',
     path: '/services',
     dropdown: [
       { name: 'Fenestration', path: '/services/fenestration' },
@@ -65,8 +65,8 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'glass py-3' 
+          isScrolled
+            ? 'bg-white/90 backdrop-blur-xl shadow-soft py-3'
             : 'bg-transparent py-5'
         }`}
       >
@@ -74,24 +74,19 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="relative z-10 flex items-center gap-3 group">
-              <div className="relative w-12 h-12 flex items-center justify-center">
+              <div className="relative w-44 h-12 flex items-center justify-center">
                 {/* Stylized AA Logo */}
-                <img src="/logo1.png" alt="AA Logo" loading="eager" className="w-15 h-15" />
-              </div>
-              <div className="">
-                <span className="font-display font-bold text-lg text-arch-white tracking-tight">
-                  ARCHITECTURAL
-                </span>
-                <span className="block font-display text-xs text-arch-gold tracking-[0.3em]">
-                  ALUMINIUM
-                </span>
+                <img src="/logo-light.png" alt="AA Logo" loading="eager" className="w-34 h-16" />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <div 
+              {navLinks.map((link, index) => {
+                // Links from Gallery onwards (index 4+) get gold color
+                const isGoldLink = index >= 4;
+                return (
+                <div
                   key={link.name}
                   className="relative"
                   onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
@@ -100,22 +95,24 @@ const Navbar = () => {
                   <Link
                     to={link.path}
                     className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                      location.pathname === link.path 
-                        ? 'text-arch-gold' 
-                        : 'text-arch-silver-light hover:text-arch-gold'
+                      location.pathname === link.path
+                        ? 'text-arch-gold'
+                        : isGoldLink
+                          ? 'text-arch-gold hover:text-arch-amber'
+                          : 'text-arch-graphite hover:text-arch-gold'
                     }`}
                   >
                     {link.name}
                     {link.dropdown && (
-                      <ChevronDown 
-                        size={14} 
+                      <ChevronDown
+                        size={14}
                         className={`transition-transform duration-300 ${
                           activeDropdown === link.name ? 'rotate-180' : ''
                         }`}
                       />
                     )}
                   </Link>
-                  
+
                   {/* Dropdown Menu */}
                   <AnimatePresence>
                     {link.dropdown && activeDropdown === link.name && (
@@ -124,13 +121,13 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-56 glass rounded-lg overflow-hidden"
+                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl overflow-hidden shadow-medium border border-arch-silver/30"
                       >
                         {link.dropdown.map((item, idx) => (
                           <Link
                             key={item.name}
                             to={item.path}
-                            className="block px-4 py-3 text-sm text-arch-silver-light hover:text-arch-gold hover:bg-arch-gold/10 transition-colors duration-200"
+                            className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
                           >
                             {item.name}
                           </Link>
@@ -139,7 +136,7 @@ const Navbar = () => {
                     )}
                   </AnimatePresence>
                 </div>
-              ))}
+              )})}
             </div>
 
             {/* Right Actions */}
@@ -147,16 +144,16 @@ const Navbar = () => {
               {/* Search Button */}
               <button
                 onClick={openSearch}
-                className="p-2 text-arch-silver-light hover:text-arch-gold transition-colors duration-300"
+                className="p-2 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
                 aria-label="Search"
               >
                 <Search size={20} />
               </button>
 
               {/* Phone (Desktop only) */}
-              <a 
+              <a
                 href="tel:+263778498911"
-                className="hidden md:flex items-center gap-2 text-arch-silver-light hover:text-arch-gold transition-colors duration-300"
+                className="hidden md:flex items-center gap-2 text-arch-gold hover:text-arch-amber transition-colors duration-300"
               >
                 <Phone size={18} />
                 <span className="text-sm font-medium">+263 778 498 911</span>
@@ -165,7 +162,7 @@ const Navbar = () => {
               {/* CTA Button (Desktop) */}
               <Link
                 to="/contact"
-                className="hidden md:block magnetic-btn bg-arch-gold text-arch-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-arch-amber transition-colors duration-300"
+                className="hidden md:block magnetic-btn bg-arch-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-arch-charcoal transition-colors duration-300"
               >
                 <span>Get Quote</span>
               </Link>
@@ -173,7 +170,7 @@ const Navbar = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-arch-silver-light hover:text-arch-gold transition-colors duration-300"
+                className="lg:hidden p-2 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -198,7 +195,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-arch-black/90 backdrop-blur-lg"
+              className="absolute inset-0 bg-arch-black/30 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -208,7 +205,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-arch-charcoal"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl"
             >
               <div className="flex flex-col h-full pt-20 pb-8 px-6">
                 {/* Nav Links */}
@@ -222,10 +219,10 @@ const Navbar = () => {
                     >
                       <Link
                         to={link.path}
-                        className={`block py-4 text-2xl font-display font-semibold border-b border-arch-graphite transition-colors duration-300 ${
-                          location.pathname === link.path 
-                            ? 'text-arch-gold' 
-                            : 'text-arch-white hover:text-arch-gold'
+                        className={`block py-4 text-2xl font-display font-semibold border-b border-arch-silver-light transition-colors duration-300 ${
+                          location.pathname === link.path
+                            ? 'text-arch-gold'
+                            : 'text-arch-charcoal hover:text-arch-gold'
                         }`}
                       >
                         {link.name}
@@ -239,19 +236,19 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="space-y-4 pt-8 border-t border-arch-graphite"
+                  className="space-y-4 pt-8 border-t border-arch-silver-light"
                 >
-                  <a 
+                  <a
                     href="tel:+263778498911"
-                    className="flex items-center gap-3 text-arch-silver-light hover:text-arch-gold transition-colors duration-300"
+                    className="flex items-center gap-3 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
                   >
                     <Phone size={18} />
                     <span>+263 778 498 911</span>
                   </a>
-                  
+
                   <Link
                     to="/contact"
-                    className="block w-full text-center bg-arch-gold text-arch-black px-6 py-3 rounded-full font-semibold hover:bg-arch-amber transition-colors duration-300"
+                    className="block w-full text-center bg-arch-black text-white px-6 py-3 rounded-full font-semibold hover:bg-arch-charcoal transition-colors duration-300"
                   >
                     Get a Quote
                   </Link>

@@ -244,7 +244,7 @@ const Gallery = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background with parallax images */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-30">
+          <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-20">
             {[...Array(9)].map((_, i) => (
               <motion.div
                 key={i}
@@ -253,7 +253,7 @@ const Gallery = () => {
                 transition={{ delay: i * 0.1, duration: 1 }}
                 className="relative overflow-hidden"
               >
-                <img 
+                <img
                   src={galleryItems[i]?.image}
                   alt=""
                   className="w-full h-full object-cover"
@@ -261,7 +261,7 @@ const Gallery = () => {
               </motion.div>
             ))}
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-arch-black via-arch-black/95 to-arch-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white" />
         </div>
 
         {/* Animated grid lines */}
@@ -269,7 +269,7 @@ const Gallery = () => {
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute h-px bg-gradient-to-r from-transparent via-arch-gold/20 to-transparent"
+              className="absolute h-px bg-gradient-to-r from-transparent via-arch-gold/30 to-transparent"
               style={{ top: `${(i + 1) * 15}%`, width: '100%' }}
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -286,15 +286,15 @@ const Gallery = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-[1.1]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-charcoal mb-6 leading-[1.1]">
               Our Work
               <span className="block gradient-text">Speaks for Itself</span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="text-xl text-arch-silver max-w-2xl">
-              Explore three decades of excellence in aluminium fabrication, 
+            <p className="text-xl text-arch-slate max-w-2xl">
+              Explore three decades of excellence in aluminium fabrication,
               shopfitting, and architectural solutions across Zimbabwe and beyond.
             </p>
           </AnimatedSection>
@@ -304,28 +304,28 @@ const Gallery = () => {
             <div className="flex flex-wrap gap-8 md:gap-16">
               <div>
                 <span className="block text-4xl font-display font-bold text-arch-gold">1,402+</span>
-                <span className="text-arch-silver-dark text-sm">Completed Projects</span>
+                <span className="text-arch-slate text-sm">Completed Projects</span>
               </div>
               <div>
-                <span className="block text-4xl font-display font-bold text-white">16</span>
-                <span className="text-arch-silver-dark text-sm">Project Categories</span>
+                <span className="block text-4xl font-display font-bold text-arch-charcoal">16</span>
+                <span className="text-arch-slate text-sm">Project Categories</span>
               </div>
               <div>
-                <span className="block text-4xl font-display font-bold text-white">30+</span>
-                <span className="text-arch-silver-dark text-sm">Years of Excellence</span>
+                <span className="block text-4xl font-display font-bold text-arch-charcoal">30+</span>
+                <span className="text-arch-slate text-sm">Years of Excellence</span>
               </div>
             </div>
           </AnimatedSection>
         </div>
 
         {/* Scroll indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 border-arch-silver/30 rounded-full flex items-start justify-center p-2">
-            <motion.div 
+          <div className="w-6 h-10 border-2 border-arch-charcoal/30 rounded-full flex items-start justify-center p-2">
+            <motion.div
               className="w-1 h-2 bg-arch-gold rounded-full"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -335,12 +335,12 @@ const Gallery = () => {
       </section>
 
       {/* Filter & View Controls */}
-      <section className="sticky top-20 z-40 bg-arch-black/90 backdrop-blur-xl border-y border-white/5">
+      <section className="sticky top-20 z-40 bg-white/90 backdrop-blur-xl border-y border-arch-silver-light">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 py-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             {/* Category filters */}
             <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto scrollbar-hide">
-              <Filter className="w-4 h-4 text-arch-silver-dark flex-shrink-0" />
+              <Filter className="w-4 h-4 text-arch-slate flex-shrink-0" />
               {categories.map((cat) => (
                 <motion.button
                   key={cat.id}
@@ -348,7 +348,7 @@ const Gallery = () => {
                   className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-all ${
                     selectedCategory === cat.id
                       ? 'bg-arch-gold text-arch-black font-medium'
-                      : 'bg-white/5 text-arch-silver hover:bg-white/10'
+                      : 'bg-arch-platinum text-arch-slate hover:bg-arch-silver-light border border-arch-silver-light'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -360,13 +360,13 @@ const Gallery = () => {
 
             {/* View mode toggles */}
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-arch-silver-dark text-sm mr-2 hidden sm:inline">View:</span>
+              <span className="text-arch-slate text-sm mr-2 hidden sm:inline">View:</span>
               <button
                 onClick={() => setViewMode('masonry')}
                 className={`p-2 rounded-lg transition-all ${
-                  viewMode === 'masonry' 
-                    ? 'bg-arch-gold text-arch-black' 
-                    : 'bg-white/5 text-arch-silver hover:bg-white/10'
+                  viewMode === 'masonry'
+                    ? 'bg-arch-gold text-arch-black'
+                    : 'bg-arch-platinum text-arch-slate hover:bg-arch-silver-light'
                 }`}
                 aria-label="Masonry view"
               >
@@ -375,9 +375,9 @@ const Gallery = () => {
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg transition-all ${
-                  viewMode === 'grid' 
-                    ? 'bg-arch-gold text-arch-black' 
-                    : 'bg-white/5 text-arch-silver hover:bg-white/10'
+                  viewMode === 'grid'
+                    ? 'bg-arch-gold text-arch-black'
+                    : 'bg-arch-platinum text-arch-slate hover:bg-arch-silver-light'
                 }`}
                 aria-label="Grid view"
               >
@@ -389,7 +389,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 md:py-24 bg-arch-charcoal">
+      <section className="py-16 md:py-24 bg-arch-platinum">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatePresence mode="wait">
             <motion.div
@@ -456,7 +456,7 @@ const Gallery = () => {
 
           {filteredItems.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-arch-silver-dark text-lg">No projects found in this category.</p>
+              <p className="text-arch-slate text-lg">No projects found in this category.</p>
             </div>
           )}
         </div>
@@ -557,7 +557,7 @@ const Gallery = () => {
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-arch-black relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-gradient-to-b from-arch-platinum to-arch-snow relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -567,15 +567,15 @@ const Gallery = () => {
 
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 text-center">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
               Ready to Start Your
               <span className="gradient-text"> Project?</span>
             </h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <p className="text-xl text-arch-silver max-w-2xl mx-auto mb-10">
-              Let us bring your vision to life with our expert aluminium fabrication 
+            <p className="text-xl text-arch-slate max-w-2xl mx-auto mb-10">
+              Let us bring your vision to life with our expert aluminium fabrication
               and installation services.
             </p>
           </AnimatedSection>
@@ -592,7 +592,7 @@ const Gallery = () => {
               </motion.a>
               <motion.a
                 href="tel:+263778498911"
-                className="inline-flex items-center justify-center px-8 py-4 border border-arch-silver/30 text-white rounded-full hover:bg-white/5 transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 border border-arch-silver text-arch-charcoal rounded-full hover:bg-arch-silver-light transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

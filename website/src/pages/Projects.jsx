@@ -296,15 +296,15 @@ function ProjectCard({ project, onClick, index }) {
 
 function ProjectModal({ project, onClose }) {
   const [currentImage, setCurrentImage] = useState(0);
-  
+
   if (!project) return null;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-arch-black/90 backdrop-blur-xl"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-arch-black/80 backdrop-blur-xl"
       onClick={onClose}
     >
       <motion.div
@@ -312,7 +312,7 @@ function ProjectModal({ project, onClose }) {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: 'spring', damping: 25 }}
-        className="bg-arch-charcoal border border-white/10 rounded-3xl overflow-hidden max-w-5xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white border border-arch-silver-light rounded-3xl overflow-hidden max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image Gallery */}
@@ -377,9 +377,9 @@ function ProjectModal({ project, onClose }) {
         
         {/* Content */}
         <div className="p-8 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{project.title}</h2>
-          
-          <div className="flex flex-wrap items-center gap-6 mb-6 text-arch-silver">
+          <h2 className="text-3xl md:text-4xl font-bold text-arch-charcoal mb-4 font-display">{project.title}</h2>
+
+          <div className="flex flex-wrap items-center gap-6 mb-6 text-arch-slate">
             <span className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-arch-gold" />
               {project.location}
@@ -389,24 +389,24 @@ function ProjectModal({ project, onClose }) {
               {project.year}
             </span>
           </div>
-          
-          <p className="text-arch-silver/80 text-lg mb-8 leading-relaxed">{project.description}</p>
-          
+
+          <p className="text-arch-slate text-lg mb-8 leading-relaxed">{project.description}</p>
+
           {/* Services */}
           <div className="mb-8">
-            <h3 className="text-lg font-bold text-white mb-4">Services Provided</h3>
+            <h3 className="text-lg font-bold text-arch-charcoal mb-4">Services Provided</h3>
             <div className="flex flex-wrap gap-3">
               {project.services.map((service, i) => (
                 <span
                   key={i}
-                  className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-arch-silver"
+                  className="px-4 py-2 bg-arch-platinum border border-arch-silver-light rounded-full text-arch-slate"
                 >
                   {service}
                 </span>
               ))}
             </div>
           </div>
-          
+
           {/* CTA */}
           <div className="flex flex-wrap gap-4">
             <Link
@@ -418,7 +418,7 @@ function ProjectModal({ project, onClose }) {
             </Link>
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-arch-platinum border border-arch-silver-light text-arch-charcoal font-medium rounded-full hover:bg-arch-silver-light transition-all"
             >
               View Gallery
             </Link>
@@ -465,7 +465,7 @@ export default function Projects() {
             alt="Project showcase"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-arch-black/80 via-arch-black/70 to-arch-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white" />
         </div>
         
         {/* Content */}
@@ -483,12 +483,12 @@ export default function Projects() {
               1402+ Projects Completed
             </span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-arch-charcoal mb-6 font-display">
               Our{' '}
               <span className="gradient-text">Projects</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-arch-silver/80 max-w-3xl mx-auto">
+
+            <p className="text-xl md:text-2xl text-arch-slate max-w-3xl mx-auto">
               Discover our portfolio of exceptional aluminium fabrication and installation projects across Zimbabwe and beyond.
             </p>
           </motion.div>
@@ -496,7 +496,7 @@ export default function Projects() {
       </section>
       
       {/* Filter & Projects Section */}
-      <section className="py-16 md:py-24 bg-arch-black relative">
+      <section className="py-16 md:py-24 bg-arch-platinum relative">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           {/* Filter Bar */}
           <AnimatedSection className="mb-12">
@@ -510,7 +510,7 @@ export default function Projects() {
                     className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all ${
                       selectedCategory === category
                         ? 'bg-arch-gold text-arch-black'
-                        : 'bg-white/5 text-arch-silver hover:bg-white/10 border border-white/10'
+                        : 'bg-white text-arch-slate hover:bg-arch-silver-light border border-arch-silver-light'
                     }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -519,18 +519,18 @@ export default function Projects() {
                   </motion.button>
                 ))}
               </div>
-              
+
               {/* View Toggle */}
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full p-1">
+              <div className="flex items-center gap-2 bg-white border border-arch-silver-light rounded-full p-1">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-full transition-all ${viewMode === 'grid' ? 'bg-arch-gold text-arch-black' : 'text-arch-silver'}`}
+                  className={`p-2 rounded-full transition-all ${viewMode === 'grid' ? 'bg-arch-gold text-arch-black' : 'text-arch-slate'}`}
                 >
                   <Grid3X3 className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('masonry')}
-                  className={`p-2 rounded-full transition-all ${viewMode === 'masonry' ? 'bg-arch-gold text-arch-black' : 'text-arch-silver'}`}
+                  className={`p-2 rounded-full transition-all ${viewMode === 'masonry' ? 'bg-arch-gold text-arch-black' : 'text-arch-slate'}`}
                 >
                   <LayoutGrid className="w-5 h-5" />
                 </button>
@@ -562,14 +562,14 @@ export default function Projects() {
           {/* No Results */}
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-arch-silver text-lg">No projects found in this category.</p>
+              <p className="text-arch-slate text-lg">No projects found in this category.</p>
             </div>
           )}
         </div>
       </section>
       
       {/* Stats Section */}
-      <section className="py-16 bg-arch-charcoal border-y border-white/10">
+      <section className="py-16 bg-white border-y border-arch-silver-light">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -580,7 +580,7 @@ export default function Projects() {
             ].map((stat, index) => (
               <StaggerItem key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold gradient-text font-display">{stat.number}</div>
-                <div className="text-arch-silver mt-2">{stat.label}</div>
+                <div className="text-arch-slate mt-2">{stat.label}</div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -588,13 +588,13 @@ export default function Projects() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 bg-arch-black">
+      <section className="py-24 bg-gradient-to-b from-arch-platinum to-arch-snow">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display">
+            <h2 className="text-3xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
               Have a Project in Mind?
             </h2>
-            <p className="text-arch-silver/80 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-arch-slate text-lg max-w-2xl mx-auto mb-8">
               Let's discuss how we can bring your vision to life with our premium aluminium solutions.
             </p>
             <Link

@@ -254,21 +254,21 @@ const Careers = () => {
 
       {/* Hero Section - Split design with team image */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-arch-black" />
-        
+        <div className="absolute inset-0 bg-arch-snow" />
+
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-arch-gold/5 rounded-full blur-3xl"
-            animate={{ 
+            className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-arch-gold/10 rounded-full blur-3xl"
+            animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 90, 0]
             }}
             transition={{ duration: 20, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-arch-silver/5 rounded-full blur-3xl"
-            animate={{ 
+            className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-arch-silver/20 rounded-full blur-3xl"
+            animate={{
               scale: [1.2, 1, 1.2],
               rotate: [0, -90, 0]
             }}
@@ -287,16 +287,16 @@ const Careers = () => {
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-[1.1]">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-charcoal mb-6 leading-[1.1]">
                   Build Your
                   <span className="block gradient-text">Future With Us</span>
                 </h1>
               </AnimatedSection>
 
               <AnimatedSection delay={0.2}>
-                <p className="text-xl text-arch-silver mb-8 max-w-lg">
-                  Working at Architectural Aluminium means being part of a family 
-                  enterprise that creates fascinating products. Once you experience it, 
+                <p className="text-xl text-arch-slate mb-8 max-w-lg">
+                  Working at Architectural Aluminium means being part of a family
+                  enterprise that creates fascinating products. Once you experience it,
                   you'll want to stay.
                 </p>
               </AnimatedSection>
@@ -323,8 +323,8 @@ const Careers = () => {
                       <Users className="w-6 h-6 text-arch-gold" />
                     </div>
                     <div>
-                      <span className="block text-2xl font-bold text-white">50+</span>
-                      <span className="text-arch-silver-dark text-sm">Team Members</span>
+                      <span className="block text-2xl font-bold text-arch-charcoal">50+</span>
+                      <span className="text-arch-slate text-sm">Team Members</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -332,8 +332,8 @@ const Careers = () => {
                       <Building2 className="w-6 h-6 text-arch-gold" />
                     </div>
                     <div>
-                      <span className="block text-2xl font-bold text-white">30+</span>
-                      <span className="text-arch-silver-dark text-sm">Years Strong</span>
+                      <span className="block text-2xl font-bold text-arch-charcoal">30+</span>
+                      <span className="text-arch-slate text-sm">Years Strong</span>
                     </div>
                   </div>
                 </div>
@@ -387,8 +387,8 @@ const Careers = () => {
               </div>
 
               {/* Floating badge */}
-              <motion.div 
-                className="absolute -bottom-6 -left-6 bg-arch-gold text-arch-black p-6 rounded-2xl shadow-2xl"
+              <motion.div
+                className="absolute -bottom-6 -left-6 bg-arch-gold text-arch-black p-6 rounded-2xl shadow-medium"
                 initial={{ scale: 0, rotate: -10 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.5, type: 'spring' }}
@@ -403,18 +403,18 @@ const Careers = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-24 md:py-32 bg-arch-charcoal">
+      <section className="py-24 md:py-32 bg-arch-platinum">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <AnimatedSection>
                 <span className="text-arch-gold font-mono text-sm tracking-wider">WHY JOIN US</span>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-4 mb-6">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mt-4 mb-6">
                   More Than Just a Job
                 </h2>
-                <p className="text-arch-silver text-lg mb-8">
-                  At Architectural Aluminium, we invest in our people. We believe that 
-                  when our team thrives, our business thrives. Here's what you can expect 
+                <p className="text-arch-slate text-lg mb-8">
+                  At Architectural Aluminium, we invest in our people. We believe that
+                  when our team thrives, our business thrives. Here's what you can expect
                   when you join us.
                 </p>
               </AnimatedSection>
@@ -423,10 +423,10 @@ const Careers = () => {
               <StaggerContainer className="grid grid-cols-2 gap-4" staggerDelay={0.1}>
                 {values.map((value, index) => (
                   <StaggerItem key={index}>
-                    <div className="p-4 bg-arch-graphite rounded-xl border border-white/5 hover:border-arch-gold/30 transition-colors">
+                    <div className="p-4 bg-white rounded-xl border border-arch-silver-light hover:border-arch-gold/50 transition-colors shadow-soft">
                       <value.icon className="w-8 h-8 text-arch-gold mb-3" />
-                      <h3 className="text-white font-semibold mb-1">{value.title}</h3>
-                      <p className="text-arch-silver-dark text-sm">{value.description}</p>
+                      <h3 className="text-arch-charcoal font-semibold mb-1">{value.title}</h3>
+                      <p className="text-arch-slate text-sm">{value.description}</p>
                     </div>
                   </StaggerItem>
                 ))}
@@ -437,15 +437,15 @@ const Careers = () => {
             <StaggerContainer className="grid sm:grid-cols-2 gap-4" staggerDelay={0.1}>
               {benefits.map((benefit, index) => (
                 <StaggerItem key={index}>
-                  <motion.div 
-                    className="p-6 bg-arch-graphite rounded-xl border border-white/5 hover:border-arch-gold/30 transition-all group"
+                  <motion.div
+                    className="p-6 bg-white rounded-xl border border-arch-silver-light hover:border-arch-gold/50 transition-all group shadow-soft"
                     whileHover={{ y: -4 }}
                   >
                     <div className="w-12 h-12 bg-arch-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-arch-gold/20 transition-colors">
                       <benefit.icon className="w-6 h-6 text-arch-gold" />
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">{benefit.title}</h3>
-                    <p className="text-arch-silver-dark">{benefit.description}</p>
+                    <h3 className="text-arch-charcoal font-semibold text-lg mb-2">{benefit.title}</h3>
+                    <p className="text-arch-slate">{benefit.description}</p>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -455,15 +455,15 @@ const Careers = () => {
       </section>
 
       {/* Open Positions */}
-      <section id="openings" className="py-24 md:py-32 bg-arch-black">
+      <section id="openings" className="py-24 md:py-32 bg-white">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold font-mono text-sm tracking-wider">OPPORTUNITIES</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-4 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mt-4 mb-6">
               Open Positions
             </h2>
-            <p className="text-arch-silver text-lg max-w-2xl mx-auto">
-              We're always looking for talented individuals to join our team. 
+            <p className="text-arch-slate text-lg max-w-2xl mx-auto">
+              We're always looking for talented individuals to join our team.
               Explore our current openings and find your perfect role.
             </p>
           </AnimatedSection>
@@ -478,7 +478,7 @@ const Careers = () => {
                   className={`px-5 py-2.5 rounded-full text-sm transition-all ${
                     selectedDepartment === dept.id
                       ? 'bg-arch-gold text-arch-black font-medium'
-                      : 'bg-white/5 text-arch-silver hover:bg-white/10'
+                      : 'bg-arch-platinum text-arch-slate hover:bg-arch-silver-light border border-arch-silver-light'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -509,7 +509,7 @@ const Careers = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-arch-charcoal rounded-2xl border border-white/5 overflow-hidden hover:border-arch-gold/30 transition-colors"
+                  className="bg-arch-platinum rounded-2xl border border-arch-silver-light overflow-hidden hover:border-arch-gold/50 transition-colors"
                 >
                   {/* Job header - always visible */}
                   <button
@@ -518,12 +518,12 @@ const Careers = () => {
                   >
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-3 mb-2">
-                        <h3 className="text-xl font-semibold text-white">{job.title}</h3>
+                        <h3 className="text-xl font-semibold text-arch-charcoal">{job.title}</h3>
                         <span className="px-3 py-1 bg-arch-gold/10 text-arch-gold text-xs font-mono rounded-full">
                           {job.type}
                         </span>
                       </div>
-                      <div className="flex flex-wrap gap-4 text-arch-silver-dark text-sm">
+                      <div className="flex flex-wrap gap-4 text-arch-slate text-sm">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
                           {job.location}
@@ -539,7 +539,7 @@ const Careers = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-arch-silver-dark text-sm hidden sm:block">
+                      <span className="text-arch-slate text-sm hidden sm:block">
                         {departments.find(d => d.id === job.department)?.label}
                       </span>
                       <motion.div
@@ -561,15 +561,15 @@ const Careers = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 border-t border-white/5 pt-6">
-                          <p className="text-arch-silver mb-6">{job.description}</p>
+                        <div className="px-6 pb-6 border-t border-arch-silver-light pt-6">
+                          <p className="text-arch-slate mb-6">{job.description}</p>
 
                           <div className="grid md:grid-cols-2 gap-8">
                             <div>
-                              <h4 className="text-white font-semibold mb-3">Requirements</h4>
+                              <h4 className="text-arch-charcoal font-semibold mb-3">Requirements</h4>
                               <ul className="space-y-2">
                                 {job.requirements.map((req, i) => (
-                                  <li key={i} className="flex items-start gap-2 text-arch-silver-dark text-sm">
+                                  <li key={i} className="flex items-start gap-2 text-arch-slate text-sm">
                                     <ChevronRight className="w-4 h-4 text-arch-gold flex-shrink-0 mt-0.5" />
                                     {req}
                                   </li>
@@ -577,10 +577,10 @@ const Careers = () => {
                               </ul>
                             </div>
                             <div>
-                              <h4 className="text-white font-semibold mb-3">Responsibilities</h4>
+                              <h4 className="text-arch-charcoal font-semibold mb-3">Responsibilities</h4>
                               <ul className="space-y-2">
                                 {job.responsibilities.map((resp, i) => (
-                                  <li key={i} className="flex items-start gap-2 text-arch-silver-dark text-sm">
+                                  <li key={i} className="flex items-start gap-2 text-arch-slate text-sm">
                                     <ChevronRight className="w-4 h-4 text-arch-gold flex-shrink-0 mt-0.5" />
                                     {resp}
                                   </li>
@@ -601,7 +601,7 @@ const Careers = () => {
                             </motion.a>
                             <motion.a
                               href="/contact"
-                              className="inline-flex items-center justify-center px-6 py-3 border border-arch-silver/30 text-white rounded-full hover:bg-white/5 transition-colors"
+                              className="inline-flex items-center justify-center px-6 py-3 border border-arch-silver text-arch-charcoal rounded-full hover:bg-arch-silver-light transition-colors"
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
                             >
@@ -617,10 +617,10 @@ const Careers = () => {
 
               {filteredJobs.length === 0 && (
                 <div className="text-center py-16">
-                  <p className="text-arch-silver-dark text-lg mb-4">
+                  <p className="text-arch-slate text-lg mb-4">
                     No openings in this department at the moment.
                   </p>
-                  <p className="text-arch-silver">
+                  <p className="text-arch-slate">
                     Send us your CV anyway! We're always interested in talented individuals.
                   </p>
                 </div>
@@ -631,10 +631,10 @@ const Careers = () => {
       </section>
 
       {/* Application CTA */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-arch-charcoal to-arch-black relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-gradient-to-br from-arch-platinum to-arch-snow relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 opacity-5" style={{
+          <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `repeating-linear-gradient(
               45deg,
               transparent,
@@ -648,27 +648,27 @@ const Careers = () => {
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
                 Don't See the Right Role?
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <p className="text-xl text-arch-silver mb-10">
-                We're always looking for talented individuals. Send us your CV and 
+              <p className="text-xl text-arch-slate mb-10">
+                We're always looking for talented individuals. Send us your CV and
                 we'll keep you in mind for future opportunities.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="bg-arch-graphite p-8 rounded-2xl border border-white/5">
-                <h3 className="text-white font-semibold text-lg mb-4">Submit Your CV</h3>
-                <p className="text-arch-silver-dark mb-6">
+              <div className="bg-white p-8 rounded-2xl border border-arch-silver-light shadow-soft">
+                <h3 className="text-arch-charcoal font-semibold text-lg mb-4">Submit Your CV</h3>
+                <p className="text-arch-slate mb-6">
                   Email your CV and cover letter to:
                 </p>
-                <a 
+                <a
                   href="mailto:careers@archaluminium.co.zw"
-                  className="inline-flex items-center text-arch-gold hover:text-arch-yellow text-xl font-semibold transition-colors"
+                  className="inline-flex items-center text-arch-gold hover:text-arch-amber text-xl font-semibold transition-colors"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   careers@archaluminium.co.zw
