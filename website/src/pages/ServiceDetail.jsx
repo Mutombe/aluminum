@@ -454,15 +454,15 @@ const ServicePattern = ({ type, className }) => {
 
 // FAQ Accordion Component
 const FAQItem = ({ question, answer, isOpen, onClick, accentColor }) => (
-  <motion.div 
-    className="border-b border-arch-graphite"
+  <motion.div
+    className="border-b border-arch-silver-light"
     initial={false}
   >
     <button
       onClick={onClick}
       className="w-full py-6 flex items-center justify-between text-left group"
     >
-      <span className="text-lg font-medium text-arch-white group-hover:text-arch-gold transition-colors pr-8">
+      <span className="text-lg font-medium text-arch-charcoal group-hover:text-arch-gold transition-colors pr-8">
         {question}
       </span>
       <motion.div
@@ -482,7 +482,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, accentColor }) => (
           transition={{ duration: 0.3 }}
           className="overflow-hidden"
         >
-          <p className="pb-6 text-arch-silver-dark leading-relaxed">
+          <p className="pb-6 text-arch-slate leading-relaxed">
             {answer}
           </p>
         </motion.div>
@@ -506,7 +506,7 @@ const GalleryImage = ({ src, alt, onClick, index }) => (
       alt={alt} 
       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
     />
-    <div className="absolute inset-0 bg-arch-black/0 group-hover:bg-arch-black/40 transition-colors duration-300 flex items-center justify-center">
+    <div className="absolute inset-0 bg-arch-charcoal/0 group-hover:bg-arch-charcoal/40 transition-colors duration-300 flex items-center justify-center">
       <motion.div
         initial={{ scale: 0 }}
         whileHover={{ scale: 1 }}
@@ -569,7 +569,7 @@ export default function ServiceDetail() {
             alt={service.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-arch-black via-arch-black/60 to-arch-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/50" />
         </motion.div>
         
         {/* Floating Particles */}
@@ -607,7 +607,7 @@ export default function ServiceDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2 text-sm text-arch-silver-dark mb-8"
+            className="flex items-center gap-2 text-sm text-arch-slate mb-8"
           >
             <Link to="/" className="hover:text-arch-gold transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
@@ -632,11 +632,11 @@ export default function ServiceDetail() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="font-display text-5xl md:text-7xl font-bold text-arch-white mb-4"
+                className="font-display text-5xl md:text-7xl font-bold text-arch-charcoal mb-4"
               >
                 {service.title}
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -645,12 +645,12 @@ export default function ServiceDetail() {
               >
                 {service.tagline}
               </motion.p>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="text-lg text-arch-silver-dark max-w-xl"
+                className="text-lg text-arch-slate max-w-xl"
               >
                 {service.description}
               </motion.p>
@@ -669,7 +669,7 @@ export default function ServiceDetail() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 + i * 0.1 }}
-                  className="relative glass p-6 rounded-2xl group hover:border-arch-gold/30 border border-transparent transition-colors"
+                  className="relative bg-white/90 backdrop-blur-sm p-6 rounded-2xl group hover:border-arch-gold/30 border border-arch-silver-light shadow-soft transition-colors"
                 >
                   <div className="absolute inset-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <CornerBrackets size={12} color={service.accentColor} />
@@ -677,7 +677,7 @@ export default function ServiceDetail() {
                   <p className="font-display text-3xl md:text-4xl font-bold text-arch-gold">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="text-arch-silver-dark text-sm mt-1">{stat.label}</p>
+                  <p className="text-arch-slate text-sm mt-1">{stat.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -697,9 +697,9 @@ export default function ServiceDetail() {
               <Phone className="w-5 h-5" />
               Get a Quote
             </Link>
-            <a 
+            <a
               href="#features"
-              className="inline-flex items-center gap-2 px-8 py-4 glass text-arch-white font-medium rounded-full hover:bg-white/10 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-arch-charcoal font-medium rounded-full border border-arch-silver-light hover:bg-arch-platinum transition-all"
             >
               Explore Features
               <ChevronDown className="w-5 h-5" />
@@ -709,41 +709,41 @@ export default function ServiceDetail() {
       </section>
 
       {/* About Section */}
-      <section className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
-        <BlueprintGrid className="opacity-20" />
-        
+      <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
+        <BlueprintGrid className="opacity-10" />
+
         {/* Constellation pattern */}
-        <motion.div 
-          className="absolute right-10 top-20 w-40 h-40 opacity-15"
+        <motion.div
+          className="absolute right-10 top-20 w-40 h-40 opacity-10"
           animate={{ rotate: [0, 10, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         >
           <ConstellationPattern className="w-full h-full" />
         </motion.div>
-        
+
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 About This Service
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
                 Excellence in Every Detail
               </h2>
-              <div className="space-y-4 text-arch-silver-dark text-lg leading-relaxed">
+              <div className="space-y-4 text-arch-slate text-lg leading-relaxed">
                 {service.longDescription.split('\n\n').map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>
-              
+
               {/* Applications */}
               <div className="mt-8">
-                <h4 className="text-arch-white font-semibold mb-4">Applications</h4>
+                <h4 className="text-arch-charcoal font-semibold mb-4">Applications</h4>
                 <div className="flex flex-wrap gap-2">
                   {service.applications.map((app) => (
-                    <span 
+                    <span
                       key={app}
-                      className="px-4 py-2 bg-arch-graphite/50 border border-arch-graphite rounded-full text-sm text-arch-silver-light"
+                      className="px-4 py-2 bg-white border border-arch-silver-light rounded-full text-sm text-arch-slate"
                     >
                       {app}
                     </span>
@@ -769,11 +769,11 @@ export default function ServiceDetail() {
                 </div>
                 
                 {/* Floating secondary image */}
-                <motion.div 
-                  className="absolute -bottom-8 -left-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-arch-charcoal"
+                <motion.div
+                  className="absolute -bottom-8 -left-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <img 
+                  <img
                     src={service.galleryImages[1]}
                     alt={service.title}
                     className="w-full h-full object-cover"
@@ -795,15 +795,15 @@ export default function ServiceDetail() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="relative py-24 md:py-32 bg-arch-black overflow-hidden">
+      <section id="features" className="relative py-24 md:py-32 bg-arch-snow overflow-hidden">
         {/* Isometric Grid */}
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.03]">
           <IsometricCubeGrid className="w-full h-full text-arch-gold" opacity={1} />
         </div>
-        
+
         {/* Angular Layers */}
-        <motion.div 
-          className="absolute left-0 top-1/4 w-48 h-48 opacity-10"
+        <motion.div
+          className="absolute left-0 top-1/4 w-48 h-48 opacity-5"
           animate={{ rotate: [0, -5, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -815,10 +815,10 @@ export default function ServiceDetail() {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               What We Offer
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
               Features & Capabilities
             </h2>
-            <p className="text-arch-silver-dark text-lg">
+            <p className="text-arch-slate text-lg">
               Comprehensive solutions tailored to your specific requirements
             </p>
           </AnimatedSection>
@@ -826,30 +826,30 @@ export default function ServiceDetail() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.1}>
-                <motion.div 
-                  className="relative p-8 rounded-2xl bg-arch-charcoal/50 border border-arch-graphite hover:border-arch-gold/30 transition-all duration-500 h-full group overflow-hidden"
+                <motion.div
+                  className="relative p-8 rounded-2xl bg-white border border-arch-silver-light hover:border-arch-gold/30 shadow-soft transition-all duration-500 h-full group overflow-hidden"
                   whileHover={{ y: -5 }}
                 >
                   {/* Pattern background on hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500">
                     <ServicePattern type={service.pattern} className="w-full h-full text-arch-gold" />
                   </div>
-                  
+
                   <div className="relative">
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                       <feature.icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="font-display text-xl font-semibold text-arch-white mb-3 group-hover:text-arch-gold transition-colors">
+                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3 group-hover:text-arch-gold transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-arch-silver-dark">
+                    <p className="text-arch-slate">
                       {feature.desc}
                     </p>
                   </div>
-                  
+
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className={`absolute top-0 right-0 w-full h-full bg-gradient-to-bl ${service.color} opacity-10`} 
+                    <div className={`absolute top-0 right-0 w-full h-full bg-gradient-to-bl ${service.color} opacity-10`}
                          style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
                   </div>
                 </motion.div>
@@ -860,25 +860,25 @@ export default function ServiceDetail() {
       </section>
 
       {/* Specifications & Finishes */}
-      <section className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
-        <BlueprintLines className="text-arch-silver opacity-15" />
-        
+      <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
+        <BlueprintLines className="text-arch-silver opacity-10" />
+
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Specifications */}
             <AnimatedSection>
-              <div className="relative p-8 md:p-10 rounded-3xl glass">
+              <div className="relative p-8 md:p-10 rounded-3xl bg-white border border-arch-silver-light shadow-soft">
                 <div className="absolute inset-4">
                   <CornerBrackets size={24} color={service.accentColor} />
                 </div>
-                
+
                 <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                   Technical
                 </span>
-                <h3 className="font-display text-3xl font-bold text-arch-white mt-2 mb-8">
+                <h3 className="font-display text-3xl font-bold text-arch-charcoal mt-2 mb-8">
                   Specifications
                 </h3>
-                
+
                 <div className="space-y-4">
                   {service.specifications.map((spec, i) => (
                     <motion.div
@@ -887,26 +887,26 @@ export default function ServiceDetail() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="flex items-center justify-between py-3 border-b border-arch-graphite last:border-0"
+                      className="flex items-center justify-between py-3 border-b border-arch-silver-light last:border-0"
                     >
-                      <span className="text-arch-silver-dark">{spec.label}</span>
-                      <span className="text-arch-white font-medium">{spec.value}</span>
+                      <span className="text-arch-slate">{spec.label}</span>
+                      <span className="text-arch-charcoal font-medium">{spec.value}</span>
                     </motion.div>
                   ))}
                 </div>
               </div>
             </AnimatedSection>
-            
+
             {/* Finishes */}
             <AnimatedSection delay={0.2}>
-              <div className="relative p-8 md:p-10 rounded-3xl bg-arch-black border border-arch-graphite">
+              <div className="relative p-8 md:p-10 rounded-3xl bg-white border border-arch-silver-light shadow-soft">
                 <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                   Available
                 </span>
-                <h3 className="font-display text-3xl font-bold text-arch-white mt-2 mb-8">
+                <h3 className="font-display text-3xl font-bold text-arch-charcoal mt-2 mb-8">
                   Finishes
                 </h3>
-                
+
                 <div className="space-y-3">
                   {service.finishes.map((finish, i) => (
                     <motion.div
@@ -915,20 +915,20 @@ export default function ServiceDetail() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="flex items-center gap-3 p-4 rounded-xl bg-arch-charcoal/50 hover:bg-arch-charcoal transition-colors group"
+                      className="flex items-center gap-3 p-4 rounded-xl bg-arch-platinum/50 hover:bg-arch-platinum transition-colors group"
                     >
                       <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                         <Palette className="w-5 h-5 text-white" />
                       </div>
-                      <span className="text-arch-silver-light group-hover:text-arch-white transition-colors">
+                      <span className="text-arch-slate group-hover:text-arch-charcoal transition-colors">
                         {finish}
                       </span>
                     </motion.div>
                   ))}
                 </div>
-                
-                <Link 
-                  to="/services"
+
+                <Link
+                  to="/finishes"
                   className="inline-flex items-center gap-2 text-arch-gold hover:text-arch-amber transition-colors mt-6"
                 >
                   View All Finishes
@@ -941,15 +941,15 @@ export default function ServiceDetail() {
       </section>
 
       {/* Process Section */}
-      <section className="relative py-24 md:py-32 bg-arch-black overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-arch-snow overflow-hidden">
         {/* Hexagonal Grid */}
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.03]">
           <HexagonalGrid className="w-full h-full text-arch-gold" opacity={1} />
         </div>
-        
+
         {/* Circuit Pattern */}
-        <motion.div 
-          className="absolute right-10 bottom-20 w-48 h-48 opacity-10"
+        <motion.div
+          className="absolute right-10 bottom-20 w-48 h-48 opacity-5"
           animate={{ y: [-10, 10, -10] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -961,7 +961,7 @@ export default function ServiceDetail() {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               How We Work
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
               Our Process
             </h2>
           </AnimatedSection>
@@ -974,18 +974,18 @@ export default function ServiceDetail() {
                   {index < service.process.length - 1 && (
                     <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-arch-gold/50 to-transparent z-0" />
                   )}
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="relative text-center"
                     whileHover={{ y: -5 }}
                   >
                     <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg mb-6`}>
-                      <span className="text-2xl font-bold text-arch-black font-display">{step.step}</span>
+                      <span className="text-2xl font-bold text-white font-display">{step.step}</span>
                     </div>
-                    <h4 className="font-display text-xl font-semibold text-arch-white mb-2">
+                    <h4 className="font-display text-xl font-semibold text-arch-charcoal mb-2">
                       {step.title}
                     </h4>
-                    <p className="text-arch-silver-dark text-sm">
+                    <p className="text-arch-slate text-sm">
                       {step.desc}
                     </p>
                   </motion.div>
@@ -997,16 +997,16 @@ export default function ServiceDetail() {
       </section>
 
       {/* Gallery Section */}
-      <section className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
-        <FloatingParticles className="opacity-20" count={20} />
-        
+      <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
+        <FloatingParticles className="opacity-10" count={20} />
+
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Portfolio
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4">
                 Project Gallery
               </h2>
             </div>
@@ -1021,7 +1021,7 @@ export default function ServiceDetail() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {service.galleryImages.map((img, i) => (
-              <GalleryImage 
+              <GalleryImage
                 key={i}
                 src={img}
                 alt={`${service.title} project ${i + 1}`}
@@ -1034,37 +1034,37 @@ export default function ServiceDetail() {
       </section>
 
       {/* FAQs */}
-      <section className="relative py-24 md:py-32 bg-arch-black overflow-hidden">
-        <BlueprintGrid className="opacity-15" />
-        
+      <section className="relative py-24 md:py-32 bg-arch-snow overflow-hidden">
+        <BlueprintGrid className="opacity-5" />
+
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-16">
             <AnimatedSection>
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Got Questions?
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-white mt-4 mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
                 FAQs
               </h2>
-              <p className="text-arch-silver-dark text-lg mb-8">
+              <p className="text-arch-slate text-lg mb-8">
                 Find answers to common questions about our {service.title.toLowerCase()} services.
               </p>
-              
-              <div className="relative p-6 rounded-2xl glass">
-                <h4 className="text-arch-white font-semibold mb-4">Still have questions?</h4>
-                <p className="text-arch-silver-dark text-sm mb-4">
+
+              <div className="relative p-6 rounded-2xl bg-white border border-arch-silver-light shadow-soft">
+                <h4 className="text-arch-charcoal font-semibold mb-4">Still have questions?</h4>
+                <p className="text-arch-slate text-sm mb-4">
                   Our team is here to help with any specific inquiries about your project.
                 </p>
-                <Link 
+                <Link
                   to="/contact"
-                  className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.color} text-arch-black font-semibold rounded-full hover:shadow-lg transition-all`}
+                  className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.color} text-white font-semibold rounded-full hover:shadow-lg transition-all`}
                 >
                   <Phone className="w-4 h-4" />
                   Contact Us
                 </Link>
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={0.2}>
               <div className="space-y-0">
                 {service.faqs.map((faq, i) => (
@@ -1084,13 +1084,13 @@ export default function ServiceDetail() {
       </section>
 
       {/* Related Services */}
-      <section className="relative py-24 md:py-32 bg-arch-charcoal overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Explore More
             </span>
-            <h2 className="font-display text-4xl font-bold text-arch-white mt-4">
+            <h2 className="font-display text-4xl font-bold text-arch-charcoal mt-4">
               Related Services
             </h2>
           </AnimatedSection>
@@ -1101,23 +1101,23 @@ export default function ServiceDetail() {
               if (!related) return null;
               return (
                 <AnimatedSection key={relatedId}>
-                  <Link 
+                  <Link
                     to={`/services/${relatedId}`}
-                    className="group relative block p-8 rounded-2xl bg-arch-black border border-arch-graphite hover:border-arch-gold/30 transition-all overflow-hidden"
+                    className="group relative block p-8 rounded-2xl bg-white border border-arch-silver-light hover:border-arch-gold/30 shadow-soft transition-all overflow-hidden"
                   >
                     {/* Background image */}
-                    <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
                       <img src={related.heroImage} alt="" className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-arch-black via-arch-black/80 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
                     </div>
-                    
+
                     <div className="relative flex items-center justify-between">
                       <div>
                         <span className="text-arch-gold text-sm">{related.subtitle}</span>
-                        <h3 className="font-display text-2xl font-bold text-arch-white group-hover:text-arch-gold transition-colors mt-1">
+                        <h3 className="font-display text-2xl font-bold text-arch-charcoal group-hover:text-arch-gold transition-colors mt-1">
                           {related.title}
                         </h3>
-                        <p className="text-arch-silver-dark mt-2 max-w-md">{related.tagline}</p>
+                        <p className="text-arch-slate mt-2 max-w-md">{related.tagline}</p>
                       </div>
                       <ArrowUpRight className="w-8 h-8 text-arch-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </div>
@@ -1130,37 +1130,37 @@ export default function ServiceDetail() {
       </section>
 
       {/* Navigation */}
-      <section className="relative py-12 bg-arch-black border-t border-arch-graphite">
+      <section className="relative py-12 bg-white border-t border-arch-silver-light">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="flex items-center justify-between">
             {prevService ? (
-              <Link 
+              <Link
                 to={`/services/${prevService.id}`}
-                className="group flex items-center gap-3 text-arch-silver-light hover:text-arch-gold transition-colors"
+                className="group flex items-center gap-3 text-arch-slate hover:text-arch-gold transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                 <div className="text-left">
-                  <span className="text-xs text-arch-silver-dark block">Previous</span>
-                  <span className="font-medium">{prevService.title}</span>
+                  <span className="text-xs text-arch-slate block">Previous</span>
+                  <span className="font-medium text-arch-charcoal">{prevService.title}</span>
                 </div>
               </Link>
             ) : <div />}
-            
-            <Link 
+
+            <Link
               to="/services"
-              className="text-arch-silver-dark hover:text-arch-gold transition-colors text-sm"
+              className="text-arch-slate hover:text-arch-gold transition-colors text-sm"
             >
               All Services
             </Link>
-            
+
             {nextService ? (
-              <Link 
+              <Link
                 to={`/services/${nextService.id}`}
-                className="group flex items-center gap-3 text-arch-silver-light hover:text-arch-gold transition-colors"
+                className="group flex items-center gap-3 text-arch-slate hover:text-arch-gold transition-colors"
               >
                 <div className="text-right">
-                  <span className="text-xs text-arch-silver-dark block">Next</span>
-                  <span className="font-medium">{nextService.title}</span>
+                  <span className="text-xs text-arch-slate block">Next</span>
+                  <span className="font-medium text-arch-charcoal">{nextService.title}</span>
                 </div>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -1177,37 +1177,37 @@ export default function ServiceDetail() {
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-arch-black/85" />
+          <div className="absolute inset-0 bg-white/90" />
         </div>
-        
-        <FloatingParticles className="opacity-30" count={30} />
-        
+
+        <FloatingParticles className="opacity-10" count={30} />
+
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="relative text-center max-w-3xl mx-auto">
             <div className="absolute -inset-8 hidden md:block">
               <CornerBrackets size={50} color={service.accentColor} />
             </div>
-            
-            <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-white mb-6">
+
+            <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-charcoal mb-6">
               Ready to Start Your
               <span className={`block bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
                 {service.title} Project?
               </span>
             </h2>
-            <p className="text-xl text-arch-silver-dark mb-10">
+            <p className="text-xl text-arch-slate mb-10">
               Contact us today for a free consultation and quote. Our team is ready to bring your vision to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link 
+              <Link
                 to={`/contact?service=${service.id}`}
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} text-arch-black font-bold rounded-full hover:shadow-lg transition-all`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} text-white font-bold rounded-full hover:shadow-lg transition-all`}
               >
                 <Phone className="w-5 h-5" />
                 Get a Free Quote
               </Link>
-              <a 
+              <a
                 href="tel:+263778498911"
-                className="inline-flex items-center gap-2 px-8 py-4 glass text-arch-white font-medium rounded-full hover:bg-white/10 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-arch-charcoal font-medium rounded-full border border-arch-silver-light hover:bg-arch-platinum transition-all"
               >
                 Call: +263 778 498 911
               </a>
@@ -1223,7 +1223,7 @@ export default function ServiceDetail() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-arch-black/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-arch-charcoal/95 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
             <motion.img
@@ -1237,7 +1237,7 @@ export default function ServiceDetail() {
             />
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 w-12 h-12 rounded-full glass flex items-center justify-center text-arch-white hover:text-arch-gold transition-colors"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-arch-charcoal hover:text-arch-gold transition-colors"
             >
               <Plus className="w-6 h-6 rotate-45" />
             </button>
