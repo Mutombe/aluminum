@@ -807,7 +807,7 @@ const Contact = () => {
                           onChange={handleConsultChange}
                           required
                           min={new Date().toISOString().split('T')[0]}
-                          className="w-full px-4 py-3 bg-arch-charcoal border border-white/10 rounded-xl text-white focus:outline-none focus:border-arch-gold/50 transition-colors cursor-pointer"
+                          className="w-full px-4 py-3 bg-arch-platinum border border-arch-silver/30 rounded-xl text-arch-charcoal focus:outline-none focus:border-arch-gold/50 transition-colors cursor-pointer"
                         />
                       </div>
                       <div>
@@ -956,7 +956,7 @@ const Contact = () => {
         </div>
 
         {/* Address overlay card */}
-        <div className="absolute bottom-6 left-6 md:left-16 bg-white/95 backdrop-blur-xl p-6 rounded-2xl border border-arch-silver/30 shadow-medium max-w-sm z-10">
+        <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:left-6 md:left-16 bg-white/95 backdrop-blur-xl p-4 sm:p-6 rounded-2xl border border-arch-silver/30 shadow-medium max-w-sm z-10">
           <h3 className="text-arch-charcoal font-semibold text-lg mb-2">Our Location</h3>
           <p className="text-arch-steel mb-4">
             25 Connaught Road<br />

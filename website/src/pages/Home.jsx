@@ -156,9 +156,22 @@ const Home = () => {
       LAYER 2: GRADIENT OVERLAY - THE MAGIC FADE
       Solid on left (covering content area), fading to transparent on right
       This creates the "dissipating" effect
+      Mobile: Full coverage for readability, Desktop: Side fade effect
       ============================================ */}
         <div
-          className="absolute inset-0 z-20 pointer-events-none"
+          className="absolute inset-0 z-20 pointer-events-none lg:hidden"
+          style={{
+            background: `linear-gradient(
+        to bottom,
+        rgba(250, 250, 250, 0.95) 0%,
+        rgba(250, 250, 250, 0.9) 30%,
+        rgba(250, 250, 250, 0.85) 60%,
+        rgba(250, 250, 250, 0.7) 100%
+      )`,
+          }}
+        />
+        <div
+          className="absolute inset-0 z-20 pointer-events-none hidden lg:block"
           style={{
             background: `linear-gradient(
         to right,

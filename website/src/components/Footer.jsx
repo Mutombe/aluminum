@@ -47,9 +47,9 @@ const Footer = () => {
         }} />
       </div>
 
-      {/* Floating decorative elements */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-arch-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-48 h-48 bg-white/5 rounded-full blur-3xl" />
+      {/* Floating decorative elements - hidden on mobile */}
+      <div className="absolute top-20 right-20 w-64 h-64 bg-arch-gold/5 rounded-full blur-3xl hidden md:block" />
+      <div className="absolute bottom-20 left-20 w-48 h-48 bg-white/5 rounded-full blur-3xl hidden md:block" />
 
       {/* Main Footer Content */}
       <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 py-16 md:py-24">

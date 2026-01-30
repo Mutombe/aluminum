@@ -250,7 +250,7 @@ const AluminiumFinishes = () => {
             >
             {/* Powder Coat Color Grid - Centered */}
               <div className="flex justify-center">
-                <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 md:gap-6 max-w-3xl">
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 md:gap-6 max-w-3xl">
                 {powderCoatColors.map((color, index) => (
                   <motion.button
                     key={color.name}
@@ -258,7 +258,7 @@ const AluminiumFinishes = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.03 }}
                     onClick={() => setSelectedColor(selectedColor?.name === color.name ? null : color)}
-                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 w-24 h-24 md:w-28 md:h-28 ${
+                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 min-h-[44px] ${
                       selectedColor?.name === color.name ? 'ring-2 ring-arch-gold ring-offset-2 ring-offset-arch-platinum scale-105' : ''
                     }`}
                     style={{ backgroundColor: color.hex }}

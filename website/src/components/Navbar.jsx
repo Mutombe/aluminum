@@ -74,9 +74,9 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="relative z-10 flex items-center gap-3 group">
-              <div className="relative w-44 h-12 flex items-center justify-center">
+              <div className="relative w-32 h-10 md:w-44 md:h-12 flex items-center justify-center">
                 {/* Stylized AA Logo */}
-                <img src="/logo-light.png" alt="AA Logo" loading="eager" className="w-34 h-16" />
+                <img src="/logo-light.png" alt="AA Logo" loading="eager" className="w-28 h-12 md:w-34 md:h-16" />
               </div>
             </Link>
 
