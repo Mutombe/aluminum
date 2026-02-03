@@ -261,7 +261,7 @@ const Navbar = () => {
                       className="flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-arch-silver-light text-arch-gold hover:text-arch-amber transition-colors duration-300"
                     >
                       <img 
-                        src="/lupane-timbers-logo.png" 
+                        src="/lupane.png" 
                         alt="Lupane Timbers" 
                         className="w-6 h-6 object-contain"
                       />
