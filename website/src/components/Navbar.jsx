@@ -132,6 +132,25 @@ const Navbar = () => {
                             {item.name}
                           </Link>
                         ))}
+                        {/* Lupane Timbers - External Partner Link */}
+                        {link.name === 'Services' && (
+                          <>
+                            <div className="border-t border-arch-silver/30 my-1" />
+                            <a
+                              href="https://www.lupanetimbers.co.zw"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-arch-gold hover:text-arch-amber hover:bg-arch-platinum/50 transition-colors duration-200"
+                            >
+                              <img 
+                                src="/lupane.png" 
+                                alt="Lupane Timbers" 
+                                className="w-5 h-5 object-contain"
+                              />
+                              <span>Lupane Timbers</span>
+                            </a>
+                          </>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -229,6 +248,26 @@ const Navbar = () => {
                       </Link>
                     </motion.div>
                   ))}
+                  {/* Lupane Timbers - Mobile Menu */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: navLinks.length * 0.05 + 0.1 }}
+                  >
+                    <a
+                      href="https://www.lupanetimbers.co.zw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-arch-silver-light text-arch-gold hover:text-arch-amber transition-colors duration-300"
+                    >
+                      <img 
+                        src="/lupane-timbers-logo.png" 
+                        alt="Lupane Timbers" 
+                        className="w-6 h-6 object-contain"
+                      />
+                      <span>Lupane Timbers</span>
+                    </a>
+                  </motion.div>
                 </nav>
 
                 {/* Contact Info */}

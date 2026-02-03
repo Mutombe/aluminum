@@ -527,9 +527,6 @@ const Home = () => {
       {/* Aluminium Finishes Section */}
       <AluminiumFinishes />
 
-      {/* Architectural Divider */}
-      <ArchitecturalDivider className="bg-arch-black" />
-
       {/* Why Choose Us - Unique card layout */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-arch-platinum to-arch-snow" />

@@ -12,8 +12,8 @@ export const companyInfo = {
   hours: "Mon - Fri 09:00 - 17:00",
   memberships: ["CIFOZ"],
   stats: {
-    customers: 675,
-    projects: 1402,
+    customers: 15000,
+    projects: 2000,
     years: 30,
     teamMembers: 50
   },

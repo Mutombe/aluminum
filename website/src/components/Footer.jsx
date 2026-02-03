@@ -87,23 +87,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-flex items-center gap-3 mb-6">
-              <svg viewBox="0 0 48 48" className="w-10 h-10">
-                <defs>
-                  <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#D4AF37" />
-                    <stop offset="100%" stopColor="#F5B800" />
-                  </linearGradient>
-                </defs>
-                <path d="M12 40 L24 8 L28 8 L16 40 Z" fill="url(#footerLogoGradient)" />
-                <path d="M20 40 L32 8 L36 8 L24 40 Z" fill="url(#footerLogoGradient)" />
-                <rect x="14" y="28" width="14" height="3" fill="url(#footerLogoGradient)" />
-              </svg>
-              <div>
-                <span className="font-display font-bold text-white">ARCHITECTURAL</span>
-                <span className="block font-display text-xs text-arch-gold tracking-[0.2em]">ALUMINIUM</span>
-              </div>
-            </Link>
 
             <p className="text-arch-silver-dark mb-8 max-w-sm">
               Zimbabwe's leading fabricator of aluminium, shop fitting and joinery products since 1994.
@@ -116,7 +99,7 @@ const Footer = () => {
                 href={companyInfo.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full border border-arch-graphite text-arch-silver-dark hover:border-arch-gold hover:text-arch-gold hover:bg-arch-gold/10 transition-all duration-300"
+                className="p-3 rounded-full border border-arch-gold text-arch-gold bg-arch-gold/10 transition-all duration-300"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
@@ -125,7 +108,7 @@ const Footer = () => {
                 href={companyInfo.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full border border-arch-graphite text-arch-silver-dark hover:border-arch-gold hover:text-arch-gold hover:bg-arch-gold/10 transition-all duration-300"
+                className="p-3 rounded-full border border-arch-gold text-arch-gold bg-arch-gold/10 transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -134,7 +117,7 @@ const Footer = () => {
                 href={companyInfo.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full border border-arch-graphite text-arch-silver-dark hover:border-arch-gold hover:text-arch-gold hover:bg-arch-gold/10 transition-all duration-300"
+                className="p-3 rounded-full border border-arch-gold text-arch-gold bg-arch-gold/10 transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -174,6 +157,19 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              {/* Lupane Timbers - Sister Company */}
+              <li className="pt-3 mt-3 border-t border-white/10">
+                <a
+                  href="https://www.lupanetimbers.co.zw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-arch-gold hover:text-arch-amber transition-colors duration-200 font-medium"
+                >
+                  <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+                  Lupane Timbers
+                  <ArrowUpRight size={14} className="hover:opacity-100 transition-opacity duration-200" />
+                </a>
+              </li>
             </ul>
           </div>
 
