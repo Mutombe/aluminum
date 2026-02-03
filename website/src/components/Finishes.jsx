@@ -23,6 +23,12 @@ const powderCoatColors = [
   { name: 'Oak Gloss', hex: '#B09860', category: 'earth' },
   { name: 'Sand Gloss', hex: '#A8A088', category: 'earth' },
   { name: 'Grey Satin', hex: '#888888', category: 'grey' },
+  { name: 'Charcoal Grey', hex: '#36454F', category: 'grey' },
+  { name: 'Bronze PC', hex: '#8C7853', category: 'earth' },
+  { name: 'Natural PC', hex: '#D4D6D9', category: 'earth' },
+  { name: 'Black Matt', hex: '#1C1C1C', category: 'dark' },
+  { name: 'White Gloss', hex: '#FFFFFF', category: 'light' },
+  { name: 'White Matt', hex: '#F5F5F5', category: 'light' },
 ];
 
 // Anodised Finishes - FrostUltra Range
@@ -250,7 +256,7 @@ const AluminiumFinishes = () => {
             >
             {/* Powder Coat Color Grid - Centered */}
               <div className="flex justify-center">
-                <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 md:gap-6 max-w-3xl">
+                <div className="grid grid-cols-4 sm:grid-cols-6 gap-3 sm:gap-4 md:gap-6 max-w-4xl">
                 {powderCoatColors.map((color, index) => (
                   <motion.button
                     key={color.name}
@@ -258,9 +264,9 @@ const AluminiumFinishes = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.03 }}
                     onClick={() => setSelectedColor(selectedColor?.name === color.name ? null : color)}
-                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 min-h-[44px] ${
+                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 min-h-[44px] ${
                       selectedColor?.name === color.name ? 'ring-2 ring-arch-gold ring-offset-2 ring-offset-arch-platinum scale-105' : ''
-                    }`}
+                    } ${color.category === 'light' ? 'border border-arch-silver/50' : ''}`}
                     style={{ backgroundColor: color.hex }}
                   >
                     {/* Shine effect */}
@@ -273,14 +279,18 @@ const AluminiumFinishes = () => {
                         animate={{ scale: 1 }}
                         className="absolute inset-0 flex items-center justify-center"
                       >
-                        <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-arch-white/90 flex items-center justify-center">
-                          <IoCheckmarkDone className="text-arch-black" size={14} />
+                        <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center ${
+                          color.category === 'light' ? 'bg-arch-black/90' : 'bg-arch-white/90'
+                        }`}>
+                          <IoCheckmarkDone className={color.category === 'light' ? 'text-white' : 'text-arch-black'} size={14} />
                         </div>
                       </motion.div>
                     )}
                     
                     {/* Hover label */}
-                    <div className="absolute inset-x-0 bottom-0 p-1.5 md:p-2 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className={`absolute inset-x-0 bottom-0 p-1.5 md:p-2 bg-gradient-to-t ${
+                      color.category === 'light' ? 'from-black/60' : 'from-black/80'
+                    } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                       <p className="text-[8px] md:text-[10px] text-white text-center font-medium truncate">
                         {color.name.replace('Matt ', '')}
                       </p>
@@ -302,7 +312,9 @@ const AluminiumFinishes = () => {
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-4">
                         <div
-                          className="w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg flex-shrink-0"
+                          className={`w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg flex-shrink-0 ${
+                            selectedColor.category === 'light' ? 'border border-arch-silver/50' : ''
+                          }`}
                           style={{ backgroundColor: selectedColor.hex }}
                         />
                         <div className="text-left">
