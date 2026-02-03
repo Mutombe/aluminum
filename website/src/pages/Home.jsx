@@ -447,6 +447,46 @@ const Home = () => {
                     </Link>
                   </StaggerItem>
                 ))}
+
+                {/* Lupane Timbers - Sister Company */}
+                <StaggerItem>
+                  <a
+                    href="https://www.lupanetimbers.co.zw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block p-6 md:p-8 rounded-2xl bg-gradient-to-br from-arch-gold/10 via-arch-amber/5 to-transparent border border-arch-gold/30 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                  >
+                    {/* Corner brackets decoration */}
+                    <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <CornerBrackets size={20} color="#D4AF37" />
+                    </div>
+
+                    <div className="relative flex items-start justify-between gap-4">
+                      <div className="flex items-start gap-4">
+                        <img 
+                          src="/lupane.png" 
+                          alt="Lupane Timbers" 
+                          className="w-10 h-10 md:w-12 md:h-12 object-contain mt-1"
+                        />
+                        <div>
+                          <span className="text-arch-gold font-mono text-sm">
+                            Sister Company
+                          </span>
+                          <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-gold mt-2 mb-3 group-hover:text-arch-amber transition-colors duration-300">
+                            Lupane Timbers
+                          </h3>
+                          <p className="text-arch-steel">
+                            Premium timber products and joinery solutions from our sister company.
+                          </p>
+                        </div>
+                      </div>
+                      <ArrowUpRight
+                        className="text-arch-gold group-hover:text-arch-amber group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+                        size={24}
+                      />
+                    </div>
+                  </a>
+                </StaggerItem>
               </StaggerContainer>
             </div>
           </div>
