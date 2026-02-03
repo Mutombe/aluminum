@@ -577,7 +577,7 @@ const Careers = () => {
 
                           <div className="mt-8 flex flex-col sm:flex-row gap-4">
                             <motion.a
-                              href={`mailto:careers@archaluminium.co.zw?subject=Application for ${job.title}`}
+                              href={`mailto:dmarombo@hotali.co.zw?subject=Application for ${job.title}`}
                               className="inline-flex items-center justify-center px-6 py-3 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
