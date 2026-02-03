@@ -294,8 +294,8 @@ const About = () => {
             </div>
           </AnimatedSection>
 
-          {/* Architectural Divider */}
-          <ArchitecturalDivider />
+          {/* Architectural Divider 
+          <ArchitecturalDivider />*/}
 
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-8 my-24">
@@ -577,8 +577,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Architectural Divider */}
-      <ArchitecturalDivider className="bg-white" />
+      {/* Architectural Divider 
+      <ArchitecturalDivider className="bg-white" />*/}
 
       {/* Certifications & Memberships */}
       <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
@@ -695,10 +695,10 @@ const About = () => {
 
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="relative text-center max-w-3xl mx-auto">
-            {/* Corner brackets */}
+            {/* Corner brackets 
             <div className="absolute -inset-4 md:-inset-8 hidden sm:block">
               <CornerBrackets size={40} color="#D4AF37" />
-            </div>
+            </div>*/}
 
             <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mb-6">
               Join Our Journey

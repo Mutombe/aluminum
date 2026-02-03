@@ -703,9 +703,6 @@ export default function Services() {
           <AnimatedSection>
             {/* Corner Brackets */}
             <div className="relative inline-block">
-              <div className="absolute -inset-6 md:-inset-10 hidden sm:block">
-                <CornerBrackets size={40} color="#D4AF37" />
-              </div>
 
               <h2 className="text-4xl md:text-6xl font-bold text-arch-charcoal mb-6 font-display">
                 Ready to Start Your{' '}

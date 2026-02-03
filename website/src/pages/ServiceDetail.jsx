@@ -1184,9 +1184,6 @@ export default function ServiceDetail() {
 
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="relative text-center max-w-3xl mx-auto">
-            <div className="absolute -inset-8 hidden md:block">
-              <CornerBrackets size={50} color={service.accentColor} />
-            </div>
 
             <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-charcoal mb-6">
               Ready to Start Your

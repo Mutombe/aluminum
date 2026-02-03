@@ -717,13 +717,13 @@ const Home = () => {
 
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="relative max-w-4xl mx-auto text-center">
-            {/* Decorative corner brackets - VISIBLE ON MOBILE */}
+            {/* Decorative corner brackets - VISIBLE ON MOBILE 
             <div className="absolute -inset-4 md:-inset-12 block md:hidden">
               <CornerBrackets size={30} color="#D4AF37" />
             </div>
             <div className="absolute -inset-12 hidden md:block">
               <CornerBrackets size={60} color="#D4AF37" />
-            </div>
+            </div>*/}
 
             <AnimatedSection>
               <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-black mb-6">
