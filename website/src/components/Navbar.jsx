@@ -12,22 +12,21 @@ const navLinks = [
     path: '/about',
     dropdown: [
       { name: 'Our Company', path: '/about' },
-      { name: 'Business Profile', path: '/business-profile.pdf', external: true }
-    ]
-  },
-  {
-    name: 'Services',
-    path: '/services',
-    dropdown: [
-      { name: 'Fenestration', path: '/services/fenestration' },
-      { name: 'Shopfitting', path: '/services/shopfitting' },
-      { name: 'Building Interiors', path: '/services/interiors' },
-      { name: 'Residential', path: '/services/residential' },
-      { name: 'Commercial Exteriors', path: '/services/exteriors' }
+      { name: 'Business Profile', path: '/business-profile.pdf', external: true },
+      {
+        name: 'What We Offer',
+        path: '/services',
+        children: [
+          { name: 'Fenestration', path: '/services/fenestration' },
+          { name: 'Shopfitting', path: '/services/shopfitting' },
+          { name: 'Building Interiors', path: '/services/interiors' },
+          { name: 'Residential', path: '/services/residential' },
+          { name: 'Commercial Exteriors', path: '/services/exteriors' }
+        ]
+      }
     ]
   },
   { name: 'Projects', path: '/projects' },
-  { name: 'Gallery', path: '/gallery' },
   { name: 'Careers', path: '/careers' },
   { name: 'News', path: '/news' },
   { name: 'Contact', path: '/contact' }
@@ -90,8 +89,8 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link, index) => {
-                // Links from Gallery onwards (index 4+) get gold color
-                const isGoldLink = index >= 4;
+                // Links from Careers onwards (index 3+) get gold color
+                const isGoldLink = index >= 3;
                 return (
                 <div
                   key={link.name}
@@ -128,47 +127,61 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl overflow-hidden shadow-medium border border-arch-silver/30"
+                        className={`absolute top-full left-0 mt-2 bg-white rounded-xl overflow-hidden shadow-medium border border-arch-silver/30 ${
+                          link.dropdown.some(item => item.children) ? 'w-72' : 'w-56'
+                        }`}
                       >
-                        {link.dropdown.map((item, idx) => (
-                          item.external ? (
-                            <a
-                              key={item.name}
-                              href={item.path}
-                              download
-                              className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
-                            >
-                              {item.name}
-                            </a>
-                          ) : (
-                            <Link
-                              key={item.name}
-                              to={item.path}
-                              className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
-                            >
-                              {item.name}
-                            </Link>
-                          )
+                        {link.dropdown.map((item) => (
+                          <div key={item.name}>
+                            {item.external ? (
+                              <a
+                                href={item.path}
+                                download
+                                className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
+                              >
+                                {item.name}
+                              </a>
+                            ) : (
+                              <Link
+                                to={item.path}
+                                className={`block px-4 py-3 text-sm hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200 ${
+                                  item.children ? 'font-semibold text-arch-charcoal' : 'text-arch-graphite'
+                                }`}
+                              >
+                                {item.name}
+                              </Link>
+                            )}
+                            {/* Nested children (e.g. service sublinks) */}
+                            {item.children && (
+                              <div className="border-t border-arch-silver/20">
+                                {item.children.map((child) => (
+                                  <Link
+                                    key={child.name}
+                                    to={child.path}
+                                    className="block pl-8 pr-4 py-2.5 text-sm text-arch-slate hover:text-arch-gold hover:bg-arch-platinum/60 transition-colors duration-200"
+                                  >
+                                    {child.name}
+                                  </Link>
+                                ))}
+                                {/* Lupane Timbers - under services */}
+                                <div className="border-t border-arch-silver/20 my-1" />
+                                <a
+                                  href="https://www.lupanetimbers.co.zw"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-3 pl-8 pr-4 py-2.5 text-sm font-medium text-arch-gold hover:text-arch-amber hover:bg-arch-platinum/50 transition-colors duration-200"
+                                >
+                                  <img
+                                    src="/lupane.png"
+                                    alt="Lupane Timbers"
+                                    className="w-4 h-4 object-contain"
+                                  />
+                                  <span>Lupane Timbers</span>
+                                </a>
+                              </div>
+                            )}
+                          </div>
                         ))}
-                        {/* Lupane Timbers - External Partner Link */}
-                        {link.name === 'Services' && (
-                          <>
-                            <div className="border-t border-arch-silver/30 my-1" />
-                            <a
-                              href="https://www.lupanetimbers.co.zw"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-arch-gold hover:text-arch-amber hover:bg-arch-platinum/50 transition-colors duration-200"
-                            >
-                              <img 
-                                src="/lupane.png" 
-                                alt="Lupane Timbers" 
-                                className="w-5 h-5 object-contain"
-                              />
-                              <span>Lupane Timbers</span>
-                            </a>
-                          </>
-                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -266,26 +279,42 @@ const Navbar = () => {
                       </Link>
                       {/* Mobile dropdown sub-items */}
                       {link.dropdown && (
-                        <div className="pl-4 border-b border-arch-silver-light">
+                        <div className="pl-4 border-b border-arch-silver-light pb-2">
                           {link.dropdown.map((item) => (
-                            item.external ? (
-                              <a
-                                key={item.name}
-                                href={item.path}
-                                download
-                                className="block py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
-                              >
-                                {item.name}
-                              </a>
-                            ) : (
-                              <Link
-                                key={item.name}
-                                to={item.path}
-                                className="block py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
-                              >
-                                {item.name}
-                              </Link>
-                            )
+                            <div key={item.name}>
+                              {item.external ? (
+                                <a
+                                  href={item.path}
+                                  download
+                                  className="block py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
+                                >
+                                  {item.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  to={item.path}
+                                  className={`block py-2.5 text-base hover:text-arch-gold transition-colors duration-200 ${
+                                    item.children ? 'font-semibold text-arch-charcoal mt-2' : 'text-arch-slate'
+                                  }`}
+                                >
+                                  {item.name}
+                                </Link>
+                              )}
+                              {/* Nested children */}
+                              {item.children && (
+                                <div className="pl-4">
+                                  {item.children.map((child) => (
+                                    <Link
+                                      key={child.name}
+                                      to={child.path}
+                                      className="block py-2 text-sm text-arch-slate hover:text-arch-gold transition-colors duration-200"
+                                    >
+                                      {child.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
                           ))}
                         </div>
                       )}
