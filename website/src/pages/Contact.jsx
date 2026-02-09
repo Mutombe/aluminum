@@ -27,7 +27,6 @@ import {
 } from 'lucide-react';
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { toast } from 'sonner';
-import emailjs from '@emailjs/browser';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
@@ -234,29 +233,33 @@ const Contact = () => {
     return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
   };
 
-  // Quote form submit via EmailJS
+  // Quote form submit via Django API
   const handleQuoteSubmit = async (e) => {
     e.preventDefault();
     setIsQuoteSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: quoteFormData.name,
-        from_email: quoteFormData.email,
-        phone: quoteFormData.phone,
-        company: quoteFormData.company,
-        service: quoteFormData.service,
-        project_details: quoteFormData.projectDetails,
-        file_count: uploadedFiles.length > 0 ? `${uploadedFiles.length} file(s) attached (names: ${uploadedFiles.map(f => f.name).join(', ')})` : 'No files attached',
-        selected_finish: selectedFinish ? `${selectedFinish} (${selectedFinishType})` : 'None',
-      };
+      const formData = new FormData();
+      formData.append('name', quoteFormData.name);
+      formData.append('email', quoteFormData.email);
+      formData.append('phone', quoteFormData.phone);
+      formData.append('company', quoteFormData.company);
+      formData.append('service', quoteFormData.service);
+      formData.append('project_details', quoteFormData.projectDetails);
+      formData.append('selected_finish', selectedFinish ? `${selectedFinish} (${selectedFinishType})` : '');
+      uploadedFiles.forEach((file) => {
+        formData.append('uploaded_files', file);
+      });
 
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/quote/`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => null);
+        throw new Error(err ? JSON.stringify(err) : 'Server error');
+      }
 
       setIsQuoteSubmitting(false);
       setIsQuoteSubmitted(true);
@@ -280,29 +283,31 @@ const Contact = () => {
     }
   };
 
-  // Consult form submit via EmailJS
+  // Consult form submit via Django API
   const handleConsultSubmit = async (e) => {
     e.preventDefault();
     setIsConsultSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: consultFormData.name,
-        from_email: consultFormData.email,
-        phone: consultFormData.phone,
-        company: consultFormData.company,
-        preferred_date: consultFormData.preferredDate,
-        preferred_time: consultFormData.preferredTime,
-        consultation_type: consultFormData.consultationType,
-        notes: consultFormData.notes,
-      };
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/consultation/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: consultFormData.name,
+          email: consultFormData.email,
+          phone: consultFormData.phone,
+          company: consultFormData.company,
+          consultation_type: consultFormData.consultationType,
+          preferred_date: consultFormData.preferredDate,
+          preferred_time: consultFormData.preferredTime,
+          notes: consultFormData.notes,
+        }),
+      });
 
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_CONSULT_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      if (!res.ok) {
+        const err = await res.json().catch(() => null);
+        throw new Error(err ? JSON.stringify(err) : 'Server error');
+      }
 
       setIsConsultSubmitting(false);
       setIsConsultSubmitted(true);
