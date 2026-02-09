@@ -30,6 +30,8 @@ import { toast } from 'sonner';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://aluminum-backend.onrender.com/api';
+
 const Contact = () => {
   const [searchParams] = useSearchParams();
 
@@ -251,7 +253,7 @@ const Contact = () => {
         formData.append('uploaded_files', file);
       });
 
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/quote/`, {
+      const res = await fetch(`${API_URL}/quote/`, {
         method: 'POST',
         body: formData,
       });
@@ -289,7 +291,7 @@ const Contact = () => {
     setIsConsultSubmitting(true);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/consultation/`, {
+      const res = await fetch(`${API_URL}/consultation/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
