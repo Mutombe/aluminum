@@ -124,7 +124,7 @@ const Contact = () => {
       description: 'We reply within 24 hours',
       primary: 'sales@hotali.co.zw',
       secondary: 'info@hotali.co.zw',
-      action: 'mailto:sales@hotali.co.zw'
+      action: 'mailto:dmarombo@hotali.co.zw'
     },
     {
       icon: MapPin,

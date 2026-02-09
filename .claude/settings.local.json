@@ -10,7 +10,8 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nTransform ServiceDetail page to light theme\n\n- Update all section backgrounds from dark to light colors\n- Change text colors for proper contrast on light backgrounds\n- Update cards, stats boxes, and feature panels to white with borders\n- Convert FAQ accordion to light theme styling\n- Update related services cards and navigation section\n- Apply consistent arch-snow, arch-platinum backgrounds\n- Use arch-charcoal for headings and arch-slate for body text\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git commit:*)",
       "Bash(npm install:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(pip --version:*)"
     ]
   }
 }

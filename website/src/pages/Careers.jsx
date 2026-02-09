@@ -353,7 +353,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Why Join Us */}
+      {/* Why Join Us 
       <section className="py-24 md:py-32 bg-arch-platinum">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -372,7 +372,7 @@ const Careers = () => {
                 </p>
               </AnimatedSection>
 
-              {/* Values grid */}
+
               <StaggerContainer
                 className="grid grid-cols-2 gap-4"
                 staggerDelay={0.1}
@@ -393,7 +393,6 @@ const Careers = () => {
               </StaggerContainer>
             </div>
 
-            {/* Benefits grid */}
             <StaggerContainer
               className="grid sm:grid-cols-2 gap-4"
               staggerDelay={0.1}
@@ -417,7 +416,7 @@ const Careers = () => {
             </StaggerContainer>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Open Positions */}
       <section id="openings" className="py-24 md:py-32 bg-white">
