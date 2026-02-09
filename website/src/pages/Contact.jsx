@@ -123,8 +123,8 @@ const Contact = () => {
       title: 'Email Us',
       description: 'We reply within 24 hours',
       primary: 'sales@hotali.co.zw',
-      secondary: 'info@hotali.co.zw',
-      action: 'mailto:dmarombo@hotali.co.zw'
+      secondary: 'dmarombo@hotali.co.zw',
+      action: 'mailto:sales@hotali.co.zw'
     },
     {
       icon: MapPin,
