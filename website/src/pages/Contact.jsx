@@ -467,7 +467,7 @@ const Contact = () => {
             </p>
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
             {/* Quick Quote Form with File Upload */}
             <AnimatedSection>
               <div className="bg-white rounded-3xl p-8 md:p-10 border border-arch-silver/30 shadow-soft h-full">
