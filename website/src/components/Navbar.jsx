@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, Phone, ChevronDown, Building2, FileDown, Layers, DoorOpen, Store, Armchair, Home, Building } from 'lucide-react';
 import { useSearch } from '../context/SearchContext';
 
 const navLinks = [
@@ -11,17 +11,18 @@ const navLinks = [
     name: 'About',
     path: '/about',
     dropdown: [
-      { name: 'Our Company', path: '/about' },
-      { name: 'Business Profile', path: '/business-profile.pdf', external: true },
+      { name: 'Our Company', path: '/about', icon: Building2 },
+      { name: 'Business Profile', path: '/business-profile.pdf', external: true, icon: FileDown },
       {
         name: 'What We Offer',
         path: '/services',
+        icon: Layers,
         children: [
-          { name: 'Fenestration', path: '/services/fenestration' },
-          { name: 'Shopfitting', path: '/services/shopfitting' },
-          { name: 'Building Interiors', path: '/services/interiors' },
-          { name: 'Residential', path: '/services/residential' },
-          { name: 'Commercial Exteriors', path: '/services/exteriors' }
+          { name: 'Fenestration', path: '/services/fenestration', icon: DoorOpen },
+          { name: 'Shopfitting', path: '/services/shopfitting', icon: Store },
+          { name: 'Building Interiors', path: '/services/interiors', icon: Armchair },
+          { name: 'Residential', path: '/services/residential', icon: Home },
+          { name: 'Commercial Exteriors', path: '/services/exteriors', icon: Building }
         ]
       }
     ]
@@ -137,17 +138,19 @@ const Navbar = () => {
                               <a
                                 href={item.path}
                                 download
-                                className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
+                                className="flex items-center gap-3 px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
                               >
+                                {item.icon && <item.icon size={16} className="text-arch-gold/70 flex-shrink-0" />}
                                 {item.name}
                               </a>
                             ) : (
                               <Link
                                 to={item.path}
-                                className={`block px-4 py-3 text-sm hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200 ${
+                                className={`flex items-center gap-3 px-4 py-3 text-sm hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200 ${
                                   item.children ? 'font-semibold text-arch-charcoal' : 'text-arch-graphite'
                                 }`}
                               >
+                                {item.icon && <item.icon size={16} className="text-arch-gold/70 flex-shrink-0" />}
                                 {item.name}
                               </Link>
                             )}
@@ -158,8 +161,9 @@ const Navbar = () => {
                                   <Link
                                     key={child.name}
                                     to={child.path}
-                                    className="block pl-8 pr-4 py-2.5 text-sm text-arch-slate hover:text-arch-gold hover:bg-arch-platinum/60 transition-colors duration-200"
+                                    className="flex items-center gap-3 pl-8 pr-4 py-2.5 text-sm text-arch-slate hover:text-arch-gold hover:bg-arch-platinum/60 transition-colors duration-200"
                                   >
+                                    {child.icon && <child.icon size={14} className="text-arch-gold/60 flex-shrink-0" />}
                                     {child.name}
                                   </Link>
                                 ))}
@@ -286,17 +290,19 @@ const Navbar = () => {
                                 <a
                                   href={item.path}
                                   download
-                                  className="block py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
+                                  className="flex items-center gap-3 py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
                                 >
+                                  {item.icon && <item.icon size={16} className="text-arch-gold/70 flex-shrink-0" />}
                                   {item.name}
                                 </a>
                               ) : (
                                 <Link
                                   to={item.path}
-                                  className={`block py-2.5 text-base hover:text-arch-gold transition-colors duration-200 ${
+                                  className={`flex items-center gap-3 py-2.5 text-base hover:text-arch-gold transition-colors duration-200 ${
                                     item.children ? 'font-semibold text-arch-charcoal mt-2' : 'text-arch-slate'
                                   }`}
                                 >
+                                  {item.icon && <item.icon size={16} className="text-arch-gold/70 flex-shrink-0" />}
                                   {item.name}
                                 </Link>
                               )}
@@ -307,8 +313,9 @@ const Navbar = () => {
                                     <Link
                                       key={child.name}
                                       to={child.path}
-                                      className="block py-2 text-sm text-arch-slate hover:text-arch-gold transition-colors duration-200"
+                                      className="flex items-center gap-3 py-2 text-sm text-arch-slate hover:text-arch-gold transition-colors duration-200"
                                     >
+                                      {child.icon && <child.icon size={14} className="text-arch-gold/60 flex-shrink-0" />}
                                       {child.name}
                                     </Link>
                                   ))}
