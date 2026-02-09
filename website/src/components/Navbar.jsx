@@ -12,7 +12,7 @@ const navLinks = [
     path: '/about',
     dropdown: [
       { name: 'Our Company', path: '/about', icon: Building2 },
-      { name: 'Business Profile', path: '/business-profile.pdf', external: true, icon: FileDown },
+      { name: 'Business Profile', path: '/AA Company Profile 2023 web.pdf', external: true, icon: FileDown },
       {
         name: 'What We Offer',
         path: '/services',
