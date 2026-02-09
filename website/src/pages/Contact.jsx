@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
@@ -233,57 +234,97 @@ const Contact = () => {
     return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
   };
 
-  // Quote form submit
+  // Quote form submit via EmailJS
   const handleQuoteSubmit = async (e) => {
     e.preventDefault();
     setIsQuoteSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const templateParams = {
+        from_name: quoteFormData.name,
+        from_email: quoteFormData.email,
+        phone: quoteFormData.phone,
+        company: quoteFormData.company,
+        service: quoteFormData.service,
+        project_details: quoteFormData.projectDetails,
+        file_count: uploadedFiles.length > 0 ? `${uploadedFiles.length} file(s) attached (names: ${uploadedFiles.map(f => f.name).join(', ')})` : 'No files attached',
+        selected_finish: selectedFinish ? `${selectedFinish} (${selectedFinishType})` : 'None',
+      };
 
-    setIsQuoteSubmitting(false);
-    setIsQuoteSubmitted(true);
-    toast.success('Quote request sent successfully! We\'ll review your drawings and get back to you within 24-48 hours.');
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-    setTimeout(() => {
-      setQuoteFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        projectDetails: ''
-      });
-      setUploadedFiles([]);
-      setIsQuoteSubmitted(false);
-    }, 3000);
+      setIsQuoteSubmitting(false);
+      setIsQuoteSubmitted(true);
+      toast.success('Quote request sent successfully! We\'ll review your drawings and get back to you within 24-48 hours.');
+
+      setTimeout(() => {
+        setQuoteFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          projectDetails: ''
+        });
+        setUploadedFiles([]);
+        setIsQuoteSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      setIsQuoteSubmitting(false);
+      toast.error('Failed to send quote request. Please try again or contact us directly.');
+    }
   };
 
-  // Consult form submit
+  // Consult form submit via EmailJS
   const handleConsultSubmit = async (e) => {
     e.preventDefault();
     setIsConsultSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const templateParams = {
+        from_name: consultFormData.name,
+        from_email: consultFormData.email,
+        phone: consultFormData.phone,
+        company: consultFormData.company,
+        preferred_date: consultFormData.preferredDate,
+        preferred_time: consultFormData.preferredTime,
+        consultation_type: consultFormData.consultationType,
+        notes: consultFormData.notes,
+      };
 
-    setIsConsultSubmitting(false);
-    setIsConsultSubmitted(true);
-    toast.success('Consultation booked! We\'ll confirm your appointment via email shortly.');
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_CONSULT_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-    setTimeout(() => {
-      setConsultFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        preferredDate: '',
-        preferredTime: '',
-        consultationType: '',
-        notes: ''
-      });
-      setIsConsultSubmitted(false);
-    }, 3000);
+      setIsConsultSubmitting(false);
+      setIsConsultSubmitted(true);
+      toast.success('Consultation booked! We\'ll confirm your appointment via email shortly.');
+
+      setTimeout(() => {
+        setConsultFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          preferredDate: '',
+          preferredTime: '',
+          consultationType: '',
+          notes: ''
+        });
+        setIsConsultSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      setIsConsultSubmitting(false);
+      toast.error('Failed to book consultation. Please try again or contact us directly.');
+    }
   };
 
   const handleQuoteChange = (e) => {

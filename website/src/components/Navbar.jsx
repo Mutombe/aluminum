@@ -7,7 +7,14 @@ import { useSearch } from '../context/SearchContext';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
+  {
+    name: 'About',
+    path: '/about',
+    dropdown: [
+      { name: 'Our Company', path: '/about' },
+      { name: 'Business Profile', path: '/business-profile.pdf', external: true }
+    ]
+  },
   {
     name: 'Services',
     path: '/services',
@@ -124,13 +131,24 @@ const Navbar = () => {
                         className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl overflow-hidden shadow-medium border border-arch-silver/30"
                       >
                         {link.dropdown.map((item, idx) => (
-                          <Link
-                            key={item.name}
-                            to={item.path}
-                            className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
-                          >
-                            {item.name}
-                          </Link>
+                          item.external ? (
+                            <a
+                              key={item.name}
+                              href={item.path}
+                              download
+                              className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
+                            >
+                              {item.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={item.name}
+                              to={item.path}
+                              className="block px-4 py-3 text-sm text-arch-graphite hover:text-arch-gold hover:bg-arch-platinum transition-colors duration-200"
+                            >
+                              {item.name}
+                            </Link>
+                          )
                         ))}
                         {/* Lupane Timbers - External Partner Link */}
                         {link.name === 'Services' && (
@@ -246,6 +264,31 @@ const Navbar = () => {
                       >
                         {link.name}
                       </Link>
+                      {/* Mobile dropdown sub-items */}
+                      {link.dropdown && (
+                        <div className="pl-4 border-b border-arch-silver-light">
+                          {link.dropdown.map((item) => (
+                            item.external ? (
+                              <a
+                                key={item.name}
+                                href={item.path}
+                                download
+                                className="block py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
+                              >
+                                {item.name}
+                              </a>
+                            ) : (
+                              <Link
+                                key={item.name}
+                                to={item.path}
+                                className="block py-2.5 text-base text-arch-slate hover:text-arch-gold transition-colors duration-200"
+                              >
+                                {item.name}
+                              </Link>
+                            )
+                          ))}
+                        </div>
+                      )}
                     </motion.div>
                   ))}
                   {/* Lupane Timbers - Mobile Menu */}

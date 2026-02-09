@@ -2,19 +2,21 @@ import React from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  MapPin, 
-  Calendar, 
-  Building2, 
-  X, 
-  ArrowRight, 
+import {
+  MapPin,
+  Calendar,
+  Building2,
+  X,
+  ArrowRight,
   ArrowUpRight,
   Filter,
   Grid3X3,
   LayoutGrid,
   ChevronLeft,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Download,
+  FileText
 } from 'lucide-react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
@@ -587,6 +589,60 @@ export default function Projects() {
         </div>
       </section>
       
+      {/* Brochure Download Section */}
+      <section className="py-16 md:py-24 bg-arch-platinum">
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 p-8 md:p-12 rounded-3xl bg-white border border-arch-silver-light shadow-soft overflow-hidden">
+              {/* Background pattern */}
+              <div className="absolute inset-0 opacity-[0.03]" style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+                backgroundSize: '40px 40px'
+              }} />
+
+              <div className="relative flex items-start gap-5">
+                <div className="w-14 h-14 bg-arch-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-7 h-7 text-arch-gold" />
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-arch-charcoal mb-2">
+                    Company Brochure
+                  </h3>
+                  <p className="text-arch-slate max-w-lg">
+                    Download our comprehensive brochure featuring our full range of services,
+                    project portfolio, and company capabilities.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <motion.a
+                  href="/brochure.pdf"
+                  download="Architectural-Aluminium-Brochure.pdf"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-amber transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Download className="w-5 h-5" />
+                  Download Brochure
+                </motion.a>
+                <motion.a
+                  href="/business-profile.pdf"
+                  download="Architectural-Aluminium-Business-Profile.pdf"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-arch-silver text-arch-charcoal font-medium rounded-full hover:border-arch-gold hover:text-arch-gold transition-all"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Download className="w-5 h-5" />
+                  Business Profile
+                </motion.a>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-b from-arch-platinum to-arch-snow">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 text-center">
