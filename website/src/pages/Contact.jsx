@@ -115,16 +115,16 @@ const Contact = () => {
       title: 'Call Us',
       description: 'Mon - Fri, 8am to 5pm',
       primary: '+263 778 498 911',
-      secondary: '+263 (4) 334566/9',
+      secondary: '0242 334571',
       action: 'tel:+263778498911'
     },
     {
       icon: Mail,
       title: 'Email Us',
       description: 'We reply within 24 hours',
-      primary: 'sales@archaluminium.co.zw',
-      secondary: 'info@archaluminium.co.zw',
-      action: 'mailto:sales@archaluminium.co.zw'
+      primary: 'sales@hotali.co.zw',
+      secondary: 'info@hotali.co.zw',
+      action: 'mailto:sales@hotali.co.zw'
     },
     {
       icon: MapPin,

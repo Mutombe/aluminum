@@ -659,11 +659,11 @@ const Careers = () => {
                   Email your CV and cover letter to:
                 </p>
                 <a
-                  href="mailto:careers@archaluminium.co.zw"
+                  href="mailto:dmarombo@hotali.co.zw"
                   className="inline-flex items-center text-arch-gold hover:text-arch-amber text-xl font-semibold transition-colors"
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  careers@archaluminium.co.zw
+                  dmarombo@hotali.co.zw
                 </a>
               </div>
             </AnimatedSection>
