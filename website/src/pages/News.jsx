@@ -248,54 +248,6 @@ const News = () => {
         </div>
       </section>
 
-      {/* Magazine Pages Gallery */}
-      <section className="py-16 md:py-24 bg-arch-snow">
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection className="text-center mb-12">
-            <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">Inside the Feature</span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-arch-charcoal mt-4 mb-4">
-              Magazine Pages
-            </h2>
-            <p className="text-arch-slate max-w-2xl mx-auto">
-              Browse through the full feature from Issue 54 of Structure and Design magazine.
-            </p>
-          </AnimatedSection>
-
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" staggerDelay={0.1}>
-            {magazinePages.map((page, index) => (
-              <StaggerItem key={index}>
-                <motion.div
-                  className="relative group rounded-xl overflow-hidden border border-arch-silver-light shadow-soft"
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="aspect-[3/4]">
-                    <img
-                      src={page.src}
-                      alt={page.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5">
-                    <motion.button
-                      onClick={() => setModalPageIndex(index)}
-                      className="px-5 py-2.5 bg-arch-gold text-arch-black text-sm font-semibold rounded-full flex items-center gap-2 hover:bg-arch-yellow transition-colors shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <BookOpen className="w-4 h-4" />
-                      View Details
-                    </motion.button>
-                  </div>
-                  <div className="absolute top-3 right-3 px-2 py-1 bg-black/50 text-white text-xs font-mono rounded-md backdrop-blur-sm">
-                    {index + 1} / {magazinePages.length}
-                  </div>
-                </motion.div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
       {/* Magazine Modal */}
       <AnimatePresence>
         {modalPageIndex !== null && (
