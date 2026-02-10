@@ -36,7 +36,7 @@ const Careers = () => {
     { id: "all", label: "All Departments" },
     { id: "manufacturing", label: "Manufacturing" },
     { id: "sales", label: "Sales & Marketing" },
-    { id: "engineering", label: "Engineering" },
+    { id: "engineering", label: "Technical" },
     { id: "admin", label: "Administration" },
     { id: "installation", label: "Installation" },
   ];

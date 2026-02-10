@@ -11,7 +11,19 @@
       "Bash(git commit:*)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(pip --version:*)"
+      "Bash(pip --version:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(python -m venv:*)",
+      "Bash(venvScriptspip install -r requirements.txt)",
+      "Bash(\"venv/Scripts/pip\" install -r requirements.txt)",
+      "Bash(\"venv/Scripts/python\" manage.py makemigrations submissions)",
+      "Bash(\"venv/Scripts/python\" manage.py migrate)",
+      "Bash(\"venv/Scripts/python\" manage.py check)",
+      "Bash(\"venv/Scripts/python\" -c \"import django; import os; os.environ.setdefault\\(''DJANGO_SETTINGS_MODULE'',''config.settings''\\); django.setup\\(\\); from django.contrib.auth.models import User; User.objects.create_superuser\\(''admin'',''estimations@hotali.co.zw'',''admin123''\\) if not User.objects.filter\\(username=''admin''\\).exists\\(\\) else print\\(''already exists''\\)\")",
+      "Bash(\"venv/Scripts/python\" manage.py runserver 0.0.0.0:8000)",
+      "Bash(curl:*)",
+      "Bash(printf:*)",
+      "Bash(\"venv/Scripts/pip\" install dj-database-url psycopg2-binary)"
     ]
   }
 }
