@@ -1,22 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Calendar, 
-  Clock, 
-  ArrowRight, 
+import {
+  Calendar,
+  Clock,
+  ArrowRight,
   Tag,
   ChevronLeft,
   ChevronRight,
   Search,
   Rss,
   Share2,
-  BookOpen
+  BookOpen,
+  Play,
+  X,
+  ZoomIn
 } from 'lucide-react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
 const News = () => {
+  const [lightboxImage, setLightboxImage] = useState(null);
+
   const articles = [
     {
       id: 1,
@@ -32,6 +37,36 @@ const News = () => {
   ];
 
   const featuredArticle = articles[0];
+
+  const magazinePages = [
+    { src: '/download (22).jpg', alt: 'Magazine feature - Exclusive new colour palette introduction' },
+    { src: '/download (23).jpg', alt: 'Magazine feature - Dynamic colour range and trends' },
+    { src: '/download (24).jpg', alt: 'Magazine feature - Corporate projects showcase' },
+    { src: '/download (25).jpg', alt: 'Magazine feature - Commercial buildings portfolio' },
+    { src: '/download (26).jpg', alt: 'Magazine feature - Going beyond borders' },
+    { src: '/download (38).jpg', alt: 'Magazine feature - Residential and commercial projects' },
+  ];
+
+  const videos = [
+    {
+      id: 'dQw4w9WgXcQ',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/gMaGa0MAsxM',
+      title: 'Aluminium in Modern Architecture',
+      description: 'How aluminium is transforming modern building design with lightweight, durable facades and fenestration systems.',
+    },
+    {
+      id: '2',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/WVEaBopaDRE',
+      title: 'Curtain Wall Installation Process',
+      description: 'A detailed look at how aluminium curtain wall systems are manufactured, tested, and installed on commercial buildings.',
+    },
+    {
+      id: '3',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/p1phBBHgaLQ',
+      title: 'The Future of Sustainable Construction Materials',
+      description: 'Exploring how recycled aluminium and advanced alloys are shaping the future of eco-friendly construction.',
+    },
+  ];
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-GB', {
@@ -191,6 +226,115 @@ const News = () => {
               </div>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      {/* Magazine Pages Gallery */}
+      <section className="py-16 md:py-24 bg-arch-snow">
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection className="text-center mb-12">
+            <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">Inside the Feature</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-arch-charcoal mt-4 mb-4">
+              Magazine Pages
+            </h2>
+            <p className="text-arch-slate max-w-2xl mx-auto">
+              Browse through the full feature from Issue 54 of Structure and Design magazine.
+            </p>
+          </AnimatedSection>
+
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" staggerDelay={0.1}>
+            {magazinePages.map((page, index) => (
+              <StaggerItem key={index}>
+                <motion.div
+                  className="relative group cursor-pointer rounded-xl overflow-hidden border border-arch-silver-light shadow-soft"
+                  whileHover={{ y: -4 }}
+                  onClick={() => setLightboxImage(page)}
+                >
+                  <div className="aspect-[3/4]">
+                    <img
+                      src={page.src}
+                      alt={page.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setLightboxImage(null)}
+          >
+            <button
+              onClick={() => setLightboxImage(null)}
+              className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={lightboxImage.src}
+              alt={lightboxImage.alt}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Industry Videos Section */}
+      <section className="py-16 md:py-24 bg-arch-platinum">
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection className="text-center mb-12">
+            <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">Watch & Learn</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-arch-charcoal mt-4 mb-4">
+              Industry Insights
+            </h2>
+            <p className="text-arch-slate max-w-2xl mx-auto">
+              Explore videos about aluminium in architecture, construction materials, and modern building techniques.
+            </p>
+          </AnimatedSection>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-6 md:gap-8" staggerDelay={0.15}>
+            {videos.map((video) => (
+              <StaggerItem key={video.id}>
+                <div className="bg-white rounded-2xl overflow-hidden border border-arch-silver-light shadow-soft h-full flex flex-col">
+                  <div className="relative aspect-video">
+                    <iframe
+                      src={video.embedUrl}
+                      title={video.title}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-lg font-display font-bold text-arch-charcoal mb-2">
+                      {video.title}
+                    </h3>
+                    <p className="text-arch-slate text-sm flex-1">
+                      {video.description}
+                    </p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
