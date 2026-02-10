@@ -20,7 +20,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/An
 import SEO from '../components/SEO';
 
 const News = () => {
-  const [lightboxImage, setLightboxImage] = useState(null);
+  const [modalPageIndex, setModalPageIndex] = useState(null);
 
   const articles = [
     {
@@ -258,9 +258,8 @@ const News = () => {
             {magazinePages.map((page, index) => (
               <StaggerItem key={index}>
                 <motion.div
-                  className="relative group cursor-pointer rounded-xl overflow-hidden border border-arch-silver-light shadow-soft"
+                  className="relative group rounded-xl overflow-hidden border border-arch-silver-light shadow-soft"
                   whileHover={{ y: -4 }}
-                  onClick={() => setLightboxImage(page)}
                 >
                   <div className="aspect-[3/4]">
                     <img
@@ -269,8 +268,19 @@ const News = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5">
+                    <motion.button
+                      onClick={() => setModalPageIndex(index)}
+                      className="px-5 py-2.5 bg-arch-gold text-arch-black text-sm font-semibold rounded-full flex items-center gap-2 hover:bg-arch-yellow transition-colors shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      View Details
+                    </motion.button>
+                  </div>
+                  <div className="absolute top-3 right-3 px-2 py-1 bg-black/50 text-white text-xs font-mono rounded-md backdrop-blur-sm">
+                    {index + 1} / {magazinePages.length}
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -279,31 +289,86 @@ const News = () => {
         </div>
       </section>
 
-      {/* Lightbox */}
+      {/* Magazine Modal */}
       <AnimatePresence>
-        {lightboxImage && (
+        {modalPageIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+            onClick={() => setModalPageIndex(null)}
           >
+            {/* Close button */}
             <button
-              onClick={() => setLightboxImage(null)}
-              className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+              onClick={() => setModalPageIndex(null)}
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-2.5 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
             >
               <X className="w-6 h-6 text-white" />
             </button>
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              src={lightboxImage.src}
-              alt={lightboxImage.alt}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
+
+            {/* Page counter */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 md:top-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-mono z-50">
+              {modalPageIndex + 1} / {magazinePages.length}
+            </div>
+
+            {/* Previous button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setModalPageIndex((modalPageIndex - 1 + magazinePages.length) % magazinePages.length);
+              }}
+              className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            >
+              <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Next button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setModalPageIndex((modalPageIndex + 1) % magazinePages.length);
+              }}
+              className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            >
+              <ChevronRight className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Main image */}
+            <div className="flex items-center justify-center w-full h-full px-16 py-20" onClick={(e) => e.stopPropagation()}>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={modalPageIndex}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.2 }}
+                  src={magazinePages[modalPageIndex].src}
+                  alt={magazinePages[modalPageIndex].alt}
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                />
+              </AnimatePresence>
+            </div>
+
+            {/* Thumbnail strip */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 px-4 py-2 bg-black/50 backdrop-blur-sm rounded-xl z-50">
+              {magazinePages.map((page, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setModalPageIndex(i);
+                  }}
+                  className={`w-12 h-16 rounded-md overflow-hidden border-2 transition-all ${
+                    i === modalPageIndex
+                      ? 'border-arch-gold opacity-100 scale-105'
+                      : 'border-transparent opacity-50 hover:opacity-80'
+                  }`}
+                >
+                  <img src={page.src} alt={page.alt} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
