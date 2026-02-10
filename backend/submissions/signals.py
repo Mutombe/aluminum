@@ -8,6 +8,8 @@ from .models import QuoteRequest, ConsultationBooking
 
 logger = logging.getLogger(__name__)
 
+FALLBACK_EMAIL = 'estimations@hotali.co.zw'
+
 SERVICE_LABELS = {
     'fenestration': 'Fenestration (Windows & Doors)',
     'shopfitting': 'Shopfitting & Joinery',
@@ -89,12 +91,15 @@ def send_quote_email(sender, instance, created, **kwargs):
     </div>
     """
 
+    from_email = settings.DEFAULT_FROM_EMAIL or FALLBACK_EMAIL
+    to_email = settings.NOTIFICATION_EMAIL or FALLBACK_EMAIL
+
     subject = f"Quote Request – {instance.name} – {service_display}"
     msg = EmailMultiAlternatives(
         subject=subject,
         body=f"New quote request from {instance.name} ({instance.email}). Service: {service_display}.",
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        to=[settings.NOTIFICATION_EMAIL],
+        from_email=from_email,
+        to=[to_email],
         reply_to=[instance.email],
     )
     msg.attach_alternative(html, 'text/html')
@@ -139,12 +144,15 @@ def send_consultation_email(sender, instance, created, **kwargs):
     </div>
     """
 
+    from_email = settings.DEFAULT_FROM_EMAIL or FALLBACK_EMAIL
+    to_email = settings.NOTIFICATION_EMAIL or FALLBACK_EMAIL
+
     subject = f"Consultation Booking – {instance.name} – {consult_display}"
     msg = EmailMultiAlternatives(
         subject=subject,
         body=f"New consultation booking from {instance.name} ({instance.email}). Type: {consult_display}. Date: {instance.preferred_date} {instance.preferred_time}.",
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        to=[settings.NOTIFICATION_EMAIL],
+        from_email=from_email,
+        to=[to_email],
         reply_to=[instance.email],
     )
     msg.attach_alternative(html, 'text/html')
