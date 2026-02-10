@@ -39,32 +39,44 @@ const News = () => {
   const featuredArticle = articles[0];
 
   const magazinePages = [
-    { src: '/download (22).jpg', alt: 'Magazine feature - Exclusive new colour palette introduction' },
-    { src: '/download (23).jpg', alt: 'Magazine feature - Dynamic colour range and trends' },
-    { src: '/download (24).jpg', alt: 'Magazine feature - Corporate projects showcase' },
-    { src: '/download (25).jpg', alt: 'Magazine feature - Commercial buildings portfolio' },
-    { src: '/download (26).jpg', alt: 'Magazine feature - Going beyond borders' },
-    { src: '/download (38).jpg', alt: 'Magazine feature - Residential and commercial projects' },
+    { src: '/download(22).jpg', alt: 'Magazine feature - Exclusive new colour palette introduction' },
+    { src: '/download(23).jpg', alt: 'Magazine feature - Dynamic colour range and trends' },
+    { src: '/download(24).jpg', alt: 'Magazine feature - Corporate projects showcase' },
+    { src: '/download(25).jpg', alt: 'Magazine feature - Commercial buildings portfolio' },
+    { src: '/download(26).jpg', alt: 'Magazine feature - Going beyond borders' },
+    { src: '/download(38).jpg', alt: 'Magazine feature - Residential and commercial projects' },
   ];
 
   const videos = [
     {
-      id: 'dQw4w9WgXcQ',
-      embedUrl: 'https://www.youtube-nocookie.com/embed/gMaGa0MAsxM',
-      title: 'Aluminium in Modern Architecture',
-      description: 'How aluminium is transforming modern building design with lightweight, durable facades and fenestration systems.',
+      id: '0mVOGZgjXiw',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/0mVOGZgjXiw',
+      title: 'Aluminium Fabrication Process',
+      description: 'A quick look at how aluminium profiles are cut, assembled, and finished for modern construction.',
     },
     {
-      id: '2',
-      embedUrl: 'https://www.youtube-nocookie.com/embed/WVEaBopaDRE',
-      title: 'Curtain Wall Installation Process',
-      description: 'A detailed look at how aluminium curtain wall systems are manufactured, tested, and installed on commercial buildings.',
+      id: 'IPCNysGwi3U',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/IPCNysGwi3U',
+      title: 'Aluminium Window Installation',
+      description: 'Watch how precision-engineered aluminium windows are fitted into residential and commercial buildings.',
     },
     {
-      id: '3',
-      embedUrl: 'https://www.youtube-nocookie.com/embed/p1phBBHgaLQ',
-      title: 'The Future of Sustainable Construction Materials',
-      description: 'Exploring how recycled aluminium and advanced alloys are shaping the future of eco-friendly construction.',
+      id: 'X8Eh-vI29Pg',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/X8Eh-vI29Pg',
+      title: 'Modern Aluminium Facades',
+      description: 'Exploring the role of aluminium curtain walling and facades in contemporary architecture.',
+    },
+    {
+      id: 'oIC2SlEk7TU',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/oIC2SlEk7TU',
+      title: 'Aluminium in Construction',
+      description: 'How aluminium materials are transforming the construction industry with durability and style.',
+    },
+    {
+      id: 'Me_3kyI7SEw',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/Me_3kyI7SEw',
+      title: 'Building with Aluminium',
+      description: 'From shopfitting to curtain walling — the versatility of aluminium in modern building projects.',
     },
   ];
 
@@ -309,11 +321,11 @@ const News = () => {
             </p>
           </AnimatedSection>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-6 md:gap-8" staggerDelay={0.15}>
+          <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6" staggerDelay={0.1}>
             {videos.map((video) => (
               <StaggerItem key={video.id}>
                 <div className="bg-white rounded-2xl overflow-hidden border border-arch-silver-light shadow-soft h-full flex flex-col">
-                  <div className="relative aspect-video">
+                  <div className="relative aspect-[9/16]">
                     <iframe
                       src={video.embedUrl}
                       title={video.title}
@@ -323,11 +335,11 @@ const News = () => {
                       allowFullScreen
                     />
                   </div>
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="text-lg font-display font-bold text-arch-charcoal mb-2">
+                  <div className="p-4 flex-1 flex flex-col">
+                    <h3 className="text-sm font-display font-bold text-arch-charcoal mb-1">
                       {video.title}
                     </h3>
-                    <p className="text-arch-slate text-sm flex-1">
+                    <p className="text-arch-slate text-xs flex-1">
                       {video.description}
                     </p>
                   </div>
