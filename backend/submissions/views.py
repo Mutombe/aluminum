@@ -56,3 +56,19 @@ def smtp_health_check(request):
 
     status_code = 200 if result['status'] == 'ok' else 502
     return Response(result, status=status_code)
+
+
+@api_view(['POST'])
+def setup_admin(request):
+    """One-time superuser creation. Only works when no superuser exists."""
+    from django.contrib.auth.models import User
+
+    if User.objects.filter(is_superuser=True).exists():
+        return Response({'status': 'skipped', 'message': 'Superuser already exists'}, status=200)
+
+    User.objects.create_superuser(
+        username='admin',
+        email='estimations@hotali.co.zw',
+        password='admin123',
+    )
+    return Response({'status': 'created', 'message': 'Superuser created (admin / admin123)'}, status=201)
