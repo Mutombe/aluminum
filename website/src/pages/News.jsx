@@ -158,9 +158,10 @@ const News = () => {
                 {/* Magazine Card - Portrait orientation */}
                 <div className="flex justify-center md:justify-end">
                   <motion.div
-                    className="relative w-64 md:w-72 group"
+                    className="relative w-64 md:w-72 group cursor-pointer"
                     whileHover={{ y: -8 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setModalPageIndex(0)}
                   >
                     {/* Shadow effect */}
                     <div className="absolute -inset-4 bg-arch-gold/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -172,8 +173,13 @@ const News = () => {
                         alt={featuredArticle.title}
                         className="w-full h-full object-cover"
                       />
-                      {/* Subtle shine overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      {/* Hover overlay with View Details */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                        <span className="px-4 py-2 bg-arch-gold text-arch-black text-sm font-semibold rounded-full flex items-center gap-2 shadow-lg">
+                          <BookOpen className="w-4 h-4" />
+                          View Details
+                        </span>
+                      </div>
                     </div>
 
                     {/* Featured badge */}
@@ -216,22 +222,23 @@ const News = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-3">
+                    <motion.button
+                      onClick={() => setModalPageIndex(0)}
+                      className="inline-flex items-center px-6 py-3 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      View Full Feature
+                    </motion.button>
                     <motion.a
                       href="/finishes"
-                      className="inline-flex items-center px-6 py-3 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
+                      className="inline-flex items-center px-6 py-3 bg-white text-arch-charcoal font-semibold rounded-full hover:bg-arch-silver-light border border-arch-silver-light transition-colors"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       View Colour Range
                       <ArrowRight className="ml-2 w-4 h-4" />
-                    </motion.a>
-                    <motion.a
-                      href="/contact"
-                      className="inline-flex items-center px-6 py-3 bg-white text-arch-charcoal font-semibold rounded-full hover:bg-arch-silver-light border border-arch-silver-light transition-colors"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Contact Us
                     </motion.a>
                   </div>
                 </div>
