@@ -42,6 +42,8 @@ class QuoteRequestSerializer(serializers.ModelSerializer):
         return files
 
     def create(self, validated_data):
+        from .signals import send_quote_emails
+
         files = validated_data.pop('uploaded_files', [])
         quote = QuoteRequest.objects.create(**validated_data)
         for f in files:
@@ -50,6 +52,8 @@ class QuoteRequestSerializer(serializers.ModelSerializer):
                 file=f,
                 original_name=f.name,
             )
+        # Send emails AFTER files are saved
+        send_quote_emails(quote)
         return quote
 
 
@@ -61,3 +65,10 @@ class ConsultationBookingSerializer(serializers.ModelSerializer):
             'consultation_type', 'preferred_date', 'preferred_time',
             'notes',
         ]
+
+    def create(self, validated_data):
+        from .signals import send_consultation_emails
+
+        booking = ConsultationBooking.objects.create(**validated_data)
+        send_consultation_emails(booking)
+        return booking
