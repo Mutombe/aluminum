@@ -469,7 +469,7 @@ const About = () => {
                 {[
                   { value: 50000, label: "Square Metres Factory", suffix: "" },
                   {
-                    value: 100,
+                    value: 30,
                     label: "Years Combined Expertise",
                     suffix: "+",
                   },

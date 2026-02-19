@@ -124,7 +124,6 @@ const Contact = () => {
       title: 'Email Us',
       description: 'We reply as soon as possible',
       primary: 'sales@hotali.co.zw',
-      secondary: 'dmarombo@hotali.co.zw',
       action: 'mailto:sales@hotali.co.zw'
     },
     {

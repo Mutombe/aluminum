@@ -575,8 +575,8 @@ export default function Projects() {
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '1402+', label: 'Projects Completed' },
-              { number: '675+', label: 'Happy Clients' },
+              { number: '15000+', label: 'Projects Completed' },
+              { number: '15000+', label: 'Happy Clients' },
               { number: '30+', label: 'Years Experience' },
               { number: '50k', label: 'Sqm Factory' }
             ].map((stat, index) => (
