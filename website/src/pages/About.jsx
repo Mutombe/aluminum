@@ -4,20 +4,18 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
-  Award,
+  Trophy,
   Target,
   Eye,
   Heart,
   Lightbulb,
   Shield,
   Users,
-  CheckCircle2,
-} from "lucide-react";
-import { SiFsecure } from "react-icons/si";
+  CheckCircle,
+  ShieldCheck,
+  UsersThree,
+} from "@phosphor-icons/react";
 import SEO from "../components/SEO";
-import { BiShieldQuarter } from "react-icons/bi";
-import { RiTeamLine } from "react-icons/ri";
-import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import {
   AnimatedSection,
   StaggerContainer,
@@ -45,7 +43,7 @@ import {
   IsometricCubeGrid,
 } from "../components/ArchitecturalPatterns";
 import { companyInfo, team } from "../data/content";
-import { LiaAwardSolid } from "react-icons/lia";
+
 
 const About = () => {
   const containerRef = useRef(null);
@@ -76,8 +74,8 @@ const About = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600"
-            alt="Manufacturing excellence"
+            src="/ecobank/DJI_0438.jpg"
+            alt="Ecobank Headquarters - Architectural Aluminium project"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/50" />
@@ -251,8 +249,8 @@ const About = () => {
                   craftsmanship and dedication that defined our early days.
                 </p>
                 <p>
-                  Today, we stand as Zimbabwe's leading fabricator of aluminium,
-                  shop fitting and joinery products, setting the standard that
+                  Today, we stand as Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>,{' '}
+                  <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and joinery products, setting the standard that
                   other players in the industry aspire to.
                 </p>
               </div>
@@ -273,8 +271,8 @@ const About = () => {
 
               <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
-                  alt="Our journey"
+                  src="/firstmutual/untitled-561.JPG"
+                  alt="First Mutual Park - our craftsmanship"
                   className="w-full h-full object-cover"
                 />
                 {/* Corner brackets on image */}
@@ -316,8 +314,8 @@ const About = () => {
                   <p className="text-arch-slate">
                     To design and manufacture high-quality aluminium solutions
                     for residential and commercial customers in Zimbabwe and
-                    beyond. We specialize in aluminium windows, doors, and
-                    frames, and are a leading supplier of premium aluminium
+                    beyond. We specialize in aluminium <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">windows, doors, and
+                    frames</Link>, and are a leading supplier of premium aluminium
                     products tailored to every need.
                   </p>
                 </div>
@@ -390,13 +388,13 @@ const About = () => {
                   pattern: "circuit",
                 },
                 {
-                  icon: BiShieldQuarter,
+                  icon: ShieldCheck,
                   title: "Integrity",
                   desc: "Honest dealings and transparent relationships",
                   pattern: "angular",
                 },
                 {
-                  icon: RiTeamLine,
+                  icon: UsersThree,
                   title: "Teamwork",
                   desc: "Collaborative excellence across all departments",
                   pattern: "constellation",
@@ -442,8 +440,8 @@ const About = () => {
           <AnimatedSection>
             <div className="relative p-8 md:p-12 rounded-3xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1600"
-                alt="Our factory"
+                src="/ecobank/DSC08596.jpg"
+                alt="Ecobank HQ facade - our workmanship"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-arch-black/80" />
@@ -621,19 +619,19 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: LiaAwardSolid,
+                icon: Trophy,
                 title: "CIFOZ Member",
                 desc: "Proud member of the Construction Industry Federation of Zimbabwe, upholding the highest industry standards.",
                 pattern: "hex",
               },
               {
-                icon: SiFsecure,
+                icon: ShieldCheck,
                 title: "Fully Insured",
                 desc: "Third Party Insurance and Advance Payment Guarantee provided by reputable financial institutions.",
                 pattern: "circuit",
               },
               {
-                icon: IoCheckmarkDoneCircleOutline,
+                icon: CheckCircle,
                 title: "Quality Assured",
                 desc: "Rigorous quality control processes ensure every product meets our exacting standards.",
                 pattern: "beam",
@@ -705,7 +703,7 @@ const About = () => {
             </h2>
             <p className="text-xl text-arch-slate mb-10">
               Whether you're a potential client, partner, or team member, we'd
-              love to hear from you.
+              love to <Link to="/contact" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">hear from you</Link>.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link

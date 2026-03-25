@@ -107,91 +107,33 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "CBZ Bank Headquarters",
+    title: "Ecobank Headquarters",
     category: "Commercial",
-    location: "Harare CBD",
+    location: "Harare",
     year: 2023,
-    description: "Complete shopfitting and aluminium installation for CBZ Bank's flagship headquarters, featuring custom teller stations and modern partitioning systems.",
-    services: ["Shopfitting", "Bank Teller Stations", "Aluminium Partitioning"],
-    // Vision: Modern glass-fronted bank building with reflective aluminium facade
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+    description: "Complete aluminium curtain walling, cladding, and interior fit-out for Ecobank's striking Pan-African headquarters featuring a bold blue and white facade with circular porthole windows, colorful glass panels, and full interior shopfitting.",
+    services: ["Curtain Walling", "Cladding", "Shopfitting", "Partitioning", "Office Workstations"],
+    image: "/ecobank/DJI_0409.jpg"
   },
   {
     id: 2,
-    title: "Sam Levy's Village Extension",
-    category: "Retail",
-    location: "Borrowdale, Harare",
-    year: 2022,
-    description: "Premium shopfront installations for multiple retail units in Zimbabwe's premier shopping destination.",
-    services: ["Shopfronts", "Curtain Walling", "Entrance Canopies"],
-    // Vision: Upscale shopping mall with glass storefronts
-    image: "10.webp"
-  },
-  {
-    id: 3,
-    title: "Meikles Hotel Renovation",
-    category: "Hospitality",
-    location: "Harare CBD",
-    year: 2023,
-    description: "Heritage-sensitive aluminium window replacement and interior partitioning for Zimbabwe's iconic luxury hotel.",
-    services: ["Fenestration", "Drywall Partitions", "Suspended Ceilings"],
-    // Vision: Elegant hotel lobby with large glass panels
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800"
-  },
-  {
-    id: 4,
-    title: "Private Residence - Borrowdale Brooke",
-    category: "Residential",
-    location: "Borrowdale",
-    year: 2024,
-    description: "Luxury home featuring floor-to-ceiling sliding doors, custom louvre systems, and frameless glass balustrades.",
-    services: ["Sliding Doors", "Louvre Windows", "Glass Balustrades"],
-    // Vision: Modern luxury home with expansive glass walls
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800"
-  },
-  {
-    id: 5,
-    title: "Old Mutual Tower",
-    category: "Commercial",
-    location: "Harare CBD",
-    year: 2022,
-    description: "Major curtain walling project spanning 15 floors of Zimbabwe's tallest commercial building.",
-    services: ["Curtain Walling", "Flush Glazing", "Entrance Systems"],
-    // Vision: Tall glass skyscraper with reflective facade
-    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800"
-  },
-  {
-    id: 6,
     title: "First Mutual Park",
     category: "Commercial",
     location: "Harare",
     year: 2023,
-    description: "Complete exterior cladding and interior shopfitting for this modern corporate campus.",
-    services: ["Cladding", "Shopfitting", "Office Workstations"],
-    // Vision: Modern corporate office building
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800"
+    description: "Full exterior glazing, aluminium entrance systems, and cladding for First Mutual's modern corporate campus featuring structural curtain walling, aluminium-framed doors, and stainless steel balustrades.",
+    services: ["Curtain Walling", "Entrance Systems", "Cladding", "Windows", "Balustrades"],
+    image: "/firstmutual/untitled-561.JPG"
   },
   {
-    id: 7,
-    title: "Victoria Falls Airport",
-    category: "Infrastructure",
-    location: "Victoria Falls",
-    year: 2021,
-    description: "Aluminium facade and interior installations for Zimbabwe's premier tourist gateway.",
-    services: ["Facade Engineering", "Interior Cladding", "Suspended Ceilings"],
-    // Vision: Modern airport terminal with glass walls
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800"
-  },
-  {
-    id: 8,
-    title: "Edgars Stores Chain",
-    category: "Retail",
-    location: "Nationwide",
-    year: 2023,
-    description: "Standardised shopfront system rollout across 12 retail locations nationwide.",
-    services: ["Shopfronts", "Shop Product Display", "Interior Modelling"],
-    // Vision: Modern retail storefront with glass display
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800"
+    id: 3,
+    title: "Seagrave Road Residence",
+    category: "Residential",
+    location: "Harare",
+    year: 2024,
+    description: "Luxury residential property featuring floor-to-ceiling aluminium-framed glass walls, frameless corner openings, floating steel staircases, stainless steel balustrades, and modern aluminium windows.",
+    services: ["Frameless Glazing", "Windows", "Balustrades", "Steel Structures", "Aluminium Cladding"],
+    image: "/seagrave-road/1.jpg"
   }
 ];
 
@@ -346,86 +288,74 @@ export const galleryImages = [
   {
     id: 1,
     category: "Commercial",
-    title: "Curtain Walling Installation",
-    // Vision: Large-scale curtain wall on commercial building
-    src: "https://images.unsplash.com/photo-1486718448742-163732cd1544?w=800"
+    title: "Ecobank HQ - Aerial View",
+    src: "/ecobank/DJI_0409.jpg"
   },
   {
     id: 2,
-    category: "Fenestration",
-    title: "Floor-to-Ceiling Windows",
-    // Vision: Stunning floor-to-ceiling window installation
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800"
+    category: "Commercial",
+    title: "Ecobank HQ - Colorful Facade",
+    src: "/ecobank/DSC08596.jpg"
   },
   {
     id: 3,
-    category: "Shopfitting",
-    title: "Retail Store Interior",
-    // Vision: Modern retail store interior with displays
-    src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800"
+    category: "Interiors",
+    title: "Ecobank HQ - Atrium Garden",
+    src: "/ecobank/DSC08648.jpg"
   },
   {
     id: 4,
-    category: "Residential",
-    title: "Sliding Door System",
-    // Vision: Elegant sliding door opening to patio
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
+    category: "Interiors",
+    title: "Ecobank HQ - Open Plan Office",
+    src: "/ecobank/DSC08839.jpg"
   },
   {
     id: 5,
-    category: "Interiors",
-    title: "Office Partitioning",
-    // Vision: Modern office with glass partitions
-    src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800"
+    category: "Commercial",
+    title: "First Mutual Park - Campus",
+    src: "/firstmutual/untitled-499.JPG"
   },
   {
     id: 6,
-    category: "Commercial",
-    title: "Shopfront Installation",
-    // Vision: Attractive retail shopfront
-    src: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?w=800"
+    category: "Fenestration",
+    title: "First Mutual Park - Structural Glazing",
+    src: "/firstmutual/untitled-202.JPG"
   },
   {
     id: 7,
     category: "Fenestration",
-    title: "Louvre Window System",
-    // Vision: Modern louvre windows on building
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+    title: "First Mutual Park - Entrance Doors",
+    src: "/firstmutual/untitled-251.JPG"
   },
   {
     id: 8,
-    category: "Shopfitting",
-    title: "Bank Interior",
-    // Vision: Modern bank interior with teller stations
-    src: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800"
+    category: "Commercial",
+    title: "First Mutual Park - Glass & Stone",
+    src: "/firstmutual/untitled-561.JPG"
   },
   {
     id: 9,
-    category: "Residential",
-    title: "Modern Home Facade",
-    // Vision: Contemporary home with aluminium features
-    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800"
+    category: "Interiors",
+    title: "Ecobank HQ - Meeting Pod",
+    src: "/ecobank/DSC08847.jpg"
   },
   {
     id: 10,
-    category: "Interiors",
-    title: "Suspended Ceiling",
-    // Vision: Elegant suspended ceiling installation
-    src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800"
+    category: "Fenestration",
+    title: "First Mutual Park - Windows",
+    src: "/firstmutual/untitled-327.JPG"
   },
   {
     id: 11,
-    category: "Commercial",
-    title: "Entrance Canopy",
-    // Vision: Dramatic entrance canopy on commercial building
-    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+    category: "Residential",
+    title: "Seagrave Road Residence",
+    src: "/seagrave-road/1.jpg"
   },
   {
     id: 12,
-    category: "Fenestration",
-    title: "Frameless Glass Door",
-    // Vision: Elegant frameless glass entrance
-    src: "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800"
+    category: "Shopfitting",
+    title: "Ecobank HQ - Wall Panelling",
+    src: "/ecobank/DSC08707.jpg"
   }
 ];
 

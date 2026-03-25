@@ -1,0 +1,1 @@
+- [project_arch_aluminum.md](project_arch_aluminum.md) - Architectural Aluminium Zimbabwe website design system: brand colors, fonts, component patterns, key file paths

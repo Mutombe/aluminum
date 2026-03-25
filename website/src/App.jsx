@@ -20,6 +20,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 import Gallery from './pages/Gallery';
 import Careers from './pages/Careers';
 import News from './pages/News';
@@ -59,6 +60,7 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/services/:serviceId" element={<ServiceDetail />} />
                   <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects/:id" element={<ProjectDetail />} />
                   <Route path="/gallery" element={<Gallery />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/news" element={<News />} />

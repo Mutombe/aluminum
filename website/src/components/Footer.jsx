@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  MapPin, Phone, Mail, Clock,
-  Facebook, Linkedin, Instagram,
-  ArrowUpRight, ChevronRight
-} from 'lucide-react';
+  MapPin, Phone, Envelope, Clock,
+  FacebookLogo, LinkedinLogo, InstagramLogo,
+  ArrowUpRight, CaretRight
+} from '@phosphor-icons/react';
 import { companyInfo } from '../data/content';
 
 const Footer = () => {
@@ -89,7 +89,8 @@ const Footer = () => {
           <div className="lg:col-span-4">
 
             <p className="text-arch-silver-dark mb-8 max-w-sm">
-              Zimbabwe's leading fabricator of aluminium, shop fitting and joinery products since 1994.
+              Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
+              <a href="https://www.lupanetimbers.co.zw" target="_blank" rel="noopener noreferrer" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">joinery</a> products since 1994.
               Setting the standard for excellence in the industry.
             </p>
 
@@ -102,7 +103,7 @@ const Footer = () => {
                 className="p-3 rounded-full border border-arch-gold text-arch-gold bg-arch-gold/10 transition-all duration-300"
                 aria-label="Facebook"
               >
-                <Facebook size={18} />
+                <FacebookLogo size={18} />
               </a>
               <a
                 href={companyInfo.social.linkedin}
@@ -111,7 +112,7 @@ const Footer = () => {
                 className="p-3 rounded-full border border-arch-gold text-arch-gold bg-arch-gold/10 transition-all duration-300"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={18} />
+                <LinkedinLogo size={18} />
               </a>
               <a
                 href={companyInfo.social.instagram}
@@ -120,7 +121,7 @@ const Footer = () => {
                 className="p-3 rounded-full border border-arch-gold text-arch-gold bg-arch-gold/10 transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram size={18} />
+                <InstagramLogo size={18} />
               </a>
             </div>
           </div>
@@ -135,7 +136,7 @@ const Footer = () => {
                     to={link.path}
                     className="group flex items-center gap-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                   >
-                    <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+                    <CaretRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
                     {link.name}
                   </Link>
                 </li>
@@ -152,7 +153,7 @@ const Footer = () => {
                     to={link.path}
                     className="group flex items-center gap-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                   >
-                    <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+                    <CaretRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
                     {link.name}
                   </Link>
                 </li>
@@ -165,7 +166,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 text-arch-gold hover:text-arch-amber transition-colors duration-200 font-medium"
                 >
-                  <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+                  <CaretRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
                   Lupane Timbers
                   <ArrowUpRight size={14} className="hover:opacity-100 transition-opacity duration-200" />
                 </a>
@@ -182,7 +183,7 @@ const Footer = () => {
                     to={link.path}
                     className="group flex items-center gap-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                   >
-                    <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+                    <CaretRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
                     {link.name}
                   </Link>
                 </li>
@@ -219,7 +220,7 @@ const Footer = () => {
                   href={`mailto:${companyInfo.email}`}
                   className="flex items-center gap-3 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
                 >
-                  <Mail size={18} className="flex-shrink-0 text-arch-gold" />
+                  <Envelope size={18} className="flex-shrink-0 text-arch-gold" />
                   <span className="text-sm">{companyInfo.email}</span>
                 </a>
               </li>
@@ -238,12 +239,22 @@ const Footer = () => {
               <span>© {currentYear} Architectural Aluminium. All rights reserved.</span>
             </div>
 
-            <div className="flex items-center gap-6 text-sm text-arch-silver-dark">
+            <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-arch-silver-dark">
               <span className="flex items-center gap-2">
                 Member of <span className="text-arch-gold font-semibold">CIFOZ</span>
               </span>
               <span className="hidden md:block">•</span>
-              <span className="hidden md:block">#1 in Zimbabwe</span>
+              <span className="flex items-center gap-1.5">
+                Developed by{' '}
+                <a
+                  href="https://bitstudio.co.zw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-arch-gold hover:text-arch-amber font-semibold transition-colors duration-300"
+                >
+                  Bit Studio
+                </a>
+              </span>
             </div>
           </div>
         </div>

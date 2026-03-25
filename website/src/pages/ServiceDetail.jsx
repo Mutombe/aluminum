@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { 
-  ArrowRight, ArrowLeft, Check, Phone, ChevronRight, ChevronDown,
-  Sparkles, Shield, Clock, Award, Star, Ruler, Palette, Settings,
-  Layers, Eye, Zap, Target, Plus, Minus, ArrowUpRight, Play
-} from 'lucide-react';
+import {
+  ArrowRight, ArrowLeft, Check, Phone, CaretRight, CaretDown,
+  Sparkle, Shield, Clock, Trophy, Star, Ruler, Palette, Gear,
+  Stack, Eye, Lightning, Target, Plus, Minus, ArrowUpRight, Play
+} from '@phosphor-icons/react';
 import SEO from '../components/SEO';
 import { AnimatedSection, StaggerContainer, StaggerItem, AnimatedCounter } from '../components/AnimatedComponents';
 import {
@@ -36,7 +36,7 @@ const servicesData = {
     title: 'Fenestration',
     subtitle: 'Doors, Windows & Glass Solutions',
     tagline: 'Where Light Meets Architecture',
-    description: 'Complete fenestration solutions that transform spaces through the perfect marriage of aluminium craftsmanship and glass artistry. From residential windows to commercial curtain walling, we create openings that inspire.',
+    description: <>Complete fenestration solutions that transform spaces through the perfect marriage of aluminium craftsmanship and glass artistry. From <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential</Link> windows to <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial curtain walling</Link>, we create openings that inspire.</>,
     longDescription: `Our fenestration division represents three decades of expertise in creating the perfect interface between interior comfort and exterior beauty. Every window, door, and glass system we produce is engineered for optimal thermal performance, security, and aesthetic appeal.
 
 We work with architects, contractors, and homeowners to deliver solutions that not only meet but exceed expectations. Our in-house design team uses advanced CAD systems to ensure precise specifications, while our manufacturing facility employs state-of-the-art machinery for consistent quality.`,
@@ -54,7 +54,7 @@ We work with architects, contractors, and homeowners to deliver solutions that n
       { 
         title: 'Sliding & Folding Doors', 
         desc: 'Seamless transitions between indoor and outdoor spaces with our precision-engineered sliding and bi-fold door systems.',
-        icon: Layers
+        icon: Stack
       },
       { 
         title: 'Hinged & Pivot Doors', 
@@ -69,12 +69,12 @@ We work with architects, contractors, and homeowners to deliver solutions that n
       { 
         title: 'Shower Cubicles', 
         desc: 'Elegant frameless and semi-framed shower enclosures that elevate bathroom aesthetics.',
-        icon: Sparkles
+        icon: Sparkle
       },
       { 
         title: 'Frameless Glass Doors', 
         desc: 'Minimalist glass door systems that create stunning visual continuity.',
-        icon: Zap
+        icon: Lightning
       },
       { 
         title: 'Curtain Walling', 
@@ -117,7 +117,7 @@ We work with architects, contractors, and homeowners to deliver solutions that n
     title: 'Shopfitting & Joinery',
     subtitle: 'Interior Commercial Solutions',
     tagline: 'Crafting Spaces That Sell',
-    description: 'Transform retail environments and commercial interiors with our bespoke shopfitting solutions. From concept to completion, we create spaces that captivate customers and enhance brand experiences.',
+    description: <>Transform retail environments and commercial <Link to="/services/interiors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">interiors</Link> with our bespoke shopfitting solutions. From concept to completion, we create spaces that captivate customers and enhance brand experiences.</>,
     longDescription: `Our shopfitting division combines traditional joinery craftsmanship with modern manufacturing technology to deliver exceptional commercial interiors. We understand that retail environments must not only look stunning but also function efficiently to drive sales and enhance customer experiences.
 
 Working closely with brands, architects, and project managers, we translate design visions into reality. Our capabilities span from individual display units to complete store fit-outs, always maintaining the highest standards of quality and finish.`,
@@ -135,7 +135,7 @@ Working closely with brands, architects, and project managers, we translate desi
       { 
         title: 'Shop Product Displays', 
         desc: 'Custom display solutions that showcase products effectively and enhance visual merchandising.',
-        icon: Layers
+        icon: Stack
       },
       { 
         title: 'Interior Modelling', 
@@ -150,7 +150,7 @@ Working closely with brands, architects, and project managers, we translate desi
       { 
         title: 'Office Workstations', 
         desc: 'Ergonomic and stylish workstation systems for modern offices.',
-        icon: Settings
+        icon: Gear
       },
       { 
         title: 'Wall Panelling', 
@@ -160,7 +160,7 @@ Working closely with brands, architects, and project managers, we translate desi
       { 
         title: 'Custom Joinery', 
         desc: 'Bespoke joinery pieces crafted to exact specifications.',
-        icon: Sparkles
+        icon: Sparkle
       },
     ],
     specifications: [
@@ -197,7 +197,7 @@ Working closely with brands, architects, and project managers, we translate desi
     title: 'Building Interiors',
     subtitle: 'Partitions & Ceilings',
     tagline: 'Defining Spaces, Inspiring Work',
-    description: 'Create functional, beautiful interior environments with our comprehensive range of partitioning and ceiling systems. From open-plan offices to acoustic-critical spaces, we deliver solutions that work.',
+    description: <>Create functional, beautiful interior environments with our comprehensive range of partitioning and ceiling systems. Paired with our <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link> capabilities, we deliver solutions that work.</>,
     longDescription: `Interior spaces demand intelligent design that balances aesthetics, acoustics, and functionality. Our building interiors division specializes in creating these balanced environments through innovative partition and ceiling systems.
 
 We offer everything from traditional drywall solutions to cutting-edge demountable systems, glass partitions, and high-performance acoustic ceilings. Our team works with architects and interior designers to ensure seamless integration with overall design concepts.`,
@@ -215,7 +215,7 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
       { 
         title: 'Drywall Partitions', 
         desc: 'Cost-effective solid partitions with excellent fire and acoustic ratings.',
-        icon: Layers
+        icon: Stack
       },
       { 
         title: 'Aluminium Partitions', 
@@ -230,17 +230,17 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
       { 
         title: 'Suspended Ceilings', 
         desc: 'Integrated ceiling systems with lighting and HVAC coordination.',
-        icon: Sparkles
+        icon: Sparkle
       },
       { 
         title: 'Acoustic Solutions', 
         desc: 'High-performance acoustic panels and systems for noise control.',
-        icon: Zap
+        icon: Lightning
       },
       { 
         title: 'Moveable Walls', 
         desc: 'Flexible operable walls for multi-functional spaces.',
-        icon: Settings
+        icon: Gear
       },
     ],
     specifications: [
@@ -277,7 +277,7 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
     title: 'Residential Properties',
     subtitle: 'Home Aluminium Solutions',
     tagline: 'Elevating Home Living',
-    description: 'Premium aluminium solutions that transform houses into homes. From stunning patio doors to secure entrance systems, we bring quality and style to every residential project.',
+    description: <>Premium aluminium solutions that transform houses into homes. From stunning <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">patio doors</Link> to secure entrance systems, we bring quality and style to every residential project.</>,
     longDescription: `Your home deserves the finest aluminium solutions. Our residential division focuses exclusively on creating products that enhance living spaces while providing security, energy efficiency, and lasting beauty.
 
 We understand that homeowners want products that look beautiful, perform excellently, and require minimal maintenance. That's why we use only the highest quality aluminium alloys and finishes, backed by comprehensive warranties.`,
@@ -295,7 +295,7 @@ We understand that homeowners want products that look beautiful, perform excelle
       { 
         title: 'Patio Doors', 
         desc: 'Wide-span sliding and folding systems that connect indoor and outdoor living.',
-        icon: Layers
+        icon: Stack
       },
       { 
         title: 'Sliding & Folding', 
@@ -310,12 +310,12 @@ We understand that homeowners want products that look beautiful, perform excelle
       { 
         title: 'Window Systems', 
         desc: 'Energy-efficient windows in various styles and opening types.',
-        icon: Sparkles
+        icon: Sparkle
       },
       { 
         title: 'Louvre Systems', 
         desc: 'Adjustable louvres for ventilation and privacy control.',
-        icon: Settings
+        icon: Gear
       },
       { 
         title: 'Security Doors', 
@@ -357,7 +357,7 @@ We understand that homeowners want products that look beautiful, perform excelle
     title: 'Commercial Exteriors',
     subtitle: 'Building Facades & Entrances',
     tagline: 'Defining Skylines',
-    description: 'Create iconic building facades with our commercial exterior solutions. From gleaming curtain walls to grand entrance systems, we deliver architectural statements that stand the test of time.',
+    description: <>Create iconic building <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">facades</Link> with our commercial exterior solutions. From gleaming curtain walls to grand entrance systems, we deliver architectural statements that stand the test of time.</>,
     longDescription: `Commercial buildings demand exterior solutions that combine visual impact with engineering excellence. Our commercial exteriors division delivers just that – facade systems that define skylines while performing flawlessly for decades.
 
 We partner with leading architects and developers on projects ranging from boutique commercial buildings to landmark developments. Our engineering team ensures every system meets structural, thermal, and weatherproofing requirements while achieving the desired aesthetic vision.`,
@@ -375,7 +375,7 @@ We partner with leading architects and developers on projects ranging from bouti
       { 
         title: 'Curtain Walling', 
         desc: 'Stick and unitized systems for buildings of any scale.',
-        icon: Layers
+        icon: Stack
       },
       { 
         title: 'Structural Glazing', 
@@ -390,7 +390,7 @@ We partner with leading architects and developers on projects ranging from bouti
       { 
         title: 'Canopies', 
         desc: 'Dramatic entrance canopies and covered walkways.',
-        icon: Sparkles
+        icon: Sparkle
       },
       { 
         title: 'Cladding Systems', 
@@ -610,9 +610,9 @@ export default function ServiceDetail() {
             className="flex items-center gap-2 text-sm text-arch-slate mb-8"
           >
             <Link to="/" className="hover:text-arch-gold transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
+            <CaretRight className="w-4 h-4" />
             <Link to="/services" className="hover:text-arch-gold transition-colors">Services</Link>
-            <ChevronRight className="w-4 h-4" />
+            <CaretRight className="w-4 h-4" />
             <span className="text-arch-gold">{service.title}</span>
           </motion.nav>
 
@@ -624,7 +624,7 @@ export default function ServiceDetail() {
                 transition={{ delay: 0.3 }}
                 className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${service.color} rounded-full text-arch-black text-sm font-medium mb-6`}
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkle className="w-4 h-4" />
                 {service.subtitle}
               </motion.span>
               
@@ -702,7 +702,7 @@ export default function ServiceDetail() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-arch-charcoal font-medium rounded-full border border-arch-silver-light hover:bg-arch-platinum transition-all"
             >
               Explore Features
-              <ChevronDown className="w-5 h-5" />
+              <CaretDown className="w-5 h-5" />
             </a>
           </motion.div>
         </motion.div>
@@ -1047,7 +1047,7 @@ export default function ServiceDetail() {
                 FAQs
               </h2>
               <p className="text-arch-slate text-lg mb-8">
-                Find answers to common questions about our {service.title.toLowerCase()} services.
+                Find answers to common questions about our {service.title.toLowerCase()} services, or visit our <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">projects</Link> page to see them in action.
               </p>
 
               <div className="relative p-6 rounded-2xl bg-white border border-arch-silver-light shadow-soft">
@@ -1192,7 +1192,7 @@ export default function ServiceDetail() {
               </span>
             </h2>
             <p className="text-xl text-arch-slate mb-10">
-              Contact us today for a free consultation and quote. Our team is ready to bring your vision to life.
+              <Link to="/contact" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Contact us</Link> today for a free consultation and quote. Browse our <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">projects</Link> or <Link to="/gallery" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">gallery</Link> to see our work in action.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

@@ -4,218 +4,106 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
-  Calendar,
-  Building2,
-  X,
+  CalendarBlank,
+  BuildingOffice,
   ArrowRight,
   ArrowUpRight,
-  Filter,
-  Grid3X3,
-  LayoutGrid,
-  ChevronLeft,
-  ChevronRight,
-  Sparkles,
-  Download,
+  GridFour,
+  SquaresFour,
+  Sparkle,
+  DownloadSimple,
   FileText
-} from 'lucide-react';
+} from '@phosphor-icons/react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
 const projects = [
   {
     id: 1,
-    title: 'CBZ Bank Head Office',
+    title: 'Ecobank Headquarters',
     category: 'Commercial',
-    location: 'Harare CBD',
+    location: 'Harare',
     year: '2023',
-    description: 'Complete aluminium curtain walling and interior partitioning for the CBZ Bank headquarters, featuring flush glazing and custom entrance systems.',
-    services: ['Curtain Walling', 'Partitioning', 'Shopfronts'],
+    description: 'Complete aluminium curtain walling, cladding, and interior fit-out for Ecobank\'s striking Pan-African headquarters. Featuring a bold blue and white facade with circular porthole windows, colorful glass panels, and full interior shopfitting including wall panelling, glass partitions, and modern open-plan office systems.',
+    services: ['Curtain Walling', 'Cladding', 'Shopfitting', 'Partitioning', 'Office Workstations'],
     featured: true,
-    // Vision: Modern glass office building exterior with reflective facade
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+    image: '/ecobank/DJI_0409.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80'
+      '/ecobank/DJI_0409.jpg',
+      '/ecobank/DJI_0422.jpg',
+      '/ecobank/DJI_0438.jpg',
+      '/ecobank/DSC08596.jpg',
+      '/ecobank/DSC08648.jpg',
+      '/ecobank/DSC08707.jpg',
+      '/ecobank/DSC08751.jpg',
+      '/ecobank/DSC08839.jpg',
+      '/ecobank/DSC08847.jpg',
+      '/ecobank/DSC08869.jpg'
     ]
   },
   {
     id: 2,
-    title: "Sam Levy's Village",
-    category: 'Retail',
-    location: 'Borrowdale, Harare',
-    year: '2022',
-    description: 'Premium shopfitting and aluminium storefronts for multiple retail units at Zimbabwe\'s premier shopping destination.',
-    services: ['Shopfitting', 'Storefronts', 'Display Units'],
+    title: 'First Mutual Park',
+    category: 'Commercial',
+    location: 'Harare',
+    year: '2023',
+    description: 'Full exterior glazing, aluminium entrance systems, and cladding for First Mutual\'s modern corporate campus. The project features structural curtain walling, aluminium-framed doors, stainless steel balustrades, and aluminium window systems set within a striking brick and stone facade.',
+    services: ['Curtain Walling', 'Entrance Systems', 'Cladding', 'Windows', 'Balustrades'],
     featured: true,
-    // Vision: Modern shopping mall interior with elegant storefronts
-    image: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80',
+    image: '/firstmutual/untitled-561.JPG',
     gallery: [
-      'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80',
-      'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80'
+      '/firstmutual/untitled-561.JPG',
+      '/firstmutual/untitled-17.JPG',
+      '/firstmutual/untitled-202.JPG',
+      '/firstmutual/untitled-218.JPG',
+      '/firstmutual/untitled-251.JPG',
+      '/firstmutual/untitled-327.JPG',
+      '/firstmutual/untitled-451.JPG',
+      '/firstmutual/untitled-499.JPG',
+      '/firstmutual/untitled-50.JPG',
+      '/firstmutual/untitled-8.JPG'
     ]
   },
   {
     id: 3,
-    title: 'Meikles Hotel',
-    category: 'Hospitality',
-    location: 'Harare CBD',
-    year: '2021',
-    description: 'Heritage renovation with modern aluminium windows and doors, maintaining the classic aesthetic while improving energy efficiency.',
-    services: ['Windows', 'Doors', 'Balustrades'],
+    title: 'Seagrave Road Residence',
+    category: 'Residential',
+    location: 'Harare',
+    year: '2024',
+    description: 'A luxury residential property featuring floor-to-ceiling aluminium-framed glass walls, frameless glass corner openings, floating steel and timber staircases, stainless steel balustrades, and modern aluminium window systems — all set within beautifully landscaped gardens.',
+    services: ['Frameless Glazing', 'Windows', 'Balustrades', 'Steel Structures', 'Aluminium Cladding'],
     featured: true,
-    // Vision: Elegant hotel lobby with large windows
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+    image: '/seagrave-road/1.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Old Mutual Tower',
-    category: 'Commercial',
-    location: 'Harare CBD',
-    year: '2023',
-    description: 'Comprehensive facade upgrade with modern curtain walling systems and energy-efficient glazing solutions.',
-    services: ['Curtain Walling', 'Glazing', 'Entrance Systems'],
-    // Vision: Tall commercial tower with glass facade
-    image: 'https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80'
-    ]
-  },
-  {
-    id: 5,
-    title: 'Steward Bank Branches',
-    category: 'Banking',
-    location: 'Nationwide',
-    year: '2022',
-    description: 'Multi-branch banking interior fit-out including teller stations, partitioning, and secure entrance systems.',
-    services: ['Bank Teller Stations', 'Partitioning', 'Security Doors'],
-    // Vision: Modern bank interior with teller stations
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80'
-    ]
-  },
-  {
-    id: 6,
-    title: 'Borrowdale Private Residence',
-    category: 'Residential',
-    location: 'Borrowdale, Harare',
-    year: '2023',
-    description: 'Luxury residential project featuring floor-to-ceiling sliding doors, custom windows, and aluminium cladding.',
-    services: ['Sliding Doors', 'Windows', 'Cladding'],
-    // Vision: Modern luxury home with large glass doors
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80'
-    ]
-  },
-  {
-    id: 7,
-    title: 'NMB Bank Head Office',
-    category: 'Banking',
-    location: 'Harare',
-    year: '2021',
-    description: 'Complete interior renovation with frameless glass partitions, suspended ceilings, and custom workstations.',
-    services: ['Partitioning', 'Ceilings', 'Workstations'],
-    // Vision: Modern corporate office interior
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80'
-    ]
-  },
-  {
-    id: 8,
-    title: 'Victoria Falls Hotel',
-    category: 'Hospitality',
-    location: 'Victoria Falls',
-    year: '2022',
-    description: 'Heritage-sensitive aluminium window and door replacement for this iconic hotel, maintaining colonial charm.',
-    services: ['Windows', 'Doors', 'Restoration'],
-    // Vision: Colonial-style hotel with elegant windows
-    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80'
-    ]
-  },
-  {
-    id: 9,
-    title: 'Westgate Shopping Centre',
-    category: 'Retail',
-    location: 'Harare',
-    year: '2023',
-    description: 'Major retail renovation including new shopfronts, mall entrances, and interior display solutions.',
-    services: ['Shopfronts', 'Entrances', 'Display Units'],
-    // Vision: Shopping mall entrance with glass doors
-    image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80'
-    ]
-  },
-  {
-    id: 10,
-    title: 'FBC Holdings Tower',
-    category: 'Commercial',
-    location: 'Harare CBD',
-    year: '2021',
-    description: 'Premium office building with full aluminium facade system and high-performance glazing.',
-    services: ['Curtain Walling', 'Glazing', 'Canopies'],
-    // Vision: Corporate tower with modern facade
-    image: 'https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&q=80'
-    ]
-  },
-  {
-    id: 11,
-    title: 'Highlands Medical Centre',
-    category: 'Healthcare',
-    location: 'Highlands, Harare',
-    year: '2022',
-    description: 'Specialised healthcare fit-out with hygienic wall systems, acoustic partitions, and clean room solutions.',
-    services: ['Partitioning', 'Ceilings', 'Clean Rooms'],
-    // Vision: Modern medical facility interior
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80'
-    ]
-  },
-  {
-    id: 12,
-    title: 'Gunhill Luxury Apartments',
-    category: 'Residential',
-    location: 'Gunhill, Harare',
-    year: '2023',
-    description: 'High-end residential complex with premium aluminium windows, doors, and balcony balustrades.',
-    services: ['Windows', 'Doors', 'Balustrades'],
-    // Vision: Modern apartment building exterior
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80'
+      '/seagrave-road/1.jpg',
+      '/seagrave-road/6.jpg',
+      '/seagrave-road/9.jpg',
+      '/seagrave-road/10.jpg',
+      '/seagrave-road/12.jpg',
+      '/seagrave-road/14.jpg',
+      '/seagrave-road/17.jpg',
+      '/seagrave-road/18.jpg',
+      '/seagrave-road/22B.jpg'
     ]
   }
 ];
 
-const categories = ['All', 'Commercial', 'Retail', 'Hospitality', 'Banking', 'Residential', 'Healthcare'];
+const categories = ['All', 'Commercial', 'Residential'];
 
-function ProjectCard({ project, onClick, index }) {
+function ProjectCard({ project, index }) {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
+    <Link to={`/projects/${project.id}`} className={`relative group cursor-pointer block ${project.featured ? 'md:col-span-2 md:row-span-2' : ''}`}>
     <motion.div
       layout
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className={`relative group cursor-pointer ${project.featured ? 'md:col-span-2 md:row-span-2' : ''}`}
+      className="relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
     >
       <div className="relative h-full min-h-[300px] md:min-h-[400px] overflow-hidden rounded-2xl">
         {/* Image */}
@@ -245,7 +133,7 @@ function ProjectCard({ project, onClick, index }) {
         {project.featured && (
           <div className="absolute top-4 right-4">
             <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full flex items-center gap-1">
-              <Sparkles className="w-3 h-3" />
+              <Sparkle className="w-3 h-3" />
               Featured
             </span>
           </div>
@@ -264,7 +152,7 @@ function ProjectCard({ project, onClick, index }) {
                 {project.location}
               </span>
               <span className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
+                <CalendarBlank className="w-4 h-4" />
                 {project.year}
               </span>
             </div>
@@ -293,147 +181,12 @@ function ProjectCard({ project, onClick, index }) {
         />
       </div>
     </motion.div>
-  );
-}
-
-function ProjectModal({ project, onClose }) {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  if (!project) return null;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-arch-black/80 backdrop-blur-xl"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ type: 'spring', damping: 25 }}
-        className="bg-white border border-arch-silver-light rounded-3xl overflow-hidden max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Image Gallery */}
-        <div className="relative aspect-video">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImage}
-              src={project.gallery[currentImage]}
-              alt={project.title}
-              className="w-full h-full object-cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            />
-          </AnimatePresence>
-          
-          {/* Gallery Navigation */}
-          {project.gallery.length > 1 && (
-            <>
-              <button
-                onClick={() => setCurrentImage((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1))}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-arch-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-arch-gold hover:text-arch-black transition-all"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => setCurrentImage((prev) => (prev === project.gallery.length - 1 ? 0 : prev + 1))}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-arch-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-arch-gold hover:text-arch-black transition-all"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-              
-              {/* Gallery Dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {project.gallery.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentImage(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${i === currentImage ? 'bg-arch-gold w-6' : 'bg-white/50'}`}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-          
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 w-12 h-12 bg-arch-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-arch-gold hover:text-arch-black transition-all"
-          >
-            <X className="w-6 h-6" />
-          </button>
-          
-          {/* Category Badge */}
-          <div className="absolute top-4 left-4">
-            <span className="px-4 py-2 bg-arch-gold text-arch-black font-bold rounded-full">
-              {project.category}
-            </span>
-          </div>
-        </div>
-        
-        {/* Content */}
-        <div className="p-8 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-arch-charcoal mb-4 font-display">{project.title}</h2>
-
-          <div className="flex flex-wrap items-center gap-6 mb-6 text-arch-slate">
-            <span className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-arch-gold" />
-              {project.location}
-            </span>
-            <span className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-arch-gold" />
-              {project.year}
-            </span>
-          </div>
-
-          <p className="text-arch-slate text-lg mb-8 leading-relaxed">{project.description}</p>
-
-          {/* Services */}
-          <div className="mb-8">
-            <h3 className="text-lg font-bold text-arch-charcoal mb-4">Services Provided</h3>
-            <div className="flex flex-wrap gap-3">
-              {project.services.map((service, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 bg-arch-platinum border border-arch-silver-light rounded-full text-arch-slate"
-                >
-                  {service}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to={`/contact?project=${project.id}`}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all"
-            >
-              Start a Similar Project
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-arch-platinum border border-arch-silver-light text-arch-charcoal font-medium rounded-full hover:bg-arch-silver-light transition-all"
-            >
-              View Gallery
-            </Link>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
+    </Link>
   );
 }
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedProject, setSelectedProject] = useState(null);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'masonry'
   const heroRef = useRef(null);
   
@@ -461,7 +214,6 @@ export default function Projects() {
       <section ref={heroRef} className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
-          {/* Vision: Dramatic collage or split screen of multiple completed projects */}
           <img
             src="https://images.unsplash.com/photo-1481253127861-534498168948?w=1600&q=80"
             alt="Project showcase"
@@ -481,7 +233,7 @@ export default function Projects() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-arch-gold/10 border border-arch-gold/30 rounded-full text-arch-gold text-sm mb-6">
-              <Building2 className="w-4 h-4" />
+              <BuildingOffice className="w-4 h-4" />
               1402+ Projects Completed
             </span>
             
@@ -491,7 +243,7 @@ export default function Projects() {
             </h1>
 
             <p className="text-xl md:text-2xl text-arch-slate max-w-3xl mx-auto">
-              Discover our portfolio of exceptional aluminium fabrication and installation projects across Zimbabwe and beyond.
+              Discover our portfolio of exceptional <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> and installation projects across Zimbabwe and beyond.
             </p>
           </motion.div>
         </motion.div>
@@ -528,13 +280,13 @@ export default function Projects() {
                   onClick={() => setViewMode('grid')}
                   className={`p-2 rounded-full transition-all ${viewMode === 'grid' ? 'bg-arch-gold text-arch-black' : 'text-arch-slate'}`}
                 >
-                  <Grid3X3 className="w-5 h-5" />
+                  <GridFour className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('masonry')}
                   className={`p-2 rounded-full transition-all ${viewMode === 'masonry' ? 'bg-arch-gold text-arch-black' : 'text-arch-slate'}`}
                 >
-                  <LayoutGrid className="w-5 h-5" />
+                  <SquaresFour className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -555,7 +307,6 @@ export default function Projects() {
                   key={project.id}
                   project={project}
                   index={index}
-                  onClick={() => setSelectedProject(project)}
                 />
               ))}
             </AnimatePresence>
@@ -610,8 +361,8 @@ export default function Projects() {
                     Company Brochure
                   </h3>
                   <p className="text-arch-slate max-w-lg">
-                    Download our comprehensive brochure featuring our full range of services,
-                    project portfolio, and company capabilities.
+                    Download our comprehensive brochure featuring our full range of <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">services</Link>,
+                    project portfolio, and <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">company</Link> capabilities.
                   </p>
                 </div>
               </div>
@@ -624,7 +375,7 @@ export default function Projects() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Download className="w-5 h-5" />
+                  <DownloadSimple className="w-5 h-5" />
                   Download Brochure
                 </motion.a>
                 <motion.a
@@ -634,7 +385,7 @@ export default function Projects() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Download className="w-5 h-5" />
+                  <DownloadSimple className="w-5 h-5" />
                   Business Profile
                 </motion.a>
               </div>
@@ -651,7 +402,7 @@ export default function Projects() {
               Have a Project in Mind?
             </h2>
             <p className="text-arch-slate text-lg max-w-2xl mx-auto mb-8">
-              Let's discuss how we can bring your vision to life with our premium aluminium solutions.
+              Let's discuss how we can bring your vision to life with our premium <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium solutions</Link>.
             </p>
             <Link
               to="/contact"
@@ -664,15 +415,6 @@ export default function Projects() {
         </div>
       </section>
       
-      {/* Project Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)} 
-          />
-        )}
-      </AnimatePresence>
     </>
   );
 }

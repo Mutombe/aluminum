@@ -1,18 +1,19 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  ZoomIn,
-  Filter,
-  Grid3X3,
-  LayoutGrid,
-  Download,
-  Share2,
-  Maximize2
-} from 'lucide-react';
+import {
+  X,
+  CaretLeft,
+  CaretRight,
+  MagnifyingGlassPlus,
+  Funnel,
+  GridFour,
+  SquaresFour,
+  DownloadSimple,
+  ShareNetwork,
+  ArrowsOut
+} from '@phosphor-icons/react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
@@ -40,161 +41,235 @@ const Gallery = () => {
     {
       id: 1,
       category: 'commercial',
-      title: 'CBZ Bank Headquarters',
-      location: 'Harare CBD',
+      title: 'Ecobank Headquarters - Aerial View',
+      location: 'Harare',
       year: '2023',
-      // Vision: Modern glass office building with sleek aluminium curtain walling, reflecting the sky
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+      image: '/ecobank/DJI_0409.jpg',
       size: 'large'
     },
     {
       id: 2,
-      category: 'shopfitting',
-      title: 'Edgars Flagship Store',
-      location: 'Sam Levy\'s Village',
+      category: 'curtain-walling',
+      title: 'Ecobank HQ - Colorful Glass Facade',
+      location: 'Harare',
       year: '2023',
-      // Vision: High-end retail interior with sleek aluminium display fixtures and modern lighting
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
-      size: 'medium'
+      image: '/ecobank/DSC08596.jpg',
+      size: 'large'
     },
     {
       id: 3,
-      category: 'residential',
-      title: 'Borrowdale Luxury Villa',
-      location: 'Borrowdale',
-      year: '2022',
-      // Vision: Modern luxury home with floor-to-ceiling aluminium windows overlooking a garden
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      category: 'interior',
+      title: 'Ecobank HQ - Atrium & Interior Garden',
+      location: 'Harare',
+      year: '2023',
+      image: '/ecobank/DSC08648.jpg',
       size: 'medium'
     },
     {
       id: 4,
-      category: 'curtain-walling',
-      title: 'Old Mutual Tower',
+      category: 'interior',
+      title: 'Ecobank HQ - Wall Panelling & Lobby',
       location: 'Harare',
-      year: '2021',
-      // Vision: Dramatic shot of reflective curtain walling on a modern skyscraper
-      image: '1.avif',
-      size: 'large'
+      year: '2023',
+      image: '/ecobank/DSC08707.jpg',
+      size: 'medium'
     },
     {
       id: 5,
       category: 'interior',
-      title: 'First Capital Bank',
-      location: 'Eastgate Mall',
+      title: 'Ecobank HQ - Open Plan Office',
+      location: 'Harare',
       year: '2023',
-      // Vision: Modern bank interior with aluminium partitions, teller stations, and suspended ceilings
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-      size: 'small'
+      image: '/ecobank/DSC08839.jpg',
+      size: 'medium'
     },
     {
       id: 6,
-      category: 'shopfitting',
-      title: 'OK Zimbabwe Supermarket',
-      location: 'Avondale',
-      year: '2022',
-      // Vision: Modern supermarket interior with custom shelving and branded aluminium fixtures
-      image: '17.webp',
+      category: 'interior',
+      title: 'Ecobank HQ - Meeting Pod',
+      location: 'Harare',
+      year: '2023',
+      image: '/ecobank/DSC08847.jpg',
       size: 'small'
     },
     {
       id: 7,
       category: 'commercial',
-      title: 'Meikles Hotel Renovation',
+      title: 'Ecobank HQ - Front Elevation',
       location: 'Harare',
       year: '2023',
-      // Vision: Elegant hotel facade with restored aluminium framework and modern glass
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+      image: '/ecobank/DJI_0422.jpg',
       size: 'medium'
     },
     {
       id: 8,
-      category: 'residential',
-      title: 'Glen Lorne Estate',
-      location: 'Glen Lorne',
-      year: '2022',
-      // Vision: Upscale residential development with matching aluminium windows and doors
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+      category: 'interior',
+      title: 'Ecobank HQ - Skylight & Balustrades',
+      location: 'Harare',
+      year: '2023',
+      image: '/ecobank/DSC08751.jpg',
       size: 'small'
     },
     {
       id: 9,
-      category: 'curtain-walling',
-      title: 'Rainbow Towers',
+      category: 'commercial',
+      title: 'First Mutual Park - Campus Overview',
       location: 'Harare',
-      year: '2021',
-      // Vision: Iconic building with extensive curtain walling catching the sunset
-      image: 'https://images.unsplash.com/photo-1515263487990-61b07816b324?w=800&q=80',
+      year: '2023',
+      image: '/firstmutual/untitled-499.JPG',
       size: 'large'
     },
     {
       id: 10,
-      category: 'interior',
-      title: 'CABS Banking Hall',
-      location: 'Julius Nyerere Way',
+      category: 'curtain-walling',
+      title: 'First Mutual Park - Structural Glazing',
+      location: 'Harare',
       year: '2023',
-      // Vision: Spacious banking hall with aluminium ceiling systems and modern workstations
-      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
-      size: 'medium'
+      image: '/firstmutual/untitled-202.JPG',
+      size: 'large'
     },
     {
       id: 11,
-      category: 'shopfitting',
-      title: 'Truworths Fashion Outlet',
-      location: 'Joina City',
-      year: '2022',
-      // Vision: Fashionable retail space with custom aluminium display systems
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-      size: 'small'
+      category: 'commercial',
+      title: 'First Mutual Park - Entrance & Canopy',
+      location: 'Harare',
+      year: '2023',
+      image: '/firstmutual/untitled-561.JPG',
+      size: 'medium'
     },
     {
       id: 12,
-      category: 'commercial',
-      title: 'Econet Head Office',
-      location: 'Msasa',
+      category: 'curtain-walling',
+      title: 'First Mutual Park - Glass & Stone Facade',
+      location: 'Harare',
       year: '2023',
-      // Vision: Modern tech company headquarters with striking aluminium and glass facade
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
+      image: '/firstmutual/untitled-17.JPG',
       size: 'medium'
     },
     {
       id: 13,
-      category: 'residential',
-      title: 'Highlands Apartments',
-      location: 'Highlands',
-      year: '2021',
-      // Vision: Modern apartment complex with uniform aluminium balcony systems
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
+      category: 'commercial',
+      title: 'First Mutual Park - Aluminium Doors',
+      location: 'Harare',
+      year: '2023',
+      image: '/firstmutual/untitled-251.JPG',
       size: 'small'
     },
     {
       id: 14,
       category: 'curtain-walling',
-      title: 'NicOz Diamond House',
-      location: 'Union Avenue',
-      year: '2022',
-      // Vision: Commercial building with distinctive diamond-pattern curtain walling
-      image: '1.jpg',
-      size: 'large'
+      title: 'First Mutual Park - Windows & Balcony',
+      location: 'Harare',
+      year: '2023',
+      image: '/firstmutual/untitled-327.JPG',
+      size: 'medium'
     },
     {
       id: 15,
-      category: 'interior',
-      title: 'Standard Chartered Bank',
-      location: 'Nelson Mandela Ave',
+      category: 'commercial',
+      title: 'First Mutual Park - Entrance Detail',
+      location: 'Harare',
       year: '2023',
-      // Vision: Premium banking environment with glass partitions and aluminium accents
-      image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80',
-      size: 'medium'
+      image: '/firstmutual/untitled-218.JPG',
+      size: 'small'
     },
     {
       id: 16,
       category: 'shopfitting',
-      title: 'Clicks Pharmacy',
-      location: 'Borrowdale Village',
+      title: 'Edgars Flagship Store',
+      location: "Sam Levy's Village",
+      year: '2023',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
+      size: 'medium'
+    },
+    {
+      id: 17,
+      category: 'curtain-walling',
+      title: 'Old Mutual Tower',
+      location: 'Harare',
+      year: '2021',
+      image: '1.avif',
+      size: 'large'
+    },
+    {
+      id: 18,
+      category: 'residential',
+      title: 'Borrowdale Luxury Villa',
+      location: 'Borrowdale',
       year: '2022',
-      // Vision: Modern pharmacy/retail space with custom aluminium shelving units
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      size: 'medium'
+    },
+    {
+      id: 19,
+      category: 'curtain-walling',
+      title: 'NicOz Diamond House',
+      location: 'Union Avenue',
+      year: '2022',
+      image: '1.jpg',
+      size: 'large'
+    },
+    {
+      id: 20,
+      category: 'shopfitting',
+      title: 'OK Zimbabwe Supermarket',
+      location: 'Avondale',
+      year: '2022',
+      image: '17.webp',
+      size: 'small'
+    },
+    {
+      id: 21,
+      category: 'residential',
+      title: 'Seagrave Road - Garden View',
+      location: 'Harare',
+      year: '2024',
+      image: '/seagrave-road/1.jpg',
+      size: 'large'
+    },
+    {
+      id: 22,
+      category: 'interior',
+      title: 'Seagrave Road - Frameless Glass Corner',
+      location: 'Harare',
+      year: '2024',
+      image: '/seagrave-road/6.jpg',
+      size: 'medium'
+    },
+    {
+      id: 23,
+      category: 'interior',
+      title: 'Seagrave Road - Floating Staircase',
+      location: 'Harare',
+      year: '2024',
+      image: '/seagrave-road/9.jpg',
+      size: 'large'
+    },
+    {
+      id: 24,
+      category: 'residential',
+      title: 'Seagrave Road - Balcony & Balustrades',
+      location: 'Harare',
+      year: '2024',
+      image: '/seagrave-road/14.jpg',
+      size: 'medium'
+    },
+    {
+      id: 25,
+      category: 'interior',
+      title: 'Seagrave Road - Floor-to-Ceiling Windows',
+      location: 'Harare',
+      year: '2024',
+      image: '/seagrave-road/17.jpg',
+      size: 'medium'
+    },
+    {
+      id: 26,
+      category: 'residential',
+      title: 'Seagrave Road - Steel & Timber Stairs',
+      location: 'Harare',
+      year: '2024',
+      image: '/seagrave-road/22B.jpg',
       size: 'small'
     }
   ];
@@ -294,8 +369,8 @@ const Gallery = () => {
 
           <AnimatedSection delay={0.2}>
             <p className="text-xl text-arch-slate max-w-2xl">
-              Explore three decades of excellence in aluminium fabrication,
-              shopfitting, and architectural solutions across Zimbabwe and beyond.
+              Explore three decades of excellence in <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link>,{' '}
+              <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, and architectural solutions across Zimbabwe and beyond.
             </p>
           </AnimatedSection>
 
@@ -340,7 +415,7 @@ const Gallery = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             {/* Category filters */}
             <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto scrollbar-hide">
-              <Filter className="w-4 h-4 text-arch-slate flex-shrink-0 hidden sm:block" />
+              <Funnel className="w-4 h-4 text-arch-slate flex-shrink-0 hidden sm:block" />
               {categories.map((cat) => (
                 <motion.button
                   key={cat.id}
@@ -370,7 +445,7 @@ const Gallery = () => {
                 }`}
                 aria-label="Masonry view"
               >
-                <LayoutGrid className="w-4 h-4" />
+                <SquaresFour className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setViewMode('grid')}
@@ -381,7 +456,7 @@ const Gallery = () => {
                 }`}
                 aria-label="Grid view"
               >
-                <Grid3X3 className="w-4 h-4" />
+                <GridFour className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -447,7 +522,7 @@ const Gallery = () => {
 
                   {/* Zoom icon */}
                   <div className="absolute top-4 right-4 w-10 h-10 bg-arch-black/50 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ZoomIn className="w-5 h-5 text-white" />
+                    <MagnifyingGlassPlus className="w-5 h-5 text-white" />
                   </div>
                 </motion.div>
               ))}
@@ -488,7 +563,7 @@ const Gallery = () => {
                 onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
                 aria-label="Previous image"
               >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <CaretLeft className="w-6 h-6 text-white" />
               </button>
             )}
 
@@ -498,7 +573,7 @@ const Gallery = () => {
                 onClick={(e) => { e.stopPropagation(); goToNext(); }}
                 aria-label="Next image"
               >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <CaretRight className="w-6 h-6 text-white" />
               </button>
             )}
 
@@ -535,13 +610,13 @@ const Gallery = () => {
                   {/* Actions */}
                   <div className="flex gap-2">
                     <button className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" aria-label="Share">
-                      <Share2 className="w-5 h-5 text-white" />
+                      <ShareNetwork className="w-5 h-5 text-white" />
                     </button>
                     <button className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" aria-label="Download">
-                      <Download className="w-5 h-5 text-white" />
+                      <DownloadSimple className="w-5 h-5 text-white" />
                     </button>
                     <button className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" aria-label="Fullscreen">
-                      <Maximize2 className="w-5 h-5 text-white" />
+                      <ArrowsOut className="w-5 h-5 text-white" />
                     </button>
                   </div>
                 </div>
@@ -575,8 +650,8 @@ const Gallery = () => {
 
           <AnimatedSection delay={0.1}>
             <p className="text-xl text-arch-slate max-w-2xl mx-auto mb-10">
-              Let us bring your vision to life with our expert aluminium fabrication
-              and installation services.
+              Let us bring your vision to life with our expert <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication
+              and installation services</Link>.
             </p>
           </AnimatedSection>
 

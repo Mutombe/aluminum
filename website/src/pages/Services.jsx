@@ -1,22 +1,22 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  DoorOpen, 
-  Store, 
-  Building2, 
-  Home, 
-  Building, 
-  Layers,
+import {
+  Door,
+  Storefront,
+  BuildingOffice,
+  House,
+  Buildings,
+  Stack,
   ArrowRight,
   Check,
   Phone,
-  ChevronRight,
-  Sparkles,
+  CaretRight,
+  Sparkle,
   Shield,
   Clock,
-  Award
-} from 'lucide-react';
+  Trophy
+} from '@phosphor-icons/react';
 import { AnimatedSection, StaggerContainer, StaggerItem, ParallaxWrapper } from '../components/AnimatedComponents';
 import {
   CornerBrackets,
@@ -43,7 +43,7 @@ const serviceDetails = [
     id: 'fenestration',
     title: 'Fenestration',
     subtitle: 'Doors, Windows & Glass Solutions',
-    icon: DoorOpen,
+    icon: Door,
     color: 'from-arch-gold to-amber-600',
     description: 'Complete fenestration solutions including aluminium doors, windows, shower cubicles, shop fronts, curtain walling, access mantraps, and frameless glass doors.',
     features: [
@@ -64,7 +64,7 @@ const serviceDetails = [
     id: 'shopfitting',
     title: 'Shopfitting & Joinery',
     subtitle: 'Interior Commercial Solutions',
-    icon: Store,
+    icon: Storefront,
     color: 'from-blue-500 to-cyan-500',
     description: 'Professional shopfitting and joinery services including product displays, interior modelling, bank teller stations, office workstations, and wall panelling.',
     features: [
@@ -78,14 +78,13 @@ const serviceDetails = [
       'Display Units'
     ],
     applications: ['Retail', 'Banking', 'Corporate'],
-    // Vision: Modern retail interior with elegant display fixtures
-    image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=800&q=80'
+    image: '/ecobank/DSC08707.jpg'
   },
   {
     id: 'interiors',
     title: 'Building Interiors',
     subtitle: 'Partitions & Ceilings',
-    icon: Layers,
+    icon: Stack,
     color: 'from-purple-500 to-pink-500',
     description: 'Transform interior spaces with our drywall partitioning, aluminium and frameless partitions, suspended ceilings, and professional interior solutions.',
     features: [
@@ -99,14 +98,13 @@ const serviceDetails = [
       'Moveable Walls'
     ],
     applications: ['Office', 'Healthcare', 'Education'],
-    // Vision: Modern office with glass partitions and suspended ceiling
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80'
+    image: '/ecobank/DSC08839.jpg'
   },
   {
     id: 'residential',
     title: 'Residential Properties',
     subtitle: 'Home Aluminium Solutions',
-    icon: Home,
+    icon: House,
     color: 'from-green-500 to-emerald-500',
     description: 'Premium residential aluminium products including patio doors, sliding and folding systems, louvres, and aluminium cladded doors for modern homes.',
     features: [
@@ -120,14 +118,13 @@ const serviceDetails = [
       'Security Doors'
     ],
     applications: ['Houses', 'Apartments', 'Estates'],
-    // Vision: Luxury home exterior with large aluminium sliding doors
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80'
+    image: '/seagrave-road/17.jpg'
   },
   {
     id: 'exteriors',
     title: 'Commercial Exteriors',
     subtitle: 'Building Facades & Entrances',
-    icon: Building,
+    icon: Buildings,
     color: 'from-orange-500 to-red-500',
     description: 'Professional commercial exterior solutions including curtain walling, flush glazing, shopfronts, entrance canopies, and stainless steel balustrades.',
     features: [
@@ -141,8 +138,7 @@ const serviceDetails = [
       'Cladding Systems'
     ],
     applications: ['Offices', 'Shopping Centres', 'Hotels'],
-    // Vision: Modern commercial building facade with glass curtain wall
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80'
+    image: '/firstmutual/untitled-561.JPG'
   }
 ];
 
@@ -401,7 +397,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-arch-gold/10 border border-arch-gold/30 rounded-full text-arch-gold text-sm mb-6">
-              <Sparkles className="w-4 h-4" />
+              <Sparkle className="w-4 h-4" />
               Comprehensive Solutions
             </span>
             
@@ -411,7 +407,7 @@ export default function Services() {
             </h1>
 
             <p className="text-xl md:text-2xl text-arch-slate max-w-3xl mx-auto mb-8">
-              From fenestration to shopfitting, we deliver excellence across every aspect of aluminium fabrication and installation.
+              From <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">fenestration</Link> to <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, we deliver excellence across every aspect of aluminium fabrication and installation.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
@@ -501,7 +497,7 @@ export default function Services() {
               Comprehensive Aluminium Solutions
             </h2>
             <p className="text-arch-slate max-w-2xl mx-auto text-lg">
-              We provide end-to-end aluminium fabrication and installation services for residential, commercial, and industrial projects.
+              We provide end-to-end aluminium fabrication and installation services for residential, commercial, and industrial <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">projects</Link>.
             </p>
           </AnimatedSection>
           
@@ -590,7 +586,7 @@ export default function Services() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-arch-gold to-amber-600 rounded-xl flex items-center justify-center">
-                      <Award className="w-7 h-7 text-arch-black" />
+                      <Trophy className="w-7 h-7 text-arch-black" />
                     </div>
                     <div>
                       <div className="text-3xl font-bold text-arch-charcoal font-display">1402+</div>
@@ -644,8 +640,8 @@ export default function Services() {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Award, title: '30+ Years', desc: 'Of Excellence', color: 'from-arch-gold to-amber-600' },
-              { icon: Building2, title: '50,000 sqm', desc: 'Factory Space', color: 'from-blue-500 to-cyan-500' },
+              { icon: Trophy, title: '30+ Years', desc: 'Of Excellence', color: 'from-arch-gold to-amber-600' },
+              { icon: BuildingOffice, title: '50,000 sqm', desc: 'Factory Space', color: 'from-blue-500 to-cyan-500' },
               { icon: Shield, title: 'Quality', desc: 'Guaranteed', color: 'from-purple-500 to-pink-500' },
               { icon: Clock, title: 'Fast', desc: 'Turnaround', color: 'from-green-500 to-emerald-500' }
             ].map((item, index) => (
@@ -672,8 +668,8 @@ export default function Services() {
         <div className="absolute inset-0">
           {/* Vision: Dramatic shot of completed aluminium facade on modern building */}
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
-            alt="Modern building"
+            src="/firstmutual/untitled-202.JPG"
+            alt="First Mutual Park - structural glazing"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-white/90 backdrop-blur-sm" />
@@ -710,7 +706,7 @@ export default function Services() {
               </h2>
             </div>
             <p className="text-xl text-arch-slate max-w-2xl mx-auto mb-10">
-              Contact us today for a free consultation and quote. Our team is ready to bring your vision to life.
+              <Link to="/contact" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Contact us</Link> today for a free consultation and quote. Our team is ready to bring your vision to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

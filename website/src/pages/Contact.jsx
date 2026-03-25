@@ -1,31 +1,30 @@
 import React from 'react';
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MapPin,
   Phone,
-  Mail,
+  Envelope,
   Clock,
-  Send,
-  Building2,
-  MessageSquare,
+  PaperPlaneTilt,
+  BuildingOffice,
+  ChatCentered,
   FileText,
   Wrench,
   ArrowRight,
-  CheckCircle2,
-  Loader2,
-  Facebook,
-  Linkedin,
-  Instagram,
-  Upload,
+  CheckCircle,
+  SpinnerGap,
+  FacebookLogo,
+  LinkedinLogo,
+  InstagramLogo,
+  UploadSimple,
   X,
-  Calendar,
+  CalendarBlank,
   FileImage,
   File,
   Palette
-} from 'lucide-react';
-import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
+} from '@phosphor-icons/react';
 import { toast } from 'sonner';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
@@ -120,7 +119,7 @@ const Contact = () => {
       action: 'tel:+263778498911'
     },
     {
-      icon: Mail,
+      icon: Envelope,
       title: 'Email Us',
       description: 'We reply as soon as possible',
       primary: 'sales@hotali.co.zw',
@@ -152,7 +151,7 @@ const Contact = () => {
       link: '#quote-form'
     },
     {
-      icon: Building2,
+      icon: BuildingOffice,
       title: 'View Our Projects',
       description: 'See examples of our work',
       link: '/projects'
@@ -164,7 +163,7 @@ const Contact = () => {
       link: '/services'
     },
     {
-      icon: MessageSquare,
+      icon: ChatCentered,
       title: 'FAQs',
       description: 'Find answers to common questions',
       link: '/about#faq'
@@ -393,8 +392,8 @@ const Contact = () => {
 
           <AnimatedSection delay={0.2}>
             <p className="text-xl text-arch-steel max-w-2xl mx-auto">
-              Whether you need a quote, have a question, or want to discuss
-              your project, our team is ready to help.
+              Whether you need a quote for our <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">services</Link>, have a question, or want to discuss
+              your <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">project</Link>, our team is ready to help.
             </p>
           </AnimatedSection>
         </div>
@@ -464,7 +463,7 @@ const Contact = () => {
             </h2>
             <p className="text-arch-steel text-lg max-w-2xl mx-auto">
               Upload your drawings for a quick quote, or book a consultation with our experts
-              to discuss your project in detail.
+              to discuss your project in detail. Explore our <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">services</Link> to learn more.
             </p>
           </AnimatedSection>
 
@@ -513,7 +512,7 @@ const Contact = () => {
                     className="text-center py-12"
                   >
                     <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <IoCheckmarkDoneCircleOutline className="w-10 h-10 text-green-500" />
+                      <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
                     <h3 className="text-2xl font-display font-bold text-arch-charcoal mb-2">
                       Quote Request Sent!
@@ -633,7 +632,7 @@ const Contact = () => {
                           onChange={handleFileInputChange}
                           className="hidden"
                         />
-                        <Upload className={`w-10 h-10 mx-auto mb-3 ${isDragging ? 'text-arch-gold' : 'text-arch-steel'}`} />
+                        <UploadSimple className={`w-10 h-10 mx-auto mb-3 ${isDragging ? 'text-arch-gold' : 'text-arch-steel'}`} />
                         <p className="text-arch-charcoal font-medium mb-1">
                           {isDragging ? 'Drop files here' : 'Drag & drop files here'}
                         </p>
@@ -708,12 +707,12 @@ const Contact = () => {
                     >
                       {isQuoteSubmitting ? (
                         <>
-                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          <SpinnerGap className="w-5 h-5 mr-2 animate-spin" />
                           Submitting...
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 mr-2" />
+                          <PaperPlaneTilt className="w-5 h-5 mr-2" />
                           Request Quote
                         </>
                       )}
@@ -728,7 +727,7 @@ const Contact = () => {
               <div className="bg-white rounded-3xl p-8 md:p-10 border border-arch-silver/30 shadow-soft h-full">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-arch-gold/10 rounded-xl flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-arch-gold" />
+                    <CalendarBlank className="w-5 h-5 text-arch-gold" />
                   </div>
                   <h3 className="text-2xl font-display font-bold text-arch-charcoal">
                     Book a Consultation
@@ -745,7 +744,7 @@ const Contact = () => {
                     className="text-center py-12"
                   >
                     <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <IoCheckmarkDoneCircleOutline className="w-10 h-10 text-green-500" />
+                      <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
                     <h3 className="text-2xl font-display font-bold text-arch-charcoal mb-2">
                       Consultation Booked!
@@ -902,12 +901,12 @@ const Contact = () => {
                     >
                       {isConsultSubmitting ? (
                         <>
-                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          <SpinnerGap className="w-5 h-5 mr-2 animate-spin" />
                           Booking...
                         </>
                       ) : (
                         <>
-                          <Calendar className="w-5 h-5 mr-2" />
+                          <CalendarBlank className="w-5 h-5 mr-2" />
                           Book Consultation
                         </>
                       )}
@@ -957,7 +956,7 @@ const Contact = () => {
                   whileHover={{ y: -2 }}
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <FacebookLogo className="w-5 h-5" />
                 </motion.a>
                 <motion.a
                   href="https://linkedin.com/company/archaluminium"
@@ -967,7 +966,7 @@ const Contact = () => {
                   whileHover={{ y: -2 }}
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <LinkedinLogo className="w-5 h-5" />
                 </motion.a>
                 <motion.a
                   href="https://instagram.com/archaluminium"
@@ -977,7 +976,7 @@ const Contact = () => {
                   whileHover={{ y: -2 }}
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <InstagramLogo className="w-5 h-5" />
                 </motion.a>
               </div>
             </AnimatedSection>

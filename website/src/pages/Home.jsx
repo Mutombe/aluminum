@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   motion,
@@ -12,21 +12,19 @@ import {
   ArrowUpRight,
   Play,
   Star,
-  ChevronDown,
-  Award,
+  CaretDown,
+  Trophy,
   Users,
-  Building2,
+  BuildingOffice,
   Clock,
-  CheckCircle2,
-  Quote,
-} from "lucide-react";
+  CheckCircle,
+  Quotes,
+  Smiley,
+  Factory,
+  StarFour,
+  ShieldCheck,
+} from "@phosphor-icons/react";
 import SEO from "../components/SEO";
-import { RiEmotionHappyLine } from "react-icons/ri";
-import { PiFactoryBold } from "react-icons/pi";
-import { MdStarBorderPurple500 } from "react-icons/md";
-import { SiFsecure } from "react-icons/si";
-import { LiaAwardSolid } from "react-icons/lia";
-import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import {
   AnimatedSection,
   StaggerContainer,
@@ -46,26 +44,254 @@ import {
   AluminiumProfilePattern,
 } from "../components/ArchitecturalPatterns";
 import AluminiumFinishes from "../components/Finishes";
-import { companyInfo, services, projects, testimonials } from "../data/content";
+import { companyInfo, services, projects } from "../data/content";
 
 const heroImages = [
+  {
+    src: "/ecobank/DJI_0409.jpg",
+    alt: "Ecobank Headquarters - aluminium curtain walling and cladding",
+  },
+  {
+    src: "/firstmutual/untitled-561.JPG",
+    alt: "First Mutual Park - structural glazing and aluminium systems",
+  },
   {
     src: "18.jpg",
     alt: "Sleek aluminium window frames",
   },
   {
-    src: "10.webp",
-    alt: "Modern aluminium curtain wall facade",
+    src: "/ecobank/DSC08596.jpg",
+    alt: "Ecobank Headquarters - colorful glass facade detail",
   },
   {
-    src: "21.jpg",
-    alt: "Commercial aluminium storefront",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200",
-    alt: "Modern office building with aluminium cladding",
+    src: "/firstmutual/untitled-17.JPG",
+    alt: "First Mutual Park - entrance with aluminium doors",
   },
 ];
+
+const googleReviews = [
+  {
+    name: "Moreblessing Mhondiwa",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWm3Y0OA4A1qIu39bZtsEApBa2FBVB6MH3tFdrSwadH_Zsl38mYSA=s120-c-rp-mo-br100",
+    rating: 5,
+    text: "Awesome team, time conscious and the team is hardworking. Final products coming out as requested. I would engage Architectural Aluminium again and again for best Aluminium products.",
+    date: "2024",
+  },
+  {
+    name: "Robert Tarusenga",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWaIVMUHjUN3u1JDdpD3sUGrGpRkA9ENGxMixfK_rqlLfnpCfE=s120-c-rp-mo-ba3-br100",
+    rating: 5,
+    text: "Excellent and durable products. Friendly staff.",
+    date: "2021",
+  },
+  {
+    name: "Betros Mazarura",
+    avatar: "https://lh3.googleusercontent.com/a/ACg8ocJDPOudmDnAtfFjo7X4qgUM5ssMcZEjBV_Ymri4koqu-3TiGWU=s120-c-rp-mo-br100",
+    rating: 5,
+    text: "Excellent service. Highly recommended for all aluminium needs.",
+    date: "2022",
+  },
+  {
+    name: "Kennedy Mtetwa",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVS8d6N-TrsqEXNYufogf5uc8uxIDC0_Jabd2bpL7eC06F-eWYD=s120-c-rp-mo-ba6-br100",
+    rating: 4,
+    text: "Good quality products and reliable service delivery.",
+    date: "2022",
+  },
+  {
+    name: "adrian mukarati",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUgMOaCnOmDXDHGEWhIjZEx_IF4FGSWSA8JnwcR78Lg08B6iY0=s120-c-rp-mo-ba3-br100",
+    rating: 4,
+    text: "Professional team with quality aluminium solutions. Would recommend.",
+    date: "2024",
+  },
+  {
+    name: "Tawanda William Mukudu",
+    avatar: "https://lh3.googleusercontent.com/a/ACg8ocL0gmru93GXEkXdbo75c5IxrWR5cWQcHaUWJVOuPObvldQXPw=s120-c-rp-mo-ba2-br100",
+    rating: 5,
+    text: "Top-notch aluminium fabrication. The finished product exceeded expectations.",
+    date: "2023",
+  },
+  {
+    name: "kudzai mhembere",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVrnXn0guMC5R5ztfj0i1crsIcEJ1xL9G-PeXogqLPOlS4MTPQhdg=s120-c-rp-mo-ba4-br100",
+    rating: 5,
+    text: "Great company with solid products. Very happy with the outcome.",
+    date: "2023",
+  },
+  {
+    name: "Whitney Chidawanyika Mutinhima",
+    avatar: "https://lh3.googleusercontent.com/a/ACg8ocI8TyfSFbWvY9Q_zFvt7kkFe-e6SJF2-eKx58Fdhsj0K_mE=s120-c-rp-mo-br100",
+    rating: 4,
+    text: "Good work on our project. Delivered on time and within budget.",
+    date: "2021",
+  },
+  {
+    name: "Tapiwa Masakusi",
+    avatar: "https://lh3.googleusercontent.com/a/ACg8ocJVc5dNANP-vNpU_AKpU3t6yzrAa-IpGfePNdBW4-msHee42Q=s120-c-rp-mo-br100",
+    rating: 4,
+    text: "Reliable aluminium supplier. Quality products for commercial projects.",
+    date: "2021",
+  },
+  {
+    name: "isaac tavengwa",
+    avatar: "https://lh3.googleusercontent.com/a/ACg8ocIkNMuVWcCweRJaHWaHjF8O2gVb_UtDv5tiVpPuqlp7uSsZtLs=s120-c-rp-mo-br100",
+    rating: 5,
+    text: "Outstanding craftsmanship. The windows and doors are perfect.",
+    date: "2021",
+  },
+  {
+    name: "KUDZANAI TRUST MUKANDIWONA",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWLlHaks8tM6SQErOd0BDGOduDTJD4RHpg8Q4EhWQPH6oB5fOtH=s120-c-rp-mo-br100",
+    rating: 5,
+    text: "Best aluminium company in Harare. Premium quality products.",
+    date: "2020",
+  },
+  {
+    name: "Michael Chikwanda",
+    avatar: null,
+    rating: 5,
+    text: "Architectural Aluminium delivered exceptional quality on our headquarters project. Their attention to detail and professionalism is unmatched in Zimbabwe.",
+    date: "2023",
+    company: "CBZ Holdings",
+    role: "Facilities Director",
+  },
+  {
+    name: "Susan Mpofu",
+    avatar: null,
+    rating: 5,
+    text: "Working with the team was seamless from design to installation. They truly understand the retail environment and delivered beyond our expectations.",
+    date: "2023",
+    company: "Edgars Stores",
+    role: "Operations Manager",
+  },
+  {
+    name: "Robert Chinamasa",
+    avatar: null,
+    rating: 5,
+    text: "The quality of their fenestration products has transformed our properties. We've used them exclusively for all our developments.",
+    date: "2024",
+    company: "Mashonaland Holdings",
+    role: "Managing Director",
+  },
+];
+
+function ReviewCard({ review }) {
+  return (
+    <div className="flex-shrink-0 w-[350px] md:w-[420px] p-6 rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl shadow-lg select-none">
+      <div className="flex items-center gap-1 mb-3">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            weight={i < review.rating ? "fill" : "regular"}
+            className={`w-4 h-4 ${i < review.rating ? 'text-arch-gold' : 'text-white/20'}`}
+          />
+        ))}
+      </div>
+      <p className="text-white/90 text-sm leading-relaxed mb-4 line-clamp-4">
+        "{review.text}"
+      </p>
+      <div className="flex items-center gap-3">
+        {review.avatar ? (
+          <img
+            src={review.avatar}
+            alt={review.name}
+            className="w-10 h-10 rounded-full object-cover border-2 border-white/20 pointer-events-none"
+          />
+        ) : (
+          <div className="w-10 h-10 rounded-full bg-arch-gold/30 flex items-center justify-center border-2 border-arch-gold/40">
+            <span className="font-display font-bold text-arch-gold text-sm">
+              {review.name.charAt(0)}
+            </span>
+          </div>
+        )}
+        <div>
+          <p className="font-semibold text-white text-sm">{review.name}</p>
+          <p className="text-white/50 text-xs">
+            {review.company ? `${review.role}, ${review.company}` : `Google Review · ${review.date}`}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ReviewMarquee({ reviews, direction = 'left', speed = 0.5 }) {
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const isInteracting = useRef(false);
+  const resumeTimeout = useRef(null);
+
+  const tripled = [...reviews, ...reviews, ...reviews];
+
+  const autoScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el || isInteracting.current) {
+      animationRef.current = requestAnimationFrame(autoScroll);
+      return;
+    }
+
+    const third = el.scrollWidth / 3;
+
+    if (direction === 'left') {
+      el.scrollLeft += speed;
+      if (el.scrollLeft >= third * 2) {
+        el.scrollLeft -= third;
+      }
+    } else {
+      el.scrollLeft -= speed;
+      if (el.scrollLeft <= 0) {
+        el.scrollLeft += third;
+      }
+    }
+
+    animationRef.current = requestAnimationFrame(autoScroll);
+  }, [direction, speed]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    // Start in the middle third so we can scroll both directions
+    const third = el.scrollWidth / 3;
+    el.scrollLeft = direction === 'left' ? third : third;
+
+    animationRef.current = requestAnimationFrame(autoScroll);
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      if (resumeTimeout.current) clearTimeout(resumeTimeout.current);
+    };
+  }, [autoScroll, direction]);
+
+  const handleInteractionStart = () => {
+    isInteracting.current = true;
+    if (resumeTimeout.current) clearTimeout(resumeTimeout.current);
+  };
+
+  const handleInteractionEnd = () => {
+    if (resumeTimeout.current) clearTimeout(resumeTimeout.current);
+    resumeTimeout.current = setTimeout(() => {
+      isInteracting.current = false;
+    }, 3000);
+  };
+
+  return (
+    <div
+      ref={scrollRef}
+      className="flex gap-6 overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+      style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      onTouchStart={handleInteractionStart}
+      onTouchEnd={handleInteractionEnd}
+      onMouseDown={handleInteractionStart}
+      onMouseUp={handleInteractionEnd}
+      onMouseLeave={handleInteractionEnd}
+    >
+      {tripled.map((review, index) => (
+        <ReviewCard key={`${direction}-${index}`} review={review} />
+      ))}
+    </div>
+  );
+}
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -158,15 +384,29 @@ const Home = () => {
       This creates the "dissipating" effect
       Mobile: Full coverage for readability, Desktop: Side fade effect
       ============================================ */}
+        {/* Mobile: Warm cinematic dark overlay */}
         <div
           className="absolute inset-0 z-20 pointer-events-none lg:hidden"
           style={{
             background: `linear-gradient(
         to bottom,
-        rgba(250, 250, 250, 0.95) 0%,
-        rgba(250, 250, 250, 0.9) 30%,
-        rgba(250, 250, 250, 0.85) 60%,
-        rgba(250, 250, 250, 0.7) 100%
+        rgba(15, 12, 8, 0.92) 0%,
+        rgba(18, 14, 10, 0.82) 20%,
+        rgba(22, 17, 12, 0.65) 45%,
+        rgba(26, 20, 14, 0.50) 65%,
+        rgba(20, 16, 11, 0.70) 85%,
+        rgba(15, 12, 8, 0.80) 100%
+      )`,
+          }}
+        />
+        {/* Mobile: Subtle vignette */}
+        <div
+          className="absolute inset-0 z-20 pointer-events-none lg:hidden"
+          style={{
+            background: `radial-gradient(
+        ellipse 80% 60% at 50% 40%,
+        transparent 0%,
+        rgba(12, 9, 6, 0.35) 100%
       )`,
           }}
         />
@@ -214,6 +454,23 @@ const Home = () => {
         />
 
         {/* ============================================
+      LAYER 2C: ARCHITECTURAL PATTERN DECORATIONS
+      Subtle patterns that reinforce the brand identity
+      ============================================ */}
+        <div className="absolute top-20 left-4 md:left-10 w-16 h-16 md:w-28 md:h-28 z-25 opacity-[0.06] md:opacity-[0.08]">
+          <BeamConnectionPattern className="w-full h-full text-arch-gold" opacity={1} />
+        </div>
+        <div className="absolute bottom-32 left-6 md:left-16 w-20 h-28 md:w-36 md:h-48 z-25 opacity-[0.04] md:opacity-[0.06]">
+          <WindowFramePattern className="w-full h-full text-arch-gold" />
+        </div>
+        <div className="absolute top-1/3 right-4 md:right-auto md:left-[42%] w-12 h-12 md:w-20 md:h-20 z-25 opacity-[0.08] md:opacity-10">
+          <AnimatedJoint />
+        </div>
+        <div className="absolute bottom-20 right-4 md:bottom-24 md:right-[30%] w-14 h-14 md:w-24 md:h-24 z-25 opacity-[0.05] md:opacity-[0.07]">
+          <AluminiumProfilePattern className="w-full h-full text-arch-silver" opacity={1} />
+        </div>
+
+        {/* ============================================
       LAYER 3: FLOATING STATS CARD (RIGHT SIDE)
       Positioned over the visible image area
       ============================================ */}
@@ -223,16 +480,34 @@ const Home = () => {
           transition={{ delay: 1, duration: 0.8 }}
           className="absolute bottom-48 right-12 z-30 hidden lg:block"
         >
-          <div className="p-6 rounded-2xl max-w-xs backdrop-blur-md bg-white/80 border border-arch-silver/30 shadow-medium">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-arch-graphite">Est. 1994</span>
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div
+              className="relative p-6 rounded-2xl max-w-xs overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
+                backdropFilter: 'blur(24px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.3)',
+              }}
+            >
+              <div
+                className="absolute top-0 left-6 right-6 h-[2px]"
+                style={{ background: 'linear-gradient(90deg, transparent, #D4AF37, transparent)' }}
+              />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-xs text-white/70 font-mono tracking-wider uppercase">Est. 1994</span>
+              </div>
+              <p className="font-display font-bold text-5xl mb-1 gradient-text">30+</p>
+              <p className="text-white/80 text-sm font-medium tracking-wide">Years of Excellence</p>
+              <div className="w-8 h-[1px] bg-white/20 my-3" />
+              <p className="text-white/60 text-xs">15,000+ Projects Completed</p>
             </div>
-            <p className="text-arch-gold font-display font-bold text-4xl mb-1">
-              30+
-            </p>
-            <p className="text-arch-steel text-sm">Years of Excellence</p>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* ============================================
@@ -246,10 +521,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-arch-black/10 border border-arch-black/20 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-arch-black/10 border border-arch-black/20 mb-8 max-lg:bg-arch-gold/12 max-lg:border-arch-gold/25"
             >
               <Star className="text-arch-gold" size={16} />
-              <span className="text-sm text-arch-charcoal">
+              <span className="text-sm text-arch-charcoal max-lg:text-white/90">
                 #1 Aluminium Supplier in Zimbabwe
               </span>
             </motion.div>
@@ -259,10 +534,51 @@ const Home = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-arch-black leading-[1.1] mb-6"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-arch-black max-lg:text-white leading-[1.1] mb-6"
             >
               Crafting
-              <span className="block gradient-text">Excellence</span>
+              <span className="block">
+                <span className="relative inline-block">
+                  <span className="gradient-text">Excellence</span>
+                  {/* Stylish SVG brush underline */}
+                  <motion.svg
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 1.4, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute -bottom-3 left-0 w-full h-4"
+                    viewBox="0 0 300 12"
+                    fill="none"
+                    preserveAspectRatio="none"
+                  >
+                    <motion.path
+                      d="M2 8.5C30 3 60 2 100 5.5C140 9 170 4 200 3C230 2 260 6 298 4"
+                      stroke="url(#goldGradient)"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 1.4, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                    <motion.path
+                      d="M8 10C50 6 90 8 150 5C200 3 240 7 295 6"
+                      stroke="url(#goldGradient)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeOpacity="0.4"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 1.2, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                    <defs>
+                      <linearGradient id="goldGradient" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#D4AF37" />
+                        <stop offset="50%" stopColor="#F5B800" />
+                        <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.3" />
+                      </linearGradient>
+                    </defs>
+                  </motion.svg>
+                </span>
+              </span>
               in Aluminium
             </motion.h1>
 
@@ -271,10 +587,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-arch-steel max-w-xl mb-10"
+              className="text-xl text-arch-steel max-lg:text-white/75 max-w-xl mb-10"
             >
-              Zimbabwe's leading fabricator of aluminium, shop fitting and
-              joinery products. Setting the standard for architectural
+              Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
+              <a href="https://www.lupanetimbers.co.zw" target="_blank" rel="noopener noreferrer" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">joinery</a> products. Setting the standard for architectural
               excellence since 1994.
             </motion.p>
 
@@ -287,7 +603,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="group flex items-center gap-3 bg-arch-black text-white px-8 py-4 rounded-full font-semibold hover:bg-arch-charcoal transition-all duration-300"
+                className="group flex items-center gap-3 bg-arch-black text-white max-lg:bg-arch-gold max-lg:text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-arch-charcoal max-lg:hover:bg-[#E5C04A] transition-all duration-300"
               >
                 Get a Quote
                 <ArrowRight
@@ -298,7 +614,7 @@ const Home = () => {
 
               <Link
                 to="/projects"
-                className="group flex items-center gap-3 border border-arch-silver text-arch-charcoal px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
+                className="group flex items-center gap-3 border border-arch-silver text-arch-charcoal max-lg:border-white/30 max-lg:text-white px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
               >
                 View Projects
                 <ArrowUpRight
@@ -333,7 +649,7 @@ const Home = () => {
                   <p className="font-display text-3xl md:text-4xl font-bold text-arch-gold">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="text-arch-steel text-sm mt-1">
+                  <p className="text-arch-steel max-lg:text-white/60 text-sm mt-1">
                     {stat.label}
                   </p>
                 </div>
@@ -352,10 +668,10 @@ const Home = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-arch-steel"
+            className="flex flex-col items-center gap-2 text-arch-steel max-lg:text-white/50"
           >
             <span className="text-xs uppercase tracking-wider">Scroll</span>
-            <ChevronDown size={20} />
+            <CaretDown size={20} />
           </motion.div>
         </motion.div>
       </section>
@@ -394,7 +710,7 @@ const Home = () => {
                   <span className="block text-arch-steel">Solutions</span>
                 </h2>
                 <p className="text-arch-steel mb-8 max-w-md">
-                  From residential windows to large-scale commercial facades, we
+                  From <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential windows</Link> to large-scale <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial facades</Link>, we
                   deliver precision-engineered aluminium solutions for every
                   need.
                 </p>
@@ -422,6 +738,15 @@ const Home = () => {
                       to={`/services/${service.id}`}
                       className="group relative block p-6 md:p-8 rounded-2xl bg-white border border-arch-silver/30 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                     >
+                      {(index === 1 || index === 3) && (
+                        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                          <img
+                            src={index === 1 ? '/ecobank/DSC08707.jpg' : '/seagrave-road/17.jpg'}
+                            alt=""
+                            className="w-full h-full object-cover opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500"
+                          />
+                        </div>
+                      )}
                       {/* Corner brackets decoration */}
                       <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <CornerBrackets size={20} color="#D4AF37" />
@@ -602,13 +927,13 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: LiaAwardSolid,
+                icon: Trophy,
                 title: "30+ Years Experience",
                 description:
-                  "Three decades of industry leadership and innovation in aluminium fabrication.",
+                  <>Three decades of industry leadership and innovation in <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link>.</>,
               },
               {
-                icon: Building2,
+                icon: BuildingOffice,
                 title: "50,000 sqm Factory",
                 description:
                   "State-of-the-art manufacturing facility with modern machinery and capacity.",
@@ -617,7 +942,7 @@ const Home = () => {
                 icon: Users,
                 title: "675+ Happy Clients",
                 description:
-                  "Trusted by leading businesses, institutions, and homeowners across Zimbabwe.",
+                  <>Trusted by leading businesses, institutions, and homeowners across <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Zimbabwe</Link>.</>,
               },
               {
                 icon: Clock,
@@ -642,49 +967,49 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="relative py-24 md:py-32 bg-white">
-        <div className="absolute inset-0 bg-grid opacity-50" />
+      {/* Testimonials Section - Infinite Scroll with Glassmorphism */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/ecobank/DJI_0409.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-arch-black/70 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-b from-arch-black/40 via-transparent to-arch-black/40" />
+        </div>
 
-        <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
+        <div className="relative z-10">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16 px-6">
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Testimonials
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-4 mb-4">
               What Our Clients Say
             </h2>
+            <p className="text-arch-silver text-lg">
+              Real reviews from our valued customers
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} weight="fill" className="w-5 h-5 text-arch-gold" />
+                ))}
+              </div>
+              <span className="text-white font-semibold">4.2</span>
+              <span className="text-arch-silver text-sm">on Google</span>
+            </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={index} delay={index * 0.15}>
-                <div className="relative p-8 rounded-2xl bg-arch-platinum border border-arch-silver/30 h-full">
-                  <Quote
-                    className="text-arch-gold/20 absolute top-6 right-6"
-                    size={48}
-                  />
-                  <p className="text-arch-graphite mb-8 relative z-10">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-arch-gold/20 flex items-center justify-center">
-                      <span className="font-display font-bold text-arch-gold">
-                        {testimonial.author.charAt(0)}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-arch-charcoal">
-                        {testimonial.author}
-                      </p>
-                      <p className="text-sm text-arch-steel">
-                        {testimonial.role}, {testimonial.company}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+          {/* Row 1 - auto-scrolls left, swipable */}
+          <div className="mb-6">
+            <ReviewMarquee reviews={googleReviews} direction="left" speed={0.5} />
+          </div>
+
+          {/* Row 2 - auto-scrolls right, swipable */}
+          <div>
+            <ReviewMarquee reviews={[...googleReviews].reverse()} direction="right" speed={0.5} />
           </div>
         </div>
       </section>
@@ -731,8 +1056,8 @@ const Home = () => {
                 <span className="block gradient-text">Space?</span>
               </h2>
               <p className="text-xl text-arch-steel mb-10 max-w-2xl mx-auto">
-                Whether you're planning a residential project or a large-scale
-                commercial development, our team is ready to bring your vision
+                Whether you're planning a <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential project</Link> or a large-scale{' '}
+                <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial development</Link>, our team is ready to bring your vision
                 to life.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

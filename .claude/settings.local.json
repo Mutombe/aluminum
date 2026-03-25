@@ -23,7 +23,14 @@
       "Bash(\"venv/Scripts/python\" manage.py runserver 0.0.0.0:8000)",
       "Bash(curl:*)",
       "Bash(printf:*)",
-      "Bash(\"venv/Scripts/pip\" install dj-database-url psycopg2-binary)"
+      "Bash(\"venv/Scripts/pip\" install dj-database-url psycopg2-binary)",
+      "Bash(npm run:*)",
+      "Bash(cp:*)",
+      "Bash(find C:/Users/PC/documents/aluminum -maxdepth 2 -type d -iname *seagrave*)",
+      "Bash(find C:/Users/PC/documents/aluminum -maxdepth 2 -type d -iname *seag*)",
+      "Bash(npx vite:*)",
+      "Bash(ls -la \"C:\\\\Users\\\\PC\\\\documents\\\\aluminum\\\\website\\\\public\\\\logo\"*)",
+      "Bash(ls -la \"C:\\\\Users\\\\PC\\\\documents\\\\aluminum\\\\website\\\\src\\\\assets\\\\logo\"*)"
     ]
   }
 }

@@ -1,32 +1,31 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
   Clock,
   Briefcase,
-  ChevronRight,
+  CaretRight,
   Heart,
   Users,
-  TrendingUp,
-  Award,
+  TrendUp,
+  Trophy,
   Coffee,
-  Zap,
+  Lightning,
   Shield,
   BookOpen,
   ArrowRight,
-  Send,
-  Building2,
+  PaperPlaneTilt,
+  BuildingOffice,
   GraduationCap,
-} from "lucide-react";
-import { SiFsecure } from "react-icons/si";
+} from "@phosphor-icons/react";
 import {
   AnimatedSection,
   StaggerContainer,
   StaggerItem,
 } from "../components/AnimatedComponents";
 import SEO from "../components/SEO";
-import { LiaAwardSolid } from "react-icons/lia";
 
 const Careers = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("all");
@@ -48,7 +47,7 @@ const Careers = () => {
       description: "Comprehensive medical aid coverage for you and your family",
     },
     {
-      icon: TrendingUp,
+      icon: TrendUp,
       title: "Career Growth",
       description:
         "Clear progression paths with regular training and development",
@@ -59,7 +58,7 @@ const Careers = () => {
       description: "Flexible working arrangements and generous leave policies",
     },
     {
-      icon: LiaAwardSolid,
+      icon: Trophy,
       title: "Recognition Programme",
       description: "Monthly awards and bonuses for exceptional performance",
     },
@@ -85,7 +84,7 @@ const Careers = () => {
       experience: "2+ years",
       posted: "3 days ago",
       description:
-        "Create detailed technical drawings for aluminium fabrication projects. Work closely with the sales and manufacturing teams to ensure accurate specifications.",
+        <>Create detailed technical drawings for <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> projects. Work closely with the sales and manufacturing teams to ensure accurate specifications.</>,
       requirements: [
         "Diploma in Draughting or Engineering Drawing",
         "2+ years experience with AutoCAD",
@@ -110,7 +109,7 @@ const Careers = () => {
       experience: "5+ years",
       posted: "2 days ago",
       description:
-        "We are looking for an experienced aluminium fabricator to join our manufacturing team. You will be responsible for cutting, shaping, and assembling aluminium components for our diverse range of projects.",
+        <>We are looking for an experienced aluminium fabricator to join our manufacturing team. You will be responsible for cutting, shaping, and assembling aluminium components for our diverse range of <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">projects</Link>.</>,
       requirements: [
         "Minimum 5 years experience in aluminium fabrication",
         "Proficiency in reading technical drawings",
@@ -135,7 +134,7 @@ const Careers = () => {
       experience: "3+ years",
       posted: "1 day ago",
       description:
-        "We are seeking a detail-oriented Estimator to join our team. You will be responsible for preparing accurate cost estimates for aluminium fabrication projects, from residential windows to large commercial facades.",
+        <>We are seeking a detail-oriented Estimator to join our team. You will be responsible for preparing accurate cost estimates for aluminium fabrication projects, from <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential windows</Link> to large <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial facades</Link>.</>,
       requirements: [
         "Minimum 3 years experience in estimating or quantity surveying",
         "Strong understanding of aluminium products and fabrication processes",
@@ -162,7 +161,7 @@ const Careers = () => {
 
   const values = [
     {
-      icon: Zap,
+      icon: Lightning,
       title: "Excellence",
       description: "We strive for excellence in everything we do",
     },
@@ -177,7 +176,7 @@ const Careers = () => {
       description: "Honest and ethical in all dealings",
     },
     {
-      icon: TrendingUp,
+      icon: TrendUp,
       title: "Innovation",
       description: "Continuously improving our craft",
     },
@@ -234,8 +233,8 @@ const Careers = () => {
 
               <AnimatedSection delay={0.2}>
                 <p className="text-xl text-arch-slate mb-8 max-w-lg">
-                  Working at Architectural Aluminium means being part of a
-                  family enterprise that creates fascinating products. Once you
+                  Working at <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Architectural Aluminium</Link> means being part of a
+                  family enterprise that creates fascinating <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">products</Link>. Once you
                   experience it, you'll want to stay.
                 </p>
               </AnimatedSection>
@@ -272,7 +271,7 @@ const Careers = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-arch-gold/10 rounded-full flex items-center justify-center">
-                      <Building2 className="w-6 h-6 text-arch-gold" />
+                      <BuildingOffice className="w-6 h-6 text-arch-gold" />
                     </div>
                     <div>
                       <span className="block text-2xl font-bold text-arch-charcoal">
@@ -430,7 +429,7 @@ const Careers = () => {
             </h2>
             <p className="text-arch-slate text-lg max-w-2xl mx-auto">
               We're always looking for talented individuals to join our team.
-              Explore our current openings and find your perfect role.
+              Explore our current openings and find your perfect role, or view our <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">projects</Link> to see what we do.
             </p>
           </AnimatedSection>
 
@@ -519,7 +518,7 @@ const Careers = () => {
                         animate={{ rotate: expandedJob === job.id ? 90 : 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <ChevronRight className="w-6 h-6 text-arch-gold" />
+                        <CaretRight className="w-6 h-6 text-arch-gold" />
                       </motion.div>
                     </div>
                   </button>
@@ -550,7 +549,7 @@ const Careers = () => {
                                     key={i}
                                     className="flex items-start gap-2 text-arch-slate text-sm"
                                   >
-                                    <ChevronRight className="w-4 h-4 text-arch-gold flex-shrink-0 mt-0.5" />
+                                    <CaretRight className="w-4 h-4 text-arch-gold flex-shrink-0 mt-0.5" />
                                     {req}
                                   </li>
                                 ))}
@@ -566,7 +565,7 @@ const Careers = () => {
                                     key={i}
                                     className="flex items-start gap-2 text-arch-slate text-sm"
                                   >
-                                    <ChevronRight className="w-4 h-4 text-arch-gold flex-shrink-0 mt-0.5" />
+                                    <CaretRight className="w-4 h-4 text-arch-gold flex-shrink-0 mt-0.5" />
                                     {resp}
                                   </li>
                                 ))}
@@ -581,7 +580,7 @@ const Careers = () => {
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
                             >
-                              <Send className="w-4 h-4 mr-2" />
+                              <PaperPlaneTilt className="w-4 h-4 mr-2" />
                               Apply Now
                             </motion.a>
                             <motion.a
@@ -644,7 +643,7 @@ const Careers = () => {
 
             <AnimatedSection delay={0.1}>
               <p className="text-xl text-arch-slate mb-10">
-                We're always looking for talented individuals. Send us your CV
+                We're always looking for talented individuals to join our team and contribute to our <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">services</Link>. Send us your CV
                 and we'll keep you in mind for future opportunities.
               </p>
             </AnimatedSection>
@@ -661,7 +660,7 @@ const Careers = () => {
                   href="mailto:dmarombo@hotali.co.zw"
                   className="inline-flex items-center text-arch-gold hover:text-arch-amber text-xl font-semibold transition-colors"
                 >
-                  <Send className="w-5 h-5 mr-2" />
+                  <PaperPlaneTilt className="w-5 h-5 mr-2" />
                   dmarombo@hotali.co.zw
                 </a>
               </div>

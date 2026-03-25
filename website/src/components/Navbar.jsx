@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, Phone, ChevronDown, Building2, FileDown, Layers, DoorOpen, Store, Armchair, Home, Building } from 'lucide-react';
+import { List, X, MagnifyingGlass, Phone, CaretDown, BuildingOffice, FileArrowDown, Stack, Door, Storefront, Armchair, House, Buildings } from '@phosphor-icons/react';
 import { useSearch } from '../context/SearchContext';
 
 const navLinks = [
@@ -11,18 +11,18 @@ const navLinks = [
     name: 'About',
     path: '/about',
     dropdown: [
-      { name: 'Our Company', path: '/about', icon: Building2 },
-      { name: 'Business Profile', path: '/AA Company Profile 2023 web.pdf', external: true, icon: FileDown },
+      { name: 'Our Company', path: '/about', icon: BuildingOffice },
+      { name: 'Business Profile', path: '/AA Company Profile 2023 web.pdf', external: true, icon: FileArrowDown },
       {
         name: 'What We Offer',
         path: '/services',
-        icon: Layers,
+        icon: Stack,
         children: [
-          { name: 'Fenestration', path: '/services/fenestration', icon: DoorOpen },
-          { name: 'Shopfitting', path: '/services/shopfitting', icon: Store },
+          { name: 'Fenestration', path: '/services/fenestration', icon: Door },
+          { name: 'Shopfitting', path: '/services/shopfitting', icon: Storefront },
           { name: 'Building Interiors', path: '/services/interiors', icon: Armchair },
-          { name: 'Residential', path: '/services/residential', icon: Home },
-          { name: 'Commercial Exteriors', path: '/services/exteriors', icon: Building }
+          { name: 'Residential', path: '/services/residential', icon: House },
+          { name: 'Commercial Exteriors', path: '/services/exteriors', icon: Buildings }
         ]
       }
     ]
@@ -74,24 +74,35 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'bg-white/90 backdrop-blur-xl shadow-soft py-3'
-            : 'bg-transparent py-5'
+            : 'py-5 max-lg:bg-transparent max-lg:backdrop-blur-none lg:bg-white/40 lg:backdrop-blur-md'
         }`}
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="relative z-10 flex items-center gap-3 group">
-              <div className="relative w-32 h-10 md:w-44 md:h-12 flex items-center justify-center">
-                {/* Stylized AA Logo */}
-                <img src="/logo-light.png" alt="AA Logo" loading="eager" className="w-28 h-12 md:w-34 md:h-16" />
+              <div
+                className={`relative flex items-center justify-center transition-all duration-500 ${
+                  !isScrolled
+                    ? 'max-lg:bg-white/85 max-lg:backdrop-blur-md max-lg:rounded-b-xl max-lg:px-4 max-lg:pb-3 max-lg:pt-8 max-lg:-mt-8'
+                    : ''
+                }`}
+                style={!isScrolled ? { marginTop: '-2rem', paddingTop: '2rem' } : {}}
+              >
+                <img
+                  src="/logo-light.png"
+                  alt="AA Logo"
+                  loading="eager"
+                  className="w-28 h-12 md:w-34 md:h-16"
+                />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link, index) => {
-                // Links from Careers onwards (index 3+) get gold color
-                const isGoldLink = index >= 3;
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path ||
+                  (link.path !== '/' && location.pathname.startsWith(link.path));
                 return (
                 <div
                   key={link.name}
@@ -101,21 +112,26 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                      location.pathname === link.path
+                    className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 ${
+                      isActive
                         ? 'text-arch-gold'
-                        : isGoldLink
-                          ? 'text-arch-gold hover:text-arch-amber'
-                          : 'text-arch-graphite hover:text-arch-gold'
+                        : 'text-arch-charcoal hover:text-arch-gold'
                     }`}
                   >
                     {link.name}
                     {link.dropdown && (
-                      <ChevronDown
+                      <CaretDown
                         size={14}
                         className={`transition-transform duration-300 ${
                           activeDropdown === link.name ? 'rotate-180' : ''
                         }`}
+                      />
+                    )}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-active"
+                        className="absolute -bottom-1 left-2 right-2 h-0.5 bg-arch-gold rounded-full"
+                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                       />
                     )}
                   </Link>
@@ -190,7 +206,8 @@ const Navbar = () => {
                     )}
                   </AnimatePresence>
                 </div>
-              )})}
+              );
+              })}
             </div>
 
             {/* Right Actions */}
@@ -198,10 +215,12 @@ const Navbar = () => {
               {/* Search Button */}
               <button
                 onClick={openSearch}
-                className="p-2 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
+                className={`p-2 hover:text-arch-gold transition-colors duration-300 ${
+                  isScrolled ? 'text-arch-graphite' : 'text-arch-graphite max-lg:text-white/90'
+                }`}
                 aria-label="Search"
               >
-                <Search size={20} />
+                <MagnifyingGlass size={20} />
               </button>
 
               {/* Phone (Desktop only) */}
@@ -224,10 +243,12 @@ const Navbar = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-arch-graphite hover:text-arch-gold transition-colors duration-300"
+                className={`lg:hidden p-2 hover:text-arch-gold transition-colors duration-300 ${
+                  isScrolled ? 'text-arch-graphite' : 'text-arch-graphite max-lg:text-white/90'
+                }`}
                 aria-label="Toggle menu"
               >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
               </button>
             </div>
           </div>

@@ -1,21 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Calendar,
+  CalendarBlank,
   Clock,
   ArrowRight,
   Tag,
-  ChevronLeft,
-  ChevronRight,
-  Search,
-  Rss,
-  Share2,
+  CaretLeft,
+  CaretRight,
+  MagnifyingGlass,
+  RssSimple,
+  ShareNetwork,
   BookOpen,
   Play,
   X,
-  ZoomIn
-} from 'lucide-react';
+  MagnifyingGlassPlus
+} from '@phosphor-icons/react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import SEO from '../components/SEO';
 
@@ -201,7 +202,7 @@ const News = () => {
 
                   <div className="flex flex-wrap items-center gap-4 mb-6 text-arch-slate text-sm">
                     <span className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
+                      <CalendarBlank className="w-4 h-4" />
                       {formatDate(featuredArticle.date)}
                     </span>
                     <span className="flex items-center gap-2">
@@ -213,7 +214,7 @@ const News = () => {
                   <p className="text-arch-slate mb-6">
                     We are proud to announce our feature in Issue 54 of <strong className="text-arch-charcoal">Structure and Design</strong>,
                     Zimbabwe's premier infrastructure development magazine. This feature represents a significant milestone
-                    in our journey as Zimbabwe's leading aluminium fabrication company.
+                    in our journey as Zimbabwe's leading <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">company</Link>.
                   </p>
 
                   <p className="text-arch-slate mb-6">
@@ -279,7 +280,7 @@ const News = () => {
               }}
               className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
             >
-              <ChevronLeft className="w-6 h-6 text-white" />
+              <CaretLeft className="w-6 h-6 text-white" />
             </button>
 
             {/* Next button */}
@@ -290,7 +291,7 @@ const News = () => {
               }}
               className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
             >
-              <ChevronRight className="w-6 h-6 text-white" />
+              <CaretRight className="w-6 h-6 text-white" />
             </button>
 
             {/* Main image */}
@@ -341,7 +342,7 @@ const News = () => {
               Industry Insights
             </h2>
             <p className="text-arch-slate max-w-2xl mx-auto">
-              Explore videos about aluminium in architecture, construction materials, and modern building techniques.
+              Explore videos about <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link> in architecture, construction materials, and modern building techniques.
             </p>
           </AnimatedSection>
 
@@ -386,7 +387,7 @@ const News = () => {
           <div className="max-w-2xl mx-auto text-center">
             <AnimatedSection>
               <div className="w-16 h-16 bg-arch-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
-                <Rss className="w-8 h-8 text-arch-gold" />
+                <RssSimple className="w-8 h-8 text-arch-gold" />
               </div>
             </AnimatedSection>
 
@@ -398,7 +399,7 @@ const News = () => {
 
             <AnimatedSection delay={0.2}>
               <p className="text-xl text-arch-slate mb-10">
-                Subscribe to our newsletter for the latest news, project updates,
+                Subscribe to our newsletter for the latest news, <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">project</Link> updates,
                 and industry insights delivered to your inbox.
               </p>
             </AnimatedSection>

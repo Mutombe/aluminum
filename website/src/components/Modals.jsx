@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cookie, X, Shield, ChevronRight } from 'lucide-react';
-import { SiFsecure } from "react-icons/si";
+import { Cookie, X, Shield, CaretRight } from '@phosphor-icons/react';
 
 // Cookie Consent Component
 export const CookieConsent = () => {
@@ -70,7 +69,7 @@ export const CookieConsent = () => {
                   className="text-sm text-arch-silver-dark hover:text-arch-gold transition-colors duration-200 flex items-center gap-1"
                 >
                   Learn more
-                  <ChevronRight size={14} />
+                  <CaretRight size={14} />
                 </button>
               </div>
             </div>

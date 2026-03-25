@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Palette, Sparkles, Image, Droplets, ArrowRight } from 'lucide-react';
+import { Check, Palette, Sparkle, Image, Drop, ArrowRight, Checks } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from './AnimatedComponents';
-import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
-import { IoCheckmarkDone } from "react-icons/io5";
 
 
 // Import anodised images - place your images in src/assets/anodised/
@@ -126,7 +124,7 @@ const AnodisedCard = ({ finish, isSelected, onSelect }) => {
         title={showImage ? 'Show color swatch' : 'Show product image'}
       >
         {showImage ? (
-          <Droplets size={18} className="text-arch-silver-light group-hover/btn:text-arch-gold transition-colors" />
+          <Drop size={18} className="text-arch-silver-light group-hover/btn:text-arch-gold transition-colors" />
         ) : (
           <Image size={18} className="text-arch-silver-light group-hover/btn:text-arch-gold transition-colors" />
         )}
@@ -239,7 +237,7 @@ const AluminiumFinishes = () => {
                   : 'text-arch-graphite hover:text-arch-charcoal'
               }`}
             >
-              <Sparkles size={18} />
+              <Sparkle size={18} />
               Anodised
             </button>
           </div>
@@ -282,7 +280,7 @@ const AluminiumFinishes = () => {
                         <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center ${
                           color.category === 'light' ? 'bg-arch-black/90' : 'bg-arch-white/90'
                         }`}>
-                          <IoCheckmarkDone className={color.category === 'light' ? 'text-white' : 'text-arch-black'} size={14} />
+                          <Checks className={color.category === 'light' ? 'text-white' : 'text-arch-black'} size={14} />
                         </div>
                       </motion.div>
                     )}
@@ -356,7 +354,7 @@ const AluminiumFinishes = () => {
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-arch-silver-light text-arch-slate text-sm">
                   <span className="hidden sm:inline">Click</span>
                   <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-arch-platinum border border-arch-silver-light">
-                    <Droplets size={14} className="text-arch-gold" />
+                    <Drop size={14} className="text-arch-gold" />
                     <span className="text-arch-slate">/</span>
                     <Image size={14} className="text-arch-gold" />
                   </span>
@@ -438,7 +436,7 @@ const AluminiumFinishes = () => {
                     <ul className="space-y-2">
                       {['Superior corrosion resistance', 'Scratch and wear resistant', 'UV stable - won\'t fade', 'Environmentally friendly'].map((benefit) => (
                         <li key={benefit} className="flex items-center gap-2 text-arch-slate text-sm md:text-base">
-                          <IoCheckmarkDone className="text-arch-gold flex-shrink-0" size={16} />
+                          <Checks className="text-arch-gold flex-shrink-0" size={16} />
                           {benefit}
                         </li>
                       ))}

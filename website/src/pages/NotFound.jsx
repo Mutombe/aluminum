@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, ArrowLeft, Search } from 'lucide-react';
+import { House, ArrowLeft, MagnifyingGlass } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
@@ -72,8 +72,10 @@ const NotFound = () => {
               Page Not Found
             </h2>
             <p className="text-arch-silver text-lg max-w-md mx-auto mb-10">
-              The page you're looking for doesn't exist or has been moved. 
-              Let's get you back on track.
+              The page you're looking for doesn't exist or has been moved.
+              Try our <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">services</Link>,{' '}
+              <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">projects</Link>, or{' '}
+              <Link to="/contact" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">contact us</Link> for help.
             </p>
           </motion.div>
 
@@ -89,7 +91,7 @@ const NotFound = () => {
                 to="/"
                 className="inline-flex items-center justify-center px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
               >
-                <Home className="w-5 h-5 mr-2" />
+                <House className="w-5 h-5 mr-2" />
                 Go Home
               </Link>
             </motion.div>
@@ -113,13 +115,15 @@ const NotFound = () => {
             className="mt-12"
           >
             <p className="text-arch-silver-dark text-sm mb-4">
-              Or try searching for what you need
+              Or browse our <Link to="/gallery" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">gallery</Link>,{' '}
+              <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">about us</Link>, or{' '}
+              <Link to="/news" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">news</Link>
             </p>
             <button 
               className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-arch-silver hover:border-arch-gold/50 transition-colors"
               aria-label="Open search"
             >
-              <Search className="w-4 h-4" />
+              <MagnifyingGlass className="w-4 h-4" />
               <span>Press ⌘K to search</span>
             </button>
           </motion.div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, ArrowRight, FileText, Briefcase, Newspaper, FolderOpen } from 'lucide-react';
+import { MagnifyingGlass, X, ArrowRight, FileText, Briefcase, Newspaper, FolderOpen } from '@phosphor-icons/react';
 import { useSearch } from '../context/SearchContext';
 
 const typeIcons = {
@@ -85,7 +85,7 @@ const SearchModal = () => {
             <div className="relative glass rounded-2xl overflow-hidden">
               {/* Search Input */}
               <div className="flex items-center gap-4 p-6 border-b border-arch-graphite/50">
-                <Search className="text-arch-gold" size={24} />
+                <MagnifyingGlass className="text-arch-gold" size={24} />
                 <input
                   ref={inputRef}
                   type="text"
