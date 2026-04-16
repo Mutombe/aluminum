@@ -80,11 +80,11 @@ const SearchModal = () => {
             className="relative w-full max-w-2xl"
           >
             {/* Decorative glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-arch-gold/20 via-arch-silver/10 to-arch-gold/20 rounded-2xl blur-xl" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-arch-gold/25 via-arch-gold/10 to-arch-gold/25 rounded-2xl blur-xl" />
 
-            <div className="relative glass rounded-2xl overflow-hidden">
+            <div className="relative bg-white/95 backdrop-blur-2xl rounded-2xl overflow-hidden border border-arch-silver-light shadow-2xl shadow-arch-black/25">
               {/* Search Input */}
-              <div className="flex items-center gap-4 p-6 border-b border-arch-graphite/50">
+              <div className="flex items-center gap-4 p-6 border-b border-arch-silver-light">
                 <MagnifyingGlass className="text-arch-gold" size={24} />
                 <input
                   ref={inputRef}
@@ -92,15 +92,15 @@ const SearchModal = () => {
                   placeholder="Search for services, projects, pages..."
                   value={searchQuery}
                   onChange={(e) => performSearch(e.target.value)}
-                  className="flex-1 bg-transparent text-arch-white text-lg placeholder:text-arch-silver-dark focus:outline-none font-body"
+                  className="flex-1 bg-transparent text-arch-charcoal text-lg placeholder:text-arch-silver-dark focus:outline-none font-body"
                 />
                 <div className="flex items-center gap-2">
-                  <kbd className="hidden sm:inline-block px-2 py-1 text-xs text-arch-silver-dark bg-arch-graphite rounded">
+                  <kbd className="hidden sm:inline-block px-2 py-1 text-xs text-arch-slate bg-arch-platinum border border-arch-silver-light rounded font-mono">
                     ESC
                   </kbd>
                   <button
                     onClick={closeSearch}
-                    className="p-2 text-arch-silver-dark hover:text-arch-gold transition-colors duration-200"
+                    className="p-2 text-arch-slate hover:text-arch-gold transition-colors duration-200"
                     aria-label="Close search"
                   >
                     <X size={20} />
@@ -112,10 +112,10 @@ const SearchModal = () => {
               <div className="max-h-[50vh] overflow-y-auto">
                 {searchQuery && searchResults.length === 0 && (
                   <div className="p-8 text-center">
-                    <p className="text-arch-silver-dark">
-                      No results found for "<span className="text-arch-gold">{searchQuery}</span>"
+                    <p className="text-arch-slate">
+                      No results found for "<span className="text-arch-gold font-medium">{searchQuery}</span>"
                     </p>
-                    <p className="text-sm text-arch-silver-dark/60 mt-2">
+                    <p className="text-sm text-arch-silver-dark mt-2">
                       Try searching for services, projects, or contact information
                     </p>
                   </div>
@@ -125,7 +125,7 @@ const SearchModal = () => {
                   <ul className="py-2">
                     {searchResults.map((result, index) => {
                       const Icon = typeIcons[result.type] || FileText;
-                      
+
                       return (
                         <motion.li
                           key={`${result.path}-${index}`}
@@ -136,22 +136,22 @@ const SearchModal = () => {
                           <button
                             onClick={() => handleResultClick(result.path)}
                             onKeyDown={(e) => handleKeyDown(e, result.path)}
-                            className="w-full flex items-center gap-4 px-6 py-4 hover:bg-arch-gold/10 transition-colors duration-200 group text-left"
+                            className="w-full flex items-center gap-4 px-6 py-4 hover:bg-arch-gold/8 transition-colors duration-200 group text-left"
                           >
-                            <div className="p-2 rounded-lg bg-arch-graphite group-hover:bg-arch-gold/20 transition-colors duration-200">
+                            <div className="p-2 rounded-lg bg-arch-platinum group-hover:bg-arch-gold/15 transition-colors duration-200">
                               <Icon size={18} className="text-arch-gold" />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-arch-white font-medium truncate group-hover:text-arch-gold transition-colors duration-200">
+                              <p className="text-arch-charcoal font-medium truncate group-hover:text-arch-gold transition-colors duration-200">
                                 {result.title}
                               </p>
-                              <p className="text-sm text-arch-silver-dark truncate">
+                              <p className="text-sm text-arch-slate truncate">
                                 {typeLabels[result.type]} · {result.path}
                               </p>
                             </div>
-                            <ArrowRight 
-                              size={16} 
-                              className="text-arch-silver-dark group-hover:text-arch-gold group-hover:translate-x-1 transition-all duration-200" 
+                            <ArrowRight
+                              size={16}
+                              className="text-arch-slate group-hover:text-arch-gold group-hover:translate-x-1 transition-all duration-200"
                             />
                           </button>
                         </motion.li>
@@ -163,7 +163,7 @@ const SearchModal = () => {
                 {/* Quick Links (when no search) */}
                 {!searchQuery && (
                   <div className="p-6">
-                    <p className="text-xs text-arch-silver-dark uppercase tracking-wider mb-4">
+                    <p className="text-xs text-arch-slate uppercase tracking-wider mb-4 font-mono">
                       Quick Links
                     </p>
                     <div className="grid grid-cols-2 gap-2">
@@ -176,12 +176,12 @@ const SearchModal = () => {
                         <button
                           key={link.path}
                           onClick={() => handleResultClick(link.path)}
-                          className="flex items-center justify-between p-3 rounded-lg bg-arch-graphite/50 hover:bg-arch-gold/10 text-arch-silver-light hover:text-arch-gold transition-all duration-200 group"
+                          className="flex items-center justify-between p-3 rounded-lg bg-arch-platinum border border-arch-silver-light hover:bg-arch-gold/10 hover:border-arch-gold/30 text-arch-charcoal hover:text-arch-gold transition-all duration-200 group"
                         >
-                          <span className="text-sm">{link.name}</span>
-                          <ArrowRight 
-                            size={14} 
-                            className="group-hover:translate-x-1 transition-transform duration-200" 
+                          <span className="text-sm font-medium">{link.name}</span>
+                          <ArrowRight
+                            size={14}
+                            className="group-hover:translate-x-1 transition-transform duration-200"
                           />
                         </button>
                       ))}
@@ -191,11 +191,11 @@ const SearchModal = () => {
               </div>
 
               {/* Footer hint */}
-              <div className="px-6 py-3 border-t border-arch-graphite/50 flex items-center justify-between text-xs text-arch-silver-dark">
-                <span>Press <kbd className="px-1.5 py-0.5 bg-arch-graphite rounded mx-1">↵</kbd> to select</span>
+              <div className="px-6 py-3 border-t border-arch-silver-light bg-arch-snow flex items-center justify-between text-xs text-arch-slate">
+                <span>Press <kbd className="px-1.5 py-0.5 bg-white border border-arch-silver-light text-arch-slate rounded mx-1 font-mono">↵</kbd> to select</span>
                 <span>
-                  <kbd className="px-1.5 py-0.5 bg-arch-graphite rounded">⌘</kbd>
-                  <kbd className="px-1.5 py-0.5 bg-arch-graphite rounded ml-0.5">K</kbd>
+                  <kbd className="px-1.5 py-0.5 bg-white border border-arch-silver-light text-arch-slate rounded font-mono">⌘</kbd>
+                  <kbd className="px-1.5 py-0.5 bg-white border border-arch-silver-light text-arch-slate rounded ml-0.5 font-mono">K</kbd>
                   {' '}to search
                 </span>
               </div>

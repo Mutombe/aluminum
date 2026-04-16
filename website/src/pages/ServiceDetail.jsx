@@ -49,6 +49,7 @@ We work with architects, contractors, and homeowners to deliver solutions that n
     ],
     color: 'from-arch-gold to-amber-600',
     accentColor: '#D4AF37',
+    textColor: 'text-arch-black',
     pattern: 'window',
     features: [
       { 
@@ -128,8 +129,9 @@ Working closely with brands, architects, and project managers, we translate desi
       'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     ],
-    color: 'from-blue-500 to-cyan-500',
-    accentColor: '#3B82F6',
+    color: 'from-arch-charcoal to-arch-graphite',
+    accentColor: '#D4AF37',
+    textColor: 'text-white',
     pattern: 'circuit',
     features: [
       { 
@@ -208,8 +210,9 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
       'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80',
       'https://images.unsplash.com/photo-1462826303086-329426d1aef5?w=800&q=80',
     ],
-    color: 'from-purple-500 to-pink-500',
-    accentColor: '#A855F7',
+    color: 'from-arch-graphite to-arch-slate',
+    accentColor: '#D4AF37',
+    textColor: 'text-white',
     pattern: 'hex',
     features: [
       { 
@@ -288,8 +291,9 @@ We understand that homeowners want products that look beautiful, perform excelle
       'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
     ],
-    color: 'from-green-500 to-emerald-500',
-    accentColor: '#22C55E',
+    color: 'from-arch-gold-dark to-arch-gold',
+    accentColor: '#D4AF37',
+    textColor: 'text-arch-black',
     pattern: 'angular',
     features: [
       { 
@@ -368,8 +372,9 @@ We partner with leading architects and developers on projects ranging from bouti
       'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=800&q=80',
       'https://images.unsplash.com/photo-1464938050520-ef2571d5b717?w=800&q=80',
     ],
-    color: 'from-orange-500 to-red-500',
-    accentColor: '#F97316',
+    color: 'from-arch-silver-dark to-arch-charcoal',
+    accentColor: '#D4AF37',
+    textColor: 'text-white',
     pattern: 'beam',
     features: [
       { 
@@ -622,7 +627,7 @@ export default function ServiceDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${service.color} rounded-full text-arch-black text-sm font-medium mb-6`}
+                className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${service.color} rounded-full ${service.textColor} text-sm font-medium mb-6`}
               >
                 <Sparkle className="w-4 h-4" />
                 {service.subtitle}
@@ -692,7 +697,7 @@ export default function ServiceDetail() {
           >
             <Link 
               to={`/contact?service=${service.id}`}
-              className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} text-arch-black font-bold rounded-full hover:shadow-lg transition-all`}
+              className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} ${service.textColor} font-bold rounded-full hover:shadow-lg transition-all`}
             >
               <Phone className="w-5 h-5" />
               Get a Quote
@@ -1057,7 +1062,7 @@ export default function ServiceDetail() {
                 </p>
                 <Link
                   to="/contact"
-                  className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.color} text-white font-semibold rounded-full hover:shadow-lg transition-all`}
+                  className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.color} ${service.textColor} font-semibold rounded-full hover:shadow-lg transition-all`}
                 >
                   <Phone className="w-4 h-4" />
                   Contact Us
@@ -1197,7 +1202,7 @@ export default function ServiceDetail() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to={`/contact?service=${service.id}`}
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} text-white font-bold rounded-full hover:shadow-lg transition-all`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} ${service.textColor} font-bold rounded-full hover:shadow-lg transition-all`}
               >
                 <Phone className="w-5 h-5" />
                 Get a Free Quote

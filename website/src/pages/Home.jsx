@@ -471,47 +471,7 @@ const Home = () => {
         </div>
 
         {/* ============================================
-      LAYER 3: FLOATING STATS CARD (RIGHT SIDE)
-      Positioned over the visible image area
-      ============================================ */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-48 right-12 z-30 hidden lg:block"
-        >
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div
-              className="relative p-6 rounded-2xl max-w-xs overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
-                backdropFilter: 'blur(24px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-                border: '1px solid rgba(255,255,255,0.25)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.3)',
-              }}
-            >
-              <div
-                className="absolute top-0 left-6 right-6 h-[2px]"
-                style={{ background: 'linear-gradient(90deg, transparent, #D4AF37, transparent)' }}
-              />
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-xs text-white/70 font-mono tracking-wider uppercase">Est. 1994</span>
-              </div>
-              <p className="font-display font-bold text-5xl mb-1 gradient-text">30+</p>
-              <p className="text-white/80 text-sm font-medium tracking-wide">Years of Excellence</p>
-              <div className="w-8 h-[1px] bg-white/20 my-3" />
-              <p className="text-white/60 text-xs">15,000+ Projects Completed</p>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* ============================================
-      LAYER 4: HERO CONTENT (LEFT SIDE)
+      LAYER 3: HERO CONTENT (LEFT SIDE)
       Text content sits on top of everything
       ============================================ */}
         <div className="relative z-30 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 pt-32 pb-24 lg:pb-32">

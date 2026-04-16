@@ -65,7 +65,7 @@ const serviceDetails = [
     title: 'Shopfitting & Joinery',
     subtitle: 'Interior Commercial Solutions',
     icon: Storefront,
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-arch-charcoal to-arch-graphite',
     description: 'Professional shopfitting and joinery services including product displays, interior modelling, bank teller stations, office workstations, and wall panelling.',
     features: [
       'Shop Product Displays',
@@ -85,7 +85,7 @@ const serviceDetails = [
     title: 'Building Interiors',
     subtitle: 'Partitions & Ceilings',
     icon: Stack,
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-arch-graphite to-arch-slate',
     description: 'Transform interior spaces with our drywall partitioning, aluminium and frameless partitions, suspended ceilings, and professional interior solutions.',
     features: [
       'Drywall Partitions',
@@ -105,7 +105,7 @@ const serviceDetails = [
     title: 'Residential Properties',
     subtitle: 'Home Aluminium Solutions',
     icon: House,
-    color: 'from-green-500 to-emerald-500',
+    color: 'from-arch-gold-dark to-arch-gold',
     description: 'Premium residential aluminium products including patio doors, sliding and folding systems, louvres, and aluminium cladded doors for modern homes.',
     features: [
       'Patio Doors',
@@ -125,7 +125,7 @@ const serviceDetails = [
     title: 'Commercial Exteriors',
     subtitle: 'Building Facades & Entrances',
     icon: Buildings,
-    color: 'from-orange-500 to-red-500',
+    color: 'from-arch-silver-dark to-arch-charcoal',
     description: 'Professional commercial exterior solutions including curtain walling, flush glazing, shopfronts, entrance canopies, and stainless steel balustrades.',
     features: [
       'Curtain Walling',
@@ -641,9 +641,9 @@ export default function Services() {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Trophy, title: '30+ Years', desc: 'Of Excellence', color: 'from-arch-gold to-amber-600' },
-              { icon: BuildingOffice, title: '50,000 sqm', desc: 'Factory Space', color: 'from-blue-500 to-cyan-500' },
-              { icon: Shield, title: 'Quality', desc: 'Guaranteed', color: 'from-purple-500 to-pink-500' },
-              { icon: Clock, title: 'Fast', desc: 'Turnaround', color: 'from-green-500 to-emerald-500' }
+              { icon: BuildingOffice, title: '50,000 sqm', desc: 'Factory Space', color: 'from-arch-charcoal to-arch-graphite' },
+              { icon: Shield, title: 'Quality', desc: 'Guaranteed', color: 'from-arch-gold-dark to-arch-gold' },
+              { icon: Clock, title: 'Fast', desc: 'Turnaround', color: 'from-arch-graphite to-arch-slate' }
             ].map((item, index) => (
               <StaggerItem key={index}>
                 <motion.div
