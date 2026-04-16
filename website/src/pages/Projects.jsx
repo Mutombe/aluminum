@@ -120,7 +120,7 @@ function ProjectCard({ project, index, isHero, viewMode }) {
             alt={project.title}
             className="w-full h-full object-cover"
             animate={{ scale: isHovered ? 1.08 : 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6 }} loading="eager"
           />
 
           {/* Overlay */}
@@ -243,7 +243,7 @@ export default function Projects() {
           <img
             src="https://images.unsplash.com/photo-1481253127861-534498168948?w=1600&q=80"
             alt="Project showcase"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           {/* Cinematic dark gradient — full-bleed image */}
           <div

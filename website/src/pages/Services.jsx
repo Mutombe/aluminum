@@ -187,7 +187,7 @@ function ServiceCard({ service, index }) {
             alt={service.title}
             className="w-full h-full object-cover"
             animate={{ scale: isHovered ? 1.1 : 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6 }} loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
           
@@ -318,7 +318,7 @@ export default function Services() {
           <img
             src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80"
             alt="Aluminium fabrication"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           {/* Cinematic dark gradient — full-bleed image */}
           <div
@@ -585,7 +585,7 @@ export default function Services() {
                 <img
                   src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80"
                   alt="Manufacturing process"
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl" loading="eager"
                 />
                 
                 {/* Floating Stats Card */}
@@ -682,7 +682,7 @@ export default function Services() {
           <img
             src="/firstmutual/untitled-202.JPG"
             alt="First Mutual Park - structural glazing"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           <div className="absolute inset-0 bg-white/90 backdrop-blur-sm" />
         </div>

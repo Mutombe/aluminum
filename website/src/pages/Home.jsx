@@ -196,7 +196,7 @@ function ReviewCard({ review }) {
           <img
             src={review.avatar}
             alt={review.name}
-            className="w-10 h-10 rounded-full object-cover border-2 border-white/20 pointer-events-none"
+            className="w-10 h-10 rounded-full object-cover border-2 border-white/20 pointer-events-none" loading="eager"
           />
         ) : (
           <div className="w-10 h-10 rounded-full bg-arch-gold/30 flex items-center justify-center border-2 border-arch-gold/40">
@@ -784,7 +784,7 @@ const Home = () => {
                           <img
                             src={cardImage}
                             alt=""
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover" loading="eager"
                           />
                           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
                         </div>
@@ -836,7 +836,7 @@ const Home = () => {
                         <img 
                           src="/lupane.png" 
                           alt="Lupane Timbers" 
-                          className="w-10 h-10 md:w-12 md:h-12 object-contain mt-1"
+                          className="w-10 h-10 md:w-12 md:h-12 object-contain mt-1" loading="eager"
                         />
                         <div>
                           <span className="text-arch-gold font-mono text-sm">
@@ -903,7 +903,7 @@ const Home = () => {
                     src={project.image}
                     alt={project.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
+                    loading="eager"
                   />
 
                   {/* Overlay */}
@@ -1032,7 +1032,7 @@ const Home = () => {
           <img
             src="/ecobank/DSC08839.jpg"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           <div className="absolute inset-0 bg-arch-black/70 backdrop-blur-sm" />
           <div className="absolute inset-0 bg-gradient-to-b from-arch-black/40 via-transparent to-arch-black/40" />
@@ -1079,7 +1079,7 @@ const Home = () => {
           <img
             src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600"
             alt="Aluminium profiles"
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-10" loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-arch-platinum via-arch-snow/95 to-arch-platinum" />
         </div>

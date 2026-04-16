@@ -349,7 +349,7 @@ const Gallery = () => {
                 <img
                   src={galleryItems[i]?.image}
                   alt=""
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover" loading="eager"
                 />
               </motion.div>
             ))}
@@ -519,7 +519,7 @@ const Gallery = () => {
                         ? item.size === 'large' ? 'h-96' : item.size === 'medium' ? 'h-72' : 'h-56'
                         : 'h-full'
                       }
-                    `}
+                    `} loading="eager"
                   />
 
                   {/* Overlay */}
@@ -607,7 +607,7 @@ const Gallery = () => {
               <img 
                 src={selectedImage.image}
                 alt={selectedImage.title}
-                className="w-full h-full object-contain rounded-lg"
+                className="w-full h-full object-contain rounded-lg" loading="eager"
               />
 
               {/* Image info */}

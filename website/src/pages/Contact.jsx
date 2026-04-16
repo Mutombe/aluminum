@@ -363,7 +363,7 @@ const Contact = () => {
             <img
               src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80"
               alt="Map background"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover" loading="eager"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-arch-snow via-arch-platinum/80 to-arch-snow" />
@@ -994,7 +994,7 @@ const Contact = () => {
             height="100%"
             style={{ border: 0 }}
             allowFullScreen=""
-            loading="lazy"
+            loading="eager"
             referrerPolicy="no-referrer-when-downgrade"
             title="Architectural Aluminium Location"
             className="w-full h-full"

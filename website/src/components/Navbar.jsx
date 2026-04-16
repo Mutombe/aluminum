@@ -202,7 +202,7 @@ const Navbar = () => {
                                   <img
                                     src="/lupane.png"
                                     alt="Lupane Timbers"
-                                    className="w-4 h-4 object-contain"
+                                    className="w-4 h-4 object-contain" loading="eager"
                                   />
                                   <span>Lupane Timbers</span>
                                 </a>
@@ -379,7 +379,7 @@ const Navbar = () => {
                       <img 
                         src="/lupane.png" 
                         alt="Lupane Timbers" 
-                        className="w-6 h-6 object-contain"
+                        className="w-6 h-6 object-contain" loading="eager"
                       />
                       <span>Lupane Timbers</span>
                     </a>

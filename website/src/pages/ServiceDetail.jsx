@@ -509,7 +509,7 @@ const GalleryImage = ({ src, alt, onClick, index }) => (
     <img 
       src={src} 
       alt={alt} 
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="eager"
     />
     <div className="absolute inset-0 bg-arch-charcoal/0 group-hover:bg-arch-charcoal/40 transition-colors duration-300 flex items-center justify-center">
       <motion.div
@@ -572,7 +572,7 @@ export default function ServiceDetail() {
           <img
             src={service.heroImage}
             alt={service.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           {/* Cinematic dark gradient — full-bleed image */}
           <div
@@ -783,7 +783,7 @@ export default function ServiceDetail() {
                   <img 
                     src={service.galleryImages[0]}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover" loading="eager"
                   />
                 </div>
                 
@@ -800,7 +800,7 @@ export default function ServiceDetail() {
                   <img
                     src={service.galleryImages[1]}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover" loading="eager"
                   />
                 </motion.div>
                 
@@ -1131,7 +1131,7 @@ export default function ServiceDetail() {
                   >
                     {/* Background image */}
                     <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                      <img src={related.heroImage} alt="" className="w-full h-full object-cover" />
+                      <img src={related.heroImage} alt="" className="w-full h-full object-cover" loading="eager" />
                       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
                     </div>
 
@@ -1199,7 +1199,7 @@ export default function ServiceDetail() {
           <img
             src={service.galleryImages[2] || service.heroImage}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           <div className="absolute inset-0 bg-white/90" />
         </div>
@@ -1254,7 +1254,7 @@ export default function ServiceDetail() {
               src={selectedImage}
               alt="Gallery"
               className="max-w-full max-h-full rounded-2xl"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()} loading="eager"
             />
             <button
               onClick={() => setSelectedImage(null)}

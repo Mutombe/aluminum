@@ -76,7 +76,7 @@ const About = () => {
           <img
             src="/more/IMG_2361.jpeg"
             alt="Precision aluminium atrium installation — craftsmanship in progress"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" loading="eager"
           />
           {/* Cinematic dark gradient — full-bleed image */}
           <div
@@ -292,7 +292,7 @@ const About = () => {
                 <img
                   src="/firstmutual/untitled-561.JPG"
                   alt="First Mutual Park - our craftsmanship"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover" loading="eager"
                 />
                 {/* Corner brackets on image */}
                 <div className="absolute inset-4">
@@ -461,7 +461,7 @@ const About = () => {
               <img
                 src="/ecobank/DSC08596.jpg"
                 alt="Ecobank HQ facade - our workmanship"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover" loading="eager"
               />
               <div className="absolute inset-0 bg-arch-black/80" />
 
@@ -573,7 +573,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="eager"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-arch-black/80 via-transparent to-transparent" />
 
