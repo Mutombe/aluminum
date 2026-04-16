@@ -39,6 +39,11 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
   const { openSearch } = useSearch();
+  // Pages with full-bleed cinematic image heroes — nav becomes transparent
+  // with white-capsule logo and white nav links until scroll
+  const hasDarkHero =
+    ['/', '/about', '/projects', '/services'].includes(location.pathname) ||
+    location.pathname.startsWith('/services/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +79,9 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'bg-white/90 backdrop-blur-xl shadow-soft py-3'
-            : 'py-5 max-lg:bg-transparent max-lg:backdrop-blur-none lg:bg-white/40 lg:backdrop-blur-md'
+            : hasDarkHero
+              ? 'py-5 bg-transparent backdrop-blur-none'
+              : 'py-5 max-lg:bg-transparent max-lg:backdrop-blur-none lg:bg-white/40 lg:backdrop-blur-md'
         }`}
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
@@ -83,11 +90,10 @@ const Navbar = () => {
             <Link to="/" className="relative z-10 flex items-center gap-3 group">
               <div
                 className={`relative flex items-center justify-center transition-all duration-500 ${
-                  !isScrolled
-                    ? 'max-lg:bg-white/85 max-lg:backdrop-blur-md max-lg:rounded-b-xl max-lg:px-4 max-lg:pb-3 max-lg:pt-8 max-lg:-mt-8'
+                  !isScrolled && hasDarkHero
+                    ? 'bg-white/40 backdrop-blur-md rounded-b-xl px-4 pb-3 pt-8 -mt-8'
                     : ''
                 }`}
-                style={!isScrolled ? { marginTop: '-2rem', paddingTop: '2rem' } : {}}
               >
                 <img
                   src="/logo-light.png"
@@ -115,7 +121,9 @@ const Navbar = () => {
                     className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 ${
                       isActive
                         ? 'text-arch-gold'
-                        : 'text-arch-charcoal hover:text-arch-gold'
+                        : !isScrolled && hasDarkHero
+                          ? 'text-white/90 hover:text-arch-gold [text-shadow:0_1px_8px_rgba(0,0,0,0.4)]'
+                          : 'text-arch-charcoal hover:text-arch-gold'
                     }`}
                   >
                     {link.name}
@@ -216,7 +224,11 @@ const Navbar = () => {
               <button
                 onClick={openSearch}
                 className={`p-2 hover:text-arch-gold transition-colors duration-300 ${
-                  isScrolled ? 'text-arch-graphite' : 'text-arch-graphite max-lg:text-white/90'
+                  isScrolled
+                    ? 'text-arch-graphite'
+                    : hasDarkHero
+                      ? 'text-white/90'
+                      : 'text-arch-graphite'
                 }`}
                 aria-label="Search"
               >
@@ -244,7 +256,11 @@ const Navbar = () => {
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`lg:hidden p-2 hover:text-arch-gold transition-colors duration-300 ${
-                  isScrolled ? 'text-arch-graphite' : 'text-arch-graphite max-lg:text-white/90'
+                  isScrolled
+                    ? 'text-arch-graphite'
+                    : hasDarkHero
+                      ? 'text-white/90'
+                      : 'text-arch-graphite'
                 }`}
                 aria-label="Toggle menu"
               >

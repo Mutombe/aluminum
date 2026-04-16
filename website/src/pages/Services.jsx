@@ -320,7 +320,19 @@ export default function Services() {
             alt="Aluminium fabrication"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white" />
+          {/* Cinematic dark gradient — full-bleed image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(
+                to top,
+                rgba(0,0,0,0.65) 0%,
+                rgba(0,0,0,0.35) 30%,
+                rgba(0,0,0,0.20) 60%,
+                rgba(0,0,0,0.30) 100%
+              )`,
+            }}
+          />
         </motion.div>
         
         {/* Floating Particles */}
@@ -401,15 +413,15 @@ export default function Services() {
               Comprehensive Solutions
             </span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-arch-charcoal mb-6 font-display">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Our{' '}
               <span className="gradient-text">Services</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-arch-slate max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               From <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">fenestration</Link> to <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, we deliver excellence across every aspect of aluminium fabrication and installation.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
@@ -420,7 +432,7 @@ export default function Services() {
               </Link>
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-arch-charcoal/10 border border-arch-charcoal/20 text-arch-charcoal font-medium rounded-full hover:bg-arch-charcoal/20 hover:border-arch-charcoal/30 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-white/30 text-white backdrop-blur-sm font-medium rounded-full hover:border-arch-gold hover:text-arch-gold transition-all"
               >
                 View Projects
                 <ArrowRight className="w-5 h-5" />
@@ -435,7 +447,7 @@ export default function Services() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 border-arch-charcoal/30 rounded-full flex items-start justify-center p-2">
+          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
             <motion.div
               className="w-1.5 h-1.5 bg-arch-gold rounded-full"
               animate={{ y: [0, 12, 0] }}

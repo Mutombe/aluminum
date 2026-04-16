@@ -113,7 +113,7 @@ export const projects = [
     year: 2023,
     description: "Complete aluminium curtain walling, cladding, and interior fit-out for Ecobank's striking Pan-African headquarters featuring a bold blue and white facade with circular porthole windows, colorful glass panels, and full interior shopfitting.",
     services: ["Curtain Walling", "Cladding", "Shopfitting", "Partitioning", "Office Workstations"],
-    image: "/ecobank/DJI_0409.jpg"
+    image: "/ecobank/DSC08707.jpg"
   },
   {
     id: 2,
@@ -288,8 +288,8 @@ export const galleryImages = [
   {
     id: 1,
     category: "Commercial",
-    title: "Ecobank HQ - Aerial View",
-    src: "/ecobank/DJI_0409.jpg"
+    title: "Ecobank HQ - Interior Fit-out",
+    src: "/ecobank/DSC08869.jpg"
   },
   {
     id: 2,

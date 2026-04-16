@@ -74,11 +74,30 @@ const About = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/ecobank/DJI_0438.jpg"
-            alt="Ecobank Headquarters - Architectural Aluminium project"
+            src="/more/IMG_2361.jpeg"
+            alt="Precision aluminium atrium installation — craftsmanship in progress"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/50" />
+          {/* Cinematic dark gradient — full-bleed image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(
+                to top,
+                rgba(0,0,0,0.70) 0%,
+                rgba(0,0,0,0.40) 30%,
+                rgba(0,0,0,0.15) 60%,
+                rgba(0,0,0,0.10) 80%,
+                rgba(0,0,0,0.30) 100%
+              ),
+              linear-gradient(
+                to right,
+                rgba(0,0,0,0.40) 0%,
+                rgba(0,0,0,0.15) 45%,
+                transparent 80%
+              )`,
+            }}
+          />
         </div>
 
         {/* Floating Particles */}
@@ -121,11 +140,11 @@ const About = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               About Us
             </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-arch-charcoal mt-4 mb-6 leading-[1.1]">
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mt-4 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Building Zimbabwe's
               <span className="block gradient-text">Future in Aluminium</span>
             </h1>
-            <p className="text-xl text-arch-slate max-w-2xl">
+            <p className="text-xl text-white/80 max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               From a backyard workshop in 1994 to Zimbabwe's premier aluminium
               fabricator, our journey is one of vision, dedication, and
               relentless pursuit of excellence.

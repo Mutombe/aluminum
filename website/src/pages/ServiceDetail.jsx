@@ -124,8 +124,8 @@ We work with architects, contractors, and homeowners to deliver solutions that n
 Working closely with brands, architects, and project managers, we translate design visions into reality. Our capabilities span from individual display units to complete store fit-outs, always maintaining the highest standards of quality and finish.`,
     heroImage: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1600&q=80',
     galleryImages: [
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
-      'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
+      '/ecobank/DSC08707.jpg',
+      '/ecobank/DSC08839.jpg',
       'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     ],
@@ -574,7 +574,26 @@ export default function ServiceDetail() {
             alt={service.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/50" />
+          {/* Cinematic dark gradient — full-bleed image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(
+                to top,
+                rgba(0,0,0,0.75) 0%,
+                rgba(0,0,0,0.45) 30%,
+                rgba(0,0,0,0.20) 60%,
+                rgba(0,0,0,0.10) 80%,
+                rgba(0,0,0,0.30) 100%
+              ),
+              linear-gradient(
+                to right,
+                rgba(0,0,0,0.45) 0%,
+                rgba(0,0,0,0.20) 45%,
+                transparent 80%
+              )`,
+            }}
+          />
         </motion.div>
         
         {/* Floating Particles */}
@@ -612,7 +631,7 @@ export default function ServiceDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2 text-sm text-arch-slate mb-8"
+            className="flex items-center gap-2 text-sm text-white/70 mb-8"
           >
             <Link to="/" className="hover:text-arch-gold transition-colors">Home</Link>
             <CaretRight className="w-4 h-4" />
@@ -637,7 +656,7 @@ export default function ServiceDetail() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="font-display text-5xl md:text-7xl font-bold text-arch-charcoal mb-4"
+                className="font-display text-5xl md:text-7xl font-bold text-white mb-4 [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
               >
                 {service.title}
               </motion.h1>
@@ -655,7 +674,7 @@ export default function ServiceDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="text-lg text-arch-slate max-w-xl"
+                className="text-lg text-white/80 max-w-xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
               >
                 {service.description}
               </motion.p>

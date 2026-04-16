@@ -40,11 +40,11 @@ const Gallery = () => {
   const galleryItems = [
     {
       id: 1,
-      category: 'commercial',
-      title: 'Ecobank Headquarters - Aerial View',
+      category: 'curtain-walling',
+      title: 'Signature Atrium — Black Aluminium & Glass',
       location: 'Harare',
-      year: '2023',
-      image: '/ecobank/DJI_0409.jpg',
+      year: '2024',
+      image: '/more/IMG_2362.jpeg',
       size: 'large'
     },
     {
@@ -95,10 +95,10 @@ const Gallery = () => {
     {
       id: 7,
       category: 'commercial',
-      title: 'Ecobank HQ - Front Elevation',
+      title: 'Bespoke Atrium Installation',
       location: 'Harare',
-      year: '2023',
-      image: '/ecobank/DJI_0422.jpg',
+      year: '2024',
+      image: '/more/IMG_2361.jpeg',
       size: 'medium'
     },
     {
@@ -271,6 +271,24 @@ const Gallery = () => {
       year: '2024',
       image: '/seagrave-road/22B.jpg',
       size: 'small'
+    },
+    {
+      id: 27,
+      category: 'curtain-walling',
+      title: 'Signature Aluminium Curtain Wall Detail',
+      location: 'Harare',
+      year: '2024',
+      image: '/more/IMG_2357.jpeg',
+      size: 'medium'
+    },
+    {
+      id: 28,
+      category: 'residential',
+      title: 'Modern Residence — Floating Staircase & Glass Balustrade',
+      location: 'Harare',
+      year: '2024',
+      image: '/more/IMG_5674.jpeg',
+      size: 'medium'
     }
   ];
 

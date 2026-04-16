@@ -48,24 +48,24 @@ import { companyInfo, services, projects } from "../data/content";
 
 const heroImages = [
   {
-    src: "/ecobank/DJI_0409.jpg",
-    alt: "Ecobank Headquarters - aluminium curtain walling and cladding",
+    src: "/more/IMG_2361.jpeg",
+    alt: "Precision aluminium fabrication and installation in progress",
+  },
+  {
+    src: "/more/IMG_9173.jpeg",
+    alt: "Industrial-scale aluminium window and door systems",
   },
   {
     src: "/firstmutual/untitled-561.JPG",
     alt: "First Mutual Park - structural glazing and aluminium systems",
   },
   {
-    src: "18.jpg",
-    alt: "Sleek aluminium window frames",
+    src: "/more/IMG_8993.jpeg",
+    alt: "Full-height aluminium curtain wall system in reception",
   },
   {
-    src: "/ecobank/DSC08596.jpg",
-    alt: "Ecobank Headquarters - colorful glass facade detail",
-  },
-  {
-    src: "/firstmutual/untitled-17.JPG",
-    alt: "First Mutual Park - entrance with aluminium doors",
+    src: "/more/IMG_2362.jpeg",
+    alt: "Bespoke black aluminium atrium structure with glass panels",
   },
 ];
 
@@ -410,19 +410,24 @@ const Home = () => {
       )`,
           }}
         />
+        {/* Desktop: Cinematic dark gradient — bottom-up vignette + soft left scrim, full-bleed image */}
         <div
           className="absolute inset-0 z-20 pointer-events-none hidden lg:block"
           style={{
             background: `linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.70) 0%,
+        rgba(0, 0, 0, 0.45) 25%,
+        rgba(0, 0, 0, 0.18) 55%,
+        rgba(0, 0, 0, 0.10) 75%,
+        rgba(0, 0, 0, 0.30) 100%
+      ),
+      linear-gradient(
         to right,
-        rgb(250, 250, 250) 0%,
-        rgb(250, 250, 250) 35%,
-        rgba(250, 250, 250, 0.95) 45%,
-        rgba(250, 250, 250, 0.8) 50%,
-        rgba(250, 250, 250, 0.5) 55%,
-        rgba(250, 250, 250, 0.2) 60%,
-        rgba(250, 250, 250, 0.05) 65%,
-        transparent 70%
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.20) 40%,
+        rgba(0, 0, 0, 0.05) 65%,
+        transparent 80%
       )`,
           }}
         />
@@ -442,13 +447,14 @@ const Home = () => {
       LAYER 2B: SOFT VIGNETTE/GLOW EFFECT (OPTIONAL)
       Adds depth where the fade happens
       ============================================ */}
+        {/* Desktop: Soft radial vignette for atmospheric depth */}
         <div
           className="absolute inset-0 z-21 pointer-events-none hidden lg:block"
           style={{
             background: `radial-gradient(
-        ellipse 50% 100% at 55% 50%,
-        rgba(250, 250, 250, 0.3) 0%,
-        transparent 70%
+        ellipse 90% 80% at 60% 50%,
+        transparent 0%,
+        rgba(0, 0, 0, 0.25) 100%
       )`,
           }}
         />
@@ -471,30 +477,98 @@ const Home = () => {
         </div>
 
         {/* ============================================
-      LAYER 3: HERO CONTENT (LEFT SIDE)
+      LAYER 3: FLOATING RANK CARD (RIGHT SIDE, DESKTOP)
+      Architectural "spec sheet" — credibility callout
+      ============================================ */}
+        <motion.div
+          initial={{ opacity: 0, x: 60, y: 20 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ delay: 1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute bottom-40 right-12 xl:right-20 z-30 hidden lg:block"
+        >
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-[280px]"
+          >
+            {/* Outer gold glow */}
+            <div className="absolute -inset-1 bg-gradient-to-br from-arch-gold/30 via-transparent to-arch-gold/20 rounded-2xl blur-xl opacity-70" />
+
+            {/* Card */}
+            <div
+              className="relative rounded-2xl overflow-hidden px-5 py-4"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%)',
+                backdropFilter: 'blur(24px) saturate(160%)',
+                WebkitBackdropFilter: 'blur(24px) saturate(160%)',
+                border: '1px solid rgba(255,255,255,0.18)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25)',
+              }}
+            >
+              {/* Top gold hairline */}
+              <div
+                className="absolute top-0 left-5 right-5 h-[2px]"
+                style={{ background: 'linear-gradient(90deg, transparent, #D4AF37 50%, transparent)' }}
+              />
+
+              {/* Corner brackets */}
+              <span className="absolute top-2 left-2 w-2.5 h-2.5 border-l border-t border-arch-gold/60" />
+              <span className="absolute top-2 right-2 w-2.5 h-2.5 border-r border-t border-arch-gold/60" />
+              <span className="absolute bottom-2 left-2 w-2.5 h-2.5 border-l border-b border-arch-gold/60" />
+              <span className="absolute bottom-2 right-2 w-2.5 h-2.5 border-r border-b border-arch-gold/60" />
+
+              {/* Eyebrow */}
+              <div className="flex items-center gap-2 mb-2">
+                <span className="relative flex w-2 h-2">
+                  <span className="absolute inline-flex w-full h-full rounded-full bg-arch-gold opacity-60 animate-ping" />
+                  <span className="relative inline-flex w-2 h-2 rounded-full bg-arch-gold" />
+                </span>
+                <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/60">
+                  Trusted Leader
+                </span>
+              </div>
+
+              {/* Rank + descriptor on one row */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-baseline gap-0.5 leading-none">
+                  <span className="font-mono text-base text-arch-gold/70">#</span>
+                  <span className="font-display font-bold text-5xl gradient-text">01</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-display text-white text-sm leading-tight tracking-wide">
+                    Aluminium Supplier
+                  </p>
+                  <p className="text-white/60 text-xs font-body mt-0.5">
+                    in Zimbabwe
+                  </p>
+                </div>
+              </div>
+
+              {/* Footer mono */}
+              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between">
+                <span className="text-[9px] font-mono tracking-[0.2em] uppercase text-white/45">
+                  Est. 1994
+                </span>
+                <span className="text-[9px] font-mono tracking-[0.2em] uppercase text-arch-gold/80">
+                  AA · ZW
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* ============================================
+      LAYER 4: HERO CONTENT (LEFT SIDE)
       Text content sits on top of everything
       ============================================ */}
-        <div className="relative z-30 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 pt-32 pb-24 lg:pb-32">
+        <div className="relative z-30 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 pt-40 lg:pt-44 pb-24 lg:pb-32">
           <div className="max-w-3xl lg:max-w-2xl">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-arch-black/10 border border-arch-black/20 mb-8 max-lg:bg-arch-gold/12 max-lg:border-arch-gold/25"
-            >
-              <Star className="text-arch-gold" size={16} />
-              <span className="text-sm text-arch-charcoal max-lg:text-white/90">
-                #1 Aluminium Supplier in Zimbabwe
-              </span>
-            </motion.div>
-
             {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-arch-black max-lg:text-white leading-[1.1] mb-6"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
             >
               Crafting
               <span className="block">
@@ -547,7 +621,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-arch-steel max-lg:text-white/75 max-w-xl mb-10"
+              className="text-xl text-white/80 max-w-xl mb-10 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
             >
               Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
               <a href="https://www.lupanetimbers.co.zw" target="_blank" rel="noopener noreferrer" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">joinery</a> products. Setting the standard for architectural
@@ -563,7 +637,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="group flex items-center gap-3 bg-arch-black text-white max-lg:bg-arch-gold max-lg:text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-arch-charcoal max-lg:hover:bg-[#E5C04A] transition-all duration-300"
+                className="group flex items-center gap-3 bg-arch-gold text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-[#E5C04A] shadow-lg shadow-arch-gold/20 transition-all duration-300"
               >
                 Get a Quote
                 <ArrowRight
@@ -574,7 +648,7 @@ const Home = () => {
 
               <Link
                 to="/projects"
-                className="group flex items-center gap-3 border border-arch-silver text-arch-charcoal max-lg:border-white/30 max-lg:text-white px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
+                className="group flex items-center gap-3 border border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
               >
                 View Projects
                 <ArrowUpRight
@@ -609,7 +683,7 @@ const Home = () => {
                   <p className="font-display text-3xl md:text-4xl font-bold text-arch-gold">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="text-arch-steel max-lg:text-white/60 text-sm mt-1">
+                  <p className="text-white/65 text-sm mt-1">
                     {stat.label}
                   </p>
                 </div>
@@ -628,7 +702,7 @@ const Home = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-arch-steel max-lg:text-white/50"
+            className="flex flex-col items-center gap-2 text-white/55"
           >
             <span className="text-xs uppercase tracking-wider">Scroll</span>
             <CaretDown size={20} />
@@ -692,46 +766,57 @@ const Home = () => {
             {/* Right column - Services grid */}
             <div className="lg:col-span-7">
               <StaggerContainer className="space-y-6">
-                {services.slice(0, 4).map((service, index) => (
-                  <StaggerItem key={service.id}>
-                    <Link
-                      to={`/services/${service.id}`}
-                      className="group relative block p-6 md:p-8 rounded-2xl bg-white border border-arch-silver/30 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-1 overflow-hidden"
-                    >
-                      {(index === 1 || index === 3) && (
-                        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                {services.slice(0, 4).map((service, index) => {
+                  const cardImage = [
+                    '/firstmutual/untitled-561.JPG',
+                    '/ecobank/DSC08707.jpg',
+                    '/ecobank/DSC08839.jpg',
+                    '/seagrave-road/17.jpg',
+                  ][index];
+                  return (
+                    <StaggerItem key={service.id}>
+                      <Link
+                        to={`/services/${service.id}`}
+                        className="group relative block p-6 md:p-8 rounded-2xl bg-white border border-arch-silver/30 shadow-soft hover:shadow-medium hover:border-arch-gold/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                      >
+                        {/* Background image with left-to-right fade */}
+                        <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
                           <img
-                            src={index === 1 ? '/ecobank/DSC08707.jpg' : '/seagrave-road/17.jpg'}
+                            src={cardImage}
                             alt=""
-                            className="w-full h-full object-cover opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500"
+                            className="w-full h-full object-cover"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
                         </div>
-                      )}
-                      {/* Corner brackets decoration */}
-                      <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <CornerBrackets size={20} color="#D4AF37" />
-                      </div>
 
-                      <div className="relative flex items-start justify-between gap-4">
-                        <div>
-                          <span className="text-arch-gold font-mono text-sm">
-                            0{index + 1}
-                          </span>
-                          <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-charcoal mt-2 mb-3 group-hover:text-arch-gold transition-colors duration-300">
-                            {service.title}
-                          </h3>
-                          <p className="text-arch-steel">
-                            {service.shortDesc}
-                          </p>
+                        {/* Corner brackets decoration */}
+                        <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <CornerBrackets size={20} color="#D4AF37" />
                         </div>
-                        <ArrowUpRight
-                          className="text-arch-silver group-hover:text-arch-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
-                          size={24}
-                        />
-                      </div>
-                    </Link>
-                  </StaggerItem>
-                ))}
+
+                        <div className="relative flex items-start justify-between gap-4">
+                          <div>
+                            <span className="text-arch-gold font-mono text-sm">
+                              0{index + 1}
+                            </span>
+                            <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-charcoal mt-2 mb-3 group-hover:text-arch-gold transition-colors duration-300">
+                              {service.title}
+                            </h3>
+                            <p className="text-arch-steel">
+                              {service.shortDesc}
+                            </p>
+                          </div>
+                          <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-arch-silver-light shadow-sm group-hover:bg-arch-gold group-hover:border-arch-gold group-hover:shadow-md group-hover:shadow-arch-gold/30 transition-all duration-300">
+                            <ArrowUpRight
+                              className="text-arch-charcoal group-hover:text-arch-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                              size={20}
+                            />
+                          </span>
+                        </div>
+                      </Link>
+                    </StaggerItem>
+                  );
+                })}
 
                 {/* Lupane Timbers - Sister Company */}
                 <StaggerItem>
@@ -765,10 +850,12 @@ const Home = () => {
                           </p>
                         </div>
                       </div>
-                      <ArrowUpRight
-                        className="text-arch-gold group-hover:text-arch-amber group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
-                        size={24}
-                      />
+                      <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-arch-gold/40 shadow-sm group-hover:bg-arch-gold group-hover:border-arch-gold group-hover:shadow-md group-hover:shadow-arch-gold/30 transition-all duration-300">
+                        <ArrowUpRight
+                          className="text-arch-gold group-hover:text-arch-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                          size={20}
+                        />
+                      </span>
                     </div>
                   </a>
                 </StaggerItem>
@@ -910,19 +997,30 @@ const Home = () => {
                 description:
                   "Our plant capacity enables quick delivery without compromising quality.",
               },
-            ].map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="group p-8 rounded-2xl border border-arch-silver/30 hover:border-arch-gold/50 bg-white hover:bg-arch-gold/5 shadow-soft transition-all duration-500 h-full">
-                  <div className="w-14 h-14 rounded-xl bg-arch-gold/10 flex items-center justify-center mb-6 group-hover:bg-arch-gold/20 transition-colors duration-300">
-                    <item.icon className="text-arch-gold" size={28} />
+            ].map((item, index) => {
+              const isFilled = index === 1 || index === 3;
+              return (
+                <AnimatedSection key={item.title} delay={index * 0.1}>
+                  <div className={`group p-8 rounded-2xl shadow-soft transition-all duration-500 h-full ${
+                    isFilled
+                      ? 'border border-arch-gold/50 bg-arch-gold/5 hover:border-arch-gold/70 hover:bg-arch-gold/10'
+                      : 'border border-arch-silver/30 hover:border-arch-gold/50 bg-white hover:bg-arch-gold/5'
+                  }`}>
+                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
+                      isFilled
+                        ? 'bg-arch-gold/20 group-hover:bg-arch-gold/30'
+                        : 'bg-arch-gold/10 group-hover:bg-arch-gold/20'
+                    }`}>
+                      <item.icon className="text-arch-gold" size={28} />
+                    </div>
+                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-arch-steel">{item.description}</p>
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-arch-steel">{item.description}</p>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -932,7 +1030,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/ecobank/DJI_0409.jpg"
+            src="/ecobank/DSC08839.jpg"
             alt=""
             className="w-full h-full object-cover"
           />
