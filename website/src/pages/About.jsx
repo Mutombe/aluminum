@@ -555,27 +555,63 @@ const About = () => {
             </p>
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <AnimatedSection key={member.name} delay={index * 0.1}>
-                <div className="group">
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-arch-black/80 via-transparent to-transparent" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map((member, index) => {
+              const initials = member.name
+                .split(' ')
+                .filter(Boolean)
+                .map((part) => part[0])
+                .slice(0, 2)
+                .join('');
+              return (
+                <AnimatedSection key={member.name} delay={index * 0.1}>
+                  <div className="group">
+                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-arch-charcoal via-arch-graphite to-arch-charcoal flex items-center justify-center">
+                      {/* Subtle dotted architectural pattern */}
+                      <div
+                        className="absolute inset-0 opacity-[0.12]"
+                        style={{
+                          backgroundImage:
+                            'radial-gradient(circle at 1px 1px, rgba(212,175,55,0.9) 1px, transparent 0)',
+                          backgroundSize: '20px 20px',
+                        }}
+                      />
 
-                    {/* Corner brackets on hover */}
-                    <div className="absolute inset-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <CornerBrackets size={20} color="#D4AF37" />
+                      {/* Top gold hairline */}
+                      <div
+                        className="absolute top-0 left-8 right-8 h-[2px]"
+                        style={{
+                          background:
+                            'linear-gradient(90deg, transparent, #D4AF37 50%, transparent)',
+                        }}
+                      />
+
+                      {/* Initials monogram */}
+                      <div className="relative flex flex-col items-center">
+                        <span className="font-display text-[6rem] md:text-[7rem] font-bold leading-none gradient-text tracking-tight group-hover:scale-105 transition-transform duration-500">
+                          {initials}
+                        </span>
+                        <span className="mt-3 text-[10px] font-mono tracking-[0.25em] uppercase text-white/40">
+                          Portrait pending
+                        </span>
+                      </div>
+
+                      {/* Corner brackets — always visible, brighter on hover */}
+                      <div className="absolute inset-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
+                        <CornerBrackets size={20} color="#D4AF37" />
+                      </div>
                     </div>
+                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-arch-gold text-sm mb-3">{member.role}</p>
+                    {member.bio && (
+                      <p className="text-arch-slate text-sm">{member.bio}</p>
+                    )}
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-arch-gold text-sm mb-3">{member.role}</p>
-                  <p className="text-arch-slate text-sm">{member.bio}</p>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>

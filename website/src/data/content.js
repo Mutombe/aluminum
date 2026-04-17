@@ -142,30 +142,32 @@ export const team = [
   {
     name: "David Stally",
     role: "Founder & CEO",
-    bio: "Visionary leader who founded Architectural Aluminium in 1994 with a dream to become Zimbabwe's premier aluminium fabricator.",
-    // Vision: Professional businessman portrait
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400"
+    bio: "Visionary leader who founded Architectural Aluminium in 1994 with a dream to become Zimbabwe's premier aluminium fabricator."
   },
   {
-    name: "Tendai Moyo",
-    role: "Operations Director",
-    bio: "20+ years of manufacturing expertise ensuring our 50,000 sqm factory runs at peak efficiency.",
-    // Vision: Professional woman in hard hat/factory setting
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
+    name: "David Ross Stally",
+    role: "Chief Operations Officer",
+    bio: "Oversees day-to-day operations across manufacturing, installation, and fulfilment."
   },
   {
-    name: "James Ncube",
-    role: "Technical Manager",
-    bio: "Engineering excellence drives our precision fabrication, overseen by James's meticulous standards.",
-    // Vision: Engineer with technical drawings
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"
+    name: "Fadzai Chitate",
+    role: "Production Manager",
+    bio: "Leads the factory floor, ensuring every piece meets our exacting quality standards."
   },
   {
-    name: "Rudo Chigwedere",
-    role: "Sales Director",
-    bio: "Building lasting relationships with 5000+ customers through exceptional service and solutions.",
-    // Vision: Professional saleswoman
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400"
+    name: "Robert Tarusenga",
+    role: "Finance Manager",
+    bio: "Manages the company's financial strategy, reporting, and capital investment."
+  },
+  {
+    name: "Tatenda Nyakabambo",
+    role: "Project Manager",
+    bio: "Coordinates project delivery end-to-end — from specification to hand-over."
+  },
+  {
+    name: "Yvonne Isaac",
+    role: "Administrator",
+    bio: "Keeps the office running smoothly and ensures every client has a dedicated point of contact."
   }
 ];
 
