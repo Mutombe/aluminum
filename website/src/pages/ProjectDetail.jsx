@@ -138,7 +138,7 @@ export default function ProjectDetail() {
                 className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"
                 onClick={() => setLightboxImage(img)}
               >
-                <img src={img} alt={`${project.title} - ${i + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="eager" />
+                <img src={img} alt={`${project.title} - ${i + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-arch-black/0 group-hover:bg-arch-black/30 transition-colors duration-300 flex items-center justify-center">
                   <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">View</span>
                 </div>
@@ -186,16 +186,7 @@ export default function ProjectDetail() {
                 <CaretRight size={24} className="text-white" />
               </button>
             )}
-            <motion.img
-              key={lightboxImage}
-              src={lightboxImage}
-              alt={project.title}
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()} loading="eager"
-            />
+            <motion.img key={lightboxImage} src={lightboxImage} alt={project.title} className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} onClick={(e) => e.stopPropagation()} />
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 bg-arch-black/70 rounded-full text-white text-sm font-mono">
               {currentLightboxIndex + 1} / {project.gallery.length}
             </div>

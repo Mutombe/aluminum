@@ -14,6 +14,8 @@ import {
   CheckCircle,
   ShieldCheck,
   UsersThree,
+  DownloadSimple,
+  FileText,
 } from "@phosphor-icons/react";
 import SEO from "../components/SEO";
 import {
@@ -73,11 +75,7 @@ const About = () => {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="/more/IMG_2361.jpeg"
-            alt="Precision aluminium atrium installation — craftsmanship in progress"
-            className="w-full h-full object-cover" loading="eager"
-          />
+          <img src="/more/IMG_2361.jpeg" alt="Precision aluminium atrium installation — craftsmanship in progress" className="w-full h-full object-cover" loading="eager" />
           {/* Cinematic dark gradient — full-bleed image */}
           <div
             className="absolute inset-0"
@@ -190,6 +188,53 @@ const About = () => {
         </div>
       </section>
 
+      {/* Company Profile Download Section */}
+      <section className="py-16 md:py-20 bg-arch-snow">
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 p-8 md:p-12 rounded-3xl bg-white border border-arch-silver-light shadow-soft overflow-hidden">
+              {/* Background pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.03]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                                   linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+                  backgroundSize: "40px 40px",
+                }}
+              />
+
+              <div className="relative flex items-start gap-5">
+                <div className="w-14 h-14 bg-arch-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-7 h-7 text-arch-gold" />
+                </div>
+                <div>
+                  <span className="text-arch-gold font-mono text-xs tracking-wider uppercase">
+                    Download
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-arch-charcoal mt-1 mb-2">
+                    Company Profile
+                  </h3>
+                  <p className="text-arch-slate max-w-lg">
+                    Our full capabilities, project portfolio, and credentials in one document — ideal for architects, contractors, and procurement teams.
+                  </p>
+                </div>
+              </div>
+
+              <motion.a
+                href="/aa-company-profile.pdf"
+                download="Architectural-Aluminium-Company-Profile.pdf"
+                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-amber transition-colors flex-shrink-0"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <DownloadSimple className="w-5 h-5" />
+                Download PDF
+              </motion.a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Timeline/Story Section */}
       <section
         ref={containerRef}
@@ -289,11 +334,7 @@ const About = () => {
               </div>
 
               <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
-                <img
-                  src="/firstmutual/untitled-561.JPG"
-                  alt="First Mutual Park - our craftsmanship"
-                  className="w-full h-full object-cover" loading="eager"
-                />
+                <img src="/firstmutual/untitled-561.JPG" alt="First Mutual Park - our craftsmanship" className="w-full h-full object-cover" />
                 {/* Corner brackets on image */}
                 <div className="absolute inset-4">
                   <CornerBrackets size={30} color="#D4AF37" />
@@ -458,11 +499,7 @@ const About = () => {
           {/* Factory Stats */}
           <AnimatedSection>
             <div className="relative p-8 md:p-12 rounded-3xl overflow-hidden">
-              <img
-                src="/ecobank/DSC08596.jpg"
-                alt="Ecobank HQ facade - our workmanship"
-                className="absolute inset-0 w-full h-full object-cover" loading="eager"
-              />
+              <img src="/ecobank/DSC08596.jpg" alt="Ecobank HQ facade - our workmanship" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-arch-black/80" />
 
               {/* Floating Particles over stats */}
@@ -570,11 +607,7 @@ const About = () => {
               <AnimatedSection key={member.name} delay={index * 0.1}>
                 <div className="group">
                   <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="eager"
-                    />
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-arch-black/80 via-transparent to-transparent" />
 
                     {/* Corner brackets on hover */}

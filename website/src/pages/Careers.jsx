@@ -300,18 +300,10 @@ const Careers = () => {
                   animate={{ y: 0 }}
                 >
                   <div className="rounded-2xl overflow-hidden h-48">
-                    <img
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80"
-                      alt="Manufacturing team"
-                      className="w-full h-full object-cover" loading="eager"
-                    />
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="Manufacturing team" className="w-full h-full object-cover" />
                   </div>
                   <div className="rounded-2xl overflow-hidden h-64">
-                    <img
-                      src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&q=80"
-                      alt="Office team collaboration"
-                      className="w-full h-full object-cover" loading="eager"
-                    />
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&q=80" alt="Office team collaboration" className="w-full h-full object-cover" />
                   </div>
                 </motion.div>
                 <motion.div
@@ -320,18 +312,10 @@ const Careers = () => {
                   animate={{ y: 0 }}
                 >
                   <div className="rounded-2xl overflow-hidden h-64">
-                    <img
-                      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80"
-                      alt="Team meeting"
-                      className="w-full h-full object-cover" loading="eager"
-                    />
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80" alt="Team meeting" className="w-full h-full object-cover" />
                   </div>
                   <div className="rounded-2xl overflow-hidden h-48">
-                    <img
-                      src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80"
-                      alt="Construction site work"
-                      className="w-full h-full object-cover" loading="eager"
-                    />
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Construction site work" className="w-full h-full object-cover" />
                   </div>
                 </motion.div>
               </div>

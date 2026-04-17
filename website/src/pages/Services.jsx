@@ -182,13 +182,7 @@ function ServiceCard({ service, index }) {
       <div className="relative h-full bg-white border border-arch-silver-light rounded-2xl overflow-hidden transition-all duration-500 hover:border-arch-gold/50 hover:shadow-xl shadow-soft">
         {/* Image Section */}
         <div className="relative h-64 overflow-hidden">
-          <motion.img
-            src={service.image}
-            alt={service.title}
-            className="w-full h-full object-cover"
-            animate={{ scale: isHovered ? 1.1 : 1 }}
-            transition={{ duration: 0.6 }} loading="eager"
-          />
+          <motion.img src={service.image} alt={service.title} className="w-full h-full object-cover" animate={{ scale: isHovered ? 1.1 : 1 }} transition={{ duration: 0.6 }} />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
           
           {/* Floating Icon */}
@@ -315,11 +309,7 @@ export default function Services() {
         {/* Background */}
         <motion.div className="absolute inset-0 z-0" style={{ scale: heroScale }}>
           {/* Vision: Wide shot of factory floor with aluminium profiles being worked on */}
-          <img
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80"
-            alt="Aluminium fabrication"
-            className="w-full h-full object-cover" loading="eager"
-          />
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80" alt="Aluminium fabrication" className="w-full h-full object-cover" loading="eager" />
           {/* Cinematic dark gradient — full-bleed image */}
           <div
             className="absolute inset-0"
@@ -582,11 +572,7 @@ export default function Services() {
             <AnimatedSection direction="right" className="relative">
               <div className="relative">
                 {/* Vision: Worker precision-cutting aluminium profile on machinery */}
-                <img
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80"
-                  alt="Manufacturing process"
-                  className="rounded-2xl shadow-2xl" loading="eager"
-                />
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Manufacturing process" className="rounded-2xl shadow-2xl" />
                 
                 {/* Floating Stats Card */}
                 <motion.div
@@ -679,11 +665,7 @@ export default function Services() {
         {/* Background */}
         <div className="absolute inset-0">
           {/* Vision: Dramatic shot of completed aluminium facade on modern building */}
-          <img
-            src="/firstmutual/untitled-202.JPG"
-            alt="First Mutual Park - structural glazing"
-            className="w-full h-full object-cover" loading="eager"
-          />
+          <img src="/firstmutual/untitled-202.JPG" alt="First Mutual Park - structural glazing" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/90 backdrop-blur-sm" />
         </div>
         

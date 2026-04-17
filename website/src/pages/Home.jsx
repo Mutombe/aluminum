@@ -193,11 +193,7 @@ function ReviewCard({ review }) {
       </p>
       <div className="flex items-center gap-3">
         {review.avatar ? (
-          <img
-            src={review.avatar}
-            alt={review.name}
-            className="w-10 h-10 rounded-full object-cover border-2 border-white/20 pointer-events-none" loading="eager"
-          />
+          <img src={review.avatar} alt={review.name} className="w-10 h-10 rounded-full object-cover border-2 border-white/20 pointer-events-none" />
         ) : (
           <div className="w-10 h-10 rounded-full bg-arch-gold/30 flex items-center justify-center border-2 border-arch-gold/40">
             <span className="font-display font-bold text-arch-gold text-sm">
@@ -365,12 +361,7 @@ const Home = () => {
               }}
               className="absolute inset-0"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="eager"
-                className="w-full h-full object-cover"
-              />
+              <img src={image.src} alt={image.alt} className="w-full h-full object-cover" loading="eager" />
             </motion.div>
           ))}
 
@@ -781,11 +772,7 @@ const Home = () => {
                       >
                         {/* Background image with left-to-right fade */}
                         <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
-                          <img
-                            src={cardImage}
-                            alt=""
-                            className="w-full h-full object-cover" loading="eager"
-                          />
+                          <img src={cardImage} alt="" className="w-full h-full object-cover" />
                           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
                         </div>
 
@@ -833,11 +820,7 @@ const Home = () => {
 
                     <div className="relative flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <img 
-                          src="/lupane.png" 
-                          alt="Lupane Timbers" 
-                          className="w-10 h-10 md:w-12 md:h-12 object-contain mt-1" loading="eager"
-                        />
+                        <img src="/lupane.png" alt="Lupane Timbers" className="w-10 h-10 md:w-12 md:h-12 object-contain mt-1" loading="eager" />
                         <div>
                           <span className="text-arch-gold font-mono text-sm">
                             Sister Company
@@ -899,12 +882,7 @@ const Home = () => {
                   className="group relative block aspect-[4/3] md:aspect-auto md:h-full min-h-[300px] rounded-2xl overflow-hidden"
                 >
                   {/* Image */}
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="eager"
-                  />
+                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-arch-black via-arch-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
@@ -1029,11 +1007,7 @@ const Home = () => {
       <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="/ecobank/DSC08839.jpg"
-            alt=""
-            className="w-full h-full object-cover" loading="eager"
-          />
+          <img src="/ecobank/DSC08839.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-arch-black/70 backdrop-blur-sm" />
           <div className="absolute inset-0 bg-gradient-to-b from-arch-black/40 via-transparent to-arch-black/40" />
         </div>
@@ -1076,11 +1050,7 @@ const Home = () => {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           {/* Vision: Dramatic close-up of aluminium profiles or architectural detail */}
-          <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600"
-            alt="Aluminium profiles"
-            className="w-full h-full object-cover opacity-10" loading="eager"
-          />
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600" alt="Aluminium profiles" className="w-full h-full object-cover opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-r from-arch-platinum via-arch-snow/95 to-arch-platinum" />
         </div>
 

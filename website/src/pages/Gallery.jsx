@@ -346,11 +346,7 @@ const Gallery = () => {
                 transition={{ delay: i * 0.1, duration: 1 }}
                 className="relative overflow-hidden"
               >
-                <img
-                  src={galleryItems[i]?.image}
-                  alt=""
-                  className="w-full h-full object-cover" loading="eager"
-                />
+                <img src={galleryItems[i]?.image} alt="" className="w-full h-full object-cover" loading="eager" />
               </motion.div>
             ))}
           </div>
@@ -510,17 +506,7 @@ const Gallery = () => {
                   `}
                   onClick={() => setSelectedImage(item)}
                 >
-                  <img 
-                    src={item.image}
-                    alt={item.title}
-                    className={`
-                      w-full object-cover transition-transform duration-700 group-hover:scale-110
-                      ${viewMode === 'masonry' 
-                        ? item.size === 'large' ? 'h-96' : item.size === 'medium' ? 'h-72' : 'h-56'
-                        : 'h-full'
-                      }
-                    `} loading="eager"
-                  />
+                  <img src={item.image} alt={item.title} className={` w-full object-cover transition-transform duration-700 group-hover:scale-110 ${viewMode === 'masonry' ? item.size === 'large' ? 'h-96' : item.size === 'medium' ? 'h-72' : 'h-56' : 'h-full' } `} />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-arch-black via-arch-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -604,11 +590,7 @@ const Gallery = () => {
               className="relative max-w-5xl max-h-[80vh] mx-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <img 
-                src={selectedImage.image}
-                alt={selectedImage.title}
-                className="w-full h-full object-contain rounded-lg" loading="eager"
-              />
+              <img src={selectedImage.image} alt={selectedImage.title} className="w-full h-full object-contain rounded-lg" />
 
               {/* Image info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-arch-black/90 to-transparent rounded-b-lg">

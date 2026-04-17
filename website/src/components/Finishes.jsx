@@ -61,11 +61,7 @@ const AnodisedCard = ({ finish, isSelected, onSelect }) => {
               transition={{ duration: 0.3 }}
               className="absolute inset-0"
             >
-              <img 
-                src={finish.image} 
-                alt={finish.name}
-                className="w-full h-full object-cover" loading="eager"
-              />
+              <img src={finish.image} alt={finish.name} className="w-full h-full object-cover" />
               {/* Subtle overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-arch-black/60 via-transparent to-transparent" />
             </motion.div>
@@ -444,12 +440,7 @@ const AluminiumFinishes = () => {
                   </div>
                   <div className="relative h-48 md:h-64 rounded-xl overflow-hidden">
                     {/* Use one of the anodised images */}
-                    <img
-                      src={a1}
-                      alt="Anodised aluminium profiles"
-                      loading="eager"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={a1} alt="Anodised aluminium profiles" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-arch-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
                       <p className="text-arch-white font-display text-sm">Premium Anodised Profiles</p>

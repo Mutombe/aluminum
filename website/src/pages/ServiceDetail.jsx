@@ -506,11 +506,7 @@ const GalleryImage = ({ src, alt, onClick, index }) => (
     className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
     onClick={onClick}
   >
-    <img 
-      src={src} 
-      alt={alt} 
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="eager"
-    />
+    <img src={src} alt={alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
     <div className="absolute inset-0 bg-arch-charcoal/0 group-hover:bg-arch-charcoal/40 transition-colors duration-300 flex items-center justify-center">
       <motion.div
         initial={{ scale: 0 }}
@@ -569,11 +565,7 @@ export default function ServiceDetail() {
       <section ref={heroRef} className="relative min-h-screen flex items-end overflow-hidden">
         {/* Background */}
         <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
-          <img
-            src={service.heroImage}
-            alt={service.title}
-            className="w-full h-full object-cover" loading="eager"
-          />
+          <img src={service.heroImage} alt={service.title} className="w-full h-full object-cover" loading="eager" />
           {/* Cinematic dark gradient — full-bleed image */}
           <div
             className="absolute inset-0"
@@ -780,11 +772,7 @@ export default function ServiceDetail() {
               <div className="relative">
                 {/* Main image */}
                 <div className="aspect-square rounded-3xl overflow-hidden">
-                  <img 
-                    src={service.galleryImages[0]}
-                    alt={service.title}
-                    className="w-full h-full object-cover" loading="eager"
-                  />
+                  <img src={service.galleryImages[0]} alt={service.title} className="w-full h-full object-cover" />
                 </div>
                 
                 {/* Corner brackets */}
@@ -797,11 +785,7 @@ export default function ServiceDetail() {
                   className="absolute -bottom-8 -left-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <img
-                    src={service.galleryImages[1]}
-                    alt={service.title}
-                    className="w-full h-full object-cover" loading="eager"
-                  />
+                  <img src={service.galleryImages[1]} alt={service.title} className="w-full h-full object-cover" />
                 </motion.div>
                 
                 {/* Service pattern */}
@@ -1131,7 +1115,7 @@ export default function ServiceDetail() {
                   >
                     {/* Background image */}
                     <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                      <img src={related.heroImage} alt="" className="w-full h-full object-cover" loading="eager" />
+                      <img src={related.heroImage} alt="" className="w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
                     </div>
 
@@ -1196,11 +1180,7 @@ export default function ServiceDetail() {
       {/* CTA Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={service.galleryImages[2] || service.heroImage}
-            alt=""
-            className="w-full h-full object-cover" loading="eager"
-          />
+          <img src={service.galleryImages[2] || service.heroImage} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/90" />
         </div>
 
@@ -1247,15 +1227,7 @@ export default function ServiceDetail() {
             className="fixed inset-0 z-50 bg-arch-charcoal/95 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <motion.img
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              src={selectedImage}
-              alt="Gallery"
-              className="max-w-full max-h-full rounded-2xl"
-              onClick={(e) => e.stopPropagation()} loading="eager"
-            />
+            <motion.img initial={{ scale: 0.8 }} animate={{ scale: 1 }} exit={{ scale: 0.8 }} src={selectedImage} alt="Gallery" className="max-w-full max-h-full rounded-2xl" onClick={(e) => e.stopPropagation()} />
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-arch-charcoal hover:text-arch-gold transition-colors"

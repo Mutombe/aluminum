@@ -360,11 +360,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-arch-platinum">
           {/* Vision: Aerial view of Harare or abstract map pattern */}
           <div className="absolute inset-0 opacity-10">
-            <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80"
-              alt="Map background"
-              className="w-full h-full object-cover" loading="eager"
-            />
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80" alt="Map background" className="w-full h-full object-cover" loading="eager" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-arch-snow via-arch-platinum/80 to-arch-snow" />
         </div>

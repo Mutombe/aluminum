@@ -169,11 +169,7 @@ const News = () => {
 
                     {/* Magazine image */}
                     <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-arch-silver-light shadow-medium">
-                      <img
-                        src={featuredArticle.image}
-                        alt={featuredArticle.title}
-                        className="w-full h-full object-cover" loading="eager"
-                      />
+                      <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover" />
                       {/* Hover overlay with View Details */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                         <span className="px-4 py-2 bg-arch-gold text-arch-black text-sm font-semibold rounded-full flex items-center gap-2 shadow-lg">
@@ -297,16 +293,7 @@ const News = () => {
             {/* Main image */}
             <div className="flex items-center justify-center w-full h-full px-16 py-20" onClick={(e) => e.stopPropagation()}>
               <AnimatePresence mode="wait">
-                <motion.img
-                  key={modalPageIndex}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.2 }}
-                  src={magazinePages[modalPageIndex].src}
-                  alt={magazinePages[modalPageIndex].alt}
-                  className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" loading="eager"
-                />
+                <motion.img key={modalPageIndex} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} transition={{ duration: 0.2 }} src={magazinePages[modalPageIndex].src} alt={magazinePages[modalPageIndex].alt} className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" />
               </AnimatePresence>
             </div>
 
@@ -325,7 +312,7 @@ const News = () => {
                       : 'border-transparent opacity-50 hover:opacity-80'
                   }`}
                 >
-                  <img src={page.src} alt={page.alt} className="w-full h-full object-cover" loading="eager" />
+                  <img src={page.src} alt={page.alt} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

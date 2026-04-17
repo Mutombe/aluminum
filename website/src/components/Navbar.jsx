@@ -12,7 +12,7 @@ const navLinks = [
     path: '/about',
     dropdown: [
       { name: 'Our Company', path: '/about', icon: BuildingOffice },
-      { name: 'Business Profile', path: '/AA Company Profile 2023 web.pdf', external: true, icon: FileArrowDown },
+      { name: 'Business Profile', path: '/aa-company-profile.pdf', external: true, icon: FileArrowDown },
       {
         name: 'What We Offer',
         path: '/services',
@@ -95,12 +95,7 @@ const Navbar = () => {
                     : ''
                 }`}
               >
-                <img
-                  src="/logo-light.png"
-                  alt="AA Logo"
-                  loading="eager"
-                  className="w-28 h-12 md:w-34 md:h-16"
-                />
+                <img src="/logo-light.png" alt="AA Logo" className="w-28 h-12 md:w-34 md:h-16" loading="eager" />
               </div>
             </Link>
 
@@ -199,11 +194,7 @@ const Navbar = () => {
                                   rel="noopener noreferrer"
                                   className="flex items-center gap-3 pl-8 pr-4 py-2.5 text-sm font-medium text-arch-gold hover:text-arch-amber hover:bg-arch-platinum/50 transition-colors duration-200"
                                 >
-                                  <img
-                                    src="/lupane.png"
-                                    alt="Lupane Timbers"
-                                    className="w-4 h-4 object-contain" loading="eager"
-                                  />
+                                  <img src="/lupane.png" alt="Lupane Timbers" className="w-4 h-4 object-contain" loading="eager" />
                                   <span>Lupane Timbers</span>
                                 </a>
                               </div>
@@ -376,11 +367,7 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-arch-silver-light text-arch-gold hover:text-arch-amber transition-colors duration-300"
                     >
-                      <img 
-                        src="/lupane.png" 
-                        alt="Lupane Timbers" 
-                        className="w-6 h-6 object-contain" loading="eager"
-                      />
+                      <img src="/lupane.png" alt="Lupane Timbers" className="w-6 h-6 object-contain" loading="eager" />
                       <span>Lupane Timbers</span>
                     </a>
                   </motion.div>
