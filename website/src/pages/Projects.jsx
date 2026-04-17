@@ -29,10 +29,11 @@ const projects = [
     featured: true,
     image: '/ecobank/DSC08707.jpg',
     gallery: [
-      '/ecobank/DSC08596.jpg',
+      '/ecobank/DSC08651.jpg',
       '/ecobank/DSC08648.jpg',
       '/ecobank/DSC08707.jpg',
       '/ecobank/DSC08751.jpg',
+      '/ecobank/DSC08831.jpg',
       '/ecobank/DSC08839.jpg',
       '/ecobank/DSC08847.jpg',
       '/ecobank/DSC08869.jpg',

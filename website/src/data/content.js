@@ -294,8 +294,8 @@ export const galleryImages = [
   {
     id: 2,
     category: "Commercial",
-    title: "Ecobank HQ - Colorful Facade",
-    src: "/ecobank/DSC08596.jpg"
+    title: "Ecobank HQ - Glass Partitioned Meeting Room",
+    src: "/ecobank/DSC08831.jpg"
   },
   {
     id: 3,

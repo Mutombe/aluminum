@@ -499,7 +499,7 @@ const About = () => {
           {/* Factory Stats */}
           <AnimatedSection>
             <div className="relative p-8 md:p-12 rounded-3xl overflow-hidden">
-              <img src="/ecobank/DSC08596.jpg" alt="Ecobank HQ facade - our workmanship" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/ecobank/DSC08651.jpg" alt="Ecobank HQ entrance — our workmanship" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-arch-black/80" />
 
               {/* Floating Particles over stats */}

@@ -49,11 +49,11 @@ const Gallery = () => {
     },
     {
       id: 2,
-      category: 'curtain-walling',
-      title: 'Ecobank HQ - Colorful Glass Facade',
+      category: 'commercial',
+      title: 'Ecobank HQ - Main Entrance & Glass Doors',
       location: 'Harare',
       year: '2023',
-      image: '/ecobank/DSC08596.jpg',
+      image: '/ecobank/DSC08651.jpg',
       size: 'large'
     },
     {
