@@ -13,10 +13,6 @@ import {
   Play,
   Star,
   CaretDown,
-  Trophy,
-  Users,
-  BuildingOffice,
-  Clock,
   CheckCircle,
   Quotes,
   Smiley,
@@ -36,7 +32,6 @@ import {
   TechnicalDrawingBg,
   CornerBrackets,
   ArchitecturalDivider,
-  CurtainWallPattern,
   BlueprintLines,
   AnimatedJoint,
   WindowFramePattern,
@@ -676,7 +671,7 @@ const Home = () => {
               className="flex flex-wrap items-center gap-4 mb-8 lg:mb-10"
             >
               <Link
-                to="/contact"
+                to="/get-quote"
                 className="group flex items-center gap-3 bg-arch-gold text-arch-black px-7 py-3.5 lg:px-8 lg:py-4 rounded-full font-semibold hover:bg-[#E5C04A] shadow-lg shadow-arch-gold/20 transition-all duration-300"
               >
                 Get a Quote
@@ -966,92 +961,6 @@ const Home = () => {
       {/* Aluminium Finishes Section */}
       <AluminiumFinishes />
 
-      {/* Why Choose Us - Unique card layout */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-arch-platinum to-arch-snow" />
-
-        {/* Curtain wall pattern background - VISIBLE ON MOBILE */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 md:w-1/2 opacity-[0.04] md:opacity-[0.05]">
-          <CurtainWallPattern
-            className="w-full h-full text-arch-gold"
-            rows={10}
-            cols={8}
-          />
-        </div>
-
-        {/* Left side pattern - VISIBLE ON MOBILE */}
-        <div className="absolute left-0 top-1/4 w-16 h-32 md:w-32 md:h-64 opacity-[0.06] md:opacity-[0.08]">
-          <WindowFramePattern className="w-full h-full text-arch-silver" />
-        </div>
-
-        <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
-              Why Choose Us
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
-              The Architectural Aluminium Difference
-            </h2>
-            <p className="text-arch-steel text-lg">
-              We combine decades of expertise with modern technology to deliver
-              exceptional quality that stands the test of time.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Trophy,
-                title: "30+ Years Experience",
-                description:
-                  <>Three decades of industry leadership and innovation in <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link>.</>,
-              },
-              {
-                icon: BuildingOffice,
-                title: "50,000 sqm Factory",
-                description:
-                  "State-of-the-art manufacturing facility with modern machinery and capacity.",
-              },
-              {
-                icon: Users,
-                title: "675+ Happy Clients",
-                description:
-                  <>Trusted by leading businesses, institutions, and homeowners across <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Zimbabwe</Link>.</>,
-              },
-              {
-                icon: Clock,
-                title: "Fast Turnaround",
-                description:
-                  "Our plant capacity enables quick delivery without compromising quality.",
-              },
-            ].map((item, index) => {
-              const isFilled = index === 1 || index === 3;
-              return (
-                <AnimatedSection key={item.title} delay={index * 0.1}>
-                  <div className={`group p-8 rounded-2xl shadow-soft transition-all duration-500 h-full ${
-                    isFilled
-                      ? 'border border-arch-gold/50 bg-arch-gold/5 hover:border-arch-gold/70 hover:bg-arch-gold/10'
-                      : 'border border-arch-silver/30 hover:border-arch-gold/50 bg-white hover:bg-arch-gold/5'
-                  }`}>
-                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
-                      isFilled
-                        ? 'bg-arch-gold/20 group-hover:bg-arch-gold/30'
-                        : 'bg-arch-gold/10 group-hover:bg-arch-gold/20'
-                    }`}>
-                      <item.icon className="text-arch-gold" size={28} />
-                    </div>
-                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-arch-steel">{item.description}</p>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section - Infinite Scroll with Glassmorphism */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Background Image */}
@@ -1139,7 +1048,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  to="/contact"
+                  to="/get-quote"
                   className="group flex items-center gap-3 bg-arch-black text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-arch-charcoal transition-colors duration-300"
                 >
                   Start Your Project

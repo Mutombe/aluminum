@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   MapPin, Phone, Envelope, Clock,
   FacebookLogo, LinkedinLogo, InstagramLogo,
@@ -28,7 +27,7 @@ const Footer = () => {
     resources: [
       { name: 'Projects', path: '/projects' },
       { name: 'Gallery', path: '/gallery' },
-      { name: 'Get a Quote', path: '/contact' },
+      { name: 'Get a Quote', path: '/get-quote' },
       { name: 'FAQs', path: '/contact#faq' }
     ]
   };
@@ -53,36 +52,6 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 py-16 md:py-24">
-        {/* Top Section - CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 md:mb-24"
-        >
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 md:p-12 rounded-2xl bg-arch-graphite border border-white/10">
-            <div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-                Ready to Start Your Project?
-              </h3>
-              <p className="text-arch-silver-dark max-w-md">
-                Get in touch with our team for a free consultation and quote.
-              </p>
-            </div>
-            <Link
-              to="/contact"
-              className="group flex items-center gap-3 bg-arch-gold text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-arch-amber transition-colors duration-300"
-            >
-              Get a Quote
-              <ArrowUpRight
-                size={20}
-                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-              />
-            </Link>
-          </div>
-        </motion.div>
-
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}

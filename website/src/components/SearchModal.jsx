@@ -170,7 +170,7 @@ const SearchModal = () => {
                       {[
                         { name: 'Services', path: '/services' },
                         { name: 'Projects', path: '/projects' },
-                        { name: 'Get a Quote', path: '/contact' },
+                        { name: 'Get a Quote', path: '/get-quote' },
                         { name: 'Careers', path: '/careers' }
                       ].map((link) => (
                         <button

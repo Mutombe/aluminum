@@ -25,6 +25,7 @@ import Gallery from './pages/Gallery';
 import Careers from './pages/Careers';
 import News from './pages/News';
 import Contact from './pages/Contact';
+import GetQuote from './pages/GetQuote';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/news" element={<News />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/get-quote" element={<GetQuote />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </AnimatePresence>

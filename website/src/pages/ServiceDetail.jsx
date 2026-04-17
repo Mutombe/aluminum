@@ -707,7 +707,7 @@ export default function ServiceDetail() {
             className="flex flex-wrap gap-4 mt-10"
           >
             <Link 
-              to={`/contact?service=${service.id}`}
+              to={`/get-quote?service=${service.id}`}
               className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} ${service.textColor} font-bold rounded-full hover:shadow-lg transition-all`}
             >
               <Phone className="w-5 h-5" />
@@ -1200,7 +1200,7 @@ export default function ServiceDetail() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                to={`/contact?service=${service.id}`}
+                to={`/get-quote?service=${service.id}`}
                 className={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.color} ${service.textColor} font-bold rounded-full hover:shadow-lg transition-all`}
               >
                 <Phone className="w-5 h-5" />

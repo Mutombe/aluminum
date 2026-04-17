@@ -156,7 +156,7 @@ export default function ProjectDetail() {
             <p className="text-arch-slate text-lg max-w-2xl mx-auto mb-8">
               Let's discuss how we can bring your vision to life with our premium <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium solutions</Link>.
             </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all">
+            <Link to="/get-quote" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all">
               Get a Quote <ArrowRight size={20} />
             </Link>
           </AnimatedSection>

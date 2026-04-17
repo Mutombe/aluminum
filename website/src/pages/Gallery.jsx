@@ -392,7 +392,7 @@ const Gallery = () => {
           <AnimatedSection delay={0.3} className="mt-12">
             <div className="flex flex-wrap gap-8 md:gap-16">
               <div>
-                <span className="block text-4xl font-display font-bold text-arch-gold">1,402+</span>
+                <span className="block text-4xl font-display font-bold text-arch-gold">5,300+</span>
                 <span className="text-arch-slate text-sm">Completed Projects</span>
               </div>
               <div>
@@ -658,7 +658,7 @@ const Gallery = () => {
           <AnimatedSection delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="/contact"
+                href="/get-quote"
                 className="inline-flex items-center justify-center px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

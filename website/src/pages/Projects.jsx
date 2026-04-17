@@ -8,8 +8,6 @@ import {
   BuildingOffice,
   ArrowRight,
   ArrowUpRight,
-  GridFour,
-  SquaresFour,
   Sparkle,
   DownloadSimple,
   FileText
@@ -90,9 +88,9 @@ const projects = [
 
 const categories = ['All', 'Commercial', 'Residential'];
 
-function ProjectCard({ project, index, isHero, viewMode }) {
+function ProjectCard({ project, index, isHero }) {
   const [isHovered, setIsHovered] = useState(false);
-  const heroLayout = isHero && viewMode === 'masonry';
+  const heroLayout = isHero;
 
   const spanClasses = heroLayout ? 'lg:col-span-2 lg:row-span-2' : '';
   const heightClasses = heroLayout
@@ -208,7 +206,6 @@ function ProjectCard({ project, index, isHero, viewMode }) {
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [viewMode, setViewMode] = useState('masonry'); // 'masonry' = editorial bento, 'grid' = uniform compact
   const heroRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -263,7 +260,7 @@ export default function Projects() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-arch-gold/10 border border-arch-gold/30 rounded-full text-arch-gold text-sm mb-6">
               <BuildingOffice className="w-4 h-4" />
-              1402+ Projects Completed
+              5300+ Projects Completed
             </span>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
@@ -303,32 +300,13 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* View Toggle */}
-              <div className="flex items-center gap-2 bg-white border border-arch-silver-light rounded-full p-1">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-full transition-all ${viewMode === 'grid' ? 'bg-arch-gold text-arch-black' : 'text-arch-slate'}`}
-                >
-                  <GridFour className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode('masonry')}
-                  className={`p-2 rounded-full transition-all ${viewMode === 'masonry' ? 'bg-arch-gold text-arch-black' : 'text-arch-slate'}`}
-                >
-                  <SquaresFour className="w-5 h-5" />
-                </button>
-              </div>
             </div>
           </AnimatedSection>
-          
-          {/* Projects Grid */}
+
+          {/* Projects Grid — editorial bento: every 3rd card is a 2x2 hero on desktop */}
           <motion.div
             layout
-            className={
-              viewMode === 'masonry'
-                ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 lg:auto-rows-[260px]'
-                : 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6'
-            }
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 lg:auto-rows-[260px]"
           >
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => (
@@ -337,7 +315,6 @@ export default function Projects() {
                   project={project}
                   index={index}
                   isHero={index % 3 === 0}
-                  viewMode={viewMode}
                 />
               ))}
             </AnimatePresence>
@@ -357,8 +334,8 @@ export default function Projects() {
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '15000+', label: 'Projects Completed' },
-              { number: '15000+', label: 'Happy Clients' },
+              { number: '5300+', label: 'Projects Completed' },
+              { number: '5000+', label: 'Happy Clients' },
               { number: '30+', label: 'Years Experience' },
               { number: '50k', label: 'Sqm Factory' }
             ].map((stat, index) => (
@@ -410,7 +387,7 @@ export default function Projects() {
                   Download Profile
                 </motion.a>
                 <Link
-                  to="/contact"
+                  to="/get-quote"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-arch-silver text-arch-charcoal font-medium rounded-full hover:border-arch-gold hover:text-arch-gold transition-all"
                 >
                   Request a Quote
@@ -433,7 +410,7 @@ export default function Projects() {
               Let's discuss how we can bring your vision to life with our premium <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium solutions</Link>.
             </p>
             <Link
-              to="/contact"
+              to="/get-quote"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all"
             >
               Start Your Project

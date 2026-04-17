@@ -188,53 +188,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Profile Download Section */}
-      <section className="py-16 md:py-20 bg-arch-snow">
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 p-8 md:p-12 rounded-3xl bg-white border border-arch-silver-light shadow-soft overflow-hidden">
-              {/* Background pattern */}
-              <div
-                className="absolute inset-0 opacity-[0.03]"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
-                                   linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
-                  backgroundSize: "40px 40px",
-                }}
-              />
-
-              <div className="relative flex items-start gap-5">
-                <div className="w-14 h-14 bg-arch-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-7 h-7 text-arch-gold" />
-                </div>
-                <div>
-                  <span className="text-arch-gold font-mono text-xs tracking-wider uppercase">
-                    Download
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-arch-charcoal mt-1 mb-2">
-                    Company Profile
-                  </h3>
-                  <p className="text-arch-slate max-w-lg">
-                    Our full capabilities, project portfolio, and credentials in one document — ideal for architects, contractors, and procurement teams.
-                  </p>
-                </div>
-              </div>
-
-              <motion.a
-                href="/aa-company-profile.pdf"
-                download="Architectural-Aluminium-Company-Profile.pdf"
-                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-amber transition-colors flex-shrink-0"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <DownloadSimple className="w-5 h-5" />
-                Download PDF
-              </motion.a>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* Timeline/Story Section */}
       <section
         ref={containerRef}
@@ -627,105 +580,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Architectural Divider 
-      <ArchitecturalDivider className="bg-white" />*/}
-
-      {/* Certifications & Memberships */}
-      <section className="relative py-24 md:py-32 bg-arch-platinum overflow-hidden">
-        {/* Isometric Grid Background */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <IsometricCubeGrid
-            className="w-full h-full text-arch-gold"
-            opacity={1}
-          />
-        </div>
-
-        {/* Angular Layers decoration */}
-        <motion.div
-          className="absolute right-0 top-1/4 w-40 h-40 md:w-64 md:h-64 opacity-10"
-          animate={{ rotate: [0, -10, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <AngularLayers className="w-full h-full" />
-        </motion.div>
-
-        {/* Constellation pattern */}
-        <motion.div
-          className="absolute left-10 bottom-20 w-32 h-32 md:w-48 md:h-48 opacity-15"
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ConstellationPattern className="w-full h-full" />
-        </motion.div>
-
-        <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
-              Credentials
-            </span>
-            <h2 className="font-display text-4xl font-bold text-arch-charcoal mt-4 mb-6">
-              Recognised Excellence
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Trophy,
-                title: "CIFOZ Member",
-                desc: "Proud member of the Construction Industry Federation of Zimbabwe, upholding the highest industry standards.",
-                pattern: "hex",
-              },
-              {
-                icon: ShieldCheck,
-                title: "Fully Insured",
-                desc: "Third Party Insurance and Advance Payment Guarantee provided by reputable financial institutions.",
-                pattern: "circuit",
-              },
-              {
-                icon: CheckCircle,
-                title: "Quality Assured",
-                desc: "Rigorous quality control processes ensure every product meets our exacting standards.",
-                pattern: "beam",
-              },
-            ].map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="relative p-8 rounded-2xl bg-white text-center h-full group overflow-hidden hover:border-arch-gold/50 border border-arch-silver-light transition-all duration-500 shadow-soft">
-                  {/* Pattern backgrounds */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.05] transition-opacity duration-500">
-                    {item.pattern === "hex" && (
-                      <HexagonalGrid
-                        className="w-full h-full text-arch-gold"
-                        opacity={1}
-                      />
-                    )}
-                    {item.pattern === "circuit" && (
-                      <CircuitPattern className="w-full h-full" />
-                    )}
-                    {item.pattern === "beam" && (
-                      <BeamConnectionPattern
-                        className="w-full h-full text-arch-gold"
-                        opacity={1}
-                      />
-                    )}
-                  </div>
-
-                  <div className="relative">
-                    <div className="w-20 h-20 rounded-full bg-arch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-arch-gold/20 transition-colors">
-                      <item.icon className="text-arch-gold" size={40} />
-                    </div>
-                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-arch-slate">{item.desc}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-arch-platinum to-arch-snow overflow-hidden">
         {/* Floating Particles */}
@@ -774,6 +628,53 @@ const About = () => {
               >
                 View Careers
               </Link>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Company Profile Download Section */}
+      <section className="py-16 md:py-20 bg-arch-snow">
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 p-8 md:p-12 rounded-3xl bg-white border border-arch-silver-light shadow-soft overflow-hidden">
+              {/* Background pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.03]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                                   linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+                  backgroundSize: "40px 40px",
+                }}
+              />
+
+              <div className="relative flex items-start gap-5">
+                <div className="w-14 h-14 bg-arch-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-7 h-7 text-arch-gold" />
+                </div>
+                <div>
+                  <span className="text-arch-gold font-mono text-xs tracking-wider uppercase">
+                    Download
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-arch-charcoal mt-1 mb-2">
+                    Company Profile
+                  </h3>
+                  <p className="text-arch-slate max-w-lg">
+                    Our full capabilities, project portfolio, and credentials in one document — ideal for architects, contractors, and procurement teams.
+                  </p>
+                </div>
+              </div>
+
+              <motion.a
+                href="/aa-company-profile.pdf"
+                download="Architectural-Aluminium-Company-Profile.pdf"
+                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-amber transition-colors flex-shrink-0"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <DownloadSimple className="w-5 h-5" />
+                Download PDF
+              </motion.a>
             </div>
           </AnimatedSection>
         </div>

@@ -414,7 +414,7 @@ export default function Services() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                to="/contact"
+                to="/get-quote"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all"
               >
                 <Phone className="w-5 h-5" />
@@ -587,7 +587,7 @@ export default function Services() {
                       <Trophy className="w-7 h-7 text-arch-black" />
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-arch-charcoal font-display">1402+</div>
+                      <div className="text-3xl font-bold text-arch-charcoal font-display">5300+</div>
                       <div className="text-arch-slate text-sm">Projects Completed</div>
                     </div>
                   </div>
@@ -704,7 +704,7 @@ export default function Services() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                to="/contact"
+                to="/get-quote"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-arch-gold to-amber-600 text-arch-black font-bold rounded-full hover:shadow-lg hover:shadow-arch-gold/30 transition-all"
               >
                 <Phone className="w-5 h-5" />

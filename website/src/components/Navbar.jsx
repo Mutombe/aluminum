@@ -42,7 +42,7 @@ const Navbar = () => {
   // Pages with full-bleed cinematic image heroes — nav becomes transparent
   // with white-capsule logo and white nav links until scroll
   const hasDarkHero =
-    ['/', '/about', '/projects', '/services'].includes(location.pathname) ||
+    ['/', '/about', '/projects', '/services', '/get-quote'].includes(location.pathname) ||
     location.pathname.startsWith('/services/');
 
   useEffect(() => {
@@ -211,10 +211,10 @@ const Navbar = () => {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4">
-              {/* Search Button */}
+              {/* Search Button (mobile / tablet only) */}
               <button
                 onClick={openSearch}
-                className={`p-2 hover:text-arch-gold transition-colors duration-300 ${
+                className={`lg:hidden p-2 hover:text-arch-gold transition-colors duration-300 ${
                   isScrolled
                     ? 'text-arch-graphite'
                     : hasDarkHero
@@ -226,19 +226,10 @@ const Navbar = () => {
                 <MagnifyingGlass size={20} />
               </button>
 
-              {/* Phone (Desktop only) */}
-              <a
-                href="tel:+263778498911"
-                className="hidden md:flex items-center gap-2 text-arch-gold hover:text-arch-amber transition-colors duration-300"
-              >
-                <Phone size={18} />
-                <span className="text-sm font-medium">+263 778 498 911</span>
-              </a>
-
               {/* CTA Button (Desktop) */}
               <Link
-                to="/contact"
-                className="hidden md:block magnetic-btn bg-arch-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-arch-charcoal transition-colors duration-300"
+                to="/get-quote"
+                className="hidden md:block magnetic-btn bg-arch-gold text-arch-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-arch-amber transition-colors duration-300"
               >
                 <span>Get Quote</span>
               </Link>
@@ -389,8 +380,8 @@ const Navbar = () => {
                   </a>
 
                   <Link
-                    to="/contact"
-                    className="block w-full text-center bg-arch-black text-white px-6 py-3 rounded-full font-semibold hover:bg-arch-charcoal transition-colors duration-300"
+                    to="/get-quote"
+                    className="block w-full text-center bg-arch-gold text-arch-black px-6 py-3 rounded-full font-semibold hover:bg-arch-amber transition-colors duration-300"
                   >
                     Get a Quote
                   </Link>

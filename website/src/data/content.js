@@ -12,8 +12,8 @@ export const companyInfo = {
   hours: "Mon - Fri 09:00 - 17:00",
   memberships: ["CIFOZ"],
   stats: {
-    customers: 15000,
-    projects: 15000,
+    customers: 5000,
+    projects: 5300,
     years: 30,
     teamMembers: 50
   },
@@ -163,7 +163,7 @@ export const team = [
   {
     name: "Rudo Chigwedere",
     role: "Sales Director",
-    bio: "Building lasting relationships with 675+ customers through exceptional service and solutions.",
+    bio: "Building lasting relationships with 5000+ customers through exceptional service and solutions.",
     // Vision: Professional saleswoman
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400"
   }
@@ -175,7 +175,7 @@ export const news = [
     id: 1,
     title: "Architectural Aluminium Celebrates 30 Years of Excellence",
     excerpt: "Three decades of innovation, quality, and market leadership in Zimbabwe's aluminium industry.",
-    content: "Architectural Aluminium marks its 30th anniversary as Zimbabwe's leading aluminium fabricator. From humble beginnings in a backyard workshop in 1994, the company has grown into an industry giant with a 50,000 square metre factory and over 15000 completed projects.",
+    content: "Architectural Aluminium marks its 30th anniversary as Zimbabwe's leading aluminium fabricator. From humble beginnings in a backyard workshop in 1994, the company has grown into an industry giant with a 50,000 square metre factory and over 5300 completed projects.",
     date: "2024-06-04",
     category: "Company News",
     // Vision: Anniversary celebration or company milestone
