@@ -336,7 +336,7 @@ const Home = () => {
   This creates the effect where the dark background "dissipates" into the images
 */}
 
-      <section className="relative min-h-screen overflow-hidden bg-arch-snow">
+      <section className="relative min-h-screen overflow-hidden bg-arch-snow flex items-center pt-24 pb-20 lg:pt-28 lg:pb-24">
         {/* ============================================
       LAYER 1: FULL-WIDTH IMAGE CAROUSEL (BACKGROUND)
       Images span the entire section, sitting at the bottom layer
@@ -375,18 +375,18 @@ const Home = () => {
       This creates the "dissipating" effect
       Mobile: Full coverage for readability, Desktop: Side fade effect
       ============================================ */}
-        {/* Mobile: Warm cinematic dark overlay */}
+        {/* Mobile: Cinematic bottom-up gradient — lets the image breathe, dark base for content legibility */}
         <div
           className="absolute inset-0 z-20 pointer-events-none lg:hidden"
           style={{
             background: `linear-gradient(
-        to bottom,
-        rgba(15, 12, 8, 0.92) 0%,
-        rgba(18, 14, 10, 0.82) 20%,
-        rgba(22, 17, 12, 0.65) 45%,
-        rgba(26, 20, 14, 0.50) 65%,
-        rgba(20, 16, 11, 0.70) 85%,
-        rgba(15, 12, 8, 0.80) 100%
+        to top,
+        rgba(10, 8, 5, 0.92) 0%,
+        rgba(12, 10, 7, 0.82) 18%,
+        rgba(15, 12, 8, 0.62) 42%,
+        rgba(18, 14, 10, 0.38) 65%,
+        rgba(15, 12, 8, 0.55) 88%,
+        rgba(10, 8, 5, 0.70) 100%
       )`,
           }}
         />
@@ -395,9 +395,9 @@ const Home = () => {
           className="absolute inset-0 z-20 pointer-events-none lg:hidden"
           style={{
             background: `radial-gradient(
-        ellipse 80% 60% at 50% 40%,
+        ellipse 90% 70% at 50% 45%,
         transparent 0%,
-        rgba(12, 9, 6, 0.35) 100%
+        rgba(8, 6, 4, 0.35) 100%
       )`,
           }}
         />
@@ -454,16 +454,16 @@ const Home = () => {
       LAYER 2C: ARCHITECTURAL PATTERN DECORATIONS
       Subtle patterns that reinforce the brand identity
       ============================================ */}
-        <div className="absolute top-20 left-4 md:left-10 w-16 h-16 md:w-28 md:h-28 z-25 opacity-[0.06] md:opacity-[0.08]">
+        <div className="absolute top-24 right-5 md:top-20 md:left-10 md:right-auto w-14 h-14 md:w-28 md:h-28 z-25 opacity-[0.18] md:opacity-[0.08]">
           <BeamConnectionPattern className="w-full h-full text-arch-gold" opacity={1} />
         </div>
-        <div className="absolute bottom-32 left-6 md:left-16 w-20 h-28 md:w-36 md:h-48 z-25 opacity-[0.04] md:opacity-[0.06]">
+        <div className="absolute bottom-44 left-5 md:bottom-32 md:left-16 w-16 h-24 md:w-36 md:h-48 z-25 opacity-[0.14] md:opacity-[0.06]">
           <WindowFramePattern className="w-full h-full text-arch-gold" />
         </div>
-        <div className="absolute top-1/3 right-4 md:right-auto md:left-[42%] w-12 h-12 md:w-20 md:h-20 z-25 opacity-[0.08] md:opacity-10">
+        <div className="hidden md:block absolute top-1/3 right-4 md:right-auto md:left-[42%] w-12 h-12 md:w-20 md:h-20 z-25 opacity-[0.08] md:opacity-10">
           <AnimatedJoint />
         </div>
-        <div className="absolute bottom-20 right-4 md:bottom-24 md:right-[30%] w-14 h-14 md:w-24 md:h-24 z-25 opacity-[0.05] md:opacity-[0.07]">
+        <div className="absolute bottom-24 right-5 md:bottom-24 md:right-[30%] w-14 h-14 md:w-24 md:h-24 z-25 opacity-[0.13] md:opacity-[0.07]">
           <AluminiumProfilePattern className="w-full h-full text-arch-silver" opacity={1} />
         </div>
 
@@ -475,12 +475,12 @@ const Home = () => {
           initial={{ opacity: 0, x: 60, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ delay: 1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-40 right-12 xl:right-20 z-30 hidden lg:block"
+          className="absolute top-1/2 -translate-y-1/2 right-10 xl:right-16 z-30 hidden lg:block"
         >
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[280px]"
+            className="relative w-[260px]"
           >
             {/* Outer gold glow */}
             <div className="absolute -inset-1 bg-gradient-to-br from-arch-gold/30 via-transparent to-arch-gold/20 rounded-2xl blur-xl opacity-70" />
@@ -552,14 +552,63 @@ const Home = () => {
       LAYER 4: HERO CONTENT (LEFT SIDE)
       Text content sits on top of everything
       ============================================ */}
-        <div className="relative z-30 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 pt-40 lg:pt-44 pb-24 lg:pb-32">
+        <div className="relative z-30 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="max-w-3xl lg:max-w-2xl">
+            {/* Mobile Signature Strip — credibility eyebrow that mirrors desktop rank card energy */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.05 }}
+              className="lg:hidden mb-6"
+            >
+              <div
+                className="relative inline-flex items-stretch rounded-xl overflow-hidden"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%)',
+                  backdropFilter: 'blur(18px) saturate(160%)',
+                  WebkitBackdropFilter: 'blur(18px) saturate(160%)',
+                  border: '1px solid rgba(212,175,55,0.35)',
+                  boxShadow: '0 8px 28px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)',
+                }}
+              >
+                {/* Top gold hairline */}
+                <div
+                  className="absolute top-0 left-3 right-3 h-[1.5px]"
+                  style={{ background: 'linear-gradient(90deg, transparent, #D4AF37 50%, transparent)' }}
+                />
+                {/* Rank block */}
+                <div className="flex items-baseline gap-0.5 leading-none px-3 py-2.5 border-r border-white/15">
+                  <span className="font-mono text-[11px] text-arch-gold/70">#</span>
+                  <span className="font-display font-bold text-2xl gradient-text">01</span>
+                </div>
+                {/* Label block */}
+                <div className="flex flex-col justify-center px-3 py-2 border-r border-white/15">
+                  <span className="text-[9px] font-mono tracking-[0.18em] uppercase text-white/55 leading-none">
+                    Trusted Leader
+                  </span>
+                  <span className="font-display text-white text-[13px] leading-tight tracking-wide mt-1">
+                    Aluminium · Zimbabwe
+                  </span>
+                </div>
+                {/* Est block */}
+                <div className="flex flex-col items-center justify-center px-3 py-2">
+                  <span className="text-[8.5px] font-mono tracking-[0.18em] uppercase text-white/45 leading-none">
+                    Est.
+                  </span>
+                  <span className="font-display text-arch-gold text-base font-bold leading-none mt-1">
+                    1994
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
+              className="font-display font-bold text-white leading-[1.05] mb-5 lg:mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
+              style={{ fontSize: 'clamp(2.5rem, 5.2vw, 4.5rem)' }}
             >
               Crafting
               <span className="block">
@@ -612,7 +661,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-white/80 max-w-xl mb-10 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
+              className="text-lg lg:text-xl text-white/80 max-w-xl mb-7 lg:mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
             >
               Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
               <a href="https://www.lupanetimbers.co.zw" target="_blank" rel="noopener noreferrer" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">joinery</a> products. Setting the standard for architectural
@@ -624,11 +673,11 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4 mb-16"
+              className="flex flex-wrap items-center gap-4 mb-8 lg:mb-10"
             >
               <Link
                 to="/contact"
-                className="group flex items-center gap-3 bg-arch-gold text-arch-black px-8 py-4 rounded-full font-semibold hover:bg-[#E5C04A] shadow-lg shadow-arch-gold/20 transition-all duration-300"
+                className="group flex items-center gap-3 bg-arch-gold text-arch-black px-7 py-3.5 lg:px-8 lg:py-4 rounded-full font-semibold hover:bg-[#E5C04A] shadow-lg shadow-arch-gold/20 transition-all duration-300"
               >
                 Get a Quote
                 <ArrowRight
@@ -639,7 +688,7 @@ const Home = () => {
 
               <Link
                 to="/projects"
-                className="group flex items-center gap-3 border border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
+                className="group flex items-center gap-3 border border-white/30 text-white backdrop-blur-sm px-7 py-3.5 lg:px-8 lg:py-4 rounded-full font-medium hover:border-arch-gold hover:text-arch-gold transition-all duration-300"
               >
                 View Projects
                 <ArrowUpRight
@@ -654,7 +703,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"
             >
               {[
                 {
@@ -671,10 +720,10 @@ const Home = () => {
                 { value: 50000, label: "Sqm Factory", suffix: "" },
               ].map((stat, index) => (
                 <div key={stat.label}>
-                  <p className="font-display text-3xl md:text-4xl font-bold text-arch-gold">
+                  <p className="font-display text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-arch-gold">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="text-white/65 text-sm mt-1">
+                  <p className="text-white/65 text-xs lg:text-sm mt-1">
                     {stat.label}
                   </p>
                 </div>
@@ -683,20 +732,20 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator — compact, hidden on small viewports to save vertical room */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30"
+          className="absolute bottom-4 lg:bottom-5 left-1/2 -translate-x-1/2 z-30 hidden sm:block"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-white/55"
+            className="flex flex-col items-center gap-1 text-white/45"
           >
-            <span className="text-xs uppercase tracking-wider">Scroll</span>
-            <CaretDown size={20} />
+            <span className="text-[10px] uppercase tracking-[0.2em] font-mono">Scroll</span>
+            <CaretDown size={14} />
           </motion.div>
         </motion.div>
       </section>
