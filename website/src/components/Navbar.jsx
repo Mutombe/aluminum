@@ -42,7 +42,7 @@ const Navbar = () => {
   // Pages with full-bleed cinematic image heroes — nav becomes transparent
   // with white-capsule logo and white nav links until scroll
   const hasDarkHero =
-    ['/', '/about', '/projects', '/services', '/get-quote'].includes(location.pathname) ||
+    ['/', '/about', '/projects', '/services', '/get-quote', '/careers'].includes(location.pathname) ||
     location.pathname.startsWith('/services/');
 
   useEffect(() => {

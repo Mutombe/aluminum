@@ -17,8 +17,6 @@ import {
   BookOpen,
   ArrowRight,
   PaperPlaneTilt,
-  BuildingOffice,
-  GraduationCap,
 } from "@phosphor-icons/react";
 import {
   AnimatedSection,
@@ -190,149 +188,71 @@ const Careers = () => {
         keywords="aluminium jobs Zimbabwe, fabrication careers, construction jobs Harare, manufacturing vacancies"
       />
 
-      {/* Hero Section - Split design with team image */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-arch-snow" />
-
-        {/* Animated background shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-arch-gold/10 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-            }}
-            transition={{ duration: 20, repeat: Infinity }}
+      {/* Hero Section — full-bleed project photo with cinematic dark gradient */}
+      <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/more/IMG_9173.jpeg"
+            alt="Architectural Aluminium workshop — where careers are built"
+            loading="eager"
+            className="w-full h-full object-cover"
           />
-          <motion.div
-            className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-arch-silver/20 rounded-full blur-3xl"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              rotate: [0, -90, 0],
+          {/* Cinematic dark gradient — full-bleed image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(
+                to top,
+                rgba(0,0,0,0.75) 0%,
+                rgba(0,0,0,0.45) 30%,
+                rgba(0,0,0,0.20) 60%,
+                rgba(0,0,0,0.10) 80%,
+                rgba(0,0,0,0.30) 100%
+              ),
+              linear-gradient(
+                to right,
+                rgba(0,0,0,0.45) 0%,
+                rgba(0,0,0,0.20) 45%,
+                transparent 80%
+              )`,
             }}
-            transition={{ duration: 20, repeat: Infinity }}
           />
         </div>
 
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Content */}
-            <div>
-              <AnimatedSection>
-                <span className="inline-block px-4 py-2 bg-arch-gold/10 border border-arch-gold/30 rounded-full text-arch-gold text-sm font-mono mb-8">
-                  Join Our Team
-                </span>
-              </AnimatedSection>
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 pb-16 md:pb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <span className="inline-block px-4 py-2 bg-arch-gold/15 border border-arch-gold/30 backdrop-blur-sm rounded-full text-arch-gold text-sm font-mono mb-8">
+              Join Our Team
+            </span>
 
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-charcoal mb-6 leading-[1.1]">
-                  Build Your
-                  <span className="block gradient-text">Future With Us</span>
-                </h1>
-              </AnimatedSection>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white mt-2 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
+              Build Your
+              <span className="block gradient-text">Future With Us</span>
+            </h1>
 
-              <AnimatedSection delay={0.2}>
-                <p className="text-xl text-arch-slate mb-8 max-w-lg">
-                  Working at <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Architectural Aluminium</Link> means being part of a
-                  family enterprise that creates fascinating <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">products</Link>. Once you
-                  experience it, you'll want to stay.
-                </p>
-              </AnimatedSection>
+            <p className="text-xl text-white/80 mb-8 max-w-xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+              Working at{' '}
+              <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Architectural Aluminium</Link>{' '}
+              means being part of a family enterprise that creates fascinating{' '}
+              <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">products</Link>. Once you experience it, you'll want to stay.
+            </p>
 
-              <AnimatedSection delay={0.3}>
-                <div className="flex flex-wrap gap-4">
-                  <motion.a
-                    href="#openings"
-                    className="inline-flex items-center px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    View Open Positions
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </motion.a>
-                </div>
-              </AnimatedSection>
-
-              {/* Quick stats */}
-              <AnimatedSection delay={0.4} className="mt-12">
-                <div className="flex flex-wrap gap-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-arch-gold/10 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-arch-gold" />
-                    </div>
-                    <div>
-                      <span className="block text-2xl font-bold text-arch-charcoal">
-                        50+
-                      </span>
-                      <span className="text-arch-slate text-sm">
-                        Team Members
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-arch-gold/10 rounded-full flex items-center justify-center">
-                      <BuildingOffice className="w-6 h-6 text-arch-gold" />
-                    </div>
-                    <div>
-                      <span className="block text-2xl font-bold text-arch-charcoal">
-                        30+
-                      </span>
-                      <span className="text-arch-slate text-sm">
-                        Years Strong
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Image collage */}
-            <AnimatedSection
-              delay={0.2}
-              direction="left"
-              className="relative hidden lg:block"
+            <motion.a
+              href="#openings"
+              className="inline-flex items-center px-8 py-4 bg-arch-gold text-arch-black font-semibold rounded-full hover:bg-arch-yellow transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className="grid grid-cols-2 gap-4">
-                {/* Vision: Workers in a modern factory setting, professional team photos */}
-                <motion.div
-                  className="space-y-4"
-                  initial={{ y: 20 }}
-                  animate={{ y: 0 }}
-                >
-                  <div className="rounded-2xl overflow-hidden h-48">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="Manufacturing team" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden h-64">
-                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&q=80" alt="Office team collaboration" className="w-full h-full object-cover" />
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="space-y-4 mt-8"
-                  initial={{ y: -20 }}
-                  animate={{ y: 0 }}
-                >
-                  <div className="rounded-2xl overflow-hidden h-64">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80" alt="Team meeting" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden h-48">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Construction site work" className="w-full h-full object-cover" />
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Floating badge */}
-              <motion.div
-                className="absolute -bottom-6 -left-6 bg-arch-gold text-arch-black p-6 rounded-2xl shadow-medium"
-                initial={{ scale: 0, rotate: -10 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ delay: 0.5, type: "spring" }}
-              >
-                <GraduationCap className="w-8 h-8 mb-2" />
-                <span className="block font-bold text-lg">Training</span>
-                <span className="text-sm opacity-80">Provided</span>
-              </motion.div>
-            </AnimatedSection>
-          </div>
+              View Open Positions
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
