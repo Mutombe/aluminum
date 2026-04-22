@@ -39,6 +39,7 @@ import {
   AluminiumProfilePattern,
 } from "../components/ArchitecturalPatterns";
 import { companyInfo, services, projects } from "../data/content";
+import AluminiumFinishes from "../components/Finishes";
 
 const heroImages = [
   {
@@ -956,6 +957,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Aluminium Finishes Section */}
+      <AluminiumFinishes />
 
       {/* Testimonials Section - Infinite Scroll with Glassmorphism */}
       <section className="relative py-24 md:py-32 overflow-hidden">
