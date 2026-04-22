@@ -163,11 +163,6 @@ export const team = [
     name: "Tatenda Nyakabambo",
     role: "Project Manager",
     bio: "Coordinates project delivery end-to-end — from specification to hand-over."
-  },
-  {
-    name: "Yvonne Isaac",
-    role: "Administrator",
-    bio: "Keeps the office running smoothly and ensures every client has a dedicated point of contact."
   }
 ];
 
