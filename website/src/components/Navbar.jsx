@@ -30,7 +30,8 @@ const navLinks = [
   { name: 'Projects', path: '/projects' },
   { name: 'Careers', path: '/careers' },
   { name: 'News', path: '/news' },
-  { name: 'Contact', path: '/contact' }
+  { name: 'Contact', path: '/contact' },
+  { name: 'Get Quote', path: '/get-quote' }
 ];
 
 const Navbar = () => {
@@ -225,14 +226,6 @@ const Navbar = () => {
               >
                 <MagnifyingGlass size={20} />
               </button>
-
-              {/* CTA Button (Desktop) */}
-              <Link
-                to="/get-quote"
-                className="hidden md:block magnetic-btn bg-arch-gold text-arch-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-arch-amber transition-colors duration-300"
-              >
-                <span>Get Quote</span>
-              </Link>
 
               {/* Mobile Menu Button */}
               <button
