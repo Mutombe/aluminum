@@ -7,16 +7,9 @@ import {
   Phone,
   Envelope,
   Clock,
-  BuildingOffice,
-  ChatCentered,
-  FileText,
-  Wrench,
   ArrowRight,
   CheckCircle,
   SpinnerGap,
-  FacebookLogo,
-  LinkedinLogo,
-  InstagramLogo,
   CalendarBlank,
 } from '@phosphor-icons/react';
 import { toast } from 'sonner';
@@ -91,33 +84,6 @@ const Contact = () => {
       primary: '8:00 AM - 5:00 PM',
       secondary: 'Saturday: 8:00 AM - 12:00 PM',
       action: null
-    }
-  ];
-
-  const quickLinks = [
-    {
-      icon: FileText,
-      title: 'Request a Quote',
-      description: 'Get a detailed estimate for your project',
-      link: '/get-quote'
-    },
-    {
-      icon: BuildingOffice,
-      title: 'View Our Projects',
-      description: 'See examples of our work',
-      link: '/projects'
-    },
-    {
-      icon: Wrench,
-      title: 'Our Services',
-      description: 'Learn about what we offer',
-      link: '/services'
-    },
-    {
-      icon: ChatCentered,
-      title: 'FAQs',
-      description: 'Find answers to common questions',
-      link: '/about#faq'
     }
   ];
 
@@ -491,67 +457,6 @@ const Contact = () => {
                     </p>
                   </form>
                 )}
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Quick Links & Social Below Forms */}
-          <div className="mt-16 grid md:grid-cols-2 gap-8">
-            <AnimatedSection delay={0.2}>
-              <h3 className="text-arch-charcoal font-semibold text-lg mb-4">Quick Links</h3>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {quickLinks.map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.link}
-                    className="flex items-center gap-3 p-4 bg-white rounded-xl border border-arch-silver/30 hover:border-arch-gold/50 hover:shadow-soft transition-all group"
-                    whileHover={{ x: 4 }}
-                  >
-                    <div className="w-10 h-10 bg-arch-gold/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-arch-gold/20 transition-colors">
-                      <link.icon className="w-5 h-5 text-arch-gold" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-arch-charcoal font-medium text-sm">{link.title}</h4>
-                      <p className="text-arch-steel text-xs">{link.description}</p>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.3}>
-              <h3 className="text-arch-charcoal font-semibold text-lg mb-4">Connect With Us</h3>
-              <div className="flex gap-4">
-                <motion.a
-                  href="https://facebook.com/archaluminium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-xl border border-arch-silver/30 flex items-center justify-center text-arch-graphite hover:text-arch-gold hover:border-arch-gold/50 transition-colors"
-                  whileHover={{ y: -2 }}
-                  aria-label="Facebook"
-                >
-                  <FacebookLogo className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com/company/archaluminium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-xl border border-arch-silver/30 flex items-center justify-center text-arch-graphite hover:text-arch-gold hover:border-arch-gold/50 transition-colors"
-                  whileHover={{ y: -2 }}
-                  aria-label="LinkedIn"
-                >
-                  <LinkedinLogo className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  href="https://instagram.com/archaluminium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-xl border border-arch-silver/30 flex items-center justify-center text-arch-graphite hover:text-arch-gold hover:border-arch-gold/50 transition-colors"
-                  whileHover={{ y: -2 }}
-                  aria-label="Instagram"
-                >
-                  <InstagramLogo className="w-5 h-5" />
-                </motion.a>
               </div>
             </AnimatedSection>
           </div>

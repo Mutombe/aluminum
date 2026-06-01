@@ -4,16 +4,8 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
-  Trophy,
   Target,
   Eye,
-  Heart,
-  Lightbulb,
-  Shield,
-  Users,
-  CheckCircle,
-  ShieldCheck,
-  UsersThree,
   DownloadSimple,
   FileText,
 } from "@phosphor-icons/react";
@@ -75,23 +67,23 @@ const About = () => {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src="/more/IMG_2361.jpeg" alt="Precision aluminium atrium installation — craftsmanship in progress" className="w-full h-full object-cover" loading="eager" />
-          {/* Cinematic dark gradient — full-bleed image */}
+          <img src="/firstmutual/untitled-202.JPG" alt="First Mutual Park — sunlit aluminium glass facade" className="w-full h-full object-cover" loading="eager" />
+          {/* Cinematic gradient — lighter so the bright facade shows */}
           <div
             className="absolute inset-0"
             style={{
               background: `linear-gradient(
                 to top,
-                rgba(0,0,0,0.70) 0%,
-                rgba(0,0,0,0.40) 30%,
-                rgba(0,0,0,0.15) 60%,
-                rgba(0,0,0,0.10) 80%,
-                rgba(0,0,0,0.30) 100%
+                rgba(0,0,0,0.65) 0%,
+                rgba(0,0,0,0.30) 30%,
+                rgba(0,0,0,0.08) 60%,
+                rgba(0,0,0,0.02) 80%,
+                rgba(0,0,0,0.15) 100%
               ),
               linear-gradient(
                 to right,
                 rgba(0,0,0,0.40) 0%,
-                rgba(0,0,0,0.15) 45%,
+                rgba(0,0,0,0.12) 45%,
                 transparent 80%
               )`,
             }}
@@ -374,80 +366,6 @@ const About = () => {
               </div>
             </AnimatedSection>
           </div>
-
-          {/* Values */}
-          <AnimatedSection className="mb-24">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
-                Our Values
-              </span>
-              <h2 className="font-display text-4xl font-bold text-arch-charcoal mt-4">
-                The Principles That Guide Us
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: Heart,
-                  title: "Quality",
-                  desc: "Uncompromising standards in every product we create",
-                  pattern: "beam",
-                },
-                {
-                  icon: Lightbulb,
-                  title: "Innovation",
-                  desc: "Embracing new technologies and design approaches",
-                  pattern: "circuit",
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Integrity",
-                  desc: "Honest dealings and transparent relationships",
-                  pattern: "angular",
-                },
-                {
-                  icon: UsersThree,
-                  title: "Teamwork",
-                  desc: "Collaborative excellence across all departments",
-                  pattern: "constellation",
-                },
-              ].map((value, index) => (
-                <AnimatedSection key={value.title} delay={index * 0.1}>
-                  <div className="relative text-center p-6 rounded-xl bg-white border border-arch-silver-light hover:border-arch-gold/50 transition-all duration-300 group overflow-hidden shadow-soft">
-                    {/* Dynamic pattern based on value */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                      {value.pattern === "beam" && (
-                        <BeamConnectionPattern
-                          className="w-full h-full text-arch-gold"
-                          opacity={1}
-                        />
-                      )}
-                      {value.pattern === "circuit" && (
-                        <CircuitPattern className="w-full h-full" />
-                      )}
-                      {value.pattern === "angular" && (
-                        <AngularLayers className="w-full h-full" />
-                      )}
-                      {value.pattern === "constellation" && (
-                        <ConstellationPattern className="w-full h-full" />
-                      )}
-                    </div>
-
-                    <div className="relative">
-                      <div className="w-12 h-12 rounded-full bg-arch-gold/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-arch-gold/20 transition-colors">
-                        <value.icon className="text-arch-gold" size={24} />
-                      </div>
-                      <h4 className="font-display font-semibold text-arch-charcoal mb-2">
-                        {value.title}
-                      </h4>
-                      <p className="text-sm text-arch-slate">{value.desc}</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </AnimatedSection>
 
           {/* Factory Stats */}
           <AnimatedSection>
