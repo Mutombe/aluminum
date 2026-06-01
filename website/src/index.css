@@ -135,12 +135,12 @@ html {
   scroll-behavior: smooth;
   /* Global type scale-up — rem-based spacing scales with this, so
      text gets bigger while whitespace stays proportional. */
-  font-size: 17.5px;
+  font-size: 18.5px;
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 18px;
+    font-size: 19.5px;
   }
 }
 
