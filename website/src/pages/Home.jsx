@@ -746,9 +746,7 @@ const Home = () => {
       </section>
 
       {/* Services Section - Unique asymmetric layout */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-arch-platinum" />
-        <div className="absolute inset-0 diagonal-stripes" />
+      <section className="relative py-24 md:py-32 overflow-hidden bg-white">
 
         {/* Blueprint lines decoration - MORE VISIBLE */}
         <BlueprintLines className="text-arch-gold opacity-60" />
@@ -801,53 +799,39 @@ const Home = () => {
             {/* Right column - Services grid */}
             <div className="lg:col-span-7">
               <StaggerContainer className="space-y-6">
-                {services.slice(0, 4).map((service, index) => {
-                  const cardImage = [
-                    '/firstmutual/untitled-561.JPG',
-                    '/ecobank/DSC08707.jpg',
-                    '/ecobank/DSC08839.jpg',
-                    '/seagrave-road/17.jpg',
-                  ][index];
-                  return (
-                    <StaggerItem key={service.id}>
-                      <Link
-                        to={`/services/${service.id}`}
-                        className="group relative block p-6 md:p-8 rounded-2xl bg-white border border-arch-silver/30 shadow-soft hover:shadow-medium hover:border-arch-gold/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
-                      >
-                        {/* Background image with left-to-right fade */}
-                        <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
-                          <img src={cardImage} alt="" className="w-full h-full object-cover" />
-                          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
-                        </div>
+                {services.slice(0, 4).map((service, index) => (
+                  <StaggerItem key={service.id}>
+                    <Link
+                      to={`/services/${service.id}`}
+                      className="group relative block p-6 md:p-8 rounded-2xl bg-white border border-arch-silver/30 shadow-soft hover:shadow-medium hover:border-arch-gold/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                    >
+                      {/* Corner brackets decoration */}
+                      <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <CornerBrackets size={20} color="#D4AF37" />
+                      </div>
 
-                        {/* Corner brackets decoration */}
-                        <div className="absolute inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                          <CornerBrackets size={20} color="#D4AF37" />
-                        </div>
-
-                        <div className="relative flex items-start justify-between gap-4">
-                          <div>
-                            <span className="text-arch-gold font-mono text-sm">
-                              0{index + 1}
-                            </span>
-                            <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-charcoal mt-2 mb-3 group-hover:text-arch-gold transition-colors duration-300">
-                              {service.title}
-                            </h3>
-                            <p className="text-arch-steel">
-                              {service.shortDesc}
-                            </p>
-                          </div>
-                          <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-arch-silver-light shadow-sm group-hover:bg-arch-gold group-hover:border-arch-gold group-hover:shadow-md group-hover:shadow-arch-gold/30 transition-all duration-300">
-                            <ArrowUpRight
-                              className="text-arch-charcoal group-hover:text-arch-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
-                              size={20}
-                            />
+                      <div className="relative flex items-start justify-between gap-4">
+                        <div>
+                          <span className="text-arch-gold font-mono text-sm">
+                            0{index + 1}
                           </span>
+                          <h3 className="font-display text-xl md:text-2xl font-semibold text-arch-charcoal mt-2 mb-3 group-hover:text-arch-gold transition-colors duration-300">
+                            {service.title}
+                          </h3>
+                          <p className="text-arch-steel">
+                            {service.shortDesc}
+                          </p>
                         </div>
-                      </Link>
-                    </StaggerItem>
-                  );
-                })}
+                        <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-arch-silver-light shadow-sm group-hover:bg-arch-gold group-hover:border-arch-gold group-hover:shadow-md group-hover:shadow-arch-gold/30 transition-all duration-300">
+                          <ArrowUpRight
+                            className="text-arch-charcoal group-hover:text-arch-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                            size={20}
+                          />
+                        </span>
+                      </div>
+                    </Link>
+                  </StaggerItem>
+                ))}
 
                 {/* Lupane Timbers - Sister Company */}
                 <StaggerItem>
