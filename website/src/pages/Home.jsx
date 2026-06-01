@@ -772,7 +772,7 @@ const Home = () => {
                 <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                   What We Do
                 </span>
-                <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
                   Comprehensive
                   <span className="block text-arch-steel">Solutions</span>
                 </h2>
@@ -884,7 +884,7 @@ const Home = () => {
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Portfolio
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-black mt-4">
                 Featured Projects
               </h2>
             </div>
@@ -959,7 +959,7 @@ const Home = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Testimonials
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-4 mb-4">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-4">
               What Our Clients Say
             </h2>
             <p className="text-arch-silver text-lg">
@@ -1021,11 +1021,11 @@ const Home = () => {
             </div>*/}
 
             <AnimatedSection>
-              <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-black mb-6">
+              <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-black mb-6 leading-[1.1]">
                 Ready to Transform Your
                 <span className="block gradient-text">Space?</span>
               </h2>
-              <p className="text-xl text-arch-steel mb-10 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-arch-steel mb-10 max-w-2xl mx-auto">
                 Whether you're planning a <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential project</Link> or a large-scale{' '}
                 <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial development</Link>, our team is ready to bring your vision
                 to life.

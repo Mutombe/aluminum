@@ -130,11 +130,11 @@ const About = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               About Us
             </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mt-4 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white mt-4 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Building Zimbabwe's
               <span className="block gradient-text">Future in Aluminium</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               From a backyard workshop in 1994 to Zimbabwe's premier aluminium
               fabricator, our journey is one of vision, dedication, and
               relentless pursuit of excellence.
@@ -408,7 +408,7 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <p className="font-display text-4xl md:text-5xl font-bold text-arch-gold mb-2">
+                    <p className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-gold mb-2">
                       <AnimatedCounter
                         value={stat.value}
                         suffix={stat.suffix}
@@ -449,7 +449,7 @@ const About = () => {
               <CornerBrackets size={40} color="#D4AF37" />
             </div>*/}
 
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mb-6">
               Join Our Journey
             </h2>
             <p className="text-xl text-arch-slate mb-10">

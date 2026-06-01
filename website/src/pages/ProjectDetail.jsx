@@ -83,7 +83,7 @@ export default function ProjectDetail() {
               <span className="block px-3 py-1 bg-arch-gold/90 text-arch-black text-xs font-bold rounded-full w-fit mb-4">
                 {project.category}
               </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-display mb-4">{project.title}</h1>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-display mb-4 leading-[1.1] break-words">{project.title}</h1>
               <div className="flex flex-wrap items-center gap-6 text-white/80">
                 <span className="flex items-center gap-2"><MapPin size={18} className="text-arch-gold" />{project.location}</span>
                 <span className="flex items-center gap-2"><CalendarBlank size={18} className="text-arch-gold" />{project.year}</span>

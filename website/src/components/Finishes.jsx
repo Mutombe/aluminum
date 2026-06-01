@@ -63,7 +63,7 @@ const AluminiumFinishes = () => {
           <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
             Finishes & Colors
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-black mt-4 mb-6">
             Premium Aluminium
             <span className="block gradient-text">Finishes</span>
           </h2>

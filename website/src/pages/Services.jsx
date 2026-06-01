@@ -403,12 +403,12 @@ export default function Services() {
               Comprehensive Solutions
             </span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Our{' '}
               <span className="gradient-text">Services</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               From <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">fenestration</Link> to <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, we deliver excellence across every aspect of aluminium fabrication and installation.
             </p>
 
@@ -495,7 +495,7 @@ export default function Services() {
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">What We Offer</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
               Comprehensive Aluminium Solutions
             </h2>
             <p className="text-arch-slate max-w-2xl mx-auto text-lg">
@@ -548,7 +548,7 @@ export default function Services() {
             <div>
               <AnimatedSection>
                 <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">How We Work</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
                   Our Process
                 </h2>
                 <p className="text-arch-slate text-lg mb-12">
@@ -631,7 +631,7 @@ export default function Services() {
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold text-sm font-medium tracking-wider uppercase mb-4 block">Our Advantages</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mb-6 font-display">
               Why Choose Us
             </h2>
           </AnimatedSection>

@@ -54,7 +54,7 @@ const NotFound = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[12rem] sm:text-[16rem] md:text-[20rem] font-display font-bold leading-none">
+            <h1 className="text-[7rem] sm:text-[16rem] md:text-[20rem] font-display font-bold leading-none">
               <span className="gradient-text">4</span>
               <span className="text-arch-charcoal">0</span>
               <span className="gradient-text">4</span>

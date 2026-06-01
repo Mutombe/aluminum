@@ -228,11 +228,11 @@ const GetQuote = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               Get Started
             </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mt-4 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white mt-4 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Request a
               <span className="block gradient-text">Detailed Quote</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               Upload your drawings or plans and our team will come back to you with a detailed quote within 24 to 48 hours.
             </p>
 

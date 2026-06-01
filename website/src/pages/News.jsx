@@ -142,7 +142,7 @@ const News = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <p className="text-xl text-arch-slate mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-arch-slate mb-8 max-w-2xl mx-auto">
                 Stay informed with our latest news, project updates, and industry insights.
               </p>
             </AnimatedSection>
@@ -379,7 +379,7 @@ const News = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
                 Stay Updated
               </h2>
             </AnimatedSection>

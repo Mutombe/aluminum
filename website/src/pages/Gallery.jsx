@@ -375,14 +375,14 @@ const Gallery = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-charcoal mb-6 leading-[1.1]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-charcoal mb-6 leading-[1.1]">
               Our Work
               <span className="block gradient-text">Speaks for Itself</span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="text-xl text-arch-slate max-w-2xl">
+            <p className="text-lg sm:text-xl text-arch-slate max-w-2xl">
               Explore three decades of excellence in <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link>,{' '}
               <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, and architectural solutions across Zimbabwe and beyond.
             </p>
@@ -642,7 +642,7 @@ const Gallery = () => {
 
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 text-center">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
               Ready to Start Your
               <span className="gradient-text"> Project?</span>
             </h2>

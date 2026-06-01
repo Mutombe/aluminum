@@ -177,14 +177,14 @@ const Contact = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-black mb-6">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-arch-black mb-6 leading-[1.1]">
               Let's Build
               <span className="gradient-text"> Together</span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="text-xl text-arch-steel max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-arch-steel max-w-2xl mx-auto">
               Whether you need a quote for our <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">services</Link>, have a question, or want to discuss
               your <Link to="/projects" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">project</Link>, our team is ready to help.
             </p>
@@ -250,7 +250,7 @@ const Contact = () => {
           {/* Section Header */}
           <AnimatedSection className="text-center mb-16">
             <span className="text-arch-gold font-mono text-sm tracking-wider">LET'S TALK</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-black mt-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-arch-black mt-4 mb-6">
               Book a
               <span className="gradient-text"> Consultation</span>
             </h2>

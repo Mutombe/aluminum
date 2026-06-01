@@ -263,12 +263,12 @@ export default function Projects() {
               5300+ Projects Completed
             </span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-display [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Our{' '}
               <span className="gradient-text">Projects</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               Discover our portfolio of exceptional <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> and installation projects across Zimbabwe and beyond.
             </p>
           </motion.div>
@@ -340,7 +340,7 @@ export default function Projects() {
               { number: '50k', label: 'Sqm Factory' }
             ].map((stat, index) => (
               <StaggerItem key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold gradient-text font-display">{stat.number}</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text font-display">{stat.number}</div>
                 <div className="text-arch-slate mt-2">{stat.label}</div>
               </StaggerItem>
             ))}

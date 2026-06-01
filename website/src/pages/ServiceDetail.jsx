@@ -648,7 +648,7 @@ export default function ServiceDetail() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="font-display text-5xl md:text-7xl font-bold text-white mb-4 [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
+                className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
               >
                 {service.title}
               </motion.h1>
@@ -657,7 +657,7 @@ export default function ServiceDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="text-2xl md:text-3xl text-arch-gold font-light mb-6"
+                className="text-xl sm:text-2xl md:text-3xl text-arch-gold font-light mb-6"
               >
                 {service.tagline}
               </motion.p>
@@ -743,7 +743,7 @@ export default function ServiceDetail() {
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 About This Service
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
                 Excellence in Every Detail
               </h2>
               <div className="space-y-4 text-arch-slate text-lg leading-relaxed">
@@ -823,7 +823,7 @@ export default function ServiceDetail() {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               What We Offer
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
               Features & Capabilities
             </h2>
             <p className="text-arch-slate text-lg">
@@ -969,7 +969,7 @@ export default function ServiceDetail() {
             <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
               How We Work
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
               Our Process
             </h2>
           </AnimatedSection>
@@ -1014,7 +1014,7 @@ export default function ServiceDetail() {
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Portfolio
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mt-4">
                 Project Gallery
               </h2>
             </div>
@@ -1051,7 +1051,7 @@ export default function ServiceDetail() {
               <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
                 Got Questions?
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
                 FAQs
               </h2>
               <p className="text-arch-slate text-lg mb-8">
@@ -1189,7 +1189,7 @@ export default function ServiceDetail() {
         <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <AnimatedSection className="relative text-center max-w-3xl mx-auto">
 
-            <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-charcoal mb-6">
+            <h2 className="font-display text-4xl md:text-6xl font-bold text-arch-charcoal mb-6 leading-[1.1]">
               Ready to Start Your
               <span className={`block bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
                 {service.title} Project?

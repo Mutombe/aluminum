@@ -231,12 +231,12 @@ const Careers = () => {
               Join Our Team
             </span>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white mt-2 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-white mt-2 mb-6 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]">
               Build Your
               <span className="block gradient-text">Future With Us</span>
             </h1>
 
-            <p className="text-xl text-white/80 mb-8 max-w-xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+            <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               Working at{' '}
               <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">Architectural Aluminium</Link>{' '}
               means being part of a family enterprise that creates fascinating{' '}
@@ -265,7 +265,7 @@ const Careers = () => {
                 <span className="text-arch-gold font-mono text-sm tracking-wider">
                   WHY JOIN US
                 </span>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mt-4 mb-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-arch-charcoal mt-4 mb-6">
                   More Than Just a Job
                 </h2>
                 <p className="text-arch-slate text-lg mb-8">
@@ -328,7 +328,7 @@ const Careers = () => {
             <span className="text-arch-gold font-mono text-sm tracking-wider">
               OPPORTUNITIES
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mt-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-arch-charcoal mt-4 mb-6">
               Open Positions
             </h2>
             <p className="text-arch-slate text-lg max-w-2xl mx-auto">
@@ -540,7 +540,7 @@ const Careers = () => {
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-arch-charcoal mb-6">
                 Don't See the Right Role?
               </h2>
             </AnimatedSection>
