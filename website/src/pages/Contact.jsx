@@ -341,7 +341,7 @@ const Contact = () => {
                           onChange={handleConsultChange}
                           required
                           className="w-full px-4 py-3 bg-arch-platinum border border-arch-silver/30 rounded-xl text-arch-charcoal placeholder-arch-steel focus:outline-none focus:border-arch-gold/50 transition-colors"
-                          placeholder="+263 7XX XXX XXX"
+                          placeholder="(code) (number)"
                         />
                       </div>
                       <div>
