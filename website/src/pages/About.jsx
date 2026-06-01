@@ -44,7 +44,7 @@ import {
   HexagonalGrid,
   IsometricCubeGrid,
 } from "../components/ArchitecturalPatterns";
-import { companyInfo, team } from "../data/content";
+import { companyInfo } from "../data/content";
 
 
 const About = () => {
@@ -504,115 +504,6 @@ const About = () => {
               </div>
             </div>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section
-        id="team"
-        className="relative py-24 md:py-32 bg-white overflow-hidden"
-      >
-        {/* Large Geometric Ring Background */}
-        <div className="absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.03]">
-          <GeometricRing size={600} />
-        </div>
-
-        {/* Blueprint lines */}
-        <BlueprintLines className="text-arch-silver opacity-20" />
-
-        {/* Floating Aluminium Profiles */}
-        <motion.div
-          className="absolute right-10 top-20 w-24 h-24 md:w-40 md:h-40 opacity-10"
-          animate={{ y: [-15, 15, -15], rotate: [0, 5, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <AluminiumProfilePattern
-            className="w-full h-full text-arch-gold"
-            opacity={1}
-          />
-        </motion.div>
-
-        <motion.div
-          className="absolute left-10 bottom-40 w-20 h-20 md:w-32 md:h-32 opacity-[0.08]"
-          animate={{ y: [10, -10, 10] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <CrossSectionPattern className="w-full h-full" />
-        </motion.div>
-
-        <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-arch-gold font-mono text-sm tracking-wider uppercase">
-              Our Team
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-arch-charcoal mt-4 mb-6">
-              Leadership That Inspires
-            </h2>
-            <p className="text-arch-slate text-lg">
-              Our skilled management operates in an informal corporate structure
-              that promotes excellence. Every team member is experienced and
-              committed to delivering the best.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, index) => {
-              const initials = member.name
-                .split(' ')
-                .filter(Boolean)
-                .map((part) => part[0])
-                .slice(0, 2)
-                .join('');
-              return (
-                <AnimatedSection key={member.name} delay={index * 0.1}>
-                  <div className="group">
-                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-arch-charcoal via-arch-graphite to-arch-charcoal flex items-center justify-center">
-                      {/* Subtle dotted architectural pattern */}
-                      <div
-                        className="absolute inset-0 opacity-[0.12]"
-                        style={{
-                          backgroundImage:
-                            'radial-gradient(circle at 1px 1px, rgba(212,175,55,0.9) 1px, transparent 0)',
-                          backgroundSize: '20px 20px',
-                        }}
-                      />
-
-                      {/* Top gold hairline */}
-                      <div
-                        className="absolute top-0 left-8 right-8 h-[2px]"
-                        style={{
-                          background:
-                            'linear-gradient(90deg, transparent, #D4AF37 50%, transparent)',
-                        }}
-                      />
-
-                      {/* Initials monogram */}
-                      <div className="relative flex flex-col items-center">
-                        <span className="font-display text-[6rem] md:text-[7rem] font-bold leading-none gradient-text tracking-tight group-hover:scale-105 transition-transform duration-500">
-                          {initials}
-                        </span>
-                        <span className="mt-3 text-[10px] font-mono tracking-[0.25em] uppercase text-white/40">
-                          Portrait pending
-                        </span>
-                      </div>
-
-                      {/* Corner brackets — always visible, brighter on hover */}
-                      <div className="absolute inset-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                        <CornerBrackets size={20} color="#D4AF37" />
-                      </div>
-                    </div>
-                    <h3 className="font-display text-xl font-semibold text-arch-charcoal mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-arch-gold text-sm mb-3">{member.role}</p>
-                    {member.bio && (
-                      <p className="text-arch-slate text-sm">{member.bio}</p>
-                    )}
-                  </div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
         </div>
       </section>
 
