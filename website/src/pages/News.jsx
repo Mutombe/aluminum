@@ -210,7 +210,7 @@ const News = () => {
                   <p className="text-arch-slate mb-6">
                     We are proud to announce our feature in Issue 54 of <strong className="text-arch-charcoal">Structure and Design</strong>,
                     Zimbabwe's premier infrastructure development magazine. This feature represents a significant milestone
-                    in our journey as Zimbabwe's leading <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">company</Link>.
+                    in our journey as Zimbabwe's leading <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> <Link to="/about" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">company</Link>.
                   </p>
 
                   <p className="text-arch-slate mb-6">
@@ -329,7 +329,7 @@ const News = () => {
               Industry Insights
             </h2>
             <p className="text-arch-slate max-w-2xl mx-auto">
-              Explore videos about <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link> in architecture, construction materials, and modern building techniques.
+              Explore videos about <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link> in architecture, construction materials, and modern building techniques.
             </p>
           </AnimatedSection>
 

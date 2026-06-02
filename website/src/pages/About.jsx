@@ -258,7 +258,7 @@ const About = () => {
                   craftsmanship and dedication that defined our early days.
                 </p>
                 <p>
-                  Today, we stand as Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>,{' '}
+                  Today, we stand as Zimbabwe's leading fabricator of <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>,{' '}
                   <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and joinery products, setting the standard that
                   other players in the industry aspire to.
                 </p>
@@ -319,7 +319,7 @@ const About = () => {
                   <p className="text-arch-slate">
                     To design and manufacture high-quality aluminium solutions
                     for residential and commercial customers in Zimbabwe and
-                    beyond. We specialize in aluminium <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">windows, doors, and
+                    beyond. We specialize in aluminium <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">windows, doors, and
                     frames</Link>, and are a leading supplier of premium aluminium
                     products tailored to every need.
                   </p>

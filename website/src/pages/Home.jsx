@@ -658,7 +658,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg lg:text-xl text-white/80 max-w-xl mb-7 lg:mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
             >
-              Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
+              Zimbabwe's leading fabricator of <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
               <a href="https://www.lupanetimbers.co.zw" target="_blank" rel="noopener noreferrer" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">joinery</a> products. Setting the standard for architectural
               excellence since 1994.
             </motion.p>
@@ -777,7 +777,7 @@ const Home = () => {
                   <span className="block text-arch-steel">Solutions</span>
                 </h2>
                 <p className="text-arch-steel mb-8 max-w-md">
-                  From <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential windows</Link> to large-scale <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial facades</Link>, we
+                  From <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential windows</Link> to large-scale <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial facades</Link>, we
                   deliver precision-engineered aluminium solutions for every
                   need.
                 </p>
@@ -1027,7 +1027,7 @@ const Home = () => {
               </h2>
               <p className="text-lg sm:text-xl text-arch-steel mb-10 max-w-2xl mx-auto">
                 Whether you're planning a <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential project</Link> or a large-scale{' '}
-                <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial development</Link>, our team is ready to bring your vision
+                <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial development</Link>, our team is ready to bring your vision
                 to life.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

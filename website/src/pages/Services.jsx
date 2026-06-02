@@ -2,11 +2,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Door,
   Storefront,
   BuildingOffice,
   House,
-  Buildings,
   Stack,
   ArrowRight,
   Check,
@@ -39,27 +37,6 @@ import SEO from '../components/SEO';
 import { services } from '../data/content';
 
 const serviceDetails = [
-  {
-    id: 'fenestration',
-    title: 'Fenestration',
-    subtitle: 'Doors, Windows & Glass Solutions',
-    icon: Door,
-    color: 'from-arch-gold to-amber-600',
-    description: 'Complete fenestration solutions including aluminium doors, windows, shower cubicles, shop fronts, curtain walling, access mantraps, and frameless glass doors.',
-    features: [
-      'Sliding & Folding Doors',
-      'Hinged & Pivot Doors',
-      'Top & Side Hung Windows',
-      'Shower Cubicles',
-      'Frameless Glass Doors',
-      'Curtain Walling Systems',
-      'Shop Fronts',
-      'Access Control Mantraps'
-    ],
-    applications: ['Residential', 'Commercial', 'Industrial'],
-    // Vision: Close-up of sleek aluminium window frame with glass reflection
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80'
-  },
   {
     id: 'shopfitting',
     title: 'Shopfitting & Joinery',
@@ -120,26 +97,6 @@ const serviceDetails = [
     applications: ['Houses', 'Apartments', 'Estates'],
     image: '/seagrave-road/17.jpg'
   },
-  {
-    id: 'exteriors',
-    title: 'Commercial Exteriors',
-    subtitle: 'Building Facades & Entrances',
-    icon: Buildings,
-    color: 'from-arch-silver-dark to-arch-charcoal',
-    description: 'Professional commercial exterior solutions including curtain walling, flush glazing, shopfronts, entrance canopies, and stainless steel balustrades.',
-    features: [
-      'Curtain Walling',
-      'Flush Glazing',
-      'Shopfronts',
-      'Entrance Canopies',
-      'Stainless Steel Balustrades',
-      'Facade Systems',
-      'Structural Glazing',
-      'Cladding Systems'
-    ],
-    applications: ['Offices', 'Shopping Centres', 'Hotels'],
-    image: '/firstmutual/untitled-561.JPG'
-  }
 ];
 
 const processSteps = [
@@ -300,8 +257,8 @@ export default function Services() {
     <>
       <SEO 
         title="Services - Architectural Aluminium"
-        description="Explore our comprehensive aluminium fabrication services including fenestration, shopfitting, building interiors, residential solutions, and commercial exteriors."
-        keywords="aluminium services, fenestration, shopfitting, joinery, building interiors, curtain walling, Zimbabwe"
+        description="Explore our aluminium fabrication services including shopfitting & joinery, building interiors, and residential solutions."
+        keywords="aluminium services, shopfitting, joinery, building interiors, partitions, residential aluminium, Zimbabwe"
       />
       
       {/* Hero Section */}
@@ -409,7 +366,7 @@ export default function Services() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-              From <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">fenestration</Link> to <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, we deliver excellence across every aspect of aluminium fabrication and installation.
+              From <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link> to <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential solutions</Link>, we deliver excellence across every aspect of aluminium fabrication and installation.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">

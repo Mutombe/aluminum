@@ -269,7 +269,7 @@ export default function Projects() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-              Discover our portfolio of exceptional <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> and installation projects across Zimbabwe and beyond.
+              Discover our portfolio of exceptional <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> and installation projects across Zimbabwe and beyond.
             </p>
           </motion.div>
         </motion.div>

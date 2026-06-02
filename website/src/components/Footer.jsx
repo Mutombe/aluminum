@@ -13,16 +13,13 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { name: 'About Us', path: '/about' },
-      { name: 'Our Team', path: '/about#team' },
       { name: 'Careers', path: '/careers' },
       { name: 'News', path: '/news' }
     ],
     services: [
-      { name: 'Fenestration', path: '/services#fenestration' },
-      { name: 'Shopfitting', path: '/services#shopfitting' },
-      { name: 'Building Interiors', path: '/services#building-interiors' },
-      { name: 'Residential', path: '/services#residential' },
-      { name: 'Commercial Exteriors', path: '/services#commercial-exteriors' }
+      { name: 'Shopfitting & Joinery', path: '/services/shopfitting' },
+      { name: 'Building Interiors', path: '/services/interiors' },
+      { name: 'Residential', path: '/services/residential' }
     ],
     resources: [
       { name: 'Projects', path: '/projects' },
@@ -58,7 +55,7 @@ const Footer = () => {
           <div className="lg:col-span-4">
 
             <p className="text-arch-silver-dark mb-8 max-w-sm">
-              Zimbabwe's leading fabricator of <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
+              Zimbabwe's leading fabricator of <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium</Link>, <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shop fitting</Link> and{' '}
               <a href="https://www.lupanetimbers.co.zw" target="_blank" rel="noopener noreferrer" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">joinery</a> products since 1994.
               Setting the standard for excellence in the industry.
             </p>

@@ -383,7 +383,7 @@ const Gallery = () => {
 
           <AnimatedSection delay={0.2}>
             <p className="text-lg sm:text-xl text-arch-slate max-w-2xl">
-              Explore three decades of excellence in <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link>,{' '}
+              Explore three decades of excellence in <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link>,{' '}
               <Link to="/services/shopfitting" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">shopfitting</Link>, and architectural solutions across Zimbabwe and beyond.
             </p>
           </AnimatedSection>

@@ -27,21 +27,6 @@ export const companyInfo = {
 // Services data
 export const services = [
   {
-    id: "fenestration",
-    title: "Fenestration",
-    shortDesc: "Doors, windows, and glass solutions",
-    description: "Premium fenestration solutions including doors, windows, shower cubicles, shop fronts, curtain walling, access mantraps, and frameless glass doors. We combine precision engineering with aesthetic excellence.",
-    features: [
-      "Aluminium Doors & Windows",
-      "Shower Cubicles",
-      "Shop Fronts",
-      "Curtain Walling",
-      "Access Mantraps",
-      "Frameless Glass Doors"
-    ],
-    icon: "Window"
-  },
-  {
     id: "shopfitting",
     title: "Shopfitting & Joinery",
     shortDesc: "Interior solutions for commercial spaces",
@@ -57,7 +42,7 @@ export const services = [
     icon: "Store"
   },
   {
-    id: "building-interiors",
+    id: "interiors",
     title: "Building Interiors",
     shortDesc: "Partitions, ceilings & balustrades",
     description: "Complete interior solutions including drywall partitions, suspended ceilings, and stainless steel balustrades. We bring architectural vision to life.",
@@ -85,21 +70,6 @@ export const services = [
       "Aluminium Cladded Doors"
     ],
     icon: "Home"
-  },
-  {
-    id: "commercial-exteriors",
-    title: "Commercial Exteriors",
-    shortDesc: "Facades and entrance systems",
-    description: "Make a statement with our commercial exterior solutions. Curtain walling, flush glazing, and entrance canopies designed for impact and durability.",
-    features: [
-      "Curtain Walling Systems",
-      "Flush Glazing",
-      "Shopfront Systems",
-      "Entrance Canopies",
-      "Facade Engineering",
-      "Cladding Systems"
-    ],
-    icon: "Building2"
   }
 ];
 
@@ -369,11 +339,9 @@ export const searchableContent = [
   { type: "page", title: "Contact", path: "/contact", keywords: ["contact", "get in touch", "enquiry", "quote", "location", "address", "phone"] },
   
   // Services
-  { type: "service", title: "Fenestration", path: "/services#fenestration", keywords: ["fenestration", "windows", "doors", "glass", "shower cubicles", "curtain walling", "shopfronts"] },
-  { type: "service", title: "Shopfitting & Joinery", path: "/services#shopfitting", keywords: ["shopfitting", "joinery", "retail", "display", "workstations", "bank teller", "interior"] },
-  { type: "service", title: "Building Interiors", path: "/services#building-interiors", keywords: ["interiors", "partitions", "ceilings", "balustrades", "drywall", "suspended"] },
-  { type: "service", title: "Residential Properties", path: "/services#residential", keywords: ["residential", "home", "house", "patio", "sliding doors", "louvre", "hinged"] },
-  { type: "service", title: "Commercial Exteriors", path: "/services#commercial-exteriors", keywords: ["commercial", "exteriors", "facade", "cladding", "entrance", "canopy"] },
+  { type: "service", title: "Shopfitting & Joinery", path: "/services/shopfitting", keywords: ["shopfitting", "joinery", "retail", "display", "workstations", "bank teller", "interior"] },
+  { type: "service", title: "Building Interiors", path: "/services/interiors", keywords: ["interiors", "partitions", "ceilings", "balustrades", "drywall", "suspended"] },
+  { type: "service", title: "Residential Properties", path: "/services/residential", keywords: ["residential", "home", "house", "patio", "sliding doors", "louvre", "hinged"] },
   
   // Contact info
   { type: "info", title: "Address", path: "/contact", keywords: ["address", "location", "25 connaught road", "avondale", "harare"] },

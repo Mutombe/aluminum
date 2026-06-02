@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { List, X, MagnifyingGlass, Phone, CaretDown, BuildingOffice, FileArrowDown, Stack, Door, Storefront, Armchair, House, Buildings } from '@phosphor-icons/react';
+import { List, X, MagnifyingGlass, Phone, CaretDown, BuildingOffice, FileArrowDown, Stack, Storefront, Armchair, House } from '@phosphor-icons/react';
 import { useSearch } from '../context/SearchContext';
 
 const navLinks = [
@@ -18,11 +18,9 @@ const navLinks = [
         path: '/services',
         icon: Stack,
         children: [
-          { name: 'Fenestration', path: '/services/fenestration', icon: Door },
           { name: 'Shopfitting', path: '/services/shopfitting', icon: Storefront },
           { name: 'Building Interiors', path: '/services/interiors', icon: Armchair },
-          { name: 'Residential', path: '/services/residential', icon: House },
-          { name: 'Commercial Exteriors', path: '/services/exteriors', icon: Buildings }
+          { name: 'Residential', path: '/services/residential', icon: House }
         ]
       }
     ]

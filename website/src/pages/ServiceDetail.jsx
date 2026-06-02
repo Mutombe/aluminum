@@ -31,88 +31,6 @@ import {
 
 // Comprehensive service data
 const servicesData = {
-  fenestration: {
-    id: 'fenestration',
-    title: 'Fenestration',
-    subtitle: 'Doors, Windows & Glass Solutions',
-    tagline: 'Where Light Meets Architecture',
-    description: <>Complete fenestration solutions that transform spaces through the perfect marriage of aluminium craftsmanship and glass artistry. From <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential</Link> windows to <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial curtain walling</Link>, we create openings that inspire.</>,
-    longDescription: `Our fenestration division represents three decades of expertise in creating the perfect interface between interior comfort and exterior beauty. Every window, door, and glass system we produce is engineered for optimal thermal performance, security, and aesthetic appeal.
-
-We work with architects, contractors, and homeowners to deliver solutions that not only meet but exceed expectations. Our in-house design team uses advanced CAD systems to ensure precise specifications, while our manufacturing facility employs state-of-the-art machinery for consistent quality.`,
-    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80',
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80',
-    ],
-    color: 'from-arch-gold to-amber-600',
-    accentColor: '#D4AF37',
-    textColor: 'text-arch-black',
-    pattern: 'window',
-    features: [
-      { 
-        title: 'Sliding & Folding Doors', 
-        desc: 'Seamless transitions between indoor and outdoor spaces with our precision-engineered sliding and bi-fold door systems.',
-        icon: Stack
-      },
-      { 
-        title: 'Hinged & Pivot Doors', 
-        desc: 'Statement entrances with our custom hinged and pivot door solutions, available in various configurations.',
-        icon: Target
-      },
-      { 
-        title: 'Top & Side Hung Windows', 
-        desc: 'Versatile window systems designed for optimal ventilation and natural light penetration.',
-        icon: Eye
-      },
-      { 
-        title: 'Shower Cubicles', 
-        desc: 'Elegant frameless and semi-framed shower enclosures that elevate bathroom aesthetics.',
-        icon: Sparkle
-      },
-      { 
-        title: 'Frameless Glass Doors', 
-        desc: 'Minimalist glass door systems that create stunning visual continuity.',
-        icon: Lightning
-      },
-      { 
-        title: 'Curtain Walling', 
-        desc: 'Large-scale facade systems for commercial buildings with superior thermal performance.',
-        icon: Ruler
-      },
-    ],
-    specifications: [
-      { label: 'Glass Thickness', value: '6mm - 24mm' },
-      { label: 'Profile Depth', value: '45mm - 150mm' },
-      { label: 'Max Panel Size', value: '3m x 4m' },
-      { label: 'Thermal Rating', value: 'U-value 1.4 W/m²K' },
-      { label: 'Sound Insulation', value: 'Up to 45dB' },
-      { label: 'Wind Load', value: 'Up to 2.4 kPa' },
-    ],
-    finishes: ['Silver Anodised', 'Bronze Anodised', 'Black Anodised', 'Powder Coated (18 colors)', 'Wood Grain Effect'],
-    applications: ['Residential Homes', 'Commercial Buildings', 'Hotels & Hospitality', 'Educational Facilities', 'Healthcare'],
-    stats: [
-      { value: 500, suffix: '+', label: 'Window Projects' },
-      { value: 98, suffix: '%', label: 'Client Satisfaction' },
-      { value: 25, suffix: 'yr', label: 'Warranty Available' },
-      { value: 48, suffix: 'hr', label: 'Quote Turnaround' },
-    ],
-    process: [
-      { step: '01', title: 'Site Survey', desc: 'Precise measurements and site condition assessment' },
-      { step: '02', title: 'Design & Quote', desc: 'CAD drawings and detailed quotation within 48 hours' },
-      { step: '03', title: 'Manufacturing', desc: 'Precision fabrication in our 50,000 sqm facility' },
-      { step: '04', title: 'Installation', desc: 'Professional fitting by certified technicians' },
-    ],
-    faqs: [
-      { q: 'What types of glass do you offer?', a: 'We offer clear, tinted, reflective, low-E, laminated, and toughened glass options. Double and triple glazing configurations are available for enhanced thermal and acoustic performance.' },
-      { q: 'How long does installation typically take?', a: 'Residential projects typically take 1-3 days. Commercial projects vary based on scope, but we provide detailed timelines during the quotation phase.' },
-      { q: 'Do you provide warranties?', a: 'Yes, we offer comprehensive warranties ranging from 5 to 25 years depending on the product and finish selected.' },
-      { q: 'Can you match existing aluminium profiles?', a: 'Absolutely. Our design team can replicate existing profiles or create custom solutions to match your specific requirements.' },
-    ],
-    relatedServices: ['residential', 'exteriors'],
-  },
   shopfitting: {
     id: 'shopfitting',
     title: 'Shopfitting & Joinery',
@@ -122,12 +40,12 @@ We work with architects, contractors, and homeowners to deliver solutions that n
     longDescription: `Our shopfitting division combines traditional joinery craftsmanship with modern manufacturing technology to deliver exceptional commercial interiors. We understand that retail environments must not only look stunning but also function efficiently to drive sales and enhance customer experiences.
 
 Working closely with brands, architects, and project managers, we translate design visions into reality. Our capabilities span from individual display units to complete store fit-outs, always maintaining the highest standards of quality and finish.`,
-    heroImage: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1600&q=80',
+    heroImage: '/ecobank/DSC08839.jpg',
     galleryImages: [
       '/ecobank/DSC08707.jpg',
-      '/ecobank/DSC08839.jpg',
-      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      '/ecobank/DSC08847.jpg',
+      '/ecobank/DSC08651.jpg',
+      '/ecobank/DSC08869.jpg',
     ],
     color: 'from-arch-charcoal to-arch-graphite',
     accentColor: '#D4AF37',
@@ -192,7 +110,7 @@ Working closely with brands, architects, and project managers, we translate desi
       { q: 'Can you manage complete store fit-outs?', a: 'Absolutely. We offer turnkey solutions including project management, coordination with other trades, and final handover.' },
       { q: 'What is your typical lead time?', a: 'Standard projects range from 2-6 weeks depending on complexity. We also offer fast-track services for urgent requirements.' },
     ],
-    relatedServices: ['interiors', 'fenestration'],
+    relatedServices: ['interiors', 'residential'],
   },
   interiors: {
     id: 'interiors',
@@ -203,12 +121,12 @@ Working closely with brands, architects, and project managers, we translate desi
     longDescription: `Interior spaces demand intelligent design that balances aesthetics, acoustics, and functionality. Our building interiors division specializes in creating these balanced environments through innovative partition and ceiling systems.
 
 We offer everything from traditional drywall solutions to cutting-edge demountable systems, glass partitions, and high-performance acoustic ceilings. Our team works with architects and interior designers to ensure seamless integration with overall design concepts.`,
-    heroImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80',
+    heroImage: '/more/IMG_2362.jpeg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80',
-      'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80',
-      'https://images.unsplash.com/photo-1462826303086-329426d1aef5?w=800&q=80',
+      '/ecobank/DSC08648.jpg',
+      '/ecobank/DSC08751.jpg',
+      '/ecobank/DSC08831.jpg',
+      '/more/IMG_2361.jpeg',
     ],
     color: 'from-arch-graphite to-arch-slate',
     accentColor: '#D4AF37',
@@ -273,23 +191,23 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
       { q: 'What acoustic ratings can you achieve?', a: 'We can achieve up to 55dB Rw with our high-performance acoustic partition systems.' },
       { q: 'Do you coordinate with other trades?', a: 'Absolutely. We work closely with electrical, HVAC, and security contractors to ensure seamless integration.' },
     ],
-    relatedServices: ['shopfitting', 'fenestration'],
+    relatedServices: ['shopfitting', 'residential'],
   },
   residential: {
     id: 'residential',
     title: 'Residential Properties',
     subtitle: 'Home Aluminium Solutions',
     tagline: 'Elevating Home Living',
-    description: <>Premium aluminium solutions that transform houses into homes. From stunning <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">patio doors</Link> to secure entrance systems, we bring quality and style to every residential project.</>,
+    description: <>Premium aluminium solutions that transform houses into homes. From stunning <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">patio doors</Link> to secure entrance systems, we bring quality and style to every residential project.</>,
     longDescription: `Your home deserves the finest aluminium solutions. Our residential division focuses exclusively on creating products that enhance living spaces while providing security, energy efficiency, and lasting beauty.
 
 We understand that homeowners want products that look beautiful, perform excellently, and require minimal maintenance. That's why we use only the highest quality aluminium alloys and finishes, backed by comprehensive warranties.`,
-    heroImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80',
+    heroImage: '/more/IMG_5674.jpeg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+      '/seagrave-road/6.jpg',
+      '/seagrave-road/9.jpg',
+      '/seagrave-road/14.jpg',
+      '/seagrave-road/17.jpg',
     ],
     color: 'from-arch-gold-dark to-arch-gold',
     accentColor: '#D4AF37',
@@ -354,88 +272,7 @@ We understand that homeowners want products that look beautiful, perform excelle
       { q: 'What warranty do you provide?', a: 'We offer up to 25 years warranty on aluminium frames and 10 years on hardware and glass units.' },
       { q: 'Can you match my existing windows?', a: 'Yes, we can manufacture to match existing profiles, colors, and configurations for consistent aesthetics.' },
     ],
-    relatedServices: ['fenestration', 'exteriors'],
-  },
-  exteriors: {
-    id: 'exteriors',
-    title: 'Commercial Exteriors',
-    subtitle: 'Building Facades & Entrances',
-    tagline: 'Defining Skylines',
-    description: <>Create iconic building <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">facades</Link> with our commercial exterior solutions. From gleaming curtain walls to grand entrance systems, we deliver architectural statements that stand the test of time.</>,
-    longDescription: `Commercial buildings demand exterior solutions that combine visual impact with engineering excellence. Our commercial exteriors division delivers just that – facade systems that define skylines while performing flawlessly for decades.
-
-We partner with leading architects and developers on projects ranging from boutique commercial buildings to landmark developments. Our engineering team ensures every system meets structural, thermal, and weatherproofing requirements while achieving the desired aesthetic vision.`,
-    heroImage: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
-      'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=800&q=80',
-      'https://images.unsplash.com/photo-1464938050520-ef2571d5b717?w=800&q=80',
-    ],
-    color: 'from-arch-silver-dark to-arch-charcoal',
-    accentColor: '#D4AF37',
-    textColor: 'text-white',
-    pattern: 'beam',
-    features: [
-      { 
-        title: 'Curtain Walling', 
-        desc: 'Stick and unitized systems for buildings of any scale.',
-        icon: Stack
-      },
-      { 
-        title: 'Structural Glazing', 
-        desc: 'Silicone-bonded systems for seamless glass facades.',
-        icon: Target
-      },
-      { 
-        title: 'Entrance Systems', 
-        desc: 'Automatic and manual entrance solutions with all-glass options.',
-        icon: Eye
-      },
-      { 
-        title: 'Canopies', 
-        desc: 'Dramatic entrance canopies and covered walkways.',
-        icon: Sparkle
-      },
-      { 
-        title: 'Cladding Systems', 
-        desc: 'Aluminium composite and solid panel cladding.',
-        icon: Palette
-      },
-      { 
-        title: 'Balustrades', 
-        desc: 'Glass and stainless steel balustrade systems.',
-        icon: Shield
-      },
-    ],
-    specifications: [
-      { label: 'Wind Load', value: 'Up to 3.0 kPa' },
-      { label: 'Water Tightness', value: '600 Pa' },
-      { label: 'Thermal Performance', value: 'U-value 1.1 W/m²K' },
-      { label: 'Max Span', value: '6m (curtain wall)' },
-      { label: 'Movement', value: '±25mm tolerance' },
-      { label: 'Testing', value: 'CWCT Compliant' },
-    ],
-    finishes: ['PVDF Coated', 'Anodised', 'Powder Coated', 'Natural Aluminium', 'Metallic Effects'],
-    applications: ['Office Towers', 'Shopping Centres', 'Hotels', 'Airports', 'Mixed-Use Developments'],
-    stats: [
-      { value: 100, suffix: 'k', label: 'Sqm Facades' },
-      { value: 50, suffix: '+', label: 'Commercial Projects' },
-      { value: 30, suffix: 'm', label: 'Tallest Installation' },
-      { value: 100, suffix: '%', label: 'Weather Test Pass' },
-    ],
-    process: [
-      { step: '01', title: 'Technical Review', desc: 'Analyzing drawings and performance requirements' },
-      { step: '02', title: 'Engineering', desc: 'Structural calculations and shop drawings' },
-      { step: '03', title: 'Mock-Up', desc: 'Full-scale prototype for testing and approval' },
-      { step: '04', title: 'Execution', desc: 'Coordinated manufacturing and installation' },
-    ],
-    faqs: [
-      { q: 'Do you provide structural calculations?', a: 'Yes, our in-house engineering team provides full structural calculations certified by professional engineers.' },
-      { q: 'Can you handle high-rise buildings?', a: 'Absolutely. We have experience with buildings over 30 meters and systems designed for high wind loads.' },
-      { q: 'What testing do you perform?', a: 'We conduct water penetration, air infiltration, and structural testing in accordance with international standards.' },
-    ],
-    relatedServices: ['fenestration', 'interiors'],
+    relatedServices: ['shopfitting', 'interiors'],
   },
 };
 

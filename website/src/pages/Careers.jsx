@@ -82,7 +82,7 @@ const Careers = () => {
       experience: "2+ years",
       posted: "3 days ago",
       description:
-        <>Create detailed technical drawings for <Link to="/services/fenestration" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> projects. Work closely with the sales and manufacturing teams to ensure accurate specifications.</>,
+        <>Create detailed technical drawings for <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">aluminium fabrication</Link> projects. Work closely with the sales and manufacturing teams to ensure accurate specifications.</>,
       requirements: [
         "Diploma in Draughting or Engineering Drawing",
         "2+ years experience with AutoCAD",
@@ -132,7 +132,7 @@ const Careers = () => {
       experience: "3+ years",
       posted: "1 day ago",
       description:
-        <>We are seeking a detail-oriented Estimator to join our team. You will be responsible for preparing accurate cost estimates for aluminium fabrication projects, from <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential windows</Link> to large <Link to="/services/exteriors" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial facades</Link>.</>,
+        <>We are seeking a detail-oriented Estimator to join our team. You will be responsible for preparing accurate cost estimates for aluminium fabrication projects, from <Link to="/services/residential" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">residential windows</Link> to large <Link to="/services" className="text-arch-gold hover:text-arch-amber underline decoration-arch-gold/30 hover:decoration-arch-gold underline-offset-2 transition-colors duration-300">commercial facades</Link>.</>,
       requirements: [
         "Minimum 3 years experience in estimating or quantity surveying",
         "Strong understanding of aluminium products and fabrication processes",
