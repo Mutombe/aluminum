@@ -7,7 +7,7 @@ import {
   Stack, Eye, Lightning, Target, Plus, Minus, ArrowUpRight, Play
 } from '@phosphor-icons/react';
 import SEO from '../components/SEO';
-import { AnimatedSection, StaggerContainer, StaggerItem, AnimatedCounter } from '../components/AnimatedComponents';
+import { AnimatedSection } from '../components/AnimatedComponents';
 import {
   CornerBrackets,
   BlueprintLines,
@@ -93,12 +93,6 @@ Working closely with brands, architects, and project managers, we translate desi
     ],
     finishes: ['Natural Wood Veneer', 'High-Gloss Lacquer', 'Matt Laminate', 'Textured Finishes', 'Custom RAL Colors'],
     applications: ['Retail Stores', 'Banks & Financial', 'Corporate Offices', 'Restaurants & Cafes', 'Showrooms'],
-    stats: [
-      { value: 300, suffix: '+', label: 'Store Fit-outs' },
-      { value: 50, suffix: '+', label: 'Bank Branches' },
-      { value: 15, suffix: 'yr', label: 'Average Client Relationship' },
-      { value: 100, suffix: '%', label: 'Project Completion Rate' },
-    ],
     process: [
       { step: '01', title: 'Brief & Concept', desc: 'Understanding your brand and spatial requirements' },
       { step: '02', title: '3D Design', desc: 'Photorealistic renders and technical drawings' },
@@ -175,12 +169,6 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
     ],
     finishes: ['Powder Coated Aluminium', 'Anodised Frames', 'Fabric Wrapped Panels', 'Timber Veneer', 'Metal Ceilings'],
     applications: ['Corporate Offices', 'Healthcare Facilities', 'Educational Buildings', 'Government Buildings', 'Call Centers'],
-    stats: [
-      { value: 200, suffix: 'k', label: 'Sqm Installed' },
-      { value: 45, suffix: 'dB', label: 'Max Sound Reduction' },
-      { value: 2, suffix: 'hr', label: 'Fire Rating Available' },
-      { value: 30, suffix: '+', label: 'System Options' },
-    ],
     process: [
       { step: '01', title: 'Space Planning', desc: 'Analyzing flow, acoustics, and functional requirements' },
       { step: '02', title: 'System Selection', desc: 'Recommending optimal solutions for your needs' },
@@ -258,12 +246,6 @@ We understand that homeowners want products that look beautiful, perform excelle
     ],
     finishes: ['Mill Finish', 'Silver Anodised', 'Bronze Tones', 'Matt Black', 'White', 'Custom Colors'],
     applications: ['Luxury Homes', 'Apartments', 'Townhouses', 'Estates', 'Renovations'],
-    stats: [
-      { value: 1000, suffix: '+', label: 'Homes Completed' },
-      { value: 25, suffix: 'yr', label: 'Warranty' },
-      { value: 40, suffix: '%', label: 'Energy Savings' },
-      { value: 5, suffix: '★', label: 'Customer Rating' },
-    ],
     process: [
       { step: '01', title: 'Home Visit', desc: 'Free consultation and precise measurements at your home' },
       { step: '02', title: 'Design Selection', desc: 'Choose from our range or create custom solutions' },
@@ -472,78 +454,50 @@ export default function ServiceDetail() {
             <span className="text-arch-gold">{service.title}</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-end">
-            <div>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${service.color} rounded-full ${service.textColor} text-sm font-medium mb-6`}
-              >
-                <Sparkle className="w-4 h-4" />
-                {service.subtitle}
-              </motion.span>
-              
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
-              >
-                {service.title}
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-xl sm:text-2xl md:text-3xl text-arch-gold font-light mb-6"
-              >
-                {service.tagline}
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="text-lg text-white/80 max-w-xl [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
-              >
-                {service.description}
-              </motion.p>
-            </div>
-
-            {/* Stats Cards */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7 }}
-              className="grid grid-cols-2 gap-4"
+          <div className="max-w-2xl">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${service.color} rounded-full ${service.textColor} text-sm font-medium mb-6`}
             >
-              {service.stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 + i * 0.1 }}
-                  className="relative bg-white/90 backdrop-blur-sm p-6 rounded-2xl group hover:border-arch-gold/30 border border-arch-silver-light shadow-soft transition-colors"
-                >
-                  <div className="absolute inset-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <CornerBrackets size={12} color={service.accentColor} />
-                  </div>
-                  <p className="font-display text-3xl md:text-4xl font-bold text-arch-gold">
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                  </p>
-                  <p className="text-arch-slate text-sm mt-1">{stat.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+              <Sparkle className="w-4 h-4" />
+              {service.subtitle}
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 leading-[1.1] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
+            >
+              {service.title}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-xl sm:text-2xl md:text-3xl text-arch-gold font-light mb-6"
+            >
+              {service.tagline}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="text-lg text-white/80 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
+            >
+              {service.description}
+            </motion.p>
           </div>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
+            transition={{ delay: 0.7 }}
             className="flex flex-wrap gap-4 mt-10"
           >
             <Link 
