@@ -254,7 +254,7 @@ We understand that homeowners want products that look beautiful, perform excelle
     ],
     faqs: [
       { q: 'Do you offer free home consultations?', a: 'Yes, we provide free home visits to assess your requirements, take measurements, and discuss options with no obligation.' },
-      { q: 'What warranty do you provide?', a: 'We offer up to 25 years warranty on aluminium frames and 10 years on hardware and glass units.' },
+      { q: 'What warranty do you provide?', a: 'Our aluminium products carry a standard 10-year warranty, while installation workmanship is covered for 5 years. Specific terms are detailed in your contract.' },
       { q: 'Can you match my existing windows?', a: 'Yes, we can manufacture to match existing profiles, colors, and configurations for consistent aesthetics.' },
     ],
     relatedServices: ['shopfitting', 'interiors'],

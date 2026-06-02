@@ -414,7 +414,7 @@ export const faqs = [
   },
   {
     question: "What warranty do you offer?",
-    answer: "We provide comprehensive warranties on all our products. Standard fenestration products carry a 10-year warranty, while shopfitting installations include a 5-year warranty. Specific terms are detailed in your contract."
+    answer: "We provide comprehensive warranties on all our products. Standard aluminium products carry a 10-year warranty, while shopfitting installations include a 5-year warranty. Specific terms are detailed in your contract."
   },
   {
     question: "Can you match existing aluminium finishes?",
