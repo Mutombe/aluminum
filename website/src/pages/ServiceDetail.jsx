@@ -124,6 +124,7 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
     heroImage: '/more/IMG_2362.jpeg',
     galleryImages: [
       '/ecobank/DSC08648.jpg',
+      '/new4.jpeg',
       '/ecobank/DSC08751.jpg',
       '/ecobank/DSC08831.jpg',
       '/more/IMG_2361.jpeg',
@@ -204,6 +205,8 @@ We offer everything from traditional drywall solutions to cutting-edge demountab
 We understand that homeowners want products that look beautiful, perform excellently, and require minimal maintenance. That's why we use only the highest quality aluminium alloys and finishes, backed by comprehensive warranties.`,
     heroImage: '/more/IMG_5674.jpeg',
     galleryImages: [
+      '/new3.jpeg',
+      '/new2.jpeg',
       '/seagrave-road/6.jpg',
       '/seagrave-road/9.jpg',
       '/seagrave-road/14.jpg',

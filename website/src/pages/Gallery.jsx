@@ -289,6 +289,51 @@ const Gallery = () => {
       year: '2024',
       image: '/more/IMG_5674.jpeg',
       size: 'medium'
+    },
+    {
+      id: 29,
+      category: 'curtain-walling',
+      title: 'Curved Glass Facade & Cladding',
+      location: 'Harare',
+      year: '2024',
+      image: '/new1.jpeg',
+      size: 'large'
+    },
+    {
+      id: 30,
+      category: 'commercial',
+      title: 'Commercial Tower — Full Glass Facade',
+      location: 'Harare',
+      year: '2024',
+      image: '/new5.jpeg',
+      size: 'large'
+    },
+    {
+      id: 31,
+      category: 'residential',
+      title: 'Aluminium Pivot Entrance Door',
+      location: 'Harare',
+      year: '2024',
+      image: '/new2.jpeg',
+      size: 'medium'
+    },
+    {
+      id: 32,
+      category: 'residential',
+      title: 'Sliding Patio Doors & Stone Feature Wall',
+      location: 'Harare',
+      year: '2024',
+      image: '/new3.jpeg',
+      size: 'medium'
+    },
+    {
+      id: 33,
+      category: 'interior',
+      title: 'Glazed Skylight Roof & Glass Partitions',
+      location: 'Harare',
+      year: '2024',
+      image: '/new4.jpeg',
+      size: 'medium'
     }
   ];
 
