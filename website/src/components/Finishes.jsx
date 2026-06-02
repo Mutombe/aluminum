@@ -20,6 +20,94 @@ const powderCoatColors = [
   { name: 'White Matt', hex: '#F5F5F5', category: 'light' },
 ];
 
+// --- Realistic metal-finish rendering ---------------------------------------
+const clampByte = (n) => Math.max(0, Math.min(255, Math.round(n)));
+
+// Lighten (+) or darken (-) a hex colour, returns an rgb() string
+const shade = (hex, amt) => {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgb(${clampByte(r + amt)}, ${clampByte(g + amt)}, ${clampByte(b + amt)})`;
+};
+
+// Derive the physical finish from the colour name.
+// gloss = sharp bright specular, satin = soft, matt = diffuse + fine grain.
+const getFinish = (name) => {
+  const n = name.toLowerCase();
+  if (n.includes('gloss')) return 'gloss';
+  if (n.includes('matt')) return 'matt';
+  return 'satin'; // satin + un-suffixed (PC / Charcoal) read as satin
+};
+
+const FINISH = {
+  gloss: { light: 60, dark: 48, spec: 0.5, grain: 0, sweep: 0.55 },
+  satin: { light: 34, dark: 32, spec: 0.26, grain: 0, sweep: 0.32 },
+  matt: { light: 16, dark: 18, spec: 0.08, grain: 0.22, sweep: 0.16 },
+};
+
+// One swatch surface — composes base sheen, specular highlight, optional matt
+// grain, a bevelled edge, and a light-rake sweep on hover.
+const MetalSurface = ({ hex, name }) => {
+  const f = FINISH[getFinish(name)];
+
+  return (
+    <>
+      {/* Base: diagonal sheen from a lit top-left to a shaded bottom-right —
+          simulates a light source raking across a smooth painted-metal face. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(135deg, ${shade(hex, f.light)} 0%, ${hex} 46%, ${shade(hex, -f.dark)} 100%)`,
+        }}
+      />
+
+      {/* Specular highlight — soft elliptical glow near the top-left */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `radial-gradient(ellipse 62% 48% at 28% 22%, rgba(255,255,255,${f.spec}) 0%, rgba(255,255,255,0) 60%)`,
+        }}
+      />
+
+      {/* Matt grain — fine speckle, only on matt finishes */}
+      {f.grain > 0 && (
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(rgba(0,0,0,0.5) 0.5px, transparent 0.5px), radial-gradient(rgba(255,255,255,0.4) 0.5px, transparent 0.5px)',
+            backgroundSize: '3px 3px, 3px 3px',
+            backgroundPosition: '0 0, 1.5px 1.5px',
+            opacity: f.grain,
+            mixBlendMode: 'overlay',
+          }}
+        />
+      )}
+
+      {/* Bevelled edge — lit top edge + shaded bottom = a raised physical chip */}
+      <div
+        className="absolute inset-0 rounded-xl pointer-events-none"
+        style={{
+          boxShadow:
+            'inset 0 1px 1px rgba(255,255,255,0.45), inset 0 -3px 7px rgba(0,0,0,0.32), inset 0 0 0 1px rgba(0,0,0,0.06)',
+        }}
+      />
+
+      {/* Light-rake sweep on hover — a bright band that passes across the metal */}
+      <div className="absolute inset-0 overflow-hidden rounded-xl">
+        <div
+          className="absolute top-0 bottom-0 -left-1/3 w-1/3 -skew-x-12 -translate-x-[250%] group-hover:translate-x-[450%] transition-transform duration-700 ease-out"
+          style={{
+            background: `linear-gradient(90deg, transparent, rgba(255,255,255,${f.sweep}), transparent)`,
+          }}
+        />
+      </div>
+    </>
+  );
+};
+
 const AluminiumFinishes = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const navigate = useNavigate();
@@ -84,31 +172,30 @@ const AluminiumFinishes = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.03 }}
                     onClick={() => setSelectedColor(selectedColor?.name === color.name ? null : color)}
-                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 min-h-[44px] ${
+                    className={`group relative aspect-square rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black/25 w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 min-h-[44px] ${
                       selectedColor?.name === color.name ? 'ring-2 ring-arch-gold ring-offset-2 ring-offset-arch-platinum scale-105' : ''
-                    } ${color.category === 'light' ? 'border border-arch-silver/50' : ''}`}
-                    style={{ backgroundColor: color.hex }}
+                    }`}
                   >
-                    {/* Shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
+                    {/* Realistic metal finish surface */}
+                    <MetalSurface hex={color.hex} name={color.name} />
+
                     {/* Selected indicator */}
                     {selectedColor?.name === color.name && (
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute inset-0 flex items-center justify-center"
+                        className="absolute inset-0 flex items-center justify-center z-10"
                       >
-                        <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center ${
+                        <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-lg ${
                           color.category === 'light' ? 'bg-arch-black/90' : 'bg-arch-white/90'
                         }`}>
                           <Checks className={color.category === 'light' ? 'text-white' : 'text-arch-black'} size={14} />
                         </div>
                       </motion.div>
                     )}
-                    
+
                     {/* Hover label */}
-                    <div className={`absolute inset-x-0 bottom-0 p-1.5 md:p-2 bg-gradient-to-t ${
+                    <div className={`absolute inset-x-0 bottom-0 z-10 p-1.5 md:p-2 bg-gradient-to-t ${
                       color.category === 'light' ? 'from-black/60' : 'from-black/80'
                     } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                       <p className="text-[8px] md:text-[10px] text-white text-center font-medium truncate">
@@ -131,12 +218,9 @@ const AluminiumFinishes = () => {
                   >
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        <div
-                          className={`w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg flex-shrink-0 ${
-                            selectedColor.category === 'light' ? 'border border-arch-silver/50' : ''
-                          }`}
-                          style={{ backgroundColor: selectedColor.hex }}
-                        />
+                        <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg flex-shrink-0 overflow-hidden">
+                          <MetalSurface hex={selectedColor.hex} name={selectedColor.name} />
+                        </div>
                         <div className="text-left">
                           <h4 className="font-display text-base md:text-lg font-semibold text-arch-charcoal">
                             {selectedColor.name}
