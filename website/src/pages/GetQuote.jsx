@@ -5,6 +5,7 @@ import {
   FileText,
   PaperPlaneTilt,
   CheckCircle,
+  Check,
   SpinnerGap,
   UploadSimple,
   X,
@@ -22,7 +23,6 @@ import SEO from '../components/SEO';
 const API_URL = import.meta.env.VITE_API_URL || 'https://aluminum-backend.onrender.com/api';
 
 const services = [
-  { value: '', label: 'Select a service' },
   { value: 'fenestration', label: 'Fenestration (Windows & Doors)' },
   { value: 'shopfitting', label: 'Shopfitting & Joinery' },
   { value: 'curtain-walling', label: 'Curtain Walling' },
@@ -46,7 +46,7 @@ const GetQuote = () => {
     email: '',
     phone: '',
     company: '',
-    service: '',
+    services: [],
     projectDetails: '',
   });
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -136,9 +136,28 @@ const GetQuote = () => {
     }));
   };
 
+  const toggleService = (value) => {
+    setQuoteFormData((prev) => ({
+      ...prev,
+      services: prev.services.includes(value)
+        ? prev.services.filter((v) => v !== value)
+        : [...prev.services, value],
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (quoteFormData.services.length === 0) {
+      toast.error('Please select at least one service.');
+      return;
+    }
+
     setIsSubmitting(true);
+
+    const serviceLabels = quoteFormData.services
+      .map((v) => services.find((s) => s.value === v)?.label || v)
+      .join(', ');
 
     try {
       const formData = new FormData();
@@ -146,7 +165,7 @@ const GetQuote = () => {
       formData.append('email', quoteFormData.email);
       formData.append('phone', quoteFormData.phone);
       formData.append('company', quoteFormData.company);
-      formData.append('service', quoteFormData.service);
+      formData.append('service', serviceLabels);
       formData.append('project_details', quoteFormData.projectDetails);
       formData.append('selected_finish', selectedFinish ? `${selectedFinish} (${selectedFinishType})` : '');
       uploadedFiles.forEach((file) => {
@@ -168,7 +187,7 @@ const GetQuote = () => {
       toast.success("Quote request sent! We'll review your drawings and get back to you within 24-48 hours.");
 
       setTimeout(() => {
-        setQuoteFormData({ name: '', email: '', phone: '', company: '', service: '', projectDetails: '' });
+        setQuoteFormData({ name: '', email: '', phone: '', company: '', services: [], projectDetails: '' });
         setUploadedFiles([]);
         setIsSubmitted(false);
       }, 3000);
@@ -450,23 +469,36 @@ const GetQuote = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="quote-service" className="block text-arch-graphite text-sm mb-2">
-                      Service Required *
+                    <label className="block text-arch-graphite text-sm mb-2">
+                      Service Required * <span className="text-arch-steel font-normal">(select all that apply)</span>
                     </label>
-                    <select
-                      id="quote-service"
-                      name="service"
-                      value={quoteFormData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-arch-platinum border border-arch-silver/30 rounded-xl text-arch-charcoal focus:outline-none focus:border-arch-gold/50 transition-colors appearance-none cursor-pointer"
-                    >
-                      {services.map((service) => (
-                        <option key={service.value} value={service.value} className="bg-arch-platinum">
-                          {service.label}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="flex flex-wrap gap-2.5">
+                      {services.map((service) => {
+                        const active = quoteFormData.services.includes(service.value);
+                        return (
+                          <button
+                            key={service.value}
+                            type="button"
+                            onClick={() => toggleService(service.value)}
+                            aria-pressed={active}
+                            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all ${
+                              active
+                                ? 'bg-arch-gold/15 border-arch-gold text-arch-charcoal'
+                                : 'bg-arch-platinum border-arch-silver/30 text-arch-steel hover:border-arch-gold/50 hover:text-arch-charcoal'
+                            }`}
+                          >
+                            <span
+                              className={`flex items-center justify-center w-4 h-4 rounded-md border transition-colors ${
+                                active ? 'bg-arch-gold border-arch-gold' : 'border-arch-silver-dark/50'
+                              }`}
+                            >
+                              {active && <Check weight="bold" className="w-3 h-3 text-arch-black" />}
+                            </span>
+                            {service.label}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   <div>
