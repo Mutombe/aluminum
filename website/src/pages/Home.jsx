@@ -43,24 +43,16 @@ import AluminiumFinishes from "../components/Finishes";
 
 const heroImages = [
   {
-    src: "/more/IMG_2361.jpeg",
-    alt: "Precision aluminium fabrication and installation in progress",
+    src: "/hero/1.jpg",
+    alt: "Architectural aluminium and glazing project by Architectural Aluminium",
   },
   {
-    src: "/more/IMG_9173.jpeg",
-    alt: "Industrial-scale aluminium window and door systems",
+    src: "/hero/2.jpg",
+    alt: "Precision aluminium fabrication and installation",
   },
   {
-    src: "/firstmutual/untitled-561.JPG",
-    alt: "First Mutual Park - structural glazing and aluminium systems",
-  },
-  {
-    src: "/more/IMG_8993.jpeg",
-    alt: "Full-height aluminium curtain wall system in reception",
-  },
-  {
-    src: "/more/IMG_2362.jpeg",
-    alt: "Bespoke black aluminium atrium structure with glass panels",
+    src: "/hero/3.JPG",
+    alt: "Structural glazing and aluminium systems on a completed building",
   },
 ];
 
@@ -361,7 +353,7 @@ const Home = () => {
           ))}
 
           {/* Subtle darkening overlay on images */}
-          <div className="absolute inset-0 bg-arch-black/30 z-20" />
+          <div className="absolute inset-0 bg-arch-black/15 z-20" />
         </motion.div>
 
         {/* ============================================
@@ -376,12 +368,12 @@ const Home = () => {
           style={{
             background: `linear-gradient(
         to top,
-        rgba(10, 8, 5, 0.92) 0%,
-        rgba(12, 10, 7, 0.82) 18%,
-        rgba(15, 12, 8, 0.62) 42%,
-        rgba(18, 14, 10, 0.38) 65%,
-        rgba(15, 12, 8, 0.55) 88%,
-        rgba(10, 8, 5, 0.70) 100%
+        rgba(10, 8, 5, 0.86) 0%,
+        rgba(12, 10, 7, 0.70) 18%,
+        rgba(15, 12, 8, 0.42) 42%,
+        rgba(18, 14, 10, 0.20) 65%,
+        rgba(15, 12, 8, 0.34) 88%,
+        rgba(10, 8, 5, 0.52) 100%
       )`,
           }}
         />
@@ -402,16 +394,16 @@ const Home = () => {
           style={{
             background: `linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.70) 0%,
-        rgba(0, 0, 0, 0.45) 25%,
-        rgba(0, 0, 0, 0.18) 55%,
-        rgba(0, 0, 0, 0.10) 75%,
-        rgba(0, 0, 0, 0.30) 100%
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.30) 25%,
+        rgba(0, 0, 0, 0.10) 55%,
+        rgba(0, 0, 0, 0.04) 75%,
+        rgba(0, 0, 0, 0.20) 100%
       ),
       linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0.20) 40%,
+        rgba(0, 0, 0, 0.62) 0%,
+        rgba(0, 0, 0, 0.28) 40%,
         rgba(0, 0, 0, 0.05) 65%,
         transparent 80%
       )`,
@@ -440,7 +432,7 @@ const Home = () => {
             background: `radial-gradient(
         ellipse 90% 80% at 60% 50%,
         transparent 0%,
-        rgba(0, 0, 0, 0.25) 100%
+        rgba(0, 0, 0, 0.16) 100%
       )`,
           }}
         />
